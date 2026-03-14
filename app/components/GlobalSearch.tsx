@@ -193,7 +193,7 @@ export default function GlobalSearch() {
                                     ) : results.length === 0 ? (
                                         <div className="text-center py-12 px-6">
                                             <p className="text-[#94A3B8] text-sm">No results found for &quot;{query}&quot;</p>
-                                            <p className="text-[#CBD5E1] text-xs mt-2">Try a different keyword or CAS number.</p>
+                                            <p className="text-[#CBD5E1] text-xs mt-2">Try a different keyword or CAS number</p>
                                         </div>
                                     ) : (
                                         <div className="space-y-1">

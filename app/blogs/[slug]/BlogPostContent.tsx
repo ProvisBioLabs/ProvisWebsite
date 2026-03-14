@@ -20,9 +20,6 @@ export default function BlogPostContent({ blog }: { blog: any }) {
                 <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         className="mb-5 flex flex-wrap items-center gap-3 text-white/80 font-semibold text-sm">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F26522] text-white text-xs font-bold uppercase tracking-wider">
-                            <Tag className="w-3.5 h-3.5" /> {blog.category}
-                        </span>
                         <span className="flex items-center gap-1.5">
                             <CalendarDays className="w-4 h-4" /> {blog.date}
                         </span>

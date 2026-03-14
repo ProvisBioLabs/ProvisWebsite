@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import GlobalSearch from './GlobalSearch';
 
 interface NavChild { name: string; href: string; desc?: string; }
-interface NavColumn { heading: string; headingHref?: string; items: NavChild[]; }
+interface NavColumn { heading: string; headingHref?: string; items: NavChild[]; gridCols?: number; center?: boolean; }
 interface NavItem { label: string; href: string; dropdown?: NavChild[]; mega?: boolean; columns?: NavColumn[]; }
 
 export const navItems: NavItem[] = [
@@ -14,11 +14,11 @@ export const navItems: NavItem[] = [
         label: 'About',
         href: '/about',
         dropdown: [
+            { name: 'Our Founder', href: '/about#founder', desc: 'Meet the leadership' },
             { name: 'Company', href: '/about#about', desc: 'Who we are & our story' },
             { name: 'Vision & Mission', href: '/about#about-purpose', desc: 'Our purpose and direction' },
-            { name: 'Our Values', href: '/about#about-values', desc: 'The PROVIS principles' },
-            { name: 'Responsibility', href: '/about#about-csr', desc: 'Corporate Social Responsibility' },
-            { name: 'Our Founder', href: '/founder', desc: 'Meet the leadership' },
+            // { name: 'Our Values', href: '/about#about-values', desc: 'The PROVIS principles' },
+            // { name: 'Responsibility', href: '/about#about-csr', desc: 'Corporate Social Responsibility' },
         ],
     },
     {
@@ -39,21 +39,18 @@ export const navItems: NavItem[] = [
             {
                 heading: 'Recombinant Bio-Reagents',
                 headingHref: '/products/recombinant-bio-reagents',
+                gridCols: 2,
+                center: true,
                 items: [
                     { name: 'Provinase®', href: '/provinase', desc: 'Flagship endonuclease' },
                     { name: 'Recombinant Human Albumin', href: '/recombinant-albumin', desc: 'Vaccine stabilizer' },
-                    { name: 'Trypsin ', href: '/trypsin', desc: 'Cell culture enzyme' },
+                    { name: 'Trypsin ', href: '/trypsin', desc: 'enzyme for biopharmaceuticals' },
                     { name: 'Carboxypeptidase B', href: '/carboxypeptidase-b', desc: 'Serine protease' },
-                ],
-            },
-            {
-                heading: 'Recombinant Bio-Reagents',
-                headingHref: '/products/recombinant-bio-reagents',
-                items: [
-                    { name: 'Streptavidin', href: '/streptavidin', desc: 'Biotin-binding protein' },
                     { name: 'PNGase F', href: '/pngase-f', desc: 'Standard N-glycan release' },
                     { name: 'PNGase F Flash™', href: '/pngase-f-flash', desc: 'Ultra-fast N-glycan release' },
+                    { name: 'Streptavidin', href: '/streptavidin', desc: 'Biotin-binding protein' },
                     { name: 'Enterokinase', href: '/enterokinase', desc: 'Tag cleavage enzyme' },
+                    { name: 'Kex2 Protease', href: '/kex2-protease', desc: 'Recombinant fusion protein cleavage' },
                     { name: 'All Products →', href: '/products', desc: 'View complete catalog' },
                 ],
             },
@@ -64,7 +61,7 @@ export const navItems: NavItem[] = [
     { label: 'Science & Technology', href: '/science' },
     { label: 'CDMO', href: '/cdmo' },
     {
-        label: 'News & Events',
+        label: 'News & Blogs',
         href: '/news',
         dropdown: [
             { name: 'Blogs', href: '/blogs', desc: 'Insights and articles' },
@@ -130,12 +127,12 @@ const Navbar: React.FC = () => {
 
     return (
         <>
-            <header className={`nav-header ${scrolled ? 'nav-scrolled bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
-                <div className="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header className={`nav-header ${scrolled ? 'nav-scrolled bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`} suppressHydrationWarning>
+                <div className="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
                     {/* Logo */}
                     <a href="/" className="nav-logo flex-shrink-0">
                         <Image
-                            src="/logo.png"
+                            src="/logo.webp"
                             alt="Provis Biolabs"
                             width={160} height={44} priority
                         // className={`transition-all duration-300 ${scrolled ? 'h-9 w-auto' : 'h-11 w-auto'}`}
@@ -213,25 +210,25 @@ const Navbar: React.FC = () => {
                                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex gap-12 justify-between">
                                                 <div className="flex gap-16 flex-1">
                                                     {item.columns.map((col, idx) => (
-                                                        <div key={idx} className="flex flex-col min-w-[220px]">
-                                                            <h4 className="text-[11px] font-bold tracking-widest font-sans text-[#94a3b8] uppercase mb-4 pb-2 border-b border-[#f1f5f9]">
+                                                        <div key={idx} className={`flex flex-col ${col.gridCols ? 'flex-[2]' : 'min-w-[220px]'}`}>
+                                                            <h4 className={`text-[11px] font-bold tracking-widest font-sans text-[#94a3b8] uppercase mb-4 pb-2 border-b border-[#f1f5f9] ${col.center ? 'text-center' : ''}`}>
                                                                 {col.headingHref ? (
                                                                     <a href={col.headingHref} className="hover:text-[#F26522] transition-colors" onClick={() => setActiveMenu(null)}>
                                                                         {col.heading} →
                                                                     </a>
                                                                 ) : col.heading}
                                                             </h4>
-                                                            <div className="flex flex-col gap-2">
+                                                            <div className={col.gridCols ? `grid grid-cols-${col.gridCols} gap-x-8 gap-y-2` : 'flex flex-col gap-2'}>
                                                                 {col.items.map((child, cIdx) => (
                                                                     <a
                                                                         key={cIdx}
                                                                         href={child.href}
-                                                                        className="group/link flex flex-col p-2 -mx-2 rounded-lg hover:bg-[#fff7f2] transition-all"
+                                                                        className={`group/link flex flex-col p-2 -mx-2 rounded-lg hover:bg-[#fff7f2] transition-all ${col.center ? 'items-center text-center' : ''}`}
                                                                         onClick={() => setActiveMenu(null)}
                                                                     >
                                                                         <span className={`text-[14px] font-sans font-bold transition-colors flex items-center gap-2 ${isLinkActive(child.href) ? 'text-[#F26522]' : 'text-[#1E3A8A] group-hover/link:text-[#F26522]'}`}>
                                                                             {child.name}
-                                                                            {child.name.includes('→') ? '' : <span className={`w-1.5 h-1.5 rounded-full transition-colors ${isLinkActive(child.href) ? 'bg-[#F26522] opacity-100' : 'bg-[#cbd5e1] group-hover/link:bg-[#F26522] opacity-0 group-hover/link:opacity-100'}`} />}
+                                                                            {child.name.includes('→') ? '' : <span className={`w-1.5 h-1.5 rounded-full transition-colors flex-shrink-0 ${isLinkActive(child.href) ? 'bg-[#F26522] opacity-100' : 'bg-[#cbd5e1] group-hover/link:bg-[#F26522] opacity-0 group-hover/link:opacity-100'}`} />}
                                                                         </span>
                                                                         {child.desc && (
                                                                             <span className="text-[12px] font-sans text-[#64748b] mt-0.5 group-hover/link:text-[#F26522]/70 transition-colors">
@@ -250,7 +247,7 @@ const Navbar: React.FC = () => {
                                                     <div className="absolute top-0 right-0 w-40 h-40 bg-[#F26522] opacity-5 blur-3xl rounded-full group-hover/promo:opacity-10 transition-opacity" />
                                                     <div className="text-[#F26522] text-[11px] font-bold tracking-widest font-sans uppercase mb-3">Capabilities</div>
                                                     <div className="text-[#1E3A8A] font-outfit font-bold text-2xl mb-4 leading-tight">Scale seamlessly from R&D to GMP</div>
-                                                    <div className="text-[#475569] font-sans text-[14px] leading-relaxed mb-6">Explore our state-of-the-art multi-kL manufacturing facility and CDMO services.</div>
+                                                    <div className="text-[#475569] font-sans text-[14px] leading-relaxed mb-6">Explore our state-of-the-art multi-kL manufacturing facility and CDMO services</div>
                                                     <a href="/cdmo" className="text-[#F26522] font-sans text-[14px] font-bold flex items-center gap-2 group-hover/promo:gap-3 transition-all">
                                                         Explore Facilities <span>→</span>
                                                     </a>
@@ -284,9 +281,9 @@ const Navbar: React.FC = () => {
             <div className={`fixed inset-0 bg-[#1E3A8A]/20 backdrop-blur-sm z-[1400] transition-opacity duration-300 ${mobileOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setMobileOpen(false)} />
 
             {/* Mobile Drawer */}
-            <div className={`fixed top-0 right-0 bottom-0 w-[320px] bg-white z-[1500] shadow-2xl transition-transform duration-400 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`fixed top-0 right-0 bottom-0 w-[320px] bg-white z-[1500] shadow-2xl transition-transform duration-400 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`} suppressHydrationWarning>
                 <div className="flex items-center justify-between p-6 border-b border-[#f1f5f9]">
-                    <Image src="/logo.png" alt="Provis Biolabs" width={120} height={32} style={{ objectFit: 'contain' }} />
+                    <Image src="/logo.webp" alt="Provis Biolabs" width={120} height={32} style={{ objectFit: 'contain' }} />
                     <button onClick={() => setMobileOpen(false)} className="p-2 text-[#64748b] hover:bg-[#f1f5f9] rounded-lg transition-colors">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>

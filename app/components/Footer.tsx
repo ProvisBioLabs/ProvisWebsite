@@ -12,8 +12,9 @@ const companyLinks = [
 const productLinks = [
     { label: "Bio-APIs", href: "/products/bio-apis" },
     { label: "Recombinant Bio-Reagents", href: "/products/recombinant-bio-reagents" },
+    { label: "Biosimilars", href: "/biosimilars" },
+    { label: "Synthetic Peptides", href: "/synthetic-peptides" },
     { label: "CDMO Services", href: "/cdmo" },
-    { label: "All Products", href: "/products" },
 ];
 
 const scienceLinks = [
@@ -32,10 +33,10 @@ const certBadges = ["WHO-GMP", "ISO 9001", "GLP", "AOF"];
 export default function Footer() {
     return (
         <footer className="relative bg-[#F8FAFC] pt-20 pb-12 border-t border-[#E2E8F0] overflow-hidden">
-            {/* Watermark Logo */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[1200px] opacity-[0.04] pointer-events-none flex justify-center items-center select-none z-0">
+            {/* Watermark Logo — hidden on mobile to avoid visual noise */}
+            <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[1200px] opacity-[0.04] pointer-events-none justify-center items-center select-none z-0">
                 <Image
-                    src="/logo.png"
+                    src="/logo.webp"
                     alt=""
                     width={1200}
                     height={400}
@@ -52,7 +53,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <Image
-                            src="/logo.png"
+                            src="/logo.webp"
                             alt="Provis Biolabs"
                             width={160}
                             height={42}
@@ -60,34 +61,34 @@ export default function Footer() {
                         />
                         <p className="text-[#475569] text-sm leading-relaxed mb-8 max-w-sm font-medium">
                             Advancing life sciences with premium, animal-origin-free bioreagents
-                            and GMP-grade APIs for global biopharma.
+                            and GMP-grade APIs for global biopharma
                         </p>
                         {/* Cert badges */}
                         <div className="flex flex-wrap gap-4 mt-8">
                             <img
-                                src="/certifications/who-gmp.png"
+                                src="/certifications/who-gmp.webp"
                                 alt="WHO GMP Certified"
-                                className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                className="h-10 w-auto object-contain transition-all duration-300"
                             />
                             <img
-                                src="/certifications/gmp.png"
+                                src="/certifications/gmp.webp"
                                 alt="GMP Certified Practice"
-                                className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                className="h-10 w-auto object-contain transition-all duration-300"
                             />
                             <img
-                                src="/certifications/iso.png"
+                                src="/certifications/iso.webp"
                                 alt="ISO Certified"
-                                className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                className="h-10 w-auto object-contain transition-all duration-300"
                             />
                             <img
-                                src="/certifications/halal.png"
+                                src="/certifications/halal.webp"
                                 alt="Halal Certified"
-                                className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                className="h-10 w-auto object-contain transition-all duration-300"
                             />
                             <img
-                                src="/certifications/kosher.png"
+                                src="/certifications/kosher.webp"
                                 alt="Kosher Certified"
-                                className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                className="h-10 w-auto object-contain transition-all duration-300"
                             />
                         </div>
                     </div>
@@ -153,7 +154,7 @@ export default function Footer() {
                             <h4 className="text-sm font-bold text-[#1E3A8A] mb-2">India Headquarters</h4>
                             <p className="text-sm text-[#475569] mb-1">Provis Biolabs Private Limited</p>
                             <p className="text-sm text-[#475569] mb-3">Hyderabad, Telangana 500072</p>
-                            <div className="flex items-center gap-4 text-sm font-medium text-[#475569]">
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm font-medium text-[#475569]">
                                 <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> +91 9059284828</span>
                                 <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> bd@provisbiolabs.com</span>
                             </div>
@@ -177,8 +178,8 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <p className="text-xs font-medium text-[#94A3B8]">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+                    <p className="text-xs font-medium text-[#94A3B8]" suppressHydrationWarning>
                         © {new Date().getFullYear()} Provis Biolabs Private Limited. All rights reserved.
                     </p>
 

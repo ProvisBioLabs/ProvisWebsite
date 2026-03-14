@@ -5,7 +5,7 @@ export default function CTABanner() {
     return (
         <section
             id="cta"
-            className="py-24 lg:pd-33 relative overflow-hidden bg-[#FAFAFA]"
+            className="py-24 lg:pb-32 relative overflow-hidden bg-[#FAFAFA]"
         >
             {/* Decorative Background Elements */}
             <div className="absolute inset-0 pointer-events-none">

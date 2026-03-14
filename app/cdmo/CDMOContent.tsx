@@ -86,7 +86,7 @@ export default function CDMOContent() {
                             </p>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A8A] leading-tight mb-6">
                                 Your Product.<br />
-                                <span className="text-[#94A3B8]">Our Expertise.</span>
+                                <span className="text-[#94A3B8]">Our Expertise</span>
                             </h1>
                             <p className="text-lg text-[#475569] leading-relaxed mb-8 max-w-lg font-medium">
                                 Delivering comprehensive contract development and manufacturing solutions tailored to accelerate your biologics from discovery to commercialization, backed by uncompromising quality and WHO-GMP standards.
@@ -98,11 +98,10 @@ export default function CDMOContent() {
                             </div>
                         </motion.div>
 
-                        <motion.div {...fade(0.15)} className="relative lg:h-[500px] w-full bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] rounded-3xl border border-[#E2E8F0] shadow-sm flex flex-col items-center justify-center p-8 overflow-hidden group">
-                            <Factory className="w-16 h-16 text-[#1E3A8A]/10 mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} />
-                            <span className="text-xs font-bold text-[#94a3b8] uppercase tracking-widest px-4 py-2 bg-white rounded-lg shadow-sm border border-[#E2E8F0]">
-                                Image Placeholder: CDMO Cleanroom Facility
-                            </span>
+                        <motion.div {...fade(0.15)} className="relative lg:h-[500px] w-full bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] rounded-3xl border border-[#E2E8F0] shadow-sm flex flex-col items-center justify-center overflow-hidden group">
+                           <img src="/cdmo-facility.png" alt="cdmo facility" 
+                            className="w-full h-full object-cover"
+                           />
                         </motion.div>
                     </div>
                 </div>
@@ -242,6 +241,7 @@ export default function CDMOContent() {
                 </div>
             </section>
 
+          
             {/* ── Product Coverage ─────────────────── */}
             <section className="py-24 bg-[#F8FAFC] border-t border-[#E2E8F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -11,7 +11,7 @@ const partnersData = [
         region: "Asia",
         country: "Singapore",
         company: "i-DNA Biotechnology Pte Ltd",
-        domain: "i-dna.sg",
+        logo: "/partners/Dna.webp",
         address: "237 Pandan Loop, #07-08 Westech Building, Singapore 128424",
         phone: "+(65) 9622 1086",
         emails: ["thuan@i-dna.sg"],
@@ -21,7 +21,7 @@ const partnersData = [
         region: "Asia",
         country: "Republic of Korea (South Korea)",
         company: "Dongilbio",
-        domain: "dongilbio.co.kr",
+        logo: "/partners/Dongilbiotech.webp",
         address: "HANMAUM B/D 5th, Baumoe-ro 225, Seocho-gu, Seoul, Republic of Korea (06740)",
         phone: "+82-2-571-3790",
         emails: ["js.mok@dongilbio.co.kr", "info@dongilbio.co.kr"],
@@ -31,17 +31,17 @@ const partnersData = [
         region: "North America",
         country: "USA",
         company: "Amerigo Scientific",
-        domain: "amerigoscientific.com",
+        logo: "/partners/amerigo.webp",
         address: "500-G Wheeler Rd, Hauppauge, NY 11788, USA",
         phone: "+1-631-629-1460 / +1-516-755-7097",
         emails: ["info@amerigoscientific.com"],
-        website: "www.amerigoscientific.com" // Extrapolated from email
+        website: "www.amerigoscientific.com"
     },
     {
         region: "North America",
         country: "USA",
         company: "Labscoop LLC",
-        domain: "labscoop.com",
+        logo: "/partners/labscoop.webp",
         address: "417 Main St, Little Rock, AR 72201, USA",
         phone: "+1-800-316-3081",
         emails: ["support@labscoop.com"],
@@ -51,7 +51,7 @@ const partnersData = [
         region: "North America",
         country: "USA",
         company: "Zageno",
-        domain: "go.zageno.com",
+        logo: "/partners/zageno.webp",
         address: "Cambridge, 625 Massachusetts Ave 2nd Floor, USA",
         phone: "+1-857-477-8479",
         emails: ["Sales@zageno.com"],
@@ -61,7 +61,7 @@ const partnersData = [
         region: "North America",
         country: "Canada",
         company: "Cedarlane",
-        domain: "cedarlanelabs.com",
+        logo: "/partners/cedarlane.webp",
         address: "4410 Paletta Court Burlington, Ontario L7L 5R2, Canada.",
         phone: "+1-289-288-0001 / Toll Free (N.A.): 1-800-268-5058",
         emails: ["general@cedarlanelabs.com"],
@@ -71,7 +71,7 @@ const partnersData = [
         region: "North America",
         country: "Canada",
         company: "BioScotia Technologies Inc.",
-        domain: "bioscotia.com",
+        logo: "/partners/bioscotia.webp",
         address: "5991, Spring Garden Road, Suite #740 Halifax, Nova Scotia, B3H 1Y6 Canada.",
         phone: "+1-902-702-0795",
         emails: ["contact@bioscotia.com"],
@@ -81,11 +81,41 @@ const partnersData = [
         region: "Europe",
         country: "The Netherlands",
         company: "Bio-Connect",
-        domain: "bio-connect.nl",
+        logo: "/partners/bioconnect.webp",
         address: "Begonialaan 3a 6851, TE in Huissen, The Netherlands",
         phone: "+31 26 326 4450",
         emails: ["info@bio-connect.nl"],
         website: "www.bio-connect.nl"
+    },
+    {
+        region: "Europe",
+        country: "France",
+        company: "CliniSciences",
+        logo: "/partners/clinisciences_new.png",
+        address: "74, rue des Suisses 92000 Nanterre - France",
+        phone: "+33 9 77 40 09 09 / +33 9 77 40 10 11",
+        emails: ["info@clinisciences.com"],
+        website: "www.clinisciences.com"
+    },
+    {
+        region: "Asia",
+        country: "India",
+        company: "BioMall",
+        logo: "/partners/biomall.png",
+        address: "Chargen Life Sciences LLP, 1010, Hubtown Solaris, NS Phadke Marg, Andheri (E), Mumbai - 400069",
+        phone: "+91-7977202692",
+        emails: ["sales@biomall.in", "support@biomall.in"],
+        website: "www.biomall.in"
+    },
+    {
+        region: "North America",
+        country: "USA (Avantor)",
+        company: "Avantor ScienceCentral™",
+        logo: "/partners/avantor.png",
+        address: "VWR Corporate Headquarters Radnor Corporate Center, Building One, Suite 200 100 Matsonford Road, Radnor, PA 19087-8660",
+        phone: "1-800-932-5000",
+        emails: ["CS.Specialist@avantorinc.com"],
+        website: "www.avantorsciences.com/us/en/search/PROVIS%20BIOLABS%20PRIVATE%20LIMITED%20MS"
     }
 ];
 
@@ -202,14 +232,13 @@ export default function PartnersContent() {
                                         </div>
 
                                         {/* Logo Section */}
-                                        <div className="h-24 mb-8 flex items-center justify-center border-b border-[#E2E8F0]/50 pb-6 relative">
+                                        <div className="h-32 mb-8 bg-white rounded-2xl relative overflow-hidden group/logo border border-[#E2E8F0] transition-colors">
                                             <Image
-                                                src={`https://logo.clearbit.com/${partner.domain}`}
+                                                src={partner.logo}
                                                 alt={`${partner.company} Logo`}
-                                                width={200}
-                                                height={80}
-                                                className="max-h-16 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-sm"
-                                                unoptimized // External logos from clearbit
+                                                fill
+                                                sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
+                                                className="object-contain opacity-100 transition-opacity"
                                             />
                                         </div>
 
@@ -222,23 +251,27 @@ export default function PartnersContent() {
                                                 </p>
                                             </div>
 
-                                            <div className="flex items-start gap-3">
-                                                <Phone className="w-5 h-5 text-[#F26522] shrink-0 mt-0.5" />
-                                                <a href={`tel:${partner.phone.split(' / ')[0]}`} className="text-sm text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors">
-                                                    {partner.phone}
-                                                </a>
-                                            </div>
-
-                                            <div className="flex items-start gap-3">
-                                                <Mail className="w-5 h-5 text-[#F26522] shrink-0 mt-0.5" />
-                                                <div className="flex flex-col gap-1">
-                                                    {partner.emails.map(email => (
-                                                        <a key={email} href={`mailto:${email}`} className="text-sm text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors">
-                                                            {email}
-                                                        </a>
-                                                    ))}
+                                            {partner.phone && (
+                                                <div className="flex items-start gap-3">
+                                                    <Phone className="w-5 h-5 text-[#F26522] shrink-0 mt-0.5" />
+                                                    <a href={`tel:${partner.phone.split(' / ')[0]}`} className="text-sm text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors">
+                                                        {partner.phone}
+                                                    </a>
                                                 </div>
-                                            </div>
+                                            )}
+
+                                            {partner.emails.length > 0 && partner.emails[0] !== "" && (
+                                                <div className="flex items-start gap-3">
+                                                    <Mail className="w-5 h-5 text-[#F26522] shrink-0 mt-0.5" />
+                                                    <div className="flex flex-col gap-1">
+                                                        {partner.emails.map(email => (
+                                                            <a key={email} href={`mailto:${email}`} className="text-sm text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors">
+                                                                {email}
+                                                            </a>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Website CTA */}
@@ -266,7 +299,7 @@ export default function PartnersContent() {
                     viewport={{ once: true }}
                     className="mt-16 bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] rounded-3xl p-8 sm:p-12 text-center shadow-xl relative overflow-hidden"
                 >
-                    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay" />
+                    <div className="absolute inset-0 opacity-10 mix-blend-overlay" />
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 relative z-10">Don't see your country listed?</h3>
                     <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg relative z-10">
                         We are continually expanding our global reach. If your country is not listed, or you are interested in becoming an authorized partner, please get in touch.

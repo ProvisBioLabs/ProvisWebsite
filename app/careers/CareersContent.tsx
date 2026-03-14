@@ -92,7 +92,7 @@ export default function CareersContent() {
                             </span> of Biotech
                         </h1>
                         <p className="text-xl sm:text-2xl text-[#475569] leading-relaxed max-w-3xl mx-auto font-light mb-12">
-                            We're looking for visionary scientists, engineers, and visionaries to help us advance life sciences and create a healthier, sustainable world.
+                            We're looking for visionary scientists, engineers, and innovators to help us advance life sciences and create a healthier, sustainable world.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -230,7 +230,7 @@ export default function CareersContent() {
                                     Contact HR Dept
                                 </a>
                             </div>
-                            <p className="text-blue-200/60 text-sm mt-8">Please include your cover letter and desired role in the subject line.</p>
+                            <p className="text-blue-200/60 text-sm mt-8">Please include your cover letter and desired role in the subject line</p>
                         </div>
                     </motion.div>
                 </div>

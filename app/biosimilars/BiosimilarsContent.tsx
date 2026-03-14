@@ -72,11 +72,7 @@ export default function BiosimilarsContent() {
                                     </li>
                                 ))}
                             </ul>
-                            <div className="bg-[#EFF6FF] border-l-4 border-[#1E3A8A] p-5 rounded-r-xl">
-                                <p className="text-[#1E3A8A] text-sm font-medium italic">
-                                    "This experience enables us to deliver de-risked biosimilar programs with confidence and speed."
-                                </p>
-                            </div>
+                           
                         </motion.div>
 
                         {/* Stats panel */}
@@ -262,7 +258,7 @@ export default function BiosimilarsContent() {
                     </div>
                 </div>
             </section>
-
+            
             {/* ── Business Model ───────────────────── */}
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

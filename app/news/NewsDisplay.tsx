@@ -8,8 +8,8 @@ const newsItems = [
         id: "expansion-jadcherla-2024",
         date: "May 2024",
         category: "Corporate Expansion",
-        title: "Large-Scale Manufacturing Facility Expansion in Jadcherla",
-        description: "To support our rapidly growing global ambitions, Provis Biolabs has initiated a massive scale-up of R&D operations alongside the construction of a state-of-the-art, large-scale fermentation-based manufacturing facility in Jadcherla, Hyderabad. This major expansion triggered widespread recruitment efforts across Production, QC, QA, EHS, and IT.",
+        title: "State-of-the-art Manufacturing Facility in Jadcherla",
+        description: "To support our rapidly growing global ambitions, Provis Biolabs has initiated a massive scale-up of R&D operations alongside the construction of a state-of-the-art, large-scale fermentation-based manufacturing facility in Jadcherla, Hyderabad. This major expansion triggered widespread recruitment efforts across Production, QC, QA, EHS, and IT",
         icon: Building2,
         accent: "#1E3A8A",
         location: "Jadcherla, Hyderabad",
@@ -20,7 +20,7 @@ const newsItems = [
         date: "September 12, 2019",
         category: "Company Milestone",
         title: "Foundation of Provis Biolabs",
-        description: "Provis Biolabs was officially established with a core mission to specialize in the development, manufacturing, and marketing of complex biotechnology products using sustainable methods. Our scientific journey began with the setup of a dedicated R&D laboratory at Aspire-BioNest, University of Hyderabad.",
+        description: "Provis Biolabs was officially established with a core mission to specialize in the development, manufacturing, and marketing of complex biotechnology products using sustainable methods. Our scientific journey began with the setup of a dedicated R&D laboratory at Aspire-BioNest, University of Hyderabad",
         icon: FlaskConical,
         accent: "#F26522",
         location: "University of Hyderabad",
@@ -76,12 +76,8 @@ export default function NewsDisplay() {
                                 <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#F26522]/10 rounded-full blur-3xl" />
                                 <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#1E3A8A]/5 rounded-full blur-3xl" />
                                 <div className={`absolute top-1/2 -translate-y-1/2 ${idx % 2 === 0 ? '-right-10' : '-left-10'} hidden lg:block`}>
-                                    <div className="w-20 h-20 bg-white shadow-xl rounded-3xl flex items-center justify-center relative z-20">
-                                        <news.icon className="w-8 h-8 text-[#F26522]" />
-                                    </div>
                                 </div>
                             </div>
-
                             {/* Content Side */}
                             <div className="w-full lg:w-1/2">
                                 <div className="flex items-center gap-4 mb-6">
@@ -125,12 +121,11 @@ export default function NewsDisplay() {
                     viewport={{ once: true }}
                     className="mt-32 p-12 sm:p-20 bg-[#F8FAFC] rounded-[60px] border border-[#E2E8F0] text-center relative overflow-hidden"
                 >
-                    <Quote className="absolute top-10 left-10 w-20 h-20 text-[#1E3A8A]/5" />
-                    <Quote className="absolute bottom-10 right-10 w-20 h-20 text-[#1E3A8A]/5 rotate-180" />
+                    <Quote className="absolute top-10 left-10 w-20 h-20 text-[#1E3A8A]/5 rotate-180" />
+                    <Quote className="absolute bottom-10 right-10 w-20 h-20 text-[#1E3A8A]/5 " />
                     <h3 className="text-2xl sm:text-3xl font-bold text-[#1E3A8A] mb-6 italic">
-                        &quot;Innovation is at the heart of our journey. Every milestone we achieve is a step closer to a sustainable biotech future.&quot;
+                        &quot;Innovation is at the heart of our journey. Every milestone we achieve is a step closer to a sustainable biotech future&quot;
                     </h3>
-                    <p className="text-[#F26522] font-black uppercase tracking-widest text-sm">— PROVIS BIOLABS TEAM</p>
                 </motion.div>
             </div>
         </section>

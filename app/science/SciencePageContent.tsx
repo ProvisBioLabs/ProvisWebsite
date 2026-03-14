@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
     Microscope, Network, FlaskConical, LineChart, Factory,
     ChevronRight, ArrowRight, Rocket, ShieldCheck
@@ -25,10 +26,10 @@ const focusAreas = [
 ];
 
 const technologies = [
-    { title: "Sustainable Methods", desc: "Developing new products through sustainable, eco-friendly methods.", color: "emerald" },
-    { title: "Advanced Molecular Biology", desc: "Utilizing advanced molecular biology and modern bioprocessing techniques.", color: "blue" },
-    { title: "Bioinformatics", desc: "Incorporating bioinformatics and data analytics to optimize research outcomes.", color: "purple" },
-    { title: "Recombinant Innovation", desc: "Innovating in recombinant protein and enzyme production workflows.", color: "orange" },
+    { title: "Sustainable Methods", desc: "Developing new products through sustainable, eco-friendly methods.", color: "emerald", image: "/science and tech/sustainable.jpg" },
+    { title: "Advanced Molecular Biology", desc: "Utilizing advanced molecular biology and modern bioprocessing techniques.", color: "blue", image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2670&auto=format&fit=crop" },
+    { title: "Bioinformatics", desc: "Incorporating bioinformatics and data analytics to optimize research outcomes.", color: "purple", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" },
+    { title: "Recombinant Innovation", desc: "Innovating in recombinant protein and enzyme production workflows.", color: "orange", image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2670&auto=format&fit=crop" },
 ];
 
 const capabilities = [
@@ -99,11 +100,11 @@ const pipeline = [
 
 // ✏️ CERTIFICATIONS — Edit certification badges here
 const certifications = [
-    { name: "WHO-GMP Certified", file: "who-gmp.png" },
-    { name: "GMP Certified Practice", file: "gmp.png" },
-    { name: "ISO 9001:2015", file: "iso.png" },
-    { name: "Halal Certified", file: "halal.png" },
-    { name: "Kosher Certified", file: "kosher.png" },
+    { name: "WHO-GMP Certified", file: "who-gmp.webp" },
+    { name: "GMP Certified Practice", file: "gmp.webp" },
+    { name: "ISO 9001:2015", file: "iso.webp" },
+    { name: "Halal Certified", file: "halal.webp" },
+    { name: "Kosher Certified", file: "kosher.webp" },
 ];
 
 // =====================================================================
@@ -195,13 +196,12 @@ export default function SciencePageContent() {
 
             {/* ── Technologies ───────────────────────── */}
             <section className="py-24 bg-[#1E3A8A] text-white overflow-hidden relative">
-                <div className="absolute inset-0 bg-[url('/hero-bg.png')] opacity-10 bg-cover bg-center mix-blend-overlay" />
+                <div className="absolute inset-0 bg-[url('/hero-bg.webp')] opacity-10 bg-cover bg-center mix-blend-overlay" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <motion.div {...fade()} className="mb-16 max-w-3xl">
-                        <span className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3 block">Methods &amp; Means</span>
-                        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Cutting-edge Technologies</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold text-[#F26522] mb-6">Cutting-edge Technologies</h2>
                         <p className="text-white/80 leading-relaxed text-lg">
                             We are dedicated to building and investing in cutting-edge technologies to accelerate our scientific endeavors, helping us expand and push the boundaries of science.
                         </p>
@@ -212,15 +212,21 @@ export default function SciencePageContent() {
                             const c = techColors[tech.color];
                             return (
                                 <motion.div key={i} {...fade(0.1 * i)}
-                                    className="group bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm overflow-hidden relative">
-                                    <div className={`w-full h-32 rounded-xl mb-6 bg-gradient-to-br ${c.gradient} border border-white/5 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500`}>
-                                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '12px 12px' }} />
-                                        <div className={`w-12 h-12 rounded-xl ${c.iconBg} flex items-center justify-center border border-white/10 shadow-lg backdrop-blur-md relative z-10`}>
-                                            <Network className={`w-6 h-6 ${c.iconColor}`} />
+                                    className="group bg-white/5 border border-white/10 p-1 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm overflow-hidden relative">
+                                    <div className="bg-[#1E3A8A] p-6 rounded-[calc(1rem-4px)] flex flex-col h-full">
+                                        <div className={`w-full h-40 rounded-xl mb-6 bg-gradient-to-br ${c.gradient} border border-white/5 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500`}>
+                                            <Image 
+                                                src={tech.image} 
+                                                alt={tech.title}
+                                                fill
+                                                className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A] via-transparent to-transparent opacity-60" />
+                                            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '12px 12px' }} />
                                         </div>
+                                        <h4 className="font-bold text-lg mb-2 text-white">{tech.title}</h4>
+                                        <p className="text-sm text-white/80 leading-relaxed">{tech.desc}</p>
                                     </div>
-                                    <h4 className="font-bold text-lg mb-2 text-white">{tech.title}</h4>
-                                    <p className="text-sm text-white/80 leading-relaxed">{tech.desc}</p>
                                 </motion.div>
                             );
                         })}

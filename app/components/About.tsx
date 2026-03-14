@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Founder from "./Founder";
 
 const values = [
     {
@@ -58,7 +59,7 @@ export default function About() {
         <section id="about" ref={sectionRef} className="bg-white overflow-hidden">
 
             {/* PART 1: Company Intro */}
-            <div className="py-28 lg:py-25">
+            <div className="py-28 lg:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
 
@@ -71,28 +72,41 @@ export default function About() {
                         >
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-6 bg-[#F26522] rounded-full" />
-                                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#F26522]">About Us</span>
+                                <span className="text-2xl font-bold tracking-[0.2em] uppercase text-[#F26522]">About Us</span>
+                            </div>
+                            <div className="space-y-5 text-[17px] text-[#5C4033] leading-[1.75]">
+                              <p>
+                                 Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we've commercialized a diverse portfolio of products with a robust and expanding pipeline. Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
+                              </p>
+                              <p>
+                                Leveraging our state-of-the-at fermentation facility, we provide scalable production solutions to partners worldwide. With a growing network of distribution partners spanning the United States, Europe and Asia, we are rapidly expanding access to our high-quality, <strong className="text-[#F26522] font-semibold">animal origin-free (AOF)</strong> bioreagents across key global markets ensuring enhanced safety, ethical sourcing, environmental responsibility and streamlined regulatory compliance for our customers worldwide.
+                              </p>
                             </div>
 
-                            <h2 className="text-5xl sm:text-6xl font-outfit font-black tracking-tight leading-[1.08] text-[#F26522] mb-8">
-                                Science that<br />
-                                <span className="text-[#FF9A5C]">serves life.</span>
-                            </h2>
-
-                            <div className="space-y-5 text-[17px] text-[#5C4033] leading-[1.75]">
-                                <p>
-                                    Provis Biolabs is a fast-growing biotechnology company specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we&apos;ve commercialized <strong className="text-[#F26522] font-semibold">10+ products</strong> with a robust and expanding pipeline.
-                                </p>
-                                <p>
-                                    Our end-to-end capabilities span R&amp;D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GMP Certified Practice, ISO 9001:2015, Halal and Kosher</strong> certifications. We deliver reliable, high-quality products that meet the unmet needs of life sciences research and therapeutic development.
-                                </p>
-                                <p>
-                                    We recently launched <strong className="text-[#F26522] font-semibold">US commercial operations</strong> to bring animal origin-free (AOF) products to the North American market &mdash; ensuring enhanced safety, ethical sourcing, and streamlined regulatory compliance.
-                                </p>
+                            {/* Certification Logos */}
+                            <div className="mt-10 flex flex-wrap gap-6 items-center">
+                                {[
+                                    { name: "WHO-GMP", img: "/certifications/who-gmp.webp" },
+                                    { name: "GMP Certified", img: "/certifications/gmp.webp" },
+                                    { name: "ISO Certified", img: "/certifications/iso.webp" },
+                                    { name: "Halal", img: "/certifications/halal.webp" },
+                                    { name: "Kosher", img: "/certifications/kosher.webp" },
+                                ].map((cert) => (
+                                    <motion.div
+                                        key={cert.name}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, delay: 0.2 }}
+                                        className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                    >
+                                        <img src={cert.img} alt={cert.name} className="h-full w-auto object-contain" />
+                                    </motion.div>
+                                ))}
                             </div>
 
                             {/* Milestone strip */}
-                            <div className="mt-12 pt-10 border-t border-[#FFF0E5] grid grid-cols-4 gap-2">
+                            <div className="mt-12 pt-10 border-t border-[#FFF0E5] grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 {milestones.map((m, i) => (
                                     <motion.div
                                         key={m.year}
@@ -119,9 +133,11 @@ export default function About() {
                         >
                             <motion.div style={{ scale: imgScale }} className="absolute inset-0">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
+                                    src="/imagev2.png"
                                     alt="Provis Biolabs laboratory"
                                     fill
+                                    priority
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     className="object-cover"
                                 />
                             </motion.div>
@@ -133,7 +149,9 @@ export default function About() {
                     </div>
                 </div>
             </div>
-
+            <div id="founder">
+                         <Founder />
+            </div>
             {/* PART 2: Vision & Mission */}
             <div id="about-purpose" className="py-24 bg-[#FFF5F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -265,6 +283,7 @@ export default function About() {
                             {
                                 title: "Supporting Education & Continuous Development",
                                 desc: "We believe in the continuous growth and development of our employees. We provide comprehensive education programs and continuous training opportunities to enhance their skills and knowledge, ensuring they stay at the forefront of the industry.",
+                                image: "/csr/education.png",
                                 icon: (
                                     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -274,6 +293,7 @@ export default function About() {
                             {
                                 title: "Promoting Gender Equality",
                                 desc: "We are dedicated to creating an inclusive and equitable workplace. We strive to promote gender equality and empower all employees, regardless of gender, to achieve their full potential within our organization.",
+                                image: "/csr/gender.png",
                                 icon: (
                                     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -283,6 +303,7 @@ export default function About() {
                             {
                                 title: "Generating Employment Opportunities",
                                 desc: "We are committed to contributing to the local economy by generating employment opportunities for the local community. Our recruitment efforts focus on hiring local talent, thereby supporting the economic growth and development of local community.",
+                                image: "/csr/employement.png",
                                 icon: (
                                     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -292,6 +313,7 @@ export default function About() {
                             {
                                 title: "Research Collaboration with Academic Institutions",
                                 desc: "We collaborate with academic institutions on various R&D projects, ensuring a continuous exchange of knowledge and expertise. This collaboration strengthens our research capabilities and also contributes to the development of cutting-edge technologies and solutions that benefit both industry and society.",
+                                image: "/csr/academic.png",
                                 icon: (
                                     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -305,15 +327,26 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                                className="bg-white p-8 lg:p-10 rounded-[2rem] border border-[#E2E8F0] shadow-sm hover:shadow-[0_16px_50px_rgba(242,101,34,0.08)] hover:border-[#F26522]/30 transition-all duration-300 group"
+                                className="bg-white rounded-[2.5rem] border border-[#E2E8F0] shadow-sm hover:shadow-[0_24px_60px_rgba(242,101,34,0.12)] hover:border-[#F26522]/30 transition-all duration-500 overflow-hidden group flex flex-col"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-[#FFF5F0] text-[#F26522] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#F26522] group-hover:text-white transition-all duration-500">
-                                    {csr.icon}
+                                <div className="relative h-64 sm:h-72 w-full overflow-hidden">
+                                    <img 
+                                        src={csr.image} 
+                                        alt={csr.title} 
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                                 </div>
-                                <h4 className="text-xl font-bold text-[#1E3A8A] mb-4 leading-snug">{csr.title}</h4>
-                                <p className="text-[#64748B] text-[15px] leading-relaxed font-medium">
-                                    {csr.desc}
-                                </p>
+                                
+                                <div className="p-8 lg:p-10 flex flex-col flex-grow">
+                                    <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#F26522] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#F26522] group-hover:text-white transition-all duration-500">
+                                        {csr.icon}
+                                    </div>
+                                    <h4 className="text-xl lg:text-2xl font-bold text-[#1E3A8A] mb-4 leading-tight">{csr.title}</h4>
+                                    <p className="text-[#64748B] text-[15px] lg:text-base leading-relaxed font-medium">
+                                        {csr.desc}
+                                    </p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>

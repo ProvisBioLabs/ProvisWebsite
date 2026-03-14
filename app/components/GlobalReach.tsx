@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 
-const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+const geoUrl = "/countries-110m.json";
 
 // Exact coordinates calculated based on partner locations with custom offsets to prevent text overlap
 const markers = [
@@ -62,10 +62,11 @@ export default function GlobalReach() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative bg-white rounded-[2rem] border border-[#E2E8F0] shadow-sm overflow-hidden p-4 lg:p-8 min-h-[400px]"
+                    className="relative bg-white rounded-[2rem] border border-[#E2E8F0] shadow-sm overflow-hidden p-2 sm:p-4 lg:p-8 min-h-[260px] sm:min-h-[400px]"
                 >
+                    <div className="overflow-x-auto">
                     {!mounted ? (
-                        <div className="w-full h-[400px] bg-[#F8FAFC] animate-pulse rounded-xl flex items-center justify-center">
+                        <div className="w-full h-[260px] sm:h-[400px] bg-[#F8FAFC] animate-pulse rounded-xl flex items-center justify-center">
                             <span className="text-sm font-bold text-[#94A3B8] tracking-widest uppercase">Loading Global Map...</span>
                         </div>
                     ) : (
@@ -73,7 +74,7 @@ export default function GlobalReach() {
                             projectionConfig={{ scale: 140 }}
                             width={800}
                             height={400}
-                            style={{ width: "100%", height: "auto" }}
+                            style={{ width: "100%", height: "auto", minWidth: "350px" }}
                         >
                             <Geographies geography={geoUrl}>
                                 {({ geographies }) =>
@@ -105,6 +106,7 @@ export default function GlobalReach() {
                             ))}
                         </ComposableMap>
                     )}
+                    </div>
                 </motion.div>
             </div>
         </section>

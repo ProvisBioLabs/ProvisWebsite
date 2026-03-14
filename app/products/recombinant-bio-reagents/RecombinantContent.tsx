@@ -69,13 +69,17 @@ export default function RecombinantContent() {
                             >
                                 <Link href={p.href} className="p-6 flex flex-col h-full cursor-pointer">
                                     {/* Image placeholder */}
-                                    <div className="w-full h-36 rounded-xl bg-gray-100 mb-5 border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors relative overflow-hidden shrink-0">
+                                    <div className="w-full h-36 rounded-xl  mb-5 border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors relative overflow-hidden shrink-0">
                                         <img
                                             src={p.image}
                                             alt={p.name}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                            className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${
+                                                p.image.startsWith('/')
+                                                    ? 'object-contain scale-125 group-hover:scale-[1.35]'
+                                                    : 'object-cover'
+                                            }`}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     </div>
                                     <div className="flex flex-wrap gap-1.5 mb-3">
                                         <span className="inline-block px-2 py-0.5 bg-[#FFF0E6] text-[#F26522] text-[9px] font-bold tracking-widest uppercase rounded">
@@ -87,10 +91,20 @@ export default function RecombinantContent() {
                                             </span>
                                         )}
                                     </div>
-                                    <h3 className="font-bold text-[#1E3A8A] text-sm mb-2 leading-tight group-hover:text-[#F26522] transition-colors">{p.name}</h3>
+                                    <h3 className="font-bold text-[#1E3A8A] text-sm mb-2 leading-tight group-hover:text-[#F26522] transition-colors flex items-center h-6">
+                                        {p.slug === 'pngase-f-flash' ? (
+                                            <img 
+                                                src="/pngase f flash.png" 
+                                                alt="PNGase F Flash™" 
+                                                className="h-full w-auto object-contain" 
+                                            />
+                                        ) : (
+                                            p.name
+                                        )}
+                                    </h3>
                                     <p className="text-[#64748B] text-xs leading-relaxed mb-4 flex-grow">{p.shortDescription}</p>
                                     <div className="mt-auto inline-flex items-center text-xs font-bold text-[#F26522]">
-                                        View Product <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                                        View Specs <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                                     </div>
                                 </Link>
                             </motion.div>
@@ -99,40 +113,6 @@ export default function RecombinantContent() {
                 </div>
             </section>
 
-            {/* ── Quality Standards ─────────────── */}
-            <section className="py-20 bg-[#F8FAFC]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <motion.div {...fade()}>
-                            <p className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3">Quality</p>
-                            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E3A8A] mb-5">GMP-Grade Manufacturing Standards</h2>
-                            <p className="text-[#475569] text-base leading-relaxed mb-6">
-                                Our GMP-grade recombinant proteins are produced under stringent guidelines to maintain product quality and consistency. We utilize high-quality media supplements to ensure safety, efficacy and minimize batch-to-batch variation.
-                            </p>
-                            <p className="text-[#475569] text-sm leading-relaxed">
-                                Each lot is subject to rigorous QC testing, including compliance with TSE/BSE-free standards and comprehensive Quality Control and Assurance protocols.
-                            </p>
-                        </motion.div>
-
-                        <motion.div {...fade(0.1)} className="grid grid-cols-2 gap-4">
-                            {[
-                                { icon: "🌱", title: "100% AOF", desc: "Animal Origin-Free raw materials throughout" },
-                                { icon: "🏭", title: "cGMP Facility", desc: "ISO & FSSC 22000 certified manufacturing" },
-                                { icon: "📊", title: "Lot Consistency", desc: "Batch-to-batch reproducibility guaranteed" },
-                                { icon: "📋", title: "TSE/BSE Free", desc: "Certified & compliant with IP/USP/EP/BP" },
-                                { icon: "🔬", title: "Rigorous QC", desc: "Full analytical characterization per lot" },
-                                { icon: "📁", title: "Full Traceability", desc: "Raw material tested & documented" },
-                            ].map((item) => (
-                                <div key={item.title} className="bg-white border border-[#E2E8F0] rounded-xl p-4 hover:border-[#F26522]/20 hover:shadow-sm transition-all">
-                                    <span className="text-xl block mb-2">{item.icon}</span>
-                                    <div className="font-bold text-[#1E3A8A] text-sm mb-1">{item.title}</div>
-                                    <div className="text-xs text-[#64748B]">{item.desc}</div>
-                                </div>
-                            ))}
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
 
             {/* ── CTA ──────────────────────────── */}
             <section className="py-16 bg-white border-t border-[#E2E8F0]">

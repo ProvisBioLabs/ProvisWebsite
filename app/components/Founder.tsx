@@ -1,8 +1,9 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { Award, Briefcase, FileText, FlaskConical, Quote, ArrowRight } from "lucide-react";
+import { Award, Briefcase, FileText, FlaskConical, Quote, ArrowRight, Linkedin } from "lucide-react";
 
 const achievements = [
     {
@@ -28,7 +29,7 @@ export default function Founder() {
     const yValue = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
     return (
-        <section ref={containerRef} className="relative py-12 pb-24 lg:pt-16 lg:pb-36 bg-[#F8FAFC] overflow-hidden">
+        <section ref={containerRef} className="relative py-12 pb-24 lg:pt-16 lg:pb-15 bg-[#F8FAFC] overflow-hidden">
             {/* Subtle background glow */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#FFF0E5] to-transparent rounded-full blur-3xl opacity-50 pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#FFF5F0] to-transparent rounded-full blur-3xl opacity-50 pointer-events-none transform -translate-x-1/3 translate-y-1/3" />
@@ -46,9 +47,9 @@ export default function Founder() {
                     >
                         <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl shadow-[#F26522]/10 bg-white ring-1 ring-[#F26522]/20 backdrop-blur-sm">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#E05A1A]/80 via-transparent to-transparent opacity-0 mix-blend-overlay transition-opacity duration-700 hover:opacity-100 z-10" />
-                            {/* Placeholder for real portrait */}
+                            {/* Portrait */}
                             <Image
-                                src="/dr-bala-reddy.jpg" // Add actual image path later
+                                src="/dr-bala-reddyv2.jpg"
                                 alt="Dr. Bala Reddy"
                                 fill
                                 className="object-cover object-top filter contrast-105"
@@ -61,7 +62,7 @@ export default function Founder() {
                                         Dr. Bala Reddy
                                     </h3>
                                     <p className="text-[#F26522] font-semibold text-sm tracking-wide uppercase">
-                                        Founder, Provis Biolabs
+                                        Founder & Managing Director
                                     </p>
                                 </div>
                             </div>
@@ -123,50 +124,28 @@ export default function Founder() {
                                 </div>
                             ))}
                         </motion.div>
-
-                    </div>
-
-                </div>
-
-                {/* Biography / Visionary Section - Moved outside grid to span full width and fix left space issue */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="bg-white rounded-[2.5rem] p-8 sm:p-12 border border-[#E2E8F0] shadow-sm relative overflow-hidden mt-16 lg:mt-24 max-w-5xl mx-auto"
-                >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFF5F0] rounded-bl-[100px] -z-10" />
-
-                    <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#F26522] mb-3">Biography</h4>
-                    <h3 className="text-3xl sm:text-4xl font-outfit font-black tracking-tight text-[#1E3A8A] mb-8">
-                        A Visionary in Biopharma
-                    </h3>
-
-                    <div className="space-y-5 text-[17.5px] text-[#475569] leading-relaxed font-light mb-10">
-                        <p>
-                            Dr. Bala Reddy is a visionary biopharma leader with <strong className="font-semibold text-[#1E3A8A]">over 23 years of experience</strong> in the biopharmaceutical industry. He founded Provis Biolabs in 2019, and within just 3 years successfully developed and commercialized recombinant bio-products addressing critical unmet needs in life sciences.
-                        </p>
-                        <p>
-                            Before founding Provis, Dr. Reddy established Hetero Biopharma Ltd in 2009 and led a team of <strong className="font-semibold text-[#1E3A8A]">600+ professionals</strong> across R&amp;D to commercial operations — driving <strong className="font-semibold text-[#1E3A8A]">20+ biosimilars</strong> (proteins &amp; mAbs), vaccines, and human plasma-derived products to market, while pioneering single-use bioprocess technologies.
-                        </p>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="pt-8 border-t border-[#F8FAFC]">
-                        <p className="text-[#1E3A8A] font-semibold text-[17px] mb-5">
-                            Interested in exploring strategic partnerships or discussing the future of biopharma?
-                        </p>
-                        <a
-                            href="#cta"
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#F26522] hover:bg-[#d95a1e] transition-all duration-300 shadow-[0_8px_24px_rgba(242,101,34,0.25)] group"
+                        
+                        {/* Connect Button */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="flex flex-col sm:flex-row items-center gap-6"
                         >
-                            Connect with Dr. Reddy
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                            <Link
+                                href="https://www.linkedin.com/in/bala-reddy-phd-4b8949b/"
+                                className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-[#1E3A8A] to-[#1e40af] text-white px-8 py-4 rounded-2xl font-outfit font-bold text-lg shadow-xl shadow-blue-900/10 hover:shadow-2xl hover:shadow-[#F26522]/20 hover:-translate-y-1 transition-all duration-300"
+                            >
+                                <span>Connect with Dr. Bala Reddy</span>
+                                <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#F26522] transition-colors duration-300">
+                                    <ArrowRight className="w-4 h-4 text-white" />
+                                </div>
+                            </Link>
+                        </motion.div>
+                    
                     </div>
-
-                </motion.div>
+                </div>
             </div>
         </section>
     );

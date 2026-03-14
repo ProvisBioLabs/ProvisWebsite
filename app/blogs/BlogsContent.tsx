@@ -6,23 +6,23 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Clock, Search, Sparkles } from "lucide-react";
 import blogsData from "./blogsData.json";
 
-const categories = ["All", ...Array.from(new Set(blogsData.map(b => b.category)))];
+const years = ["All", ...Array.from(new Set(blogsData.map(b => b.date.split(" ")[1] || "2024"))).sort().reverse()];
 
 export default function BlogsContent() {
-    const [activeCategory, setActiveCategory] = useState("All");
+    const [activeYear, setActiveYear] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
 
     const filtered = blogsData.filter(blog => {
-        const matchesCategory = activeCategory === "All" || blog.category === activeCategory;
         const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
+        const matchesYear = activeYear === "All" || blog.date.includes(activeYear);
+        return matchesSearch && matchesYear;
     });
 
     const featured = filtered[0];
     const rest = filtered.slice(1);
 
     return (
-        <section className="bg-[#FAFAFA] font-outfit min-h-screen pb-32">
+        <section className="bg-[#FAFAFA] font-outfit min-h-screen pb-32" suppressHydrationWarning>
             {/* HERO */}
             <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F2557] pt-24 pb-40 px-4 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -62,19 +62,21 @@ export default function BlogsContent() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-20">
 
-                {/* Category Filter Pills */}
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-                    className="flex flex-wrap gap-2 mb-10 justify-center">
-                    {categories.map(cat => (
-                        <button key={cat} onClick={() => setActiveCategory(cat)}
-                            className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 border
-                                ${activeCategory === cat
-                                    ? "bg-[#F26522] text-white border-[#F26522] shadow-lg shadow-[#F26522]/20"
-                                    : "bg-white text-[#475569] border-[#E2E8F0] hover:border-[#F26522]/40 hover:text-[#F26522]"}`}>
-                            {cat}
-                        </button>
-                    ))}
-                </motion.div>
+                {/* Years & Category Filter Pills */}
+                <div className="flex flex-col items-center gap-4 mb-10">
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}
+                        className="flex flex-wrap gap-2 justify-center">
+                        {years.map(year => (
+                            <button key={year} onClick={() => setActiveYear(year)}
+                                className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border
+                                    ${activeYear === year
+                                        ? "bg-[#1E3A8A] text-white border-[#1E3A8A] shadow-lg shadow-[#1E3A8A]/20"
+                                        : "bg-white text-[#475569] border-[#E2E8F0] hover:border-[#1E3A8A]/40 hover:text-[#1E3A8A]"}`}>
+                                {year} {year !== "All" && "Blogs"}
+                            </button>
+                        ))}
+                    </motion.div>
+                </div>
 
                 {/* FEATURED HERO CARD */}
                 {featured && (
@@ -95,9 +97,6 @@ export default function BlogsContent() {
                                     </div>
                                 </div>
                                 <div className="p-8 md:p-12 flex flex-col justify-center">
-                                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FFF0E6] text-[#F26522] mb-4 w-fit">
-                                        {featured.category}
-                                    </span>
                                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#1E3A8A] mb-4 leading-tight group-hover:text-[#F26522] transition-colors">
                                         {featured.title}
                                     </h2>
@@ -133,11 +132,6 @@ export default function BlogsContent() {
                                     <img src={blog.image} alt={blog.title}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                                    <div className="absolute bottom-4 left-4 z-10">
-                                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white border border-white/20">
-                                            {blog.category}
-                                        </span>
-                                    </div>
                                 </div>
 
                                 {/* Body */}

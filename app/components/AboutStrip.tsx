@@ -21,17 +21,18 @@ export default function AboutStrip() {
                     >
 
 
-                        <h2 className="text-5xl sm:text-6xl font-outfit font-black tracking-tight leading-[1.08] text-[] mb-8 ">
-                            About <span className="text-[#F26522]">Provis Biolabs</span>
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-outfit font-black tracking-tight leading-[1.08] text-[#1E3A8A] mb-8">
+                            About <span className="text-[#F26522]">us</span>
                         </h2>
-
+                          
                         <div className="text-[17px] text-[#5C4033] leading-[1.75]">
-                            <p>
-                                Provis Biolabs is a fast-growing biotechnology company specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we&apos;ve commercialized <strong className="text-[#F26522] font-semibold">10+ products</strong> with a robust and expanding pipeline.
-                            </p> <br />
-                            <p>
-                                Our end-to-end capabilities span R&amp;D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GMP Certified Practice, ISO 9001:2015, Halal and Kosher</strong> certifications. We deliver reliable, high-quality products that meet the unmet needs of life sciences research and therapeutic development.
-                            </p>
+                                <p>
+                                 Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we've commercialized a diverse portfolio of products with a robust and expanding pipeline. Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
+                              </p>
+                              <br />
+                              <p>
+                                Leveraging our state-of-the-at fermentation facility, we provide scalable production solutions to partners worldwide. With a growing network of distribution partners spanning the United States, Europe and Asia, we are rapidly expanding access to our high-quality, <strong className="text-[#F26522] font-semibold">animal origin-free (AOF)</strong> bioreagents across key global markets ensuring enhanced safety, ethical sourcing, environmental responsibility and streamlined regulatory compliance for our customers worldwide.
+                              </p>
                         </div>
                     </motion.div>
 
@@ -45,9 +46,11 @@ export default function AboutStrip() {
                     >
                         <motion.div style={{ scale: imgScale }} className="absolute inset-0">
                             <Image
-                                src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
+                                src="/imagev2.png"
                                 alt="Provis Biolabs laboratory"
                                 fill
+                                priority
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="object-cover"
                             />
                         </motion.div>

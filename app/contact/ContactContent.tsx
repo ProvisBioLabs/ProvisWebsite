@@ -45,7 +45,7 @@ export default function ContactContent() {
                         className="bg-white p-8 sm:p-12 rounded-3xl shadow-[0_20px_60px_rgba(30,58,138,0.08)] border border-[#E2E8F0]"
                     >
                         <h2 className="text-2xl sm:text-3xl font-bold text-[#1E3A8A] mb-2">Business Enquiry</h2>
-                        <p className="text-[#64748B] mb-8">Enter Your Details below and we'll get back to you shortly.</p>
+                        <p className="text-[#64748B] mb-8">Enter Your Details below and we'll get back to you shortly</p>
 
                         <ContactForm />
                     </motion.div>

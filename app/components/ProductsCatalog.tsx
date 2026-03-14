@@ -9,13 +9,11 @@ const UI_CATEGORIES = [
     {
         id: "BIO-APIS",
         label: "Bio-APIs",
-        icon: "🧬",
         description: "Pharmaceutical-grade biological active pharmaceutical ingredients for life-saving therapies.",
     },
     {
         id: "RECOMBINANT BIO-REAGENTS",
         label: "Recombinant Bio-Reagents",
-        icon: "🔬",
         description: "GMP-grade recombinant proteins and enzymes for bioprocessing, cell culture, and biomanufacturing.",
     }
 ];
@@ -42,13 +40,17 @@ function ProductCard({
             </Link>
 
             {/* Image Placeholder / Product Image */}
-            <div className="w-full h-40 rounded-xl bg-gradient-to-br from-[#F8FAFC] to-[#EFF6FF] flex items-center justify-center mb-6 relative overflow-hidden border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors z-0">
+            <div className="w-full h-52 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors z-0">
                 <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                    className={`w-full h-full transition-transform duration-700 ${
+                        product.image.startsWith('/')
+                            ? 'object-contain p-4 group-hover:scale-105'
+                            : 'object-cover group-hover:scale-110 opacity-80 group-hover:opacity-100'
+                    }`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent" />
             </div>
 
             {/* Tag + Grade */}
@@ -92,9 +94,12 @@ function ProductCard({
                     Enquire
                     <span className="ml-1 group-hover/link:translate-x-1 transition-transform">→</span>
                 </Link>
-                <div className="text-sm font-bold text-[#1E3A8A]/50 group-hover:text-[#1E3A8A] transition-colors">
+                <Link
+                    href={product.href}
+                    className="text-sm font-bold text-[#1E3A8A]/50 group-hover:text-[#1E3A8A] transition-colors hover:underline"
+                >
                     View Specs →
-                </div>
+                </Link>
             </div>
         </motion.div>
     );
@@ -169,7 +174,7 @@ export default function ProductsCatalog() {
                     >
                         Products that power
                         <br />
-                        <span className="text-[#94A3B8]">global biopharma.</span>
+                        <span className="text-[#94A3B8]">global biopharma</span>
                     </motion.h1>
 
                     <motion.p
@@ -242,7 +247,6 @@ export default function ProductsCatalog() {
                                     : "bg-[#F8FAFC] text-[#64748B] hover:bg-[#F1F5F9]"
                                     }`}
                             >
-                                <span className="text-base leading-none">{cat.icon}</span>
                                 {cat.label}
                             </button>
                         ))}
@@ -295,7 +299,6 @@ export default function ProductsCatalog() {
                                 animate={{ opacity: 1 }}
                                 className="text-center py-20 text-[#94A3B8]"
                             >
-                                <span className="text-5xl mb-4 block">🔍</span>
                                 <p className="font-bold text-lg text-[#1E3A8A]">No products found</p>
                                 <p className="text-sm mt-1">Try adjusting your search query</p>
                             </motion.div>

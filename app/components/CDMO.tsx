@@ -38,44 +38,44 @@ const services = [
 
 export default function CDMO() {
     return (
-        <section id="cdmo" className="py-24 lg:py-32 bg-white">
+        <section id="cdmo" className="py-16 lg:py-32 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-                    {/* Left Text */}
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                    {/* Left Text — sticky ONLY on desktop (has 2-col grid), not mobile */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="sticky top-32"
+                        className="lg:sticky lg:top-32"
                     >
                         <h2 className="text-sm font-bold tracking-widest uppercase text-[#E8721A] mb-4">
                             CDMO Services
                         </h2>
-                        <h3 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1E3A8A] mb-6 leading-tight">
+                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1E3A8A] mb-6 leading-tight">
                             Your vision.<br />
-                            <span className="text-[#94A3B8]">Our expertise.</span>
+                            <span className="text-[#94A3B8]">Our expertise</span>
                         </h3>
 
-                        <p className="text-lg text-[#475569] mb-6 font-medium leading-relaxed">
-                            End-to-end CDMO capabilities — from strain engineering and process development through multi-kL microbial fermentation to finished, release-tested product. All under one WHO-GMP roof.
+                        <p className="text-base lg:text-lg text-[#475569] mb-4 lg:mb-6 font-medium leading-relaxed">
+                            End-to-end CDMO capabilities from strain engineering and process development through multi-kL microbial fermentation to finished, release-tested product. All under one  roof.
                         </p>
 
-                        <p className="text-lg text-[#475569] mb-10 font-medium leading-relaxed">
-                            We handle upstream bioprocessing, downstream purification, analytical characterization, fill-finish, and regulatory CMC documentation — so you can focus on your pipeline.
+                        <p className="text-base lg:text-lg text-[#475569] mb-8 lg:mb-10 font-medium leading-relaxed">
+                            We handle upstream bioprocessing, downstream purification, analytical characterization, fill-finish, and regulatory CMC documentation so you can focus on your pipeline.
                         </p>
 
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                             <a
                                 href="/cdmo"
-                                className="px-8 py-4 rounded-full font-semibold text-white bg-[#1E3A8A] hover:scale-105 active:scale-95 transition-all duration-300"
+                                className="px-8 py-4 rounded-full font-semibold text-white bg-[#1E3A8A] hover:scale-105 active:scale-95 transition-all duration-300 text-center"
                             >
                                 Learn More
                             </a>
                             <a
                                 href="#cta"
-                                className="px-8 py-4 rounded-full font-semibold text-[#1E3A8A] border border-[#E2E8F0] hover:bg-[#FAFAFA] transition-all duration-300"
+                                className="px-8 py-4 rounded-full font-semibold text-[#1E3A8A] border border-[#E2E8F0] hover:bg-[#FAFAFA] transition-all duration-300 text-center"
                             >
                                 Get a Quote
                             </a>
@@ -92,9 +92,11 @@ export default function CDMO() {
                             className="relative h-[300px] w-full rounded-3xl overflow-hidden bg-[#FAFAFA]"
                         >
                             <Image
-                                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2680&auto=format&fit=crop"
+                                src="/cdmo-facility.png"
                                 alt="GMP facility interior"
                                 fill
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="object-cover"
                             />
                         </motion.div>

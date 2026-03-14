@@ -181,6 +181,7 @@ export default function PeptidesContent() {
                     </div>
                 </div>
             </section>
+           
         </>
     );
 }
