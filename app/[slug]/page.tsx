@@ -61,11 +61,46 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
         }
     };
 
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://provisbiolabs.com'
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Products',
+                item: 'https://provisbiolabs.com/products'
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: product.category === 'api' ? 'Bio-APIs' : product.category === 'reagent' ? 'Recombinant Bio-Reagents' : 'CDMO',
+                item: `https://provisbiolabs.com/products/${product.category === 'api' ? 'bio-apis' : product.category === 'reagent' ? 'recombinant-bio-reagents' : 'cdmo'}`
+            },
+            {
+                '@type': 'ListItem',
+                position: 4,
+                name: product.name,
+                item: `https://provisbiolabs.com/${product.slug}`
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-white font-sans">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
             <Navbar />
             <ProductView product={product} />

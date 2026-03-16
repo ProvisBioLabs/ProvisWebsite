@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import Image from "next/image";
 import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
@@ -100,9 +101,9 @@ export default function Footer() {
                         <ul className="space-y-4">
                             {companyLinks.map((link) => (
                                 <li key={link.label}>
-                                    <a href={link.href} className="text-sm font-medium text-[#475569] hover:text-[#E8721A] transition-colors">
+                                    <Link href={link.href} className="text-sm font-medium text-[#475569] hover:text-[#E8721A] transition-colors">
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -116,9 +117,9 @@ export default function Footer() {
                         <ul className="space-y-4">
                             {productLinks.map((link) => (
                                 <li key={link.label}>
-                                    <a href={link.href} className="text-sm font-medium text-[#475569] hover:text-[#E8721A] transition-colors">
+                                    <Link href={link.href} className="text-sm font-medium text-[#475569] hover:text-[#E8721A] transition-colors">
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -132,9 +133,9 @@ export default function Footer() {
                         <ul className="space-y-4">
                             {scienceLinks.map((link) => (
                                 <li key={link.label}>
-                                    <a href={link.href} className="text-sm font-medium text-[#475569] hover:text-[#E8721A] transition-colors">
+                                    <Link href={link.href} className="text-sm font-medium text-[#475569] hover:text-[#E8721A] transition-colors">
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

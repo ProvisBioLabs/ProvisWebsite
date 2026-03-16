@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -128,14 +129,14 @@ const Navbar: React.FC = () => {
             <header className={`nav-header ${scrolled ? 'nav-scrolled bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`} suppressHydrationWarning>
                 <div className="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
                     {/* Logo */}
-                    <a href="/" className="nav-logo flex-shrink-0">
+                    <Link href="/" className="nav-logo flex-shrink-0">
                         <Image
                             src="/logo.webp"
                             alt="Provis Biolabs"
                             width={160} height={44} priority
                         // className={`transition-all duration-300 ${scrolled ? 'h-9 w-auto' : 'h-11 w-auto'}`}
                         />
-                    </a>
+                    </Link>
 
                     {/* Desktop Nav */}
                     <nav className="nav-links hidden lg:flex items-center gap-5 ml-auto">
@@ -211,9 +212,9 @@ const Navbar: React.FC = () => {
                                                         <div key={idx} className={`flex flex-col ${col.gridCols ? 'flex-[2]' : 'min-w-[220px]'}`}>
                                                             <h4 className={`text-[11px] font-bold tracking-widest font-sans text-[#94a3b8] uppercase mb-4 pb-2 border-b border-[#f1f5f9] ${col.center ? 'text-center' : ''}`}>
                                                                 {col.headingHref ? (
-                                                                    <a href={col.headingHref} className="hover:text-[#F26522] transition-colors" onClick={() => setActiveMenu(null)}>
+                                                                    <Link href={col.headingHref} className="hover:text-[#F26522] transition-colors" onClick={() => setActiveMenu(null)}>
                                                                         {col.heading} →
-                                                                    </a>
+                                                                    </Link>
                                                                 ) : col.heading}
                                                             </h4>
                                                             <div className={col.gridCols ? `grid grid-cols-${col.gridCols} gap-x-8 gap-y-2` : 'flex flex-col gap-2'}>
@@ -246,9 +247,9 @@ const Navbar: React.FC = () => {
                                                     <div className="text-[#F26522] text-[11px] font-bold tracking-widest font-sans uppercase mb-3">Capabilities</div>
                                                     <div className="text-[#1E3A8A] font-outfit font-bold text-2xl mb-4 leading-tight">Scale seamlessly from R&D to GMP</div>
                                                     <div className="text-[#475569] font-sans text-[14px] leading-relaxed mb-6">Explore our state-of-the-art multi-kL manufacturing facility and CDMO services</div>
-                                                    <a href="/cdmo" className="text-[#F26522] font-sans text-[14px] font-bold flex items-center gap-2 group-hover/promo:gap-3 transition-all">
+                                                    <Link href="/cdmo" className="text-[#F26522] font-sans text-[14px] font-bold flex items-center gap-2 group-hover/promo:gap-3 transition-all">
                                                         Explore Facilities <span>→</span>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -313,20 +314,20 @@ const Navbar: React.FC = () => {
                                     <div className={`overflow-hidden transition-all duration-300 ${mobileExpanded === item.label ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                                         <div className="bg-[#f8fafc] rounded-xl p-4 mt-2 mb-2 flex flex-col gap-6 border border-[#f1f5f9]">
                                             {item.dropdown && item.dropdown.map((child, i) => (
-                                                <a key={i} href={child.href} className="flex flex-col gap-0.5 px-4 py-2 hover:bg-white rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
+                                                <Link key={i} href={child.href} className="flex flex-col gap-0.5 px-4 py-2 hover:bg-white rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
                                                     <span className="text-[14px] font-sans font-bold text-[#1E3A8A]">{child.name}</span>
                                                     {child.desc && <span className="text-[12px] font-sans text-[#64748b]">{child.desc}</span>}
-                                                </a>
+                                                </Link>
                                             ))}
 
                                             {item.mega && item.columns && item.columns.map((col, i) => (
                                                 <div key={i} className="flex flex-col gap-2">
                                                     <div className="text-[11px] font-bold font-sans tracking-widest uppercase text-[#94a3b8] ml-4 pb-1 border-b border-[#e2e8f0]">{col.heading}</div>
                                                     {col.items.map((child, cIdx) => (
-                                                        <a key={cIdx} href={child.href} className="flex flex-col gap-0.5 px-4 py-2 hover:bg-white rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
+                                                        <Link key={cIdx} href={child.href} className="flex flex-col gap-0.5 px-4 py-2 hover:bg-white rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
                                                             <span className="text-[13px] font-sans font-bold text-[#475569]">{child.name}</span>
                                                             {child.desc && <span className="text-[11px] font-sans text-[#94a3b8]">{child.desc}</span>}
-                                                        </a>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                             ))}
@@ -334,9 +335,9 @@ const Navbar: React.FC = () => {
                                     </div>
                                 </>
                             ) : (
-                                <a href={item.href} className={`p-4 rounded-xl text-[15px] font-sans font-bold transition-colors ${isItemActive(item) ? 'text-[#F26522] bg-[#fff7f2]' : 'text-[#1e293b] hover:bg-[#f8fafc]'}`} onClick={() => setMobileOpen(false)}>
+                                <Link href={item.href} className={`p-4 rounded-xl text-[15px] font-sans font-bold transition-colors ${isItemActive(item) ? 'text-[#F26522] bg-[#fff7f2]' : 'text-[#1e293b] hover:bg-[#f8fafc]'}`} onClick={() => setMobileOpen(false)}>
                                     {item.label}
-                                </a>
+                                </Link>
                             )}
                         </div>
                     ))}

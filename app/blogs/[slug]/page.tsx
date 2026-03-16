@@ -77,11 +77,40 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }
     };
 
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://provisbiolabs.com'
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'News & Insights',
+                item: 'https://provisbiolabs.com/blogs'
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: blog.title,
+                item: `https://provisbiolabs.com/blogs/${blog.slug}`
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen flex flex-col pt-20">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
             <Navbar />
             <div className="flex-grow">
