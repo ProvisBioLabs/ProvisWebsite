@@ -8,7 +8,7 @@ const slides = [
     {
         id: 1,
         type: "video",
-        src: "/8940760-uhd_3840_2160_25fps.mp4",
+        src: "/provis-biolabs-hero-background.mp4",
         poster: "/hero-bg.webp",
         title: (
             <>

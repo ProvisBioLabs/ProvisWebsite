@@ -26,7 +26,7 @@ const focusAreas = [
 ];
 
 const technologies = [
-    { title: "Sustainable Methods", desc: "Developing new products through sustainable, eco-friendly methods.", color: "emerald", image: "/science and tech/sustainable.jpg" },
+    { title: "Sustainable Methods", desc: "Developing new products through sustainable, eco-friendly methods.", color: "emerald", image: "/science and tech/sustainable-biomanufacturing-provis-biolabs.webp" },
     { title: "Advanced Molecular Biology", desc: "Utilizing advanced molecular biology and modern bioprocessing techniques.", color: "blue", image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2670&auto=format&fit=crop" },
     { title: "Bioinformatics", desc: "Incorporating bioinformatics and data analytics to optimize research outcomes.", color: "purple", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" },
     { title: "Recombinant Innovation", desc: "Innovating in recombinant protein and enzyme production workflows.", color: "orange", image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2670&auto=format&fit=crop" },

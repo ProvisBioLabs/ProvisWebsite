@@ -46,7 +46,7 @@ export default function AboutStrip() {
                     >
                         <motion.div style={{ scale: imgScale }} className="absolute inset-0">
                             <Image
-                                src="/imagev2.png"
+                                src="/provis-biolabs-research-lab.webp"
                                 alt="Provis Biolabs laboratory"
                                 fill
                                 priority

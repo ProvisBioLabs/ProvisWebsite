@@ -14,8 +14,8 @@ export const navItems: NavItem[] = [
         label: 'About',
         href: '/about',
         dropdown: [
-            { name: 'Our Founder', href: '/about#founder', desc: 'Meet the leadership' },
             { name: 'Company', href: '/about#about', desc: 'Who we are & our story' },
+            { name: 'Our Founder', href: '/about#founder', desc: 'Meet the leadership' },
             { name: 'Vision & Mission', href: '/about#about-purpose', desc: 'Our purpose and direction' },
         ],
     },

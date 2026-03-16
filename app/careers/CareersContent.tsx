@@ -139,7 +139,7 @@ export default function CareersContent() {
                             className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl"
                         >
                             <Image
-                                src="/people.png"
+                                src="/provis-biolabs-team-collaboration.webp"
                                 alt="Provis Biolabs Team"
                                 fill
                                 className="object-cover"

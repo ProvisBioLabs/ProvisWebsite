@@ -99,7 +99,7 @@ export default function CDMOContent() {
                         </motion.div>
 
                         <motion.div {...fade(0.15)} className="relative lg:h-[500px] w-full bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] rounded-3xl border border-[#E2E8F0] shadow-sm flex flex-col items-center justify-center overflow-hidden group">
-                           <img src="/cdmo-facility.png" alt="cdmo facility" 
+                           <img src="/provis-biolabs-cdmo-manufacturing-facility.webp" alt="cdmo facility" 
                             className="w-full h-full object-cover"
                            />
                         </motion.div>
