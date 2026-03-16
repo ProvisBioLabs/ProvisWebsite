@@ -1,9 +1,13 @@
-import { getProductBySlug } from "../../lib/data/products";
+import { products, getProductBySlug } from "../../lib/data/products";
 import { notFound } from "next/navigation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductView from "./ProductView";
 import type { Metadata } from "next";
+
+export async function generateStaticParams() {
+    return products.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
@@ -14,10 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${product.name} | Provis Biolabs`,
         description: product.shortDescription,
+        alternates: {
+            canonical: `/${product.slug}`
+        },
         openGraph: {
             title: product.name,
             description: product.description,
-            images: [product.image],
+            images: [product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`],
         },
     };
 }
@@ -35,7 +42,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
         '@type': 'Product',
         name: product.name,
         description: product.description,
-        image: `https://provisbiolabs.com${product.image}`,
+        image: product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`,
         brand: {
             '@type': 'Brand',
             name: 'Provis Biolabs'

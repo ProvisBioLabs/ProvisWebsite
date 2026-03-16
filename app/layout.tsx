@@ -19,7 +19,6 @@ const fontBody = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://provisbiolabs.com'),
-  alternates: { canonical: '/' },
   title: "Provis Biolabs — Pioneering Bioscience for a Healthier World",
   description:
     "Provis Biolabs delivers premium bioreagents, Bio-APIs, and CDMO services to global pharmaceutical and biopharmaceutical innovators.",

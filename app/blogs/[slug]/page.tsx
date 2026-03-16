@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${blog.title} | Provis Biolabs Insights`,
         description: blog.excerpt,
+        alternates: {
+            canonical: `/blogs/${blog.slug}`
+        },
         openGraph: {
             title: blog.title,
             description: blog.excerpt,

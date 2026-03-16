@@ -11,10 +11,24 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
     const [status, setStatus] = useState<'' | 'success' | 'error'>('');
     const [interest, setInterest] = useState(prefilledInterest);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setStatus('success');
-        setTimeout(() => setStatus(''), 5000);
+        try {
+            const formData = new FormData(e.currentTarget);
+            // Connect to your actual Formspree/Resend endpoint here
+            await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json',
+                },
+            });
+            setStatus('success');
+            setTimeout(() => setStatus(''), 5000);
+            e.currentTarget.reset();
+        } catch (error) {
+            setStatus('error');
+        }
     };
 
     return (
@@ -31,6 +45,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                     <input
                         type="text"
                         id="firstName"
+                        name="firstName"
                         required
                         placeholder="First Name"
                         className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-4 py-3.5 text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#F26522]/20 focus:border-[#F26522] transition-all font-sans"
@@ -41,6 +56,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                     <input
                         type="text"
                         id="lastName"
+                        name="lastName"
                         required
                         placeholder="Last Name"
                         className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-4 py-3.5 text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#F26522]/20 focus:border-[#F26522] transition-all font-sans"
@@ -54,6 +70,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                     <input
                         type="email"
                         id="email"
+                        name="email"
                         required
                         placeholder="Email Address"
                         className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-4 py-3.5 text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#F26522]/20 focus:border-[#F26522] transition-all font-sans"
@@ -64,6 +81,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                     <input
                         type="tel"
                         id="phone"
+                        name="phone"
                         placeholder="Phone Number"
                         className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-4 py-3.5 text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#F26522]/20 focus:border-[#F26522] transition-all font-sans"
                     />
@@ -74,6 +92,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                 <label htmlFor="interest" className="block text-[14px] font-bold text-[#1E3A8A] mb-2 font-sans">Area of Interest *</label>
                 <select
                     id="interest"
+                    name="interest"
                     required
                     value={interest}
                     onChange={(e) => setInterest(e.target.value)}
@@ -94,6 +113,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                 <label htmlFor="message" className="block text-[14px] font-bold text-[#1E3A8A] mb-2 font-sans">Message *</label>
                 <textarea
                     id="message"
+                    name="message"
                     required
                     rows={5}
                     placeholder="Your Message..."

@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/events',
         '/partners',
         '/careers',
-        '/founder',
         '/contact',
     ];
 

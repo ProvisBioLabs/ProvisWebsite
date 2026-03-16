@@ -68,7 +68,7 @@
    content-visibility: auto tells the browser to skip layout + paint for
    sections not near the viewport. This can cut initial render time by 50%+
    on long pages like this one. */
-section {
+section:not(:first-of-type) {
   content-visibility: auto;
   contain-intrinsic-size: 0 600px; /* estimated section height fallback */
 }

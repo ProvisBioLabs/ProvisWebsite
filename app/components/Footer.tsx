@@ -4,7 +4,6 @@ import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 const companyLinks = [
     { label: "About Us", href: "/about" },
-    { label: "Leadership", href: "/founder" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
 ];
