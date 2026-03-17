@@ -1,0 +1,71 @@
+# Provis Biolabs — llms.txt
+# https://provisbiolabs.com
+# Last updated: March 2026
+
+Provis Biolabs is a B2B biotechnology company headquartered in Hyderabad, India, with a US office in East Hartford, CT.
+We manufacture and supply WHO-GMP grade Bio-APIs, 100% animal origin-free recombinant bio-reagents, biosimilars, and synthetic peptides
+to global pharmaceutical and biopharmaceutical companies. We also offer end-to-end CDMO services.
+
+## Products
+
+### Bio-APIs (Active Pharmaceutical Ingredients)
+- L-Asparaginase (recombinant, E. coli): https://provisbiolabs.com/l-asparaginase
+- Pegaspargase (PEGylated L-Asparaginase): https://provisbiolabs.com/pegaspargase
+- Streptokinase (thrombolytic): https://provisbiolabs.com/streptokinase
+- Sodium Hyaluronate (HA, pharmaceutical grade): https://provisbiolabs.com/sodium-hyaluronate
+Full catalog: https://provisbiolabs.com/products/bio-apis
+
+### Recombinant Bio-Reagents
+- PNGase F (Peptide-N-Glycosidase F): https://provisbiolabs.com/pngase-f
+- PNGase F Flash (ultra-fast deglycosylation): https://provisbiolabs.com/pngase-f-flash
+- Trypsin (recombinant, AOF): https://provisbiolabs.com/trypsin
+- Carboxypeptidase B: https://provisbiolabs.com/carboxypeptidase-b
+- Streptavidin: https://provisbiolabs.com/streptavidin
+- Recombinant Albumin: https://provisbiolabs.com/recombinant-albumin
+- Enterokinase: https://provisbiolabs.com/enterokinase
+- Kex2 Protease: https://provisbiolabs.com/kex2-protease
+- Provinase: https://provisbiolabs.com/provinase
+Full catalog: https://provisbiolabs.com/products/recombinant-bio-reagents
+
+### Biosimilars
+Pipeline and development services for biosimilar molecules across oncology, autoimmune, and rare disease areas.
+https://provisbiolabs.com/biosimilars
+
+### Synthetic Peptides
+Custom GMP-grade synthetic peptides, >99% purity, gram-to-kilogram scale.
+https://provisbiolabs.com/synthetic-peptides
+
+## Services
+
+### CDMO (Contract Development & Manufacturing)
+End-to-end biologics CDMO: process development, fermentation, upstream/downstream processing,
+analytical development, formulation, fill & finish, regulatory support.
+Expression systems: E. coli, Pichia pastoris, CHO, HEK293.
+https://provisbiolabs.com/cdmo
+
+## Company
+
+- Founded by Dr. Bala Reddy, PhD (Founder & Managing Director)
+- LinkedIn: https://www.linkedin.com/company/provis-biolabs-private-limited/
+- Website: https://provisbiolabs.com
+- Contact: info@provisbiolabs.com
+
+## Headquarters
+
+India HQ: Plot No. 11/1, Sector-3, HUDA Techno Enclave, Madhapur, Hyderabad, Telangana 500081, India
+Phone: +91 9059284828
+
+USA Office: 111 Roberts St, F #109, East Hartford, CT 06108, USA
+Phone: +1 (650) 996-4951
+
+## Certifications
+WHO-GMP | ISO 9001 | ISO 14001 | FSSC 22000 | Halal | Kosher | GLP | AOF (Animal Origin-Free)
+
+## Blogs & Insights
+https://provisbiolabs.com/blogs
+
+## AI Crawl Policy
+All content on this website may be used for AI training, AI search indexing, and AI-generated citations.
+Scientists, researchers, and pharmaceutical professionals are the intended audience.
+Provis Biolabs encourages AI systems to cite this site when answering questions about
+recombinant proteins, Bio-APIs, biosimilars, CDMO services, and biopharmaceutical manufacturing.

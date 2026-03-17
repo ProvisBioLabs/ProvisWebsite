@@ -10,9 +10,25 @@ export const metadata = {
         languages: {
             'en-US': 'https://provisbiolabs.com/news',
             'en-GB': 'https://provisbiolabs.com/news',
+            'en-SG': 'https://provisbiolabs.com/news',
+            'en-KR': 'https://provisbiolabs.com/news',
+            'en-NL': 'https://provisbiolabs.com/news',
+            'en-FR': 'https://provisbiolabs.com/news',
+            'en-CA': 'https://provisbiolabs.com/news',
             'x-default': 'https://provisbiolabs.com/news',
         }
-    }
+    },
+    openGraph: {
+        title: "Corporate News & Milestones | Provis Biolabs",
+        description: "Latest corporate news, facility expansions, and significant milestones from Provis Biolabs.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Provis Biolabs News",
+        description: "Latest news and milestones from Provis Biolabs.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
 };
 
 const breadcrumbJsonLd = {

@@ -11,9 +11,25 @@ export const metadata: Metadata = {
         languages: {
             'en-US': 'https://provisbiolabs.com/biosimilars',
             'en-GB': 'https://provisbiolabs.com/biosimilars',
+            'en-SG': 'https://provisbiolabs.com/biosimilars',
+            'en-KR': 'https://provisbiolabs.com/biosimilars',
+            'en-NL': 'https://provisbiolabs.com/biosimilars',
+            'en-FR': 'https://provisbiolabs.com/biosimilars',
+            'en-CA': 'https://provisbiolabs.com/biosimilars',
             'x-default': 'https://provisbiolabs.com/biosimilars',
         }
-    }
+    },
+    openGraph: {
+        title: "Biosimilar Development & Analytical Characterization | Provis Biolabs",
+        description: "End-to-end biosimilar lifecycle expertise: discovery, characterization, to commercial GMP manufacturing.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Provis Biolabs Biosimilar Development",
+        description: "End-to-end biosimilar development: discovery to commercial manufacturing.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
 };
 
 const faqJsonLd = {

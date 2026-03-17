@@ -38,6 +38,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: product.seoDescription ?? product.description,
             images: [product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: product.seoTitle ?? product.name,
+            description: product.seoDescription ?? product.shortDescription,
+            images: [product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`],
+        },
     };
 }
 
@@ -75,11 +81,11 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
             priceCurrency: 'USD',
-            price: '0',
             url: 'https://provisbiolabs.com/contact',
             seller: {
                 '@type': 'Organization',
-                name: 'Provis Biolabs'
+                name: 'Provis Biolabs',
+                url: 'https://provisbiolabs.com'
             }
         },
         additionalProperty: product.keyFeatures?.map((feature) => ({

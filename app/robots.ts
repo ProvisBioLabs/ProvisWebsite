@@ -6,6 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://provisbiolabs.com/sitemap.xml',
+    sitemap: [
+      'https://provisbiolabs.com/sitemap.xml',
+      'https://provisbiolabs.com/hreflang-sitemap.xml',
+    ],
   };
 }

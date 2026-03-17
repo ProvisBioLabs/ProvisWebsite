@@ -11,9 +11,25 @@ export const metadata: Metadata = {
         languages: {
             'en-US': 'https://provisbiolabs.com/contact',
             'en-GB': 'https://provisbiolabs.com/contact',
+            'en-SG': 'https://provisbiolabs.com/contact',
+            'en-KR': 'https://provisbiolabs.com/contact',
+            'en-NL': 'https://provisbiolabs.com/contact',
+            'en-FR': 'https://provisbiolabs.com/contact',
+            'en-CA': 'https://provisbiolabs.com/contact',
             'x-default': 'https://provisbiolabs.com/contact',
         }
-    }
+    },
+    openGraph: {
+        title: "Contact Provis Biolabs | Partnerships & Business Inquiries",
+        description: "Get in touch for global pharma partnerships, CDMO inquiries, and technical support in biotechnology.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Contact Provis Biolabs",
+        description: "Reach out for CDMO, partnerships or technical support.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
 };
 
 const breadcrumbJsonLd = {

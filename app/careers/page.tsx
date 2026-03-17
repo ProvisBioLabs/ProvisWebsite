@@ -3,16 +3,32 @@ import Footer from "../components/Footer";
 import CareersContent from "./CareersContent";
 
 export const metadata = {
-    title: "Careers | Provis Biolabs",
-    description: "Join the team at Provis Biolabs. Discover opportunities to innovate, grow, and impact the future of biotechnology.",
+    title: "Biotechnology Careers & Jobs | Provis Biolabs",
+    description: "Join the team at Provis Biolabs. Discover opportunities to innovate, grow, and impact the future of biotechnology and biopharmaceuticals.",
     alternates: {
         canonical: "https://provisbiolabs.com/careers",
         languages: {
             'en-US': 'https://provisbiolabs.com/careers',
             'en-GB': 'https://provisbiolabs.com/careers',
+            'en-SG': 'https://provisbiolabs.com/careers',
+            'en-KR': 'https://provisbiolabs.com/careers',
+            'en-NL': 'https://provisbiolabs.com/careers',
+            'en-FR': 'https://provisbiolabs.com/careers',
+            'en-CA': 'https://provisbiolabs.com/careers',
             'x-default': 'https://provisbiolabs.com/careers',
         }
-    }
+    },
+    openGraph: {
+        title: "Biotechnology Careers & Jobs | Provis Biolabs",
+        description: "Join our team working on bioreagents, Bio-APIs, CDMO and biosimilar innovation.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Careers at Provis Biolabs",
+        description: "Biotechnology careers in bioreagents, CDMO and biosimilar innovation.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
 };
 
 const breadcrumbJsonLd = {

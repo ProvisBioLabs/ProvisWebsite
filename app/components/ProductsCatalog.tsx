@@ -43,7 +43,7 @@ function ProductCard({
             <div className="w-full h-52 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors z-0">
                 <img
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} — ${product.category === 'api' ? 'Bio-API pharmaceutical ingredient' : 'Recombinant bio-reagent'} by Provis Biolabs`}
                     className={`w-full h-full transition-transform duration-700 ${
                         product.category === 'reagent'
                             ? 'object-cover group-hover:scale-110'

@@ -1,6 +1,37 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+
+export const metadata: Metadata = {
+  title: "Provis Biolabs — Premium Bioreagents, Bio-APIs & CDMO Services",
+  description: "Provis Biolabs delivers WHO-GMP grade Bio-APIs, 100% animal origin-free recombinant bio-reagents, and end-to-end CDMO services to global pharma and biopharma innovators.",
+  alternates: {
+    canonical: "https://provisbiolabs.com",
+    languages: {
+      'en-US': 'https://provisbiolabs.com',
+      'en-GB': 'https://provisbiolabs.com',
+      'en-SG': 'https://provisbiolabs.com',
+      'en-KR': 'https://provisbiolabs.com',
+      'en-NL': 'https://provisbiolabs.com',
+      'en-FR': 'https://provisbiolabs.com',
+      'en-CA': 'https://provisbiolabs.com',
+      'x-default': 'https://provisbiolabs.com',
+    }
+  },
+  openGraph: {
+    title: "Provis Biolabs — Premium Bioreagents, Bio-APIs & CDMO",
+    description: "WHO-GMP grade Bio-APIs, animal origin-free recombinant proteins, and CDMO services for global pharma.",
+    images: ["https://provisbiolabs.com/products-showcase.webp"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Provis Biolabs — Premium Bioreagents & CDMO",
+    description: "WHO-GMP grade Bio-APIs and recombinant proteins for global pharma.",
+    images: ["https://provisbiolabs.com/products-showcase.webp"],
+  },
+};
 
 // ─── Lazy load below-the-fold sections ──────────────────────────────────────
 // This dramatically reduces JavaScript the browser has to parse on initial load.

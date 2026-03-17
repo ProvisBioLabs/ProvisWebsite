@@ -11,9 +11,25 @@ export const metadata: Metadata = {
         languages: {
             'en-US': 'https://provisbiolabs.com/science',
             'en-GB': 'https://provisbiolabs.com/science',
+            'en-SG': 'https://provisbiolabs.com/science',
+            'en-KR': 'https://provisbiolabs.com/science',
+            'en-NL': 'https://provisbiolabs.com/science',
+            'en-FR': 'https://provisbiolabs.com/science',
+            'en-CA': 'https://provisbiolabs.com/science',
             'x-default': 'https://provisbiolabs.com/science',
         }
-    }
+    },
+    openGraph: {
+        title: "Advanced Biologics R&D Capabilities | Provis Biolabs",
+        description: "Cutting-edge expression systems, bioprocess development and analytical capabilities for biologics.",
+        images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Provis Biolabs Science & Technology",
+        description: "Advanced biologics R&D: E. coli, Pichia, CHO, HEK293 expression systems.",
+        images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
+    },
 };
 
 const faqJsonLd = {

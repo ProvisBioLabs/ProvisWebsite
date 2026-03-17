@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[1200px] opacity-[0.04] pointer-events-none justify-center items-center select-none z-0">
                 <Image
                     src="/logo.webp"
-                    alt=""
+                    alt="Provis Biolabs"
                     width={1200}
                     height={400}
                     className="w-full h-auto object-contain"
@@ -196,7 +196,7 @@ export default function Footer() {
                     </div>
 
                     <a
-                        href="https://www.linkedin.com/company/provisbiolabs/"
+                        href="https://www.linkedin.com/company/provis-biolabs-private-limited/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center hover:bg-[#1E3A8A] hover:border-[#1E3A8A] hover:text-white text-[#94A3B8] transition-colors"

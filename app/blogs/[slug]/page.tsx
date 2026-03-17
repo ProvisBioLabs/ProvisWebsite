@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${blog.title} | Provis Biolabs Insights`,
         description: blog.excerpt,
         alternates: {
-            canonical: `/blogs/${blog.slug}`,
+            canonical: `https://provisbiolabs.com/blogs/${blog.slug}`,
             languages: {
                 'en-US': `https://provisbiolabs.com/blogs/${blog.slug}`,
                 'en-GB': `https://provisbiolabs.com/blogs/${blog.slug}`,

@@ -11,9 +11,25 @@ export const metadata: Metadata = {
         languages: {
             'en-US': 'https://provisbiolabs.com/cdmo',
             'en-GB': 'https://provisbiolabs.com/cdmo',
+            'en-SG': 'https://provisbiolabs.com/cdmo',
+            'en-KR': 'https://provisbiolabs.com/cdmo',
+            'en-NL': 'https://provisbiolabs.com/cdmo',
+            'en-FR': 'https://provisbiolabs.com/cdmo',
+            'en-CA': 'https://provisbiolabs.com/cdmo',
             'x-default': 'https://provisbiolabs.com/cdmo',
         }
-    }
+    },
+    openGraph: {
+        title: "Pharmaceutical CDMO Services & Biomanufacturing | Provis Biolabs",
+        description: "End-to-end biologics CDMO: fermentation, bioprocessing, GMP manufacturing, regulatory support.",
+        images: ["https://provisbiolabs.com/provis-biolabs-cdmo-manufacturing-facility.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Provis Biolabs CDMO Services",
+        description: "Expert biologics CDMO: development to commercial GMP manufacturing.",
+        images: ["https://provisbiolabs.com/provis-biolabs-cdmo-manufacturing-facility.webp"],
+    },
 };
 
 const faqJsonLd = {

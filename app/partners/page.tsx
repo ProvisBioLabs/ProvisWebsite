@@ -10,9 +10,25 @@ export const metadata = {
         languages: {
             'en-US': 'https://provisbiolabs.com/partners',
             'en-GB': 'https://provisbiolabs.com/partners',
+            'en-SG': 'https://provisbiolabs.com/partners',
+            'en-KR': 'https://provisbiolabs.com/partners',
+            'en-NL': 'https://provisbiolabs.com/partners',
+            'en-FR': 'https://provisbiolabs.com/partners',
+            'en-CA': 'https://provisbiolabs.com/partners',
             'x-default': 'https://provisbiolabs.com/partners',
         }
-    }
+    },
+    openGraph: {
+        title: "Authorized Global Partners | Provis Biolabs",
+        description: "Our network of global partners providing local support and reliable delivery for Provis Biolabs products.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Provis Biolabs Global Partners",
+        description: "Authorized partners providing local support worldwide.",
+        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+    },
 };
 
 const breadcrumbJsonLd = {

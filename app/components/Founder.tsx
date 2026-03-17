@@ -50,7 +50,7 @@ export default function Founder() {
                             {/* Portrait */}
                             <Image
                                 src="/dr-bala-reddyv2.jpg"
-                                alt="Dr. Bala Reddy"
+                                alt="Dr. Bala Reddy — Founder and Managing Director of Provis Biolabs"
                                 fill
                                 className="object-cover object-top filter contrast-105"
                             />
