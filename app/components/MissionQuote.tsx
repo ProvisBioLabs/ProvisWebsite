@@ -87,8 +87,8 @@ export default function MissionQuote() {
                             transition={{ duration: 0.8, delay: 0.1 }}
                             className="border-b border-[#E2E8F0] pb-10"
                         >
-                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">20+</div>
-                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Products in Portfolio</div>
+                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">6+</div>
+                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">years</div>
                         </motion.div>
 
                         <motion.div
@@ -99,7 +99,7 @@ export default function MissionQuote() {
                             className="border-b border-[#E2E8F0] pb-10"
                         >
                             <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">50+</div>
-                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Pharma &amp; Biopharma Partners</div>
+                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Team Members</div>
                         </motion.div>
 
                         <motion.div
@@ -108,8 +108,8 @@ export default function MissionQuote() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">10+</div>
-                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Distribution Partners</div>
+                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">20+</div>
+                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Products</div>
                         </motion.div>
 
                         <motion.div
@@ -118,8 +118,8 @@ export default function MissionQuote() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">130+</div>
-                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Team Members</div>
+                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">10+</div>
+                            <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Distributors</div>
                         </motion.div>
                     </div>
                 </div>

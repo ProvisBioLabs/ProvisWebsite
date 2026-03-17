@@ -45,9 +45,9 @@ function ProductCard({
                     src={product.image}
                     alt={product.name}
                     className={`w-full h-full transition-transform duration-700 ${
-                        product.image.startsWith('/')
-                            ? 'object-contain p-4 group-hover:scale-105'
-                            : 'object-cover group-hover:scale-110 opacity-80 group-hover:opacity-100'
+                        product.category === 'reagent'
+                            ? 'object-cover group-hover:scale-110'
+                            : 'object-contain p-4 group-hover:scale-105'
                     }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent" />
