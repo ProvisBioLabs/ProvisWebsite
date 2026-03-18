@@ -124,8 +124,7 @@ export default function Hero() {
                             loop
                             muted
                             playsInline
-                            preload="none"
-                            poster="/hero-bg-s.webp"
+                            preload="auto"
                             className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
                         >
                             <source src={slides[currentSlide].src} type="video/mp4" />
