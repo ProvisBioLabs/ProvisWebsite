@@ -6,7 +6,7 @@ import ProductsCatalog from "../../app/components/ProductsCatalog";
 export const metadata: Metadata = {
     title: "Bio-APIs, Bioreagents & CDMO Products | Provis Biolabs",
     description:
-        "Explore Provis Biolabs' full product catalog: Bio-APIs, Recombinant Bio-Reagents, Synthetic Peptides, and Biosimilar pipeline products — Animal origin-free. WHO-GMP manufactured.",
+        "Explore Provis Biolabs' full product catalog: Bio-APIs, Recombinant Bio-Reagents, Synthetic Peptides and Biosimilar pipeline products — Animal origin-free. WHO-GMP manufactured.",
     alternates: {
         canonical: "https://provisbiolabs.com/products",
         languages: {

@@ -5,7 +5,7 @@ import ContactContent from "./ContactContent";
 
 export const metadata: Metadata = {
     title: "Contact Provis Biolabs | Partnerships & Business Inquiries",
-    description: "Get in touch with the Provis Biolabs team for global partnerships, pharmaceutical CDMO inquiries, career opportunities, and technical support in biotechnology.",
+    description: "Get in touch with the Provis Biolabs team for global partnerships, pharmaceutical CDMO inquiries, career opportunities and technical support in biotechnology.",
     alternates: {
         canonical: "https://provisbiolabs.com/contact",
         languages: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: "Contact Provis Biolabs | Partnerships & Business Inquiries",
-        description: "Get in touch for global pharma partnerships, CDMO inquiries, and technical support in biotechnology.",
+        description: "Get in touch for global pharma partnerships, CDMO inquiries and technical support in biotechnology.",
         images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
     },
     twitter: {

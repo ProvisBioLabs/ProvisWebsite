@@ -17,7 +17,7 @@ export default function CookiePolicyPage() {
                 <div className="prose prose-lg prose-slate max-w-none text-[#475569]">
                     <h2 className="text-2xl font-bold text-[#1E3A8A] mt-8 mb-4">1. Introduction</h2>
                     <p className="mb-6">
-                        Provis Biolabs Private Limited ("we", "our", or "us") uses cookies and similar technologies on our website. This Cookie Policy explains what cookies are, how we use them, and your choices regarding our use of cookies, in compliance with the General Data Protection Regulation (GDPR) and other applicable data privacy laws.
+                        Provis Biolabs Private Limited ("we", "our", or "us") uses cookies and similar technologies on our website. This Cookie Policy explains what cookies are, how we use them and your choices regarding our use of cookies, in compliance with the General Data Protection Regulation (GDPR) and other applicable data privacy laws.
                     </p>
 
                     <h2 className="text-2xl font-bold text-[#1E3A8A] mt-8 mb-4">2. What Are Cookies?</h2>

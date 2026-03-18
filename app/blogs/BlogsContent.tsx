@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Clock, Search, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Search, Sparkles, Linkedin } from "lucide-react";
 import blogsData from "./blogsData.json";
 
 const years = ["All", ...Array.from(new Set(blogsData.map(b => b.date.split(" ")[1] || "2024"))).sort().reverse()];
@@ -165,6 +165,42 @@ export default function BlogsContent() {
                         <p className="text-[#94A3B8] text-lg">No articles found matching your search.</p>
                     </div>
                 )}
+
+                {/* LinkedIn Connect Section */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-24 mb-6 bg-gradient-to-br from-[#1E3A8A] to-[#0F2557] rounded-[2.5rem] p-10 sm:p-14 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl"
+                >
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[80px]" />
+                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#F26522]/20 rounded-full blur-[60px]" />
+                    
+                    <div className="relative z-10 max-w-xl text-center md:text-left">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/10">
+                            <Linkedin className="w-4 h-4 text-[#47c1ff]" />
+                            <span className="text-xs font-bold tracking-[0.2em] uppercase text-white">Join our Network</span>
+                        </div>
+                        <h2 className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">
+                            Connect with us on <span className="text-[#47c1ff] drop-shadow-[0_0_15px_rgba(71,193,255,0.4)]">LinkedIn</span>
+                        </h2>
+                        <p className="text-blue-200/80 text-base leading-relaxed">
+                            Be the first to know about our latest recombinant proteins, Bio-APIs, CDMO service updates and biomanufacturing insights.
+                        </p>
+                    </div>
+                    
+                    <div className="relative z-10 flex-shrink-0">
+                        <a 
+                            href="https://www.linkedin.com/company/provis-biolabs-private-limited/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-3 bg-white text-[#1E3A8A] hover:bg-[#F8FAFC] px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(242,101,34,0.3)] hover:-translate-y-1 group"
+                        >
+                            <Linkedin className="w-5 h-5 text-[#0077b5]" />
+                            Follow Provis Biolabs
+                        </a>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

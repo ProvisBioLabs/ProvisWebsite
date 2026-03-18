@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
     title: "Privacy Policy | Provis Biolabs",
-    description: "Learn how Provis Biolabs collects, uses, and protects your personal information when you visit our website or engage with our services.",
+    description: "Learn how Provis Biolabs collects, uses and protects your personal information when you visit our website or engage with our services.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mt-0 mb-4">1. Introduction</h2>
                         <p className="text-[#475569] leading-relaxed mb-6">
-                            Provis Biolabs Private Limited (&quot;Provis Biolabs&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website at <strong>www.provisbiolabs.com</strong> or contact us regarding our biosimilar development and Contract Development and Manufacturing Organisation (CDMO) services.
+                            Provis Biolabs Private Limited (&quot;Provis Biolabs&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose and safeguard your information when you visit our website at <strong>www.provisbiolabs.com</strong> or contact us regarding our biosimilar development and Contract Development and Manufacturing Organisation (CDMO) services.
                         </p>
                         <p className="text-[#475569] leading-relaxed mb-8">
                             By using our website, you consent to the practices described in this policy. If you do not agree with the terms of this policy, please do not access the website.
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">2. Information We Collect</h2>
                         <p className="text-[#475569] leading-relaxed mb-4">
-                            We may collect two types of information: personal information you voluntarily provide to us, and non-personal information collected automatically when you use our website.
+                            We may collect two types of information: personal information you voluntarily provide to us and non-personal information collected automatically when you use our website.
                         </p>
                         <h3 className="text-lg font-semibold text-[#1E3A8A] mb-2">Personal Information</h3>
                         <p className="text-[#475569] leading-relaxed mb-3">
@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
                         <ul className="list-disc pl-5 mb-8 text-[#475569] space-y-2">
                             <li>IP address and approximate geographic location</li>
                             <li>Browser type and version</li>
-                            <li>Pages visited, time spent on pages, and referring URLs</li>
+                            <li>Pages visited, time spent on pages and referring URLs</li>
                             <li>Device type and operating system</li>
                         </ul>
 
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <ul className="list-disc pl-5 mb-8 text-[#475569] space-y-2">
                             <li>Responding to your inquiries about our CDMO services, biosimilar pipeline, or partnership opportunities</li>
-                            <li>Providing information about our products, services, and scientific publications</li>
+                            <li>Providing information about our products, services and scientific publications</li>
                             <li>Improving the functionality and content of our website</li>
                             <li>Sending you relevant updates or communications that you have consented to receive</li>
                             <li>Complying with applicable legal and regulatory obligations</li>
@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">6. Data Security</h2>
                         <p className="text-[#475569] leading-relaxed mb-8">
-                            We implement appropriate administrative, technical, and physical security measures to protect your personal information from unauthorised access, use, alteration, or disclosure. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.
+                            We implement appropriate administrative, technical and physical security measures to protect your personal information from unauthorised access, use, alteration, or disclosure. However, no method of transmission over the Internet is 100% secure and we cannot guarantee absolute security.
                         </p>
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">7. Retention of Data</h2>

@@ -41,7 +41,7 @@ const faqJsonLd = {
             name: 'What expression systems does Provis Biolabs use for protein production?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs uses a diverse range of expression systems optimized for different molecule types, including E. coli for high-yield recombinant enzyme production, Pichia pastoris for glycoproteins, and mammalian (CHO, HEK293) systems for complex biotherapeutics requiring human-like post-translational modifications.'
+                text: 'Provis Biolabs uses a diverse range of expression systems optimized for different molecule types, including E. coli for high-yield recombinant enzyme production, Pichia pastoris for glycoproteins and mammalian (CHO, HEK293) systems for complex biotherapeutics requiring human-like post-translational modifications.'
             }
         },
         {
@@ -49,7 +49,7 @@ const faqJsonLd = {
             name: 'How does Provis Biolabs approach bioprocess development?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs employs a QbD (Quality by Design) approach to bioprocessing, systematically optimizing upstream cell culture conditions, downstream purification steps, and formulation to maximize yield, purity, and product stability while ensuring robust, scalable commercial processes.'
+                text: 'Provis Biolabs employs a QbD (Quality by Design) approach to bioprocessing, systematically optimizing upstream cell culture conditions, downstream purification steps and formulation to maximize yield, purity and product stability while ensuring robust, scalable commercial processes.'
             }
         },
         {
@@ -57,7 +57,7 @@ const faqJsonLd = {
             name: 'What analytical capabilities does Provis Biolabs have for protein characterization?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs maintains a comprehensive suite of analytical technologies including LC-MS/MS, SDS-PAGE, SEC-MALS, DLS, ELISA, and advanced glycan profiling to fully characterize protein identity, purity, potency, stability, and post-translational modifications.'
+                text: 'Provis Biolabs maintains a comprehensive suite of analytical technologies including LC-MS/MS, SDS-PAGE, SEC-MALS, DLS, ELISA and advanced glycan profiling to fully characterize protein identity, purity, potency, stability and post-translational modifications.'
             }
         }
     ]

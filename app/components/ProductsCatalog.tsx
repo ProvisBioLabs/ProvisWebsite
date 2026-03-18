@@ -14,7 +14,7 @@ const UI_CATEGORIES = [
     {
         id: "RECOMBINANT BIO-REAGENTS",
         label: "Recombinant Bio-Reagents",
-        description: "GMP-grade recombinant proteins and enzymes for bioprocessing, cell culture, and biomanufacturing.",
+        description: "GMP-grade recombinant proteins and enzymes for bioprocessing, cell culture and biomanufacturing.",
     }
 ];
 

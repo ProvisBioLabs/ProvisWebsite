@@ -41,7 +41,7 @@ const faqJsonLd = {
             name: 'What is a biosimilar?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'A biosimilar is a biological medicine that is highly similar to an already approved reference biologic, with no clinically meaningful differences in terms of safety, purity, and potency. Biosimilars offer cost-effective therapeutic options once the reference product\'s patent expires.'
+                text: 'A biosimilar is a biological medicine that is highly similar to an already approved reference biologic, with no clinically meaningful differences in terms of safety, purity and potency. Biosimilars offer cost-effective therapeutic options once the reference product\'s patent expires.'
             }
         },
         {
@@ -49,7 +49,7 @@ const faqJsonLd = {
             name: 'What biosimilar development services does Provis Biolabs offer?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs provides end-to-end biosimilar development services including molecule identification, cell line development, process development, analytical characterization, comparability studies, preclinical and clinical manufacturing, and regulatory dossier support.'
+                text: 'Provis Biolabs provides end-to-end biosimilar development services including molecule identification, cell line development, process development, analytical characterization, comparability studies, preclinical and clinical manufacturing and regulatory dossier support.'
             }
         },
         {
@@ -57,7 +57,7 @@ const faqJsonLd = {
             name: 'How does Provis Biolabs ensure biosimilar quality?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs employs advanced analytical characterization techniques including LC-MS, glycan profiling, and structural analysis to demonstrate biosimilarity per ICH Q5E guidelines and regulatory agency standards (EMA, FDA). All manufacturing is conducted under strict GMP conditions.'
+                text: 'Provis Biolabs employs advanced analytical characterization techniques including LC-MS, glycan profiling and structural analysis to demonstrate biosimilarity per ICH Q5E guidelines and regulatory agency standards (EMA, FDA). All manufacturing is conducted under strict GMP conditions.'
             }
         },
         {
@@ -65,7 +65,7 @@ const faqJsonLd = {
             name: 'What therapeutic areas does Provis Biolabs target for biosimilars?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs focuses on biosimilar development across high-impact therapeutic areas, including oncology, autoimmune diseases, and rare disorders, prioritizing molecules with significant unmet medical need and commercial opportunity.'
+                text: 'Provis Biolabs focuses on biosimilar development across high-impact therapeutic areas, including oncology, autoimmune diseases and rare disorders, prioritizing molecules with significant unmet medical need and commercial opportunity.'
             }
         }
     ]

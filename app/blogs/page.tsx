@@ -4,7 +4,7 @@ import BlogsContent from "./BlogsContent";
 
 export const metadata = {
     title: "Biotechnology Insights & Industry Discoveries | Provis Biolabs Blogs",
-    description: "Explore the latest insights, breakthroughs, and trends in the biotechnology industry. Stay updated with Provis Biolabs expert articles on recombinant proteins, mammalian expression, and more.",
+    description: "Explore the latest insights, breakthroughs and trends in the biotechnology industry. Stay updated with Provis Biolabs expert articles on recombinant proteins, mammalian expression and more.",
     alternates: {
         canonical: "https://provisbiolabs.com/blogs",
         languages: {

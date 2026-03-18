@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const categories = [
     {
@@ -8,28 +9,28 @@ const categories = [
         title: "Bio-APIs",
         shortDesc: "Pharmaceutical grade active ingredients",
         href: "/products/bio-apis",
-        image: "/products/bioapi.jpg"
+        image: "/products/bioapi-s.webp"
     },
     {
         id: "RECOMBINANT BIO-REAGENTS",
         title: "Recombinant Bio-Reagents",
         shortDesc: "100% Animal Origin-Free essential reagents",
         href: "/products/recombinant-bio-reagents",
-        image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=500&auto=format&fit=crop"
     },
     {
         id: "SYNTHETIC PEPTIDES",
         title: "Synthetic Peptides",
         shortDesc: "Custom peptide synthesis services",
         href: "/synthetic-peptides",
-        image: "/products/syntheticpeptides.png"
+        image: "/products/syntheticpeptides.webp"
     },
     {
         id: "BIOSIMILARS",
         title: "Biosimilars",
         shortDesc: "End-to-End complex biologics pipeline",
         href: "/biosimilars",
-        image:"/products/biosimilars.png"
+        image:"/products/biosimilars-s.webp"
     }
 ];
 
@@ -68,7 +69,7 @@ const products = [
         category: "RECOMBINANT BIO-REAGENTS",
         tag: "Cell Culture",
         name: "Recombinant Trypsin",
-        desc: "USP-grade AOF trypsin for cell dissociation, viral vaccine production, and recombinant insulin processing",
+        desc: "USP-grade AOF trypsin for cell dissociation, viral vaccine production and recombinant insulin processing",
     },
     {
         category: "RECOMBINANT BIO-REAGENTS",
@@ -86,7 +87,7 @@ const products = [
         category: "RECOMBINANT BIO-REAGENTS",
         tag: "Diagnostics",
         name: "Streptavidin",
-        desc: "High-purity biotin-binding protein for diagnostics, purification, and imaging applications",
+        desc: "High-purity biotin-binding protein for diagnostics, purification and imaging applications",
     },
     {
         category: "RECOMBINANT BIO-REAGENTS",
@@ -111,7 +112,7 @@ const products = [
         category: "SYNTHETIC PEPTIDES",
         tag: "Custom Synthesis",
         name: "Custom Peptide Synthesis",
-        desc: "GMP and research-grade synthetic peptides for therapeutics, diagnostics, and vaccine development",
+        desc: "GMP and research-grade synthetic peptides for therapeutics, diagnostics and vaccine development",
     },
     {
         category: "BIOSIMILARS",
@@ -157,10 +158,12 @@ export default function Products() {
                                 >
                                     <div className="mb-4">
                                         <div className="w-full h-32 rounded-xl overflow-hidden relative transition-all group-hover:ring-2 group-hover:ring-[#F26522]">
-                                            <img
+                                            <Image
                                                 src={cat.image}
                                                 alt={cat.title}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                fill
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                             />
                                             <div className="absolute inset-0 bg-[#1E3A8A]/20 group-hover:bg-[#F26522]/30 transition-opacity duration-300" />
                                             <div className="absolute bottom-2 left-2">

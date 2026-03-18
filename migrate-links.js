@@ -29,7 +29,7 @@ function migrateToLink(filePath) {
     content = content.replace(/<a(\s+[^>]*href=(?:\{[^}]+\}|"\/[^"]*")[^>]*)>/g, '<Link$1>');
     
     // Now replace </a> with </Link> but only if we know it's a paired tag.
-    // Actually, it's safer to just replace all </a> with </Link>, AND restore </a> for external links.
+    // Actually, it's safer to just replace all </a> with </Link> AND restore </a> for external links.
     // Let's replace </Link> where the preceding tag was <a ...> by looking backwards... 
     // Wait, simpler: just match <a ...>...</a> where the opening tag has an internal href.
 

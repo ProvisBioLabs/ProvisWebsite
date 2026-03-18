@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
     Check, ArrowRight, Dna, FlaskConical, Droplets,
@@ -18,7 +19,7 @@ const fade = (delay = 0) => ({
 const processes = [
     { num: "01", title: "Strain Engineering", desc: "Molecular cloning and specialized cell line development." },
     { num: "02", title: "Upstream", desc: "Advanced fermentation and high-density cell culture optimization." },
-    { num: "03", title: "Downstream", desc: "Robust purification, chromatography, and recovery processing." },
+    { num: "03", title: "Downstream", desc: "Robust purification, chromatography and recovery processing." },
     { num: "04", title: "Analysis", desc: "Rigorous ICH-validated method validation and release testing." },
     { num: "05", title: "GMP Production", desc: "End-to-end commercial-scale GMP manufacturing." },
     { num: "06", title: "Tech Transfer", desc: "Seamless scale-up documentation and technology transfer." },
@@ -27,13 +28,13 @@ const processes = [
 const services = [
     {
         title: "Strain Engineering",
-        desc: "Complete gene-to-product development workflows, encompassing state-of-the-art molecular cloning, tailored expression optimization, and stable cell line generation.",
+        desc: "Complete gene-to-product development workflows, encompassing state-of-the-art molecular cloning, tailored expression optimization and stable cell line generation.",
         bullets: ["Molecular cloning", "Expression optimization", "Cell line development"],
         icon: Dna
     },
     {
         title: "Upstream Processing",
-        desc: "Custom upstream bioprocess architectures engineered for exceptional cell density, maximum expression yield, and seamless industrial scalability.",
+        desc: "Custom upstream bioprocess architectures engineered for exceptional cell density, maximum expression yield and seamless industrial scalability.",
         bullets: ["Media optimization", "Fermentation development", "Scale-down models"],
         icon: FlaskConical
     },
@@ -45,7 +46,7 @@ const services = [
     },
     {
         title: "Analytical Development",
-        desc: "Comprehensive ICH-validated analytical methodologies developed for precise product characterization, rigorous release testing, and long-term stability profiling.",
+        desc: "Comprehensive ICH-validated analytical methodologies developed for precise product characterization, rigorous release testing and long-term stability profiling.",
         bullets: ["HPLC & Mass Spec", "Biological activity assays", "Stability studies"],
         icon: Microscope
     },
@@ -99,9 +100,14 @@ export default function CDMOContent() {
                         </motion.div>
 
                         <motion.div {...fade(0.15)} className="relative lg:h-[500px] w-full bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] rounded-3xl border border-[#E2E8F0] shadow-sm flex flex-col items-center justify-center overflow-hidden group">
-                           <img src="/provis-biolabs-cdmo-manufacturing-facility.webp" alt="cdmo facility" 
-                            className="w-full h-full object-cover"
-                           />
+                           <Image
+                                src="/provis-biolabs-cdmo-manufacturing-facility.webp"
+                                alt="Provis Biolabs CDMO manufacturing facility"
+                                fill
+                                priority
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                            />
                         </motion.div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ const services = [
     },
     {
         title: "Analytical & QC",
-        desc: "Full characterization suite — HPLC, SDS-PAGE, mass spec, endotoxin, sterility, and release testing.",
+        desc: "Full characterization suite — HPLC, SDS-PAGE, mass spec, endotoxin, sterility and release testing.",
         Icon: Activity,
     },
     {
@@ -26,12 +26,12 @@ const services = [
     },
     {
         title: "Downstream & Purification",
-        desc: "Chromatography, ultrafiltration, and PEGylation for high-purity, clinical-grade product.",
+        desc: "Chromatography, ultrafiltration and PEGylation for high-purity, clinical-grade product.",
         Icon: FlaskConical,
     },
     {
         title: "Tech Transfer",
-        desc: "Seamless process transfer with full documentation, validation, and on-site support.",
+        desc: "Seamless process transfer with full documentation, validation and on-site support.",
         Icon: Repeat,
     },
 ];
@@ -63,7 +63,7 @@ export default function CDMO() {
                         </p>
 
                         <p className="text-base lg:text-lg text-[#475569] mb-8 lg:mb-10 font-medium leading-relaxed">
-                            We handle upstream bioprocessing, downstream purification, analytical characterization, fill-finish, and regulatory CMC documentation so you can focus on your pipeline.
+                            We handle upstream bioprocessing, downstream purification, analytical characterization, fill-finish and regulatory CMC documentation so you can focus on your pipeline.
                         </p>
 
                         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
@@ -74,7 +74,7 @@ export default function CDMO() {
                                 Learn More
                             </a>
                             <a
-                                href="#cta"
+                                href="/contact"
                                 className="px-8 py-4 rounded-full font-semibold text-[#1E3A8A] border border-[#E2E8F0] hover:bg-[#FAFAFA] transition-all duration-300 text-center"
                             >
                                 Get a Quote

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ClientSections from "./components/ClientSections";
 
 export const metadata: Metadata = {
   title: "Provis Biolabs — Premium Bioreagents, Bio-APIs & CDMO Services",
-  description: "Provis Biolabs delivers WHO-GMP grade Bio-APIs, 100% animal origin-free recombinant bio-reagents, and end-to-end CDMO services to global pharma and biopharma innovators.",
+  description: "Provis Biolabs delivers WHO-GMP grade Bio-APIs, 100% animal origin-free recombinant bio-reagents and end-to-end CDMO services to global pharma and biopharma innovators.",
   alternates: {
     canonical: "https://provisbiolabs.com",
     languages: {
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Provis Biolabs — Premium Bioreagents, Bio-APIs & CDMO",
-    description: "WHO-GMP grade Bio-APIs, animal origin-free recombinant proteins, and CDMO services for global pharma.",
+    description: "WHO-GMP grade Bio-APIs, animal origin-free recombinant proteins and CDMO services for global pharma.",
     images: ["https://provisbiolabs.com/products-showcase.webp"],
     type: "website",
   },
@@ -34,11 +35,9 @@ export const metadata: Metadata = {
 };
 
 // ─── Lazy load below-the-fold sections ──────────────────────────────────────
-// This dramatically reduces JavaScript the browser has to parse on initial load.
-// Each section will be loaded only when the browser is idle or when it's near
-// the viewport.
-const AboutStrip = dynamic(() => import("./components/AboutStrip"), { ssr: true });
-const Products = dynamic(() => import("./components/Products"), { ssr: true });
+// ClientSections (a 'use client' wrapper) holds AboutStrip + Products with
+// ssr:false so their framer-motion hooks load after the page is interactive.
+// CDMO and below keep ssr:true for SEO (they have unique text content).
 const CDMO = dynamic(() => import("./components/CDMO"), { ssr: true });
 const MissionQuote = dynamic(() => import("./components/MissionQuote"), { ssr: true });
 const GlobalReach = dynamic(() => import("./components/GlobalReach"), { ssr: true });
@@ -50,8 +49,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <AboutStrip />
-      <Products />
+      <ClientSections />
       <CDMO />
       <MissionQuote />
       <GlobalReach />

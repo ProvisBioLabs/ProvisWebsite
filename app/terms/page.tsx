@@ -31,7 +31,7 @@ export default function TermsPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mt-0 mb-4">1. About Provis Biolabs</h2>
                         <p className="text-[#475569] leading-relaxed mb-8">
-                            Provis Biolabs Private Limited is a biopharmaceutical company headquartered in India, specialising in biosimilar development and offering Contract Development and Manufacturing Organisation (CDMO) services. The content on this website is intended for informational purposes related to our scientific capabilities, biosimilar pipeline, regulatory expertise, and partnership opportunities.
+                            Provis Biolabs Private Limited is a biopharmaceutical company headquartered in India, specialising in biosimilar development and offering Contract Development and Manufacturing Organisation (CDMO) services. The content on this website is intended for informational purposes related to our scientific capabilities, biosimilar pipeline, regulatory expertise and partnership opportunities.
                         </p>
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">2. Use of This Website</h2>
@@ -48,7 +48,7 @@ export default function TermsPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">3. Intellectual Property</h2>
                         <p className="text-[#475569] leading-relaxed mb-4">
-                            All content on this website — including but not limited to text, graphics, logos, images, data, and scientific information — is the intellectual property of Provis Biolabs Private Limited or its licensors and is protected under applicable copyright and intellectual property laws.
+                            All content on this website — including but not limited to text, graphics, logos, images, data and scientific information — is the intellectual property of Provis Biolabs Private Limited or its licensors and is protected under applicable copyright and intellectual property laws.
                         </p>
                         <p className="text-[#475569] leading-relaxed mb-4">
                             You may view and print pages from this website for personal, non-commercial use only. Any other use, including reproduction, modification, distribution, or transmission of any content, requires prior written permission from Provis Biolabs.
@@ -62,7 +62,7 @@ export default function TermsPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">4. Trademarks</h2>
                         <p className="text-[#475569] leading-relaxed mb-8">
-                            The Provis Biolabs name, logo, and all related product or service names are trademarks or registered trademarks of Provis Biolabs Private Limited. Third-party trademarks referenced on this website belong to their respective owners. Nothing on this website grants any licence or right to use any trademark without the express written permission of the owner.
+                            The Provis Biolabs name, logo and all related product or service names are trademarks or registered trademarks of Provis Biolabs Private Limited. Third-party trademarks referenced on this website belong to their respective owners. Nothing on this website grants any licence or right to use any trademark without the express written permission of the owner.
                         </p>
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">5. Disclaimer of Warranties</h2>
@@ -88,13 +88,13 @@ export default function TermsPage() {
                             <div className="p-6 bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0]">
                                 <h3 className="text-lg font-bold text-[#1E3A8A] mb-2">Links to External Sites</h3>
                                 <p className="leading-relaxed text-[#475569]">
-                                    This website may contain links to third-party websites for your convenience. These links do not constitute an endorsement by Provis Biolabs of the content, products, or services offered by those sites. We have no control over, and accept no responsibility for, external websites.
+                                    This website may contain links to third-party websites for your convenience. These links do not constitute an endorsement by Provis Biolabs of the content, products, or services offered by those sites. We have no control over and accept no responsibility for, external websites.
                                 </p>
                             </div>
                             <div className="p-6 bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0]">
                                 <h3 className="text-lg font-bold text-[#1E3A8A] mb-2">Linking to Our Website</h3>
                                 <p className="leading-relaxed text-[#475569]">
-                                    You may link to our homepage provided you do so in a way that is fair, legal, and does not damage our reputation. You must not link in a way that suggests any form of association, approval, or endorsement without our prior written consent.
+                                    You may link to our homepage provided you do so in a way that is fair, legal and does not damage our reputation. You must not link in a way that suggests any form of association, approval, or endorsement without our prior written consent.
                                 </p>
                             </div>
                         </div>

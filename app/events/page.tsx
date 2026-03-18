@@ -4,7 +4,7 @@ import EventsDisplay from "./EventsDisplay";
 
 export const metadata = {
     title: "Upcoming Events & Conferences | Provis Biolabs",
-    description: "Stay connected with Provis Biolabs at upcoming global biotechnology conferences, seminars, and product launches.",
+    description: "Stay connected with Provis Biolabs at upcoming global biotechnology conferences, seminars and product launches.",
     alternates: {
         canonical: "https://provisbiolabs.com/events",
         languages: {
@@ -20,7 +20,7 @@ export const metadata = {
     },
     openGraph: {
         title: "Upcoming Events & Conferences | Provis Biolabs",
-        description: "Connect with Provis Biolabs at global biotechnology conferences, seminars, and product launches.",
+        description: "Connect with Provis Biolabs at global biotechnology conferences, seminars and product launches.",
         images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
     },
     twitter: {

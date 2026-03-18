@@ -282,7 +282,7 @@ const Navbar: React.FC = () => {
             {/* Mobile Drawer */}
             <div className={`fixed top-0 right-0 bottom-0 w-[320px] bg-white z-[1500] shadow-2xl transition-transform duration-400 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`} suppressHydrationWarning>
                 <div className="flex items-center justify-between p-6 border-b border-[#f1f5f9]">
-                    <Image src="/logo.webp" alt="Provis Biolabs" width={120} height={32} style={{ objectFit: 'contain' }} />
+                    <Image src="/logo.webp" alt="Provis Biolabs" width={120} height={32} style={{ objectFit: 'contain', width: 'auto', height: 'auto' }} />
                     <button onClick={() => setMobileOpen(false)} className="p-2 text-[#64748b] hover:bg-[#f1f5f9] rounded-lg transition-colors">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>

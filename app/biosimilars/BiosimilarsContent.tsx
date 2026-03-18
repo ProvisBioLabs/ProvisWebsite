@@ -55,7 +55,7 @@ export default function BiosimilarsContent() {
                    rounded-3xl bg-white shadow-xl overflow-hidden
                   transition-transform duration-300 hover:scale-105">
                                 <Image
-                                    src="/products/biosimilars.png"
+                                    src="/products/biosimilars.webp"
                                     alt="Biosimilars Development"
                                     fill
                                     className="object-contain"

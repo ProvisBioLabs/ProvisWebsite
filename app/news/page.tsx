@@ -4,7 +4,7 @@ import NewsDisplay from "./NewsDisplay";
 
 export const metadata = {
     title: "Corporate News & Milestones | Provis Biolabs",
-    description: "Explore the latest corporate news, facility expansions, and significant milestones from Provis Biolabs.",
+    description: "Explore the latest corporate news, facility expansions and significant milestones from Provis Biolabs.",
     alternates: {
         canonical: "https://provisbiolabs.com/news",
         languages: {
@@ -20,7 +20,7 @@ export const metadata = {
     },
     openGraph: {
         title: "Corporate News & Milestones | Provis Biolabs",
-        description: "Latest corporate news, facility expansions, and significant milestones from Provis Biolabs.",
+        description: "Latest corporate news, facility expansions and significant milestones from Provis Biolabs.",
         images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
     },
     twitter: {

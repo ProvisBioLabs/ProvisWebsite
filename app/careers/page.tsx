@@ -4,7 +4,7 @@ import CareersContent from "./CareersContent";
 
 export const metadata = {
     title: "Biotechnology Careers & Jobs | Provis Biolabs",
-    description: "Join the team at Provis Biolabs. Discover opportunities to innovate, grow, and impact the future of biotechnology and biopharmaceuticals.",
+    description: "Join the team at Provis Biolabs. Discover opportunities to innovate, grow and impact the future of biotechnology and biopharmaceuticals.",
     alternates: {
         canonical: "https://provisbiolabs.com/careers",
         languages: {

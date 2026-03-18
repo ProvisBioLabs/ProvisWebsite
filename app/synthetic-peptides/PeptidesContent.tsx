@@ -136,7 +136,7 @@ export default function PeptidesContent() {
                                 {/* Image placeholder */}
                                
                                 <div className="p-7">
-                                    <h3 className="font-bold text-[#1E3A8A] mb-3 leading-tight">{s.name}</h3>
+                                    <h3 className="font-bold text-[#F26522]  mb-3 leading-tight">{s.name}</h3>
                                     <p className="text-sm text-[#64748B] leading-relaxed">{s.desc}</p>
                                 </div>
                             </motion.div>

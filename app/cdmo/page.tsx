@@ -41,7 +41,7 @@ const faqJsonLd = {
             name: 'What CDMO services does Provis Biolabs offer?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs offers end-to-end CDMO services including process development, upstream and downstream bioprocessing, analytical development, formulation, fill & finish, and regulatory support for biologics, recombinant proteins, and APIs.'
+                text: 'Provis Biolabs offers end-to-end CDMO services including process development, upstream and downstream bioprocessing, analytical development, formulation, fill & finish and regulatory support for biologics, recombinant proteins and APIs.'
             }
         },
         {
@@ -57,7 +57,7 @@ const faqJsonLd = {
             name: 'What expression systems does Provis Biolabs use?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs utilizes multiple expression systems including E. coli, Pichia pastoris, and mammalian cell cultures (CHO, HEK293) to optimally produce diverse classes of recombinant proteins and biopharmaceuticals.'
+                text: 'Provis Biolabs utilizes multiple expression systems including E. coli, Pichia pastoris and mammalian cell cultures (CHO, HEK293) to optimally produce diverse classes of recombinant proteins and biopharmaceuticals.'
             }
         },
         {
@@ -65,7 +65,7 @@ const faqJsonLd = {
             name: 'Can Provis Biolabs handle technology transfer?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Yes. Provis Biolabs provides comprehensive technology transfer services, working closely with client teams to transition existing processes into our GMP-compliant manufacturing platform with full knowledge transfer, validation, and regulatory documentation.'
+                text: 'Yes. Provis Biolabs provides comprehensive technology transfer services, working closely with client teams to transition existing processes into our GMP-compliant manufacturing platform with full knowledge transfer, validation and regulatory documentation.'
             }
         }
     ]

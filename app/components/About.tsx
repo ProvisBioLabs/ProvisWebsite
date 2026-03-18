@@ -79,7 +79,7 @@ export default function About() {
                                  Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we've commercialized a diverse portfolio of products with a robust and expanding pipeline. Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
                               </p>
                               <p>
-                                Leveraging our state-of-the-at fermentation facility, we provide scalable production solutions to partners worldwide. With a growing network of distribution partners spanning the United States, Europe and Asia, we are rapidly expanding access to our high-quality, <strong className="text-[#F26522] font-semibold">animal origin-free (AOF)</strong> bioreagents across key global markets ensuring enhanced safety, ethical sourcing, environmental responsibility and streamlined regulatory compliance for our customers worldwide.
+                                Leveraging our state-of-the-art fermentation facility, we provide scalable production solutions to partners worldwide. With a growing network of distribution partners spanning the United States, Europe and Asia, we are rapidly expanding access to our high-quality, <strong className="text-[#F26522] font-semibold">animal origin-free (AOF)</strong> bioreagents across key global markets ensuring enhanced safety, ethical sourcing, environmental responsibility and streamlined regulatory compliance for our customers worldwide.
                               </p>
                             </div>
 
@@ -303,7 +303,7 @@ export default function About() {
                             {
                                 title: "Generating Employment Opportunities",
                                 desc: "We are committed to contributing to the local economy by generating employment opportunities for the local community. Our recruitment efforts focus on hiring local talent, thereby supporting the economic growth and development of local community.",
-                                image: "/csr/employement.png",
+                                image: "/csr/employement.webp",
                                 icon: (
                                     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

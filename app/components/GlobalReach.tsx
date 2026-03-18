@@ -52,7 +52,7 @@ export default function GlobalReach() {
                     </h3>
                     <p className="text-lg text-[#475569] max-w-2xl mx-auto font-medium leading-relaxed">
                         Provis Biolabs products power pharmaceutical pipelines across North America,
-                        Europe, and Asia. Our USA operations enable faster, more compliant supply.
+                        Europe and Asia. Our USA operations enable faster, more compliant supply.
                     </p>
                 </motion.div>
 

@@ -34,7 +34,7 @@ export default function CTABanner() {
                     </p>
 
                     <a
-                        href="mailto:contact@provisbiolabs.com"
+                        href="/contact"
                         className="inline-flex items-center justify-center px-10 py-5 text-lg rounded-full font-bold text-white bg-[#F26522] shadow-[0_8px_30px_rgb(242,101,34,0.3)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgb(242,101,34,0.4)] active:translate-y-0 transition-all duration-300"
                     >
                         Get in Touch →

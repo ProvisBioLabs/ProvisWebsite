@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export const metadata = {
   title: "About Provis Biolabs — Leading Biotechnology & Bioprocessing Experts",
   description:
-    "Learn about Provis Biolabs — our journey as a global leader in bioscience, our mission to innovate for a healthier world, and the core PROVIS values that drive our excellence.",
+    "Learn about Provis Biolabs — our journey as a global leader in bioscience, our mission to innovate for a healthier world and the core PROVIS values that drive our excellence.",
   alternates: {
     canonical: "https://provisbiolabs.com/about",
     languages: {
@@ -22,7 +22,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About Provis Biolabs — Leading Biotechnology & Bioprocessing Experts",
-    description: "Learn about our journey as a global leader in bioscience, our mission, and the PROVIS values that drive our excellence.",
+    description: "Learn about our journey as a global leader in bioscience, our mission and the PROVIS values that drive our excellence.",
     images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
   },
   twitter: {
@@ -58,7 +58,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <Navbar />
-        <About />
+      <About />
       <CTABanner />
       <Footer />
     </main>

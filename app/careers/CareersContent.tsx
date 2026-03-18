@@ -36,7 +36,7 @@ const testimonials = [
     {
         name: "Elena Rodriguez",
         role: "Quality Assurance Manager",
-        quote: "I've worked in biopharma for 15 years, and the commitment to uncompromised quality at Provis is the strongest I've seen. We don't just meet compliance standards; we define them. It's rewarding to stand behind our products.",
+        quote: "I've worked in biopharma for 15 years and the commitment to uncompromised quality at Provis is the strongest I've seen. We don't just meet compliance standards; we define them. It's rewarding to stand behind our products.",
         image: "https://i.pravatar.cc/150?u=elena"
     }
 ];
@@ -70,17 +70,17 @@ const benefits = [
     {
         icon: <Heart className="w-6 h-6 text-[#1E3A8A]" />,
         title: "Health & Wellbeing",
-        desc: "Comprehensive medical coverage, mental health resources, and wellness programs designed for you and your family."
+        desc: "Comprehensive medical coverage, mental health resources and wellness programs designed for you and your family."
     },
     {
         icon: <Wallet className="w-6 h-6 text-[#1E3A8A]" />,
         title: "Financial Security",
-        desc: "Competitive compensation, equity opportunities, and robust retirement planning with company match."
+        desc: "Competitive compensation, equity opportunities and robust retirement planning with company match."
     },
     {
         icon: <Award className="w-6 h-6 text-[#1E3A8A]" />,
         title: "Continuous Learning",
-        desc: "Generous stipends for conferences, courses, and certifications to keep you at the forefront of science."
+        desc: "Generous stipends for conferences, courses and certifications to keep you at the forefront of science."
     },
     {
         icon: <Users2 className="w-6 h-6 text-[#1E3A8A]" />,
@@ -118,7 +118,7 @@ export default function CareersContent() {
                                 </span> of Biotech
                             </h1>
                             <p className="text-xl text-[#475569] leading-relaxed max-w-xl font-medium mb-10">
-                                We're looking for visionary scientists, engineers, and innovators to help us advance life sciences and create a healthier, sustainable world.
+                                We're looking for visionary scientists, engineers and innovators to help us advance life sciences and create a healthier, sustainable world.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -142,6 +142,7 @@ export default function CareersContent() {
                                 src="/provis-biolabs-team-collaboration.webp"
                                 alt="Provis Biolabs Biopharmaceutical Team Collaboration"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
                                 className="object-cover"
                                 priority
                             />
@@ -158,7 +159,7 @@ export default function CareersContent() {
                         <h2 className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3">Our Culture</h2>
                         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E3A8A] mb-6">Life at Provis</h3>
                         <p className="text-lg text-[#64748B] font-medium leading-relaxed">
-                            More than just a laboratory. We provide an ecosystem designed to accelerate your potential, foster groundbreaking discoveries, and support your overall well-being.
+                            More than just a laboratory. We provide an ecosystem designed to accelerate your potential, foster groundbreaking discoveries and support your overall well-being.
                         </p>
                     </div>
 
@@ -174,6 +175,8 @@ export default function CareersContent() {
                                 src="/about-lab.webp"
                                 alt="Provis Biolabs State-of-the-Art Biologics Laboratory"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 66vw"
+                                loading="lazy"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/80 via-[#1E3A8A]/20 to-transparent" />
@@ -196,6 +199,8 @@ export default function CareersContent() {
                                     src="/quality-lab.webp"
                                     alt="Provis Biolabs Analytical Chemistry and Quality Control Lab"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    loading="lazy"
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/80 to-transparent" />
@@ -362,7 +367,7 @@ export default function CareersContent() {
                             <Briefcase className="w-16 h-16 text-white mb-6 mx-auto opacity-90" />
                             <h2 className="text-3xl sm:text-5xl font-black text-white mb-6">Ready to make an impact?</h2>
                             <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
-                                We're actively recruiting talented individuals across R&D, Quality Assurance, Manufacturing, and Business Development.
+                                We're actively recruiting talented individuals across R&D, Quality Assurance, Manufacturing and Business Development.
                             </p>
 
                             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -245,7 +245,7 @@ export default function ProductView({ product }: { product: Product }) {
                                                 <div className="mt-1 w-6 h-6 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center shrink-0">
                                                     <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                                                 </div>
-                                                <p className="text-[#64748B] text-sm font-medium leading-relaxed">Efficiently removes high-mannose, hybrid, and complex N-glycans</p>
+                                                <p className="text-[#64748B] text-sm font-medium leading-relaxed">Efficiently removes high-mannose, hybrid and complex N-glycans</p>
                                             </li>
                                         </div>
                                         <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm flex items-start gap-4 hover:border-[#1E3A8A]/20 transition-colors">

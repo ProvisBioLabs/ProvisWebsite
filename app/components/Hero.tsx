@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +8,7 @@ const slides = [
     {
         id: 1,
         type: "video",
-        src: "/provis-biolabs-hero-background.mp4",
-        poster: "/hero-bg.webp",
+        src: "/Provis-Biolabs-Hero-Background.mp4",
         title: (
             <>
                 Empowered <br />
@@ -52,22 +51,62 @@ const slides = [
 
 export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
-    // Auto-advance slider
+    /**
+     * `slideChanged` is a ref (not state) — it doesn't trigger re-renders.
+     * It starts as false on both server AND client, matching exactly, so
+     * there is no hydration mismatch.
+     *
+     * When false → initial={false} → framer-motion renders NO inline styles
+     *   → the H1 is fully visible on first paint → LCP fires immediately.
+     * When true  → initial={{ opacity: 0 }} → normal slide-change animation.
+     */
+    const slideChanged = useRef(false);
+
+    // Defer video playback until the browser is idle (after LCP has fired).
+    // This prevents the video media pipeline from competing with LCP-critical
+    // resources on the network and main thread.
+    useEffect(() => {
+        const playVideo = () => {
+            videoRef.current?.play().catch(() => {
+                // Autoplay might be blocked by browser policy — silently fail.
+            });
+        };
+
+        if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).requestIdleCallback(playVideo, { timeout: 3000 });
+        } else {
+            // Safari fallback: 1.5s delay gives LCP time to fire first.
+            setTimeout(playVideo, 1500);
+        }
+    }, []);
+
+    // Auto-advance slider — mark slideChanged before every slide change.
     useEffect(() => {
         const timer = setInterval(() => {
+            slideChanged.current = true;
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 6000); // 6 seconds per slide
+        }, 6000);
         return () => clearInterval(timer);
+    }, []);
+
+    const handleSlideChange = useCallback((index: number) => {
+        slideChanged.current = true;
+        setCurrentSlide(index);
     }, []);
 
     return (
         <section id="hero" className="relative min-h-screen flex text-left items-center overflow-hidden bg-white">
-            
+
             <AnimatePresence mode="popLayout">
                 <motion.div
                     key={currentSlide}
-                    initial={{ opacity: 0 }}
+                    // First paint → initial={false}: framer-motion skips applying
+                    // opacity:0 as an inline style → background is visible immediately.
+                    // Slide changes → initial={{ opacity: 0 }}: normal crossfade.
+                    initial={slideChanged.current ? { opacity: 0 } : false}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -75,12 +114,12 @@ export default function Hero() {
                 >
                     {slides[currentSlide].type === "video" ? (
                         <video
+                            ref={videoRef}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            poster={slides[currentSlide].poster}
-                            preload="metadata"
+                            preload="auto"
                             className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
                         >
                             <source src={slides[currentSlide].src} type="video/mp4" />
@@ -91,11 +130,12 @@ export default function Hero() {
                             alt="Provis Biolabs Biopharma Solutions and Research"
                             fill
                             priority
+                            sizes="100vw"
                             className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply filter contrast-125"
                         />
                     )}
 
-                    {/* Ultra-clean white gradient overlay to fade the media into the background */}
+                    {/* White gradient overlays */}
                     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/69 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-80" />
                 </motion.div>
@@ -106,7 +146,11 @@ export default function Hero() {
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={`content-${currentSlide}`}
-                            initial={{ opacity: 0, y: 20 }}
+                            // First paint → initial={false}: H1 is rendered at full
+                            // opacity in SSR HTML with NO inline opacity:0 style.
+                            // Browser can record LCP as soon as fonts are ready.
+                            // Slide changes → fade+slide in from below normally.
+                            initial={slideChanged.current ? { opacity: 0, y: 20 } : false}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -143,11 +187,11 @@ export default function Hero() {
                     const isVideo = slides[currentSlide].type === "video";
                     const activeColor = "bg-[#F26522]";
                     const inactiveColor = isVideo ? "bg-[#1E3A8A]/30 hover:bg-[#1E3A8A]/50" : "bg-white/60 hover:bg-white shadow-[0_2px_4px_rgba(0,0,0,0.3)]";
-                    
+
                     return (
                         <button
                             key={index}
-                            onClick={() => setCurrentSlide(index)}
+                            onClick={() => handleSlideChange(index)}
                             className="p-2 cursor-pointer group flex items-center justify-center"
                             aria-label={`Go to slide ${index + 1}`}
                         >

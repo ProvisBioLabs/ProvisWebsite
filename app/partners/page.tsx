@@ -4,7 +4,7 @@ import PartnersContent from "./PartnersContent";
 
 export const metadata = {
     title: "Authorized Global Partners | Provis Biolabs",
-    description: "Explore our network of authorized global partners providing local support, reliable delivery, and expert advice for Provis Biolabs products worldwide.",
+    description: "Explore our network of authorized global partners providing local support, reliable delivery and expert advice for Provis Biolabs products worldwide.",
     alternates: {
         canonical: "https://provisbiolabs.com/partners",
         languages: {

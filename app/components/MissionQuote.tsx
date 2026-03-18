@@ -24,26 +24,36 @@ export default function MissionQuote() {
                         <img
                             src="/certifications/who-gmp.webp"
                             alt="WHO GMP Certified"
+                            loading="lazy"
+                            width="64" height="64"
                             className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
                         />
                         <img
                             src="/certifications/gmp.webp"
                             alt="GMP Certified Practice"
+                            loading="lazy"
+                            width="64" height="64"
                             className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
                         />
                         <img
                             src="/certifications/iso.webp"
                             alt="ISO Certified"
+                            loading="lazy"
+                            width="64" height="64"
                             className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
                         />
                         <img
                             src="/certifications/halal.webp"
                             alt="Halal Certified"
+                            loading="lazy"
+                            width="64" height="64"
                             className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
                         />
                         <img
                             src="/certifications/kosher.webp"
                             alt="Kosher Certified"
+                            loading="lazy"
+                            width="64" height="64"
                             className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
                         />
                     </div>
@@ -71,10 +81,11 @@ export default function MissionQuote() {
                     >
                         <Image
                             src="/quality-lab.webp"
-                            alt="Provis Biolabs Products"
+                            alt="Provis Biolabs Quality Control Laboratory"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            loading="lazy"
                             className="object-cover"
-                            priority
                         />
                     </motion.div>
 
@@ -87,7 +98,7 @@ export default function MissionQuote() {
                             transition={{ duration: 0.8, delay: 0.1 }}
                             className="border-b border-[#E2E8F0] pb-10"
                         >
-                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">6+</div>
+                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">7+</div>
                             <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">years</div>
                         </motion.div>
 
@@ -98,7 +109,7 @@ export default function MissionQuote() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="border-b border-[#E2E8F0] pb-10"
                         >
-                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">50+</div>
+                            <div className="text-5xl sm:text-6xl font-bold tracking-tight text-[#1E3A8A] mb-3">130+</div>
                             <div className="text-[#F26522] font-bold tracking-wide text-sm uppercase">Team Members</div>
                         </motion.div>
 

@@ -52,6 +52,8 @@ export default function Founder() {
                                 src="/dr-bala-reddyv2.jpg"
                                 alt="Dr. Bala Reddy — Founder and Managing Director of Provis Biolabs"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                loading="lazy"
                                 className="object-cover object-top filter contrast-105"
                             />
 

@@ -6,7 +6,7 @@ import BioApisContent from "./BioApisContent";
 export const metadata: Metadata = {
     title: "GMP Bio-APIs: L-Asparaginase, Streptokinase & More | Provis Biolabs",
     description:
-        "Provis Biolabs Bio-APIs — GMP-grade biological active pharmaceutical ingredients including L-Asparaginase, Pegaspargase, Streptokinase, and Sodium Hyaluronate.",
+        "Provis Biolabs Bio-APIs — GMP-grade biological active pharmaceutical ingredients including L-Asparaginase, Pegaspargase, Streptokinase and Sodium Hyaluronate.",
     alternates: {
         canonical: "https://provisbiolabs.com/products/bio-apis",
         languages: {

@@ -5,7 +5,7 @@ import PeptidesContent from "./PeptidesContent";
 
 export const metadata: Metadata = {
     title: "Custom Synthetic Peptide Manufacturing & GMP Services | Provis Biolabs",
-    description: "Premium custom synthetic peptide services at Provis Biolabs. We provide GMP manufacturing, >99% purity, and scale from grams to kilograms for clinical and commercial applications.",
+    description: "Premium custom synthetic peptide services at Provis Biolabs. We provide GMP manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
     alternates: {
         canonical: "https://provisbiolabs.com/synthetic-peptides",
         languages: {
@@ -75,7 +75,7 @@ const faqJsonLd = {
             name: 'What types of peptides can Provis Biolabs manufacture?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs manufactures a wide range of custom synthetic peptides including linear, cyclic, disulfide-bonded, PEGylated, and modified peptides for pharmaceutical, diagnostic, and research applications.'
+                text: 'Provis Biolabs manufactures a wide range of custom synthetic peptides including linear, cyclic, disulfide-bonded, PEGylated and modified peptides for pharmaceutical, diagnostic and research applications.'
             }
         }
     ]

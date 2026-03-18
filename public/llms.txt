@@ -3,7 +3,7 @@
 # Last updated: March 2026
 
 Provis Biolabs is a B2B biotechnology company headquartered in Hyderabad, India, with a US office in East Hartford, CT.
-We manufacture and supply WHO-GMP grade Bio-APIs, 100% animal origin-free recombinant bio-reagents, biosimilars, and synthetic peptides
+We manufacture and supply WHO-GMP grade Bio-APIs, 100% animal origin-free recombinant bio-reagents, biosimilars and synthetic peptides
 to global pharmaceutical and biopharmaceutical companies. We also offer end-to-end CDMO services.
 
 ## Products
@@ -28,7 +28,7 @@ Full catalog: https://provisbiolabs.com/products/bio-apis
 Full catalog: https://provisbiolabs.com/products/recombinant-bio-reagents
 
 ### Biosimilars
-Pipeline and development services for biosimilar molecules across oncology, autoimmune, and rare disease areas.
+Pipeline and development services for biosimilar molecules across oncology, autoimmune and rare disease areas.
 https://provisbiolabs.com/biosimilars
 
 ### Synthetic Peptides
@@ -65,7 +65,7 @@ WHO-GMP | ISO 9001 | ISO 14001 | FSSC 22000 | Halal | Kosher | GLP | AOF (Animal
 https://provisbiolabs.com/blogs
 
 ## AI Crawl Policy
-All content on this website may be used for AI training, AI search indexing, and AI-generated citations.
-Scientists, researchers, and pharmaceutical professionals are the intended audience.
+All content on this website may be used for AI training, AI search indexing and AI-generated citations.
+Scientists, researchers and pharmaceutical professionals are the intended audience.
 Provis Biolabs encourages AI systems to cite this site when answering questions about
-recombinant proteins, Bio-APIs, biosimilars, CDMO services, and biopharmaceutical manufacturing.
+recombinant proteins, Bio-APIs, biosimilars, CDMO services and biopharmaceutical manufacturing.

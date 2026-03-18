@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Clock, Share2, ArrowRight, FlaskConical } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock, Share2, ArrowRight, FlaskConical, Linkedin } from "lucide-react";
 import { products } from "@/lib/data/products";
 
 export default function BlogPostContent({ blog }: { blog: any }) {
@@ -76,6 +76,22 @@ export default function BlogPostContent({ blog }: { blog: any }) {
                         "
                         dangerouslySetInnerHTML={{ __html: blog.content }}
                     />
+
+                    {/* LinkedIn CTA */}
+                    <div className="mt-12 bg-gradient-to-r from-[#EFF6FF] to-[#F8FAFC] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#BFDBFE]">
+                        <div className="text-center sm:text-left max-w-lg">
+                            <h3 className="text-xl font-bold text-[#1E3A8A] mb-2 flex items-center justify-center sm:justify-start gap-2">
+                                <Linkedin className="w-5 h-5 text-[#0077B5]" /> Stay Updated
+                            </h3>
+                            <p className="text-[#475569] text-sm leading-relaxed">
+                                Follow Provis Biolabs on LinkedIn for the latest biotechnology insights, product announcements and company news.
+                            </p>
+                        </div>
+                        <a href="https://www.linkedin.com/company/provis-biolabs-private-limited/" target="_blank" rel="noopener noreferrer"
+                            className="flex-shrink-0 inline-flex items-center gap-2 bg-[#0077B5] hover:bg-[#006097] text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                            Follow on LinkedIn
+                        </a>
+                    </div>
 
                     {/* Bottom Navigation */}
                     <div className="mt-14 pt-8 border-t border-[#F1F5F9] flex items-center justify-between">

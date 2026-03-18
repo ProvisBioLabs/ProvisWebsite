@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://provisbiolabs.com'),
   title: "Provis Biolabs — Pioneering Bioscience for a Healthier World",
   description:
-    "Provis Biolabs delivers premium bioreagents, Bio-APIs, and CDMO services to global pharmaceutical and biopharmaceutical innovators.",
+    "Provis Biolabs delivers premium bioreagents, Bio-APIs and CDMO services to global pharmaceutical and biopharmaceutical innovators.",
   icons: {
     icon: '/icon.svg',
   },
@@ -50,7 +50,7 @@ export default function RootLayout({
     name: 'Provis Biolabs',
     url: 'https://provisbiolabs.com',
     logo: 'https://provisbiolabs.com/logo.webp',
-    description: 'Provis Biolabs delivers premium bioreagents, Bio-APIs, and CDMO services to global pharmaceutical and biopharmaceutical innovators.',
+    description: 'Provis Biolabs delivers premium bioreagents, Bio-APIs and CDMO services to global pharmaceutical and biopharmaceutical innovators.',
     sameAs: [
       'https://www.linkedin.com/company/provis-biolabs-private-limited/'
     ],
@@ -102,11 +102,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Pre-connect to Google Fonts CDN for faster font delivery */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        {/* Preconnect to Unsplash CDN — used for product card images */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        {/* Preload hero poster image at high priority so it's ready before the
+            video element is even parsed — directly improves LCP */}
+        <link rel="preload" as="image" href="/hero-bg-s.webp" fetchPriority="high" />
       </head>
       <body suppressHydrationWarning className={`${fontBody.variable} ${outfit.variable} font-sans antialiased text-[#475569] bg-[#FFFFFF]`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />

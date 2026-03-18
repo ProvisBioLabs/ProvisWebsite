@@ -48,7 +48,7 @@ export default function CookieConsent() {
                         <div className="flex-grow pr-8 md:pr-0">
                             <h3 className="text-[#1E3A8A] font-bold text-lg mb-2">We value your privacy</h3>
                             <p className="text-[#64748B] text-sm leading-relaxed">
-                                We use cookies and similar technologies to enhance your browsing experience, serve personalized content, and analyze our traffic.
+                                We use cookies and similar technologies to enhance your browsing experience, serve personalized content and analyze our traffic.
                                 By clicking "Accept All", you consent to our use of cookies as described in our <Link href="/cookie-policy" className="text-[#F26522] font-semibold hover:underline">Cookie Policy</Link> and <Link href="/privacy-policy" className="text-[#F26522] font-semibold hover:underline">Privacy Policy</Link>.
                             </p>
                         </div>

@@ -55,7 +55,7 @@ const partnersData = [
         address: "Cambridge, 625 Massachusetts Ave 2nd Floor, USA",
         phone: "+1-857-477-8479",
         emails: ["Sales@zageno.com"],
-        website: "www.go.zageno.com"
+        website: "go.zageno.com"
     },
     {
         region: "North America",
@@ -102,7 +102,7 @@ const partnersData = [
         country: "India",
         company: "BioMall",
         logo: "/partners/biomall.png",
-        address: "Chargen Life Sciences LLP, 1010, Hubtown Solaris, NS Phadke Marg, Andheri (E), Mumbai - 400069",
+        address: "Chargen Life Sciences LLP, 1010, Hubtown Solaris, NS Phadke Marg Andheri (E), Mumbai - 400069",
         phone: "+91-7977202692",
         emails: ["sales@biomall.in", "support@biomall.in"],
         website: "www.biomall.in"
@@ -171,7 +171,7 @@ export default function PartnersContent() {
                         transition={{ delay: 0.1 }}
                         className="text-blue-100/90 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-light"
                     >
-                        At Provis Biolabs, we value strong collaborations and trusted partnerships. To better serve our customers globally, we work closely with our authorized partners who provide local support, reliable delivery, and expert advice.
+                        At Provis Biolabs, we value strong collaborations and trusted partnerships. To better serve our customers globally, we work closely with our authorized partners who provide local support, reliable delivery and expert advice.
                     </motion.p>
                 </div>
 
