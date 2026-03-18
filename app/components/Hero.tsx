@@ -63,10 +63,7 @@ export default function Hero() {
      */
     const slideChanged = useRef(false);
 
-    // To ensure the video plays every time it comes back into view,
-    // we don't rely solely on refs which can detach. Instead, we give the <video>
-    // a unique string `key`.
-    const videoRef = useRef<HTMLVideoElement>(null);
+
 
     // Auto-advance slider — mark slideChanged before every slide change.
     useEffect(() => {
@@ -98,18 +95,23 @@ export default function Hero() {
                     className="absolute inset-0 z-0 bg-[#F8FAFC]"
                 >
                     {slides[currentSlide].type === "video" ? (
-                        <video
-                            key={`video-${currentSlide}`}
-                            ref={videoRef}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
-                        >
-                            <source src={slides[currentSlide].src} type="video/mp4" />
-                        </video>
+                        <div
+                            className="absolute inset-0 w-full h-full"
+                            dangerouslySetInnerHTML={{
+                                __html: `
+                                <video
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                    preload="auto"
+                                    class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
+                                >
+                                    <source src="${slides[currentSlide].src}" type="video/mp4" />
+                                </video>
+                                `
+                            }}
+                        />
                     ) : (
                         <Image
                             src={slides[currentSlide].src}
