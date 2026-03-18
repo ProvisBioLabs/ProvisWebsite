@@ -68,25 +68,6 @@ export default function Hero() {
     // a unique string `key`.
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    // Defer video playback until the browser is idle (after LCP has fired).
-    // This prevents the video media pipeline from competing with LCP-critical
-    // resources on the network and main thread.
-    useEffect(() => {
-        const playVideo = () => {
-            videoRef.current?.play().catch(() => {
-                // Autoplay might be blocked by browser policy — silently fail.
-            });
-        };
-
-        if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).requestIdleCallback(playVideo, { timeout: 3000 });
-        } else {
-            // Safari fallback: 1.5s delay gives LCP time to fire first.
-            setTimeout(playVideo, 1500);
-        }
-    }, [currentSlide]); // re-run whenever we cycle back to slide 0
-
     // Auto-advance slider — mark slideChanged before every slide change.
     useEffect(() => {
         const timer = setInterval(() => {
