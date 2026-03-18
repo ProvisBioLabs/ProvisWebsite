@@ -319,9 +319,11 @@ export default function SciencePageContent() {
                                 transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
                                 className="bg-white border border-[#E2E8F0] shadow-sm rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover:border-[#F26522]/30 hover:shadow-lg transition-all duration-300 group">
                                 <div className="w-28 h-28 relative flex items-center justify-center bg-[#F8FAFC] rounded-full group-hover:bg-white transition-colors duration-300 p-5 border border-transparent group-hover:border-[#E2E8F0] overflow-hidden">
-                                    <img src={`/certifications/${cert.file}`} alt={cert.name}
-                                        className="max-w-[110%] max-h-[110%] object-contain mix-blend-multiply filter group-hover:scale-110 transition-transform duration-500"
-                                        onError={(e) => { (e.target as HTMLImageElement).src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="%23cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>'; }}
+                                    <Image src={`/certifications/${cert.file}`} alt={cert.name}
+                                        fill
+                                        loading="lazy"
+                                        sizes="112px"
+                                        className="object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500 p-3"
                                     />
                                 </div>
                                 <span className="text-[#1e293b] text-sm font-bold text-center leading-tight">{cert.name}</span>

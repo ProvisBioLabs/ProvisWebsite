@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, CalendarDays, Clock, Share2, ArrowRight, FlaskConical, Linkedin } from "lucide-react";
 import { products } from "@/lib/data/products";
 
@@ -15,8 +16,10 @@ export default function BlogPostContent({ blog }: { blog: any }) {
             {/* HERO */}
             <div className="relative h-[50vh] min-h-[360px] w-full bg-[#0F2557] flex items-end">
                 <div className="absolute inset-0 z-0">
-                    <img src={blog.image} alt={blog.title}
-                        className="w-full h-full object-cover opacity-50" />
+                    <Image src={blog.image} alt={blog.title}
+                        fill priority
+                        sizes="100vw"
+                        className="object-cover opacity-50" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F2557] via-[#0F2557]/60 to-[#0F2557]/20" />
                 </div>
 
@@ -129,11 +132,14 @@ export default function BlogPostContent({ blog }: { blog: any }) {
                                     href={`/${product.slug}`}
                                     className="group bg-white rounded-2xl border border-[#E2E8F0] p-5 hover:border-[#F26522]/40 hover:shadow-[0_8px_30px_rgba(242,101,34,0.1)] transition-all duration-300 flex flex-col gap-3"
                                 >
-                                    <div className="w-full h-24 rounded-xl overflow-hidden bg-[#F8FAFC]">
-                                        <img
+                                    <div className="w-full h-24 rounded-xl overflow-hidden bg-[#F8FAFC] relative">
+                                        <Image
                                             src={product.image}
                                             alt={product.name}
-                                            className="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                                            fill
+                                            loading="lazy"
+                                            sizes="(max-width: 640px) 33vw, 20vw"
+                                            className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-1 flex-1">

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const fade = (delay = 0) => ({
     initial: { opacity: 0, y: 24 },
@@ -69,11 +70,14 @@ export default function RecombinantContent() {
                             >
                                 <Link href={p.href} className="p-6 flex flex-col h-full cursor-pointer">
                                     {/* Image placeholder */}
-                                    <div className="w-full h-36 rounded-xl  mb-5 border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors relative overflow-hidden shrink-0">
-                                        <img
+                                    <div className="w-full h-36 rounded-xl mb-5 border border-[#E2E8F0] group-hover:border-[#F26522]/20 transition-colors relative overflow-hidden shrink-0">
+                                        <Image
                                             src={p.image}
                                             alt={p.name}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            fill
+                                            loading="lazy"
+                                            sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     </div>

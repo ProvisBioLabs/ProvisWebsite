@@ -98,9 +98,9 @@ export default function About() {
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: 0.2 }}
-                                        className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                        className="relative h-12 w-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                                     >
-                                        <img src={cert.img} alt={cert.name} className="h-full w-auto object-contain" />
+                                        <Image src={cert.img} alt={cert.name} fill className="object-contain" sizes="64px" />
                                     </motion.div>
                                 ))}
                             </div>
@@ -330,10 +330,13 @@ export default function About() {
                                 className="bg-white rounded-[2.5rem] border border-[#E2E8F0] shadow-sm hover:shadow-[0_24px_60px_rgba(242,101,34,0.12)] hover:border-[#F26522]/30 transition-all duration-500 overflow-hidden group flex flex-col"
                             >
                                 <div className="relative h-64 sm:h-72 w-full overflow-hidden">
-                                    <img 
-                                        src={csr.image} 
-                                        alt={csr.title} 
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                                    <Image
+                                        src={csr.image}
+                                        alt={csr.title}
+                                        fill
+                                        loading="lazy"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                                 </div>

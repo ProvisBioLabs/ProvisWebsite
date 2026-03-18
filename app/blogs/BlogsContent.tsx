@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, BookOpen, Clock, Search, Sparkles, Linkedin } from "lucide-react";
 import blogsData from "./blogsData.json";
 
@@ -87,8 +88,10 @@ export default function BlogsContent() {
                             className="block bg-white rounded-3xl overflow-hidden border border-[#E2E8F0] shadow-sm hover:shadow-2xl hover:border-[#F26522]/30 transition-all duration-500 group">
                             <div className="grid md:grid-cols-2">
                                 <div className="h-64 md:h-full min-h-[320px] relative overflow-hidden bg-[#1E3A8A]">
-                                    <img src={featured.image} alt={featured.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                                    <Image src={featured.image} alt={featured.title}
+                                        fill loading="lazy"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
                                     <div className="absolute top-5 left-5 z-10">
                                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F26522] text-white text-xs font-bold uppercase tracking-wider shadow-lg">
@@ -129,8 +132,10 @@ export default function BlogsContent() {
                                 className="block bg-white rounded-3xl border border-[#E2E8F0] shadow-sm hover:shadow-2xl hover:border-[#F26522]/30 transition-all duration-300 overflow-hidden group h-full flex flex-col">
                                 {/* Image */}
                                 <div className="h-52 relative overflow-hidden bg-[#1E3A8A]">
-                                    <img src={blog.image} alt={blog.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                                    <Image src={blog.image} alt={blog.title}
+                                        fill loading="lazy"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                                 </div>
 
