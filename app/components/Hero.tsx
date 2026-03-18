@@ -51,7 +51,6 @@ const slides = [
 
 export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const videoRef = useRef<HTMLVideoElement>(null);
 
     /**
      * `slideChanged` is a ref (not state) — it doesn't trigger re-renders.
@@ -64,23 +63,14 @@ export default function Hero() {
      */
     const slideChanged = useRef(false);
 
-    // Defer video playback until the browser is idle (after LCP has fired).
-    // This prevents the video media pipeline from competing with LCP-critical
-    // resources on the network and main thread.
-    useEffect(() => {
-        const playVideo = () => {
-            videoRef.current?.play().catch(() => {
-                // Autoplay might be blocked by browser policy — silently fail.
-            });
-        };
-
-        if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).requestIdleCallback(playVideo, { timeout: 3000 });
-        } else {
-            // Safari fallback: 1.5s delay gives LCP time to fire first.
-            setTimeout(playVideo, 1500);
-        }
+    // Callback ref: called every time the <video> element mounts.
+    // This ensures play() is called when cycling back to the video slide
+    // (the previous useRef + useEffect only worked on initial mount).
+    const videoRefCallback = useCallback((el: HTMLVideoElement | null) => {
+        if (!el) return;
+        el.play().catch(() => {
+            // Autoplay blocked by browser policy — silently fail.
+        });
     }, []);
 
     // Auto-advance slider — mark slideChanged before every slide change.
@@ -114,12 +104,12 @@ export default function Hero() {
                 >
                     {slides[currentSlide].type === "video" ? (
                         <video
-                            ref={videoRef}
+                            ref={videoRefCallback}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="auto"
                             poster="/hero-bg-s.webp"
                             className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
                         >
