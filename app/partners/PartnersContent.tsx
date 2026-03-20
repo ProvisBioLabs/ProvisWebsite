@@ -109,7 +109,7 @@ const partnersData = [
     },
     {
         region: "North America",
-        country: "USA (Avantor)",
+        country: "USA",
         company: "Avantor ScienceCentral™",
         logo: "/partners/avantor.png",
         address: "VWR Corporate Headquarters Radnor Corporate Center, Building One, Suite 200 100 Matsonford Road, Radnor, PA 19087-8660",

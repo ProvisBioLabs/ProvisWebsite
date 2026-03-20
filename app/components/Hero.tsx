@@ -25,8 +25,8 @@ const slides = [
         src: "/hero/slide-2.jpg",
         title: (
             <>
-                Precision Manufacturing,<br />
-                Certified <span className="text-[#F26522]">Excellence</span><br />
+                Precision <br />
+                <span className="text-[#F26522]">Manufacturing</span><br />
             </>
         ),
         subtitle: "State-of-the-art manufacturing backed by ISO 9001 & WHO-GMP certification — built for the demands of modern biopharma ",
@@ -39,13 +39,13 @@ const slides = [
         src: "/hero/slide-3.jpg",
         title: (
             <>
-                Global Scale.<br />
-                <span className="text-[#F26522]">Local Impact</span><br />
+                CDMO Expertise<br />
+                <span className="text-[#F26522]">Under One Roof</span><br />
             </>
         ),
-        subtitle: "Trusted by leading pharmaceutical innovators worldwide",
-        cta1: { text: "Global Reach", link: "/partners" },
-        cta2: { text: "View Products", link: "/products" }
+        subtitle: "Integrated biosimilar CDMO services  development, scale-up and manufacturing, all under one roof ",
+        cta1: { text: "Bio Similars", link: "/biosimilars" },
+        cta2: { text: "CDMO Services", link: "/cdmo" }
     }
 ];
 

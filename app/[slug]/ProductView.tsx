@@ -156,13 +156,13 @@ export default function ProductView({ product }: { product: Product }) {
                                         {product.tagline}
                                     </span>
                                 )}
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-bold shadow-sm">
+                                {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-bold shadow-sm">
                                     <span className="relative flex h-2.5 w-2.5">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
                                         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
                                     </span>
                                     Bulk Available
-                                </div>
+                                </div> */}
                             </motion.div>
 
 
