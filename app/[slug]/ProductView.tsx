@@ -53,6 +53,11 @@ export default function ProductView({ product }: { product: Product }) {
                                         <span className="font-mono font-bold text-[#1E3A8A] text-[15px]">{product.casNumber}</span>
                                     </div>
                                 )}
+                                {product.dmfAvailable && (
+                                    <div className="flex items-center gap-2 bg-[#1E3A8A] text-white px-4 h-10 rounded-xl shadow-[0_8px_20px_rgba(30,58,138,0.15)]">
+                                        <span className="font-bold text-sm">DMF Available</span>
+                                    </div>
+                                )}
                             </div>
                         )}
 
@@ -145,11 +150,7 @@ export default function ProductView({ product }: { product: Product }) {
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="flex flex-wrap pt-4 gap-3 mb-14"
                             >
-                                {product.dmfAvailable && (
-                                    <span className="inline-flex items-center gap-2 bg-[#1E3A8A] text-white hover:bg-[#d95a1e] font-bold py-2 px-4 rounded-2xl transition-all duration-300 shadow-[0_8px_24px_rgba(242,101,34,0.25)] hover:-translate-y-0.5 text-sm">
-                                        DMF Available
-                                    </span>
-                                )}
+
                                 {product.tagline && (
                                     <span className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#FFF5F0] border border-[#F26522]/20 text-[#F26522] text-sm font-black tracking-wide shadow-sm">
                                         {product.tagline}
