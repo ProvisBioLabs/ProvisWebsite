@@ -46,6 +46,20 @@ const slides = [
         subtitle: "Integrated biosimilar CDMO services  development, scale-up and manufacturing, all under one roof ",
         cta1: { text: "Bio Similars", link: "/biosimilars" },
         cta2: { text: "CDMO Services", link: "/cdmo" }
+    },
+    {
+        id: 4,
+        type: "image",
+        src: "/hero/slide-4.png",
+        title: (
+            <>
+                Your Peptide <br />
+                <span className="text-[#F26522]">Partner</span><br />
+            </>
+        ),
+        subtitle: "Tailored peptide synthesis, dedicated CRO services and high-quality APIs  all from a single trusted partner ",
+        cta1: { text: "Custom Synthesis", link: "/cdmo" },
+        cta2: { text: "CRO Services", link: "/cdmo" }
     }
 ];
 
