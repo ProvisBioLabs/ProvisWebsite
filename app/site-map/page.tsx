@@ -37,7 +37,7 @@ export default function SitemapPage() {
                             <li><Link href="/products/recombinant-bio-reagents" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Recombinant Bio-Reagents</Link></li>
                             <li><Link href="/synthetic-peptides" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Synthetic Peptides</Link></li>
                             <li><Link href="/biosimilars" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Biosimilars</Link></li>
-                            <li><Link href="/provinase" className="text-gray-500 text-sm hover:text-[#F26522] transition-colors block pl-4 border-l border-gray-100">Provinase®</Link></li>
+                            <li><Link href="/provinase®" className="text-gray-500 text-sm hover:text-[#F26522] transition-colors block pl-4 border-l border-gray-100">Provinase®</Link></li>
                             <li><Link href="/l-asparaginase" className="text-gray-500 text-sm hover:text-[#F26522] transition-colors block pl-4 border-l border-gray-100">L-Asparaginase</Link></li>
                         </ul>
                     </div>

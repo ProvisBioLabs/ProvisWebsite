@@ -75,7 +75,7 @@ const benefits = [
     {
         icon: <Wallet className="w-6 h-6 text-[#1E3A8A]" />,
         title: "Financial Security",
-        desc: "Competitive compensation, equity opportunities and robust retirement planning with company match."
+        desc: "Competitive compensation and robust retirement planning with company match."
     },
     {
         icon: <Award className="w-6 h-6 text-[#1E3A8A]" />,
@@ -230,37 +230,7 @@ export default function CareersContent() {
                 </div>
             </div>
 
-            {/* 3. CORE VALUES GRID */}
-            <div className="py-24 bg-[#F8FAFC]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-black text-[#1E3A8A] mb-4">Our Core Values</h2>
-                    </div>
-
-                    <motion.div
-                        variants={staggerContainer}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {coreValues.map((value, idx) => (
-                            <motion.div
-                                key={idx}
-                                variants={fadeInUp}
-                                className="bg-white p-8 rounded-[2rem] border border-[#E2E8F0] hover:border-[#F26522]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
-                            >
-                                <div className="w-16 h-16 rounded-2xl bg-[#FFF7F2] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    {value.icon}
-                                </div>
-                                <h3 className="text-xl font-bold text-[#1E3A8A] mb-3">{value.title}</h3>
-                                <p className="text-[#64748B] text-sm font-medium leading-relaxed">{value.desc}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
-
+           
             {/* 4. WELLBEING & BENEFITS */}
             <div className="py-24 bg-white border-t border-[#E2E8F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

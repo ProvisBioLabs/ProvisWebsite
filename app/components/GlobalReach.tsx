@@ -48,11 +48,11 @@ export default function GlobalReach() {
                         GLOBAL NETWORK
                     </h2>
                     <h3 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1E3A8A] mb-6">
-                        Serving partners worldwide.
+                       Powering Pipelines Worldwide
                     </h3>
                     <p className="text-lg text-[#475569] max-w-2xl mx-auto font-medium leading-relaxed">
-                        Provis Biolabs products power pharmaceutical pipelines across North America,
-                        Europe and Asia. Our USA operations enable faster, more compliant supply.
+                        Accelerating drug discovery and development pipelines across North America,
+                        Europe and Asia with the quality assurance of a globally certified manufacturer
                     </p>
                 </motion.div>
 

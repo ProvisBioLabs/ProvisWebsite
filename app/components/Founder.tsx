@@ -18,7 +18,7 @@ const achievements = [
     },
     {
         icon: <FileText strokeWidth={1.5} className="w-6 h-6" />,
-        value: "10",
+        value: "10+",
         label: "Publications",
     },
 ];

@@ -25,11 +25,11 @@ const slides = [
         src: "/hero/slide-2.jpg",
         title: (
             <>
-                Innovating <br />
-                the <span className="text-[#F26522]">Future</span><br />
+                Precision Manufacturing,<br />
+                Certified <span className="text-[#F26522]">Excellence</span><br />
             </>
         ),
-        subtitle: "State-of-the-art facilities delivering high-quality CDMO services globally",
+        subtitle: "State-of-the-art manufacturing backed by ISO 9001 & WHO-GMP certification — built for the demands of modern biopharma ",
         cta1: { text: "Our Facilities", link: "/cdmo" },
         cta2: { text: "Partner With Us", link: "/contact" }
     },
@@ -52,15 +52,6 @@ const slides = [
 export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    /**
-     * `slideChanged` is a ref (not state) — it doesn't trigger re-renders.
-     * It starts as false on both server AND client, matching exactly, so
-     * there is no hydration mismatch.
-     *
-     * When false → initial={false} → framer-motion renders NO inline styles
-     *   → the H1 is fully visible on first paint → LCP fires immediately.
-     * When true  → initial={{ opacity: 0 }} → normal slide-change animation.
-     */
     const slideChanged = useRef(false);
 
 
