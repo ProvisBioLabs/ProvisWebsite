@@ -25,19 +25,16 @@ const testimonials = [
         name: "Dr. Sarah Jenkins",
         role: "Lead Research Scientist",
         quote: "Provis isn't just a workplace; it's a launchpad for ideas. The autonomy we have to pursue innovative protocols in peptide synthesis is unparalleled. I feel like I'm genuinely shaping the future of therapeutics here.",
-        image: "https://i.pravatar.cc/150?u=sarah"
     },
     {
         name: "David Chen",
         role: "Process Development Engineer",
         quote: "The culture here is intensely collaborative. When scaling from lab to 300L fermentation, you need a team that moves as one. At Provis, the synergy between R&D and manufacturing is seamlessly built into our DNA.",
-        image: "https://i.pravatar.cc/150?u=david"
     },
     {
         name: "Elena Rodriguez",
         role: "Quality Assurance Manager",
         quote: "I've worked in biopharma for 15 years and the commitment to uncompromised quality at Provis is the strongest I've seen. We don't just meet compliance standards; we define them. It's rewarding to stand behind our products.",
-        image: "https://i.pravatar.cc/150?u=elena"
     }
 ];
 
@@ -308,20 +305,9 @@ export default function CareersContent() {
                                     "{test.quote}"
                                 </p>
 
-                                <div className="flex items-center gap-4">
-                                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#FFF0E6]">
-                                        <Image
-                                            src={test.image}
-                                            alt={test.name}
-                                            fill
-                                            className="object-cover"
-                                            unoptimized
-                                        />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-[#1E3A8A]">{test.name}</h4>
-                                        <p className="text-sm font-medium text-[#F26522]">{test.role}</p>
-                                    </div>
+                                <div className="mt-auto">
+                                    <h4 className="font-bold text-[#1E3A8A] leading-tight">{test.name}</h4>
+                                    <p className="text-sm font-semibold text-[#F26522] mt-1">{test.role}</p>
                                 </div>
                             </motion.div>
                         ))}

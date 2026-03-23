@@ -49,7 +49,7 @@ export default function Founder() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[#E05A1A]/80 via-transparent to-transparent opacity-0 mix-blend-overlay transition-opacity duration-700 hover:opacity-100 z-10" />
                             {/* Portrait */}
                             <Image
-                                src="/dr-bala-reddyv2.jpg"
+                                src="/DSC05613 - 2.jpg"
                                 alt="Dr. Bala Reddy — Founder and Managing Director of Provis Biolabs"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 33vw"
