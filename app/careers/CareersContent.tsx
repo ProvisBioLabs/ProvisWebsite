@@ -216,14 +216,24 @@ export default function CareersContent() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="relative rounded-[2.5rem] overflow-hidden h-[300px] md:h-[calc(50%-12px)] bg-gradient-to-br from-[#F26522] to-[#FF8C55] p-8 flex flex-col justify-end text-white shadow-xl"
+                                className="relative rounded-[2.5rem] overflow-hidden h-[300px] md:h-[calc(50%-12px)] p-8 flex flex-col justify-end text-white shadow-xl group"
                             >
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-2xl -translate-y-10 translate-x-10" />
-                                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
-                                    <Users2 className="w-6 h-6 text-white" />
+                                <Image
+                                    src="/global-team.jpg"
+                                    alt="Provis Biolabs Global Research Team"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    loading="lazy"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/80 via-[#1E3A8A]/30 to-transparent" />
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
+                                        <Users2 className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h4 className="text-2xl font-bold mb-2">A Global Team</h4>
+                                    <p className="text-white/90 font-medium text-sm">Collaborate with brilliantly diverse minds from over 10 countries.</p>
                                 </div>
-                                <h4 className="text-2xl font-bold mb-2">A Global Team</h4>
-                                <p className="text-white/90 font-medium text-sm">Collaborate with brilliantly diverse minds from over 10 countries.</p>
                             </motion.div>
                         </div>
                     </div>

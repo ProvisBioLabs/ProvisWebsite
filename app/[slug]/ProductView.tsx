@@ -61,7 +61,7 @@ export default function ProductView({ product }: { product: Product }) {
                             </div>
                         )}
 
-                        <div className="w-full min-h-[360px] lg:h-[calc(100vh-200px)] lg:max-h-[650px] rounded-[2.5rem] overflow-hidden bg-white border border-[#E2E8F0] shadow-sm hover:shadow-[0_24px_60px_rgba(30,58,138,0.06)] hover:border-[#1E3A8A]/10 transition-all duration-500 relative group">
+                        <div suppressHydrationWarning className="w-full min-h-[360px] lg:h-[calc(100vh-200px)] lg:max-h-[650px] rounded-[2.5rem] overflow-hidden bg-white border border-[#E2E8F0] shadow-sm hover:shadow-[0_24px_60px_rgba(30,58,138,0.06)] hover:border-[#1E3A8A]/10 transition-all duration-500 relative group">
 
                             {product.cleavageImages && product.cleavageImages.length > 0 ? (
                                 product.cleavageImages.length === 1 ? (
@@ -187,28 +187,28 @@ export default function ProductView({ product }: { product: Product }) {
                                     </p>
                                     <div className="grid gap-4">
                                         <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm flex items-start gap-4 hover:border-[#1E3A8A]/20 transition-colors">
-                                            <li className="flex gap-4">
+                                            <div className="flex gap-4">
                                                 <div className="mt-1 w-6 h-6 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center shrink-0">
                                                     <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                                                 </div>
                                                 <p className="text-[#64748B] text-sm font-medium leading-relaxed">Manufactured to high purity, providing excellent batch-to-batch consistency</p>
-                                            </li>
+                                            </div>
                                         </div>
                                         <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm flex items-start gap-4 hover:border-[#1E3A8A]/20 transition-colors">
-                                            <li className="flex gap-4">
+                                            <div className="flex gap-4">
                                                 <div className="mt-1 w-6 h-6 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center shrink-0">
                                                     <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                                                 </div>
                                                 <p className="text-[#64748B] text-sm font-medium leading-relaxed">Efficiently removes high-mannose, hybrid and complex N-glycans</p>
-                                            </li>
+                                            </div>
                                         </div>
                                         <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm flex items-start gap-4 hover:border-[#1E3A8A]/20 transition-colors">
-                                            <li className="flex gap-4">
+                                            <div className="flex gap-4">
                                                 <div className="mt-1 w-6 h-6 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center shrink-0">
                                                     <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                                                 </div>
                                                 <p className="text-[#64748B] text-sm font-medium leading-relaxed">Widely used in biopharmaceutical characterization and analytical biology workflows</p>
-                                            </li>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
