@@ -164,8 +164,8 @@ const eventItems: EventItem[] = [
     },
     {
         id: "ddd-workshop-2025",
-        day: "2025",
-        month: "ANNUAL",
+        day: "28-31",
+        month: "August",
         year: "2025",
         category: "ACADEMIC WORKSHOP",
         title: "Drug Discovery & Development (DDD) Workshop",

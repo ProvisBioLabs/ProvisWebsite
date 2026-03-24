@@ -45,11 +45,11 @@ export default function Founder() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:col-span-5 relative lg:sticky lg:top-32"
                     >
-                        <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl shadow-[#F26522]/10 bg-white ring-1 ring-[#F26522]/20 backdrop-blur-sm">
+                        <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl shadow-[#F26522]/10 bg-[#F8FAFC] ring-1 ring-[#F26522]/20 backdrop-blur-sm">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#E05A1A]/80 via-transparent to-transparent opacity-0 mix-blend-overlay transition-opacity duration-700 hover:opacity-100 z-10" />
                             {/* Portrait */}
                             <Image
-                                src="/DSC05613 - 2.jpg"
+                                src="/drbalareddy1.png"
                                 alt="Dr. Bala Reddy — Founder and Managing Director of Provis Biolabs"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 33vw"

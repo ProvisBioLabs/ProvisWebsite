@@ -136,7 +136,7 @@ export default function CareersContent() {
                             className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl"
                         >
                             <Image
-                                src="/provis-biolabs-team-collaboration.webp"
+                                src="/provis-biolabs-team-collaboration.png"
                                 alt="Provis Biolabs Biopharmaceutical Team Collaboration"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -244,7 +244,7 @@ export default function CareersContent() {
                     <div className="grid lg:grid-cols-12 gap-16 items-start">
                         <div className="lg:col-span-5 lg:sticky lg:top-32">
                             <h2 className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3">Rewards & Wellness</h2>
-                            <h3 className="text-4xl sm:text-5xl font-black text-[#1E3A8A] mb-6 leading-tight">Supporting your life, inside and out.</h3>
+                            <h3 className="text-4xl sm:text-5xl font-black text-[#1E3A8A] mb-6 leading-tight">Supporting your life, inside and out</h3>
                             <p className="text-[#64748B] text-lg font-medium leading-relaxed mb-8">
                                 We believe that groundbreaking science requires a foundation of personal wellbeing and security. Our comprehensive benefits package is designed to support you at every stage of your life and career.
                             </p>
@@ -284,7 +284,7 @@ export default function CareersContent() {
                         <div className="max-w-xl">
                             <h2 className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3">The Provis Experience</h2>
                             <h3 className="text-4xl lg:text-5xl font-black text-[#1E3A8A] leading-tight">
-                                Hear from the minds making the magic happen.
+                                Hear from the minds making the magic happen
                             </h3>
                         </div>
                     </div>

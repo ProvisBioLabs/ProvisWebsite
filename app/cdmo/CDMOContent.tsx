@@ -86,7 +86,7 @@ export default function CDMOContent() {
                                 CDMO Services
                             </p>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A8A] leading-tight mb-6">
-                                Your Product.<br />
+                                Your Product<br />
                                 <span className="text-[#94A3B8]">Our Expertise</span>
                             </h1>
                             <p className="text-lg text-[#475569] leading-relaxed mb-8 max-w-lg font-medium">

@@ -60,8 +60,8 @@ export default function Footer() {
                             className="h-10 w-auto mb-6"
                         />
                         <p className="text-[#475569] text-sm leading-relaxed mb-8 max-w-sm font-medium">
-                            Advancing life sciences with premium, animal-origin-free bioreagents
-                            and GMP-grade APIs for global biopharma
+                            Your integrated partner for Bioreagents, BioAPIs, peptides, enzymes and biosimilars
+                            from discovery through development to GMP manufacturing
                         </p>
                         {/* Cert badges */}
                         <div className="flex flex-wrap gap-4 mt-8">
@@ -151,9 +151,10 @@ export default function Footer() {
                             <MapPin className="w-4 h-4 text-[#1E3A8A]" />
                         </div>
                         <div>
-                            <h4 className="text-sm font-bold text-[#1E3A8A] mb-2">India Headquarters</h4>
+                            <h4 className="text-sm font-bold text-[#1E3A8A] mb-2">India Corporate office</h4>
                             <p className="text-sm text-[#475569] mb-1">Provis Biolabs Private Limited</p>
-                            <p className="text-sm text-[#475569] mb-3">Hyderabad, Telangana 500072</p>
+                            <p className="text-sm text-[#475569] mb-1">No 1402,  Block B, Asian Suncity, Kondapur</p>
+                            <p className="text-sm text-[#475569] mb-3">Hyderabad, Telangana 500084</p>
                             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm font-medium text-[#475569]">
                                 <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> +91 9059284828</span>
                                 <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> bd@provisbiolabs.com</span>

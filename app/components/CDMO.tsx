@@ -54,7 +54,7 @@ export default function CDMO() {
                             CDMO Services
                         </h2>
                         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1E3A8A] mb-6 leading-tight">
-                            Your vision.<br />
+                            Your vision<br />
                             <span className="text-[#94A3B8]">Our expertise</span>
                         </h3>
 
