@@ -338,7 +338,7 @@ export default function CareersContent() {
 
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <a
-                                    href="mailto:hr@provisbiolabs.com"
+                                    href="mailto:career@provisbiolabs.com"
                                     className="px-8 py-4 bg-white text-[#F26522] font-bold rounded-full hover:bg-gray-50 hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
                                 >
                                     Email Resume

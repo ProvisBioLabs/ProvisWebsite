@@ -90,7 +90,7 @@ export default function CDMOContent() {
                                 <span className="text-[#94A3B8]">Our Expertise</span>
                             </h1>
                             <p className="text-lg text-[#475569] leading-relaxed mb-8 max-w-lg font-medium">
-                                Delivering comprehensive contract development and manufacturing solutions tailored to accelerate your biologics from discovery to commercialization, backed by uncompromising quality and WHO-GMP standards.
+                                Accelerating biologics development with integrated protein engineering, process development and GMP manufacturing capabilities.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-white bg-[#F26522] hover:bg-[#d95a1e] transition-all duration-300 shadow-[0_8px_24px_rgba(242,101,34,0.25)]">
