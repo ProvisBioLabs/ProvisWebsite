@@ -45,7 +45,7 @@ export default function Founder() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:col-span-5 relative lg:sticky lg:top-32"
                     >
-                        <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl shadow-[#F26522]/10 bg-[#F8FAFC] ring-1 ring-[#F26522]/20 backdrop-blur-sm">
+                        <div className="relative aspect-square w-full max-w-sm mx-auto rounded-full overflow-hidden shadow-2xl shadow-[#F26522]/10 bg-[#F8FAFC] ring-4 ring-[#F26522]/20">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#E05A1A]/80 via-transparent to-transparent opacity-0 mix-blend-overlay transition-opacity duration-700 hover:opacity-100 z-10" />
                             {/* Portrait */}
                             <Image
@@ -54,24 +54,11 @@ export default function Founder() {
                                 fill
                                 sizes="(max-width: 768px) 100vw, 33vw"
                                 loading="lazy"
-                                className="object-cover object-top filter contrast-105"
+                                className="object-cover object-top filter contrast-105 scale-[0.87]"
                             />
 
-                            {/* Floating glass badge */}
-                            <div className="absolute bottom-6 left-6 right-6 z-20">
-                                <div className="bg-white/80 backdrop-blur-xl border border-white/50 rounded-2xl p-5 shadow-lg shadow-[#1E3A8A]/5 border-[#F26522]/20">
-                                    <h3 className="font-outfit font-black text-2xl text-[#1E3A8A] mb-1">
-                                        Dr. Bala Reddy
-                                    </h3>
-                                    <p className="text-[#F26522] font-semibold text-sm tracking-wide uppercase">
-                                        Founder & Managing Director
-                                    </p>
-                                </div>
-                            </div>
                         </div>
 
-                        {/* Decorative circle behind image */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#FFF0E5] rounded-full -z-10 animate-[spin_60s_linear_infinite]" />
                     </motion.div>
 
                     {/* Content Side */}

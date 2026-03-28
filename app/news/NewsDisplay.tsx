@@ -38,7 +38,7 @@ const timelineData = [
         id: "2025-usa",
         year: "Mar 2025",
         title: "USA Commercial Operations Launched",
-        description: "Established Provis Biolabs LLC in East Hartford, Connecticut, officially launching commercial operations in the United States market.",
+        description: "Established Provis Biolabs Inc. in East Hartford, Connecticut, officially launching commercial operations in the United States market.",
         icon: Globe2,
         accent: "from-blue-500 to-indigo-600",
         color: "#3B82F6",

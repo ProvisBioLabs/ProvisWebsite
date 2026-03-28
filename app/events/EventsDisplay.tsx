@@ -41,22 +41,38 @@ const eventItems: EventItem[] = [
     //     highlight: true,
     // },
     //    {
-    //     id: "2026-march",
-    //     day: "13",
-    //     month: "MAR",
-    //     year: "2026",
-    //     category: "BIOTECH SUMMIT",
-    //     title: "Asia Biotech Leaders Summit — Singapore",
-    //     description: "Provis Biolabs will be attending the Asia Biotech Leaders Summit in Singapore. Join us as we present our latest advances in recombinant bioreagents and CDMO capabilities. Meet our team to explore collaboration opportunities and discover how we can support your next biologics project.",
-    //     icon: Rocket,
-    //     location: "Marina Bay Sands, Singapore",
-    //     booth: "Booth #B12",
-    //     type: "Summit",
-    //     image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
-    //     status: "upcoming",
-    //     highlight: true,
+    //      id: "2026-march",
+    //      day: "13",
+    //      month: "MAR",
+    //      year: "2026",
+    //      category: "BIOTECH SUMMIT",
+    //      title: "Asia Biotech Leaders Summit — Singapore",
+    //      description: "Provis Biolabs will be attending the Asia Biotech Leaders Summit in Singapore. Join us as we present our latest advances in recombinant bioreagents and CDMO capabilities. Meet our team to explore collaboration opportunities and discover how we can support your next biologics project.",
+    //      icon: Rocket,
+    //      location: "Marina Bay Sands, Singapore",
+    //      booth: "Booth #B12",
+    //      type: "Summit",
+    //      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
+    //      status: "upcoming",
+    //      highlight: true,
     // },
-    // ──────────── PAST ────────────
+    //  ──────────── PAST ────────────
+    {
+        id: "cphi-japan-2026",
+        day: "21–23",
+        month: "APR",
+        year: "2026",
+        category: "PHARMA EXHIBITION",
+        title: "CPHI Japan 2026 — Tokyo",
+        description: "Provis Biolabs will be attending CPHI Japan 2026, Asia's premier pharmaceutical industry exhibition. Join us in Tokyo as we showcase our portfolio of high-quality bioreagents, Bio-APIs, recombinant proteins and CDMO capabilities. Meet our team to explore partnership opportunities and discover how we can accelerate your next biologics project.",
+        icon: Globe,
+        location: "Tokyo Big Sight, Tokyo, Japan",
+        booth: "TBA",
+        type: "Exhibition",
+        image: "/cphi-japan-2026.png",
+        status: "upcoming",
+        highlight: true,
+    },
     {
         id: "biologics-workshop-2026",
         day: "27-28",
@@ -206,184 +222,89 @@ function UpcomingEventsSlider({ events }: { events: EventItem[] }) {
 
     return (
         <div className="relative">
-            {/* Slide window */}
+            {/* Clean image banner — no text overlay */}
             <div className="relative rounded-[28px] sm:rounded-[40px] overflow-hidden shadow-2xl border-2 border-[#F26522]/30">
                 <AnimatePresence mode="wait">
                     {events.map((event, idx) =>
                         idx === current ? (
                             <motion.div
                                 key={event.id}
-                                initial={{ opacity: 0, x: 60 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -60 }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                                className="relative"
+                                className="relative aspect-[16/7] w-full"
                             >
-                                {/* ── MOBILE LAYOUT: Stacked (image top, content bottom) ── */}
-                                <div className="block sm:hidden">
-                                    {/* Image */}
-                                    <div className="relative aspect-[16/9] w-full">
-                                        <Image
-                                            src={event.image}
-                                            alt={event.title}
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/60 to-transparent" />
-                                        {/* Badge on image */}
-                                        <div className="absolute top-3 left-3">
-                                            <span className="flex items-center gap-1 bg-[#F26522] text-white text-[9px] font-black tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
-                                                <Star className="w-2.5 h-2.5" fill="white" /> Tomorrow
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* Content below image */}
-                                    <div className="bg-[#1E3A8A] px-5 py-6">
-                                        <span className="inline-block bg-white/10 text-white/80 text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full border border-white/20 mb-3">
-                                            {event.category}
-                                        </span>
-                                        <h2 className="text-xl font-black text-white leading-tight mb-3">
-                                            {event.title}
-                                        </h2>
-                                        <div className="flex flex-col gap-1.5 text-white/70 font-semibold text-xs mb-4">
-                                            <div className="flex items-center gap-2">
-                                                <Calendar className="w-3.5 h-3.5 text-[#F26522]" />
-                                                <span>{event.day} {event.month}, {event.year}</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <MapPin className="w-3.5 h-3.5 text-[#F26522]" />
-                                                <span>{event.location}</span>
-                                            </div>
-                                        </div>
-                                        <p className="text-white/60 leading-relaxed text-sm font-medium line-clamp-3 mb-5">
-                                            {event.description}
-                                        </p>
-                                        <button className="flex items-center gap-2 bg-[#F26522] text-white px-6 py-3 rounded-2xl font-black text-xs tracking-widest uppercase shadow-xl hover:bg-[#ff7a3d] transition-colors group/btn">
-                                            Learn More
-                                            <ArrowRight className="w-3.5 h-3.5 transform transition-transform group-hover/btn:translate-x-1" />
+                                <Image
+                                    src={event.image}
+                                    alt={event.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+
+                                {/* Arrow buttons inside image */}
+                                {total > 1 && (
+                                    <>
+                                        <button
+                                            onClick={prev}
+                                            aria-label="Previous event"
+                                            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-[#F26522] hover:border-[#F26522] transition-all duration-200 shadow-lg"
+                                        >
+                                            <ChevronLeft className="w-5 h-5" />
                                         </button>
-                                    </div>
-                                </div>
-
-                                {/* ── DESKTOP LAYOUT: Full overlay hero ── */}
-                                <div className="hidden sm:block">
-                                    <div className="relative aspect-[16/7] w-full">
-                                        <Image
-                                            src={event.image}
-                                            alt={event.title}
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/90 via-[#1E3A8A]/40 to-transparent" />
-                                    </div>
-
-                                    {/* Content overlay */}
-                                    <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-12">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <span className="flex items-center gap-1.5 bg-[#F26522] text-white text-[10px] font-black tracking-widest uppercase px-4 py-1.5 rounded-full shadow-lg animate-pulse">
-                                                <Star className="w-3 h-3" fill="white" />
-                                                Tomorrow
-                                            </span>
-                                            <span className="bg-white/10 backdrop-blur-sm text-white/80 text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-white/20">
-                                                {event.category}
-                                            </span>
-                                        </div>
-
-                                        <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-4">
-                                            {event.title}
-                                        </h2>
-
-                                        <div className="flex flex-wrap items-center gap-4 text-white/70 font-bold text-sm mb-6">
-                                            <div className="flex items-center gap-2">
-                                                <Calendar className="w-4 h-4 text-[#F26522]" />
-                                                <span>{event.day} {event.month}, {event.year}</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <MapPin className="w-4 h-4 text-[#F26522]" />
-                                                <span>{event.location}</span>
-                                            </div>
-                                            <div className="flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                                                <Rocket className="w-4 h-4 text-[#F26522]" />
-                                                <span className="text-white/90 text-xs uppercase tracking-tight">{event.booth}</span>
-                                            </div>
-                                        </div>
-
-                                        <p className="text-white/70 leading-relaxed text-base font-medium max-w-3xl mb-6">
-                                            {event.description}
-                                        </p>
-
-                                        <div className="flex items-center gap-4">
-                                            <button className="flex items-center gap-2 bg-[#F26522] text-white px-8 py-3.5 rounded-2xl font-black text-sm tracking-widest uppercase shadow-xl hover:bg-[#ff7a3d] transition-colors group/btn">
-                                                Learn More
-                                                <ArrowRight className="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" />
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    {/* Desktop arrow buttons — inside the card */}
-                                    {total > 1 && (
-                                        <>
-                                            <button
-                                                onClick={prev}
-                                                aria-label="Previous event"
-                                                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white hover:bg-[#F26522] hover:border-[#F26522] transition-all duration-200 shadow-lg"
-                                            >
-                                                <ChevronLeft className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                onClick={next}
-                                                aria-label="Next event"
-                                                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white hover:bg-[#F26522] hover:border-[#F26522] transition-all duration-200 shadow-lg"
-                                            >
-                                                <ChevronRight className="w-5 h-5" />
-                                            </button>
-                                        </>
-                                    )}
-                                </div>
+                                        <button
+                                            onClick={next}
+                                            aria-label="Next event"
+                                            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-[#F26522] hover:border-[#F26522] transition-all duration-200 shadow-lg"
+                                        >
+                                            <ChevronRight className="w-5 h-5" />
+                                        </button>
+                                    </>
+                                )}
                             </motion.div>
                         ) : null
                     )}
                 </AnimatePresence>
             </div>
 
-            {/* Mobile arrow buttons — outside/below the card */}
-            {total > 1 && (
-                <div className="flex sm:hidden items-center justify-center gap-4 mt-4">
-                    <button
-                        onClick={prev}
-                        aria-label="Previous event"
-                        className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1E3A8A]/10 border border-[#E2E8F0] text-[#1E3A8A] hover:bg-[#F26522] hover:border-[#F26522] hover:text-white transition-all duration-200"
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    {/* Dot indicators inline on mobile */}
-                    {events.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setCurrent(i)}
-                            aria-label={`Go to slide ${i + 1}`}
-                            className={`rounded-full transition-all duration-300 ${
-                                i === current
-                                    ? "w-8 h-2.5 bg-[#F26522]"
-                                    : "w-2.5 h-2.5 bg-[#E2E8F0] hover:bg-[#F26522]/50"
-                            }`}
-                        />
-                    ))}
-                    <button
-                        onClick={next}
-                        aria-label="Next event"
-                        className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1E3A8A]/10 border border-[#E2E8F0] text-[#1E3A8A] hover:bg-[#F26522] hover:border-[#F26522] hover:text-white transition-all duration-200"
-                    >
-                        <ChevronRight className="w-5 h-5" />
-                    </button>
-                </div>
-            )}
+            {/* Event info below the banner */}
+            <AnimatePresence mode="wait">
+                {events.map((event, idx) =>
+                    idx === current ? (
+                        <motion.div
+                            key={event.id + "-info"}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8 }}
+                            transition={{ duration: 0.4 }}
+                            className="mt-6 bg-[#F8FAFC] border border-[#E2E8F0] rounded-[24px] px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                        >
+                            <div className="flex flex-col gap-1.5">
+                                <span className="text-[10px] font-black tracking-widest uppercase text-[#F26522]">{event.category}</span>
+                                <h2 className="text-xl font-black text-[#1E3A8A] leading-tight">{event.title}</h2>
+                                <div className="flex flex-wrap items-center gap-4 text-[#64748B] font-semibold text-sm mt-1">
+                                    <div className="flex items-center gap-1.5">
+                                        <Calendar className="w-4 h-4 text-[#F26522]" />
+                                        <span>{event.day} {event.month}, {event.year}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <MapPin className="w-4 h-4 text-[#F26522]" />
+                                        <span>{event.location}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span className="flex-shrink-0 flex items-center gap-1.5 bg-[#F26522] text-white text-xs font-black tracking-widest uppercase px-5 py-2.5 rounded-full shadow-md self-start sm:self-center animate-pulse">
+                                <Star className="w-3.5 h-3.5" fill="white" /> Upcoming
+                            </span>
+                        </motion.div>
+                    ) : null
+                )}
+            </AnimatePresence>
 
-            {/* Desktop dot indicators */}
+            {/* Dot indicators */}
             {total > 1 && (
-                <div className="hidden sm:flex items-center justify-center gap-2 mt-6">
+                <div className="flex items-center justify-center gap-2 mt-5">
                     {events.map((_, i) => (
                         <button
                             key={i}

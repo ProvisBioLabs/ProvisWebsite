@@ -169,7 +169,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <h4 className="text-sm font-bold text-[#1E3A8A] mb-2">USA Office</h4>
-                            <p className="text-sm text-[#475569] mb-1">Provis Biolabs LLC</p>
+                            <p className="text-sm text-[#475569] mb-1">Provis Biolabs Inc.</p>
                             <p className="text-sm text-[#475569] mb-3">111 Roberts St, F #109, East Hartford, CT 06108</p>
                             <div className="flex items-center gap-4 text-sm font-medium text-[#475569]">
                                 <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> +1 (650) 996-4951</span>

@@ -85,7 +85,7 @@ export default function RootLayout({
   const usaSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Provis Biolabs LLC (USA Office)',
+    name: 'Provis Biolabs Inc. (USA Office)',
     image: 'https://provisbiolabs.com/logo.webp',
     url: 'https://provisbiolabs.com',
     telephone: '+16509964951',
