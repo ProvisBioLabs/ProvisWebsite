@@ -70,8 +70,7 @@ export default function PeptidesContent() {
                                 Custom Peptide Synthesis
                             </motion.p>
                             <motion.div {...fade(0.3)} className="space-y-4 text-[#475569] text-base leading-relaxed mb-10">
-                                <p>Our reliable peptide synthesis services cover everything from peptide modifications to high-throughput synthesis and peptide library screening.</p>
-                                <p>With GMP manufacturing facilities and a state-of-the-art R&amp;D laboratory, the highest quality custom peptide synthesis is provided, ensuring a purity level of <strong className="text-[#1E3A8A]">&gt;99%</strong>.</p>
+                                <p>We provide end-to-end custom peptide synthesis services for pharmaceutical, biotechnology and academic research teams worldwide. Using advanced Fmoc-based solid-phase peptide synthesis and rigorous quality control systems, we deliver peptides ranging from simple linear sequences to complex cyclic, bridged and PEGylated constructs with high purity and reliability.</p>
                             </motion.div>
                             <motion.div {...fade(0.4)} className="flex flex-wrap gap-3">
                                 <Link href="/contact" className="px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-[#F26522] hover:bg-[#d95a1e] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(242,101,34,0.3)]">
@@ -105,7 +104,7 @@ export default function PeptidesContent() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.p {...fade()} className="text-sm font-bold tracking-widest uppercase text-[#94a3b8] mb-4">Therapeutic Coverage</motion.p>
                     <div className="flex flex-wrap gap-3">
-                        therapeuticAreas.map((area, i) => (
+                        {therapeuticAreas.map((area, i) => (
                             <motion.span
                                 key={area}
                                 {...fade(i * 0.06)}
