@@ -1,15 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, CalendarDays, Clock, Share2, ArrowRight, FlaskConical, Linkedin } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock, Share2, ArrowRight, FlaskConical, Linkedin, Check } from "lucide-react";
 import { products } from "@/lib/data/products";
 
 export default function BlogPostContent({ blog }: { blog: any }) {
+    const [copied, setCopied] = useState(false);
     const relatedProductData = blog.relatedProducts
         ? products.filter((p) => blog.relatedProducts.includes(p.slug))
         : [];
+
+    const handleShare = async () => {
+        const shareData = {
+            title: blog.title,
+            text: blog.excerpt,
+            url: window.location.href,
+        };
+
+        try {
+            if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+                await navigator.share(shareData);
+            } else {
+                await navigator.clipboard.writeText(window.location.href);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            }
+        } catch (err) {
+            // Fallback to clipboard if share fails or is cancelled
+            if ((err as Error).name !== 'AbortError') {
+                await navigator.clipboard.writeText(window.location.href);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            }
+        }
+    };
 
     return (
         <article className="bg-[#FAFAFA] font-outfit min-h-screen pb-32">
@@ -52,9 +79,33 @@ export default function BlogPostContent({ blog }: { blog: any }) {
                             className="inline-flex items-center gap-2 text-[#F26522] font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all">
                             <ArrowLeft className="w-4 h-4" /> All Articles
                         </Link>
-                        <button onClick={() => { if (typeof navigator !== "undefined") navigator.clipboard.writeText(window.location.href); }}
-                            className="inline-flex items-center gap-2 text-[#94A3B8] hover:text-[#F26522] text-sm font-semibold transition-colors">
-                            <Share2 className="w-4 h-4" /> Share
+                        <button 
+                            onClick={handleShare}
+                            className="inline-flex items-center gap-2 text-[#94A3B8] hover:text-[#F26522] text-sm font-semibold transition-all relative group"
+                        >
+                            <AnimatePresence mode="wait">
+                                {copied ? (
+                                    <motion.span
+                                        key="copied"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        className="flex items-center gap-2 text-[#10B981]"
+                                    >
+                                        <Check className="w-4 h-4" /> Copied!
+                                    </motion.span>
+                                ) : (
+                                    <motion.span
+                                        key="share"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        className="flex items-center gap-2 group-hover:scale-105 transition-transform"
+                                    >
+                                        <Share2 className="w-4 h-4" /> Share
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
                         </button>
                     </div>
 

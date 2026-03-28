@@ -144,7 +144,7 @@ export default function NewsDisplay() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="mb-24 md:mb-32 text-center max-w-3xl mx-auto">
+                <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -175,7 +175,7 @@ export default function NewsDisplay() {
                         />
                     </div>
 
-                    <div className="space-y-16 sm:space-y-24">
+                    <div className="space-y-4 sm:space-y-6">
                         {timelineData.map((item, index) => (
                             <TimelineItem key={item.id} item={item} index={index} />
                         ))}
@@ -185,7 +185,7 @@ export default function NewsDisplay() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="mt-32 p-12 sm:p-20 bg-[#F8FAFC] rounded-[60px] border border-[#E2E8F0] text-center relative overflow-hidden"
+                    className="mt-16 p-12 sm:p-20 bg-[#F8FAFC] rounded-[60px] border border-[#E2E8F0] text-center relative overflow-hidden"
                 >
                     <Quote className="absolute top-10 left-10 w-20 h-20 text-[#1E3A8A]/5 rotate-180" />
                     <Quote className="absolute bottom-10 right-10 w-20 h-20 text-[#1E3A8A]/5 " />
@@ -228,7 +228,7 @@ const TimelineItem = ({ item, index }: { item: typeof timelineData[0], index: nu
             </div>
 
             {/* Content Card container */}
-            <div className={`w-full pl-24 pr-4 md:px-0 md:w-[45%] ${isLeft ? "md:pr-12 lg:pr-16" : "md:pl-12 lg:pl-16"} mt-0`}>
+            <div className={`w-full pl-16 pr-4 md:px-0 md:w-[45%] ${isLeft ? "md:pr-6 lg:pr-8" : "md:pl-6 lg:pl-8"} mt-0`}>
                 <motion.div
                     whileHover={{ y: -4 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}

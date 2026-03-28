@@ -33,7 +33,7 @@ export default function RecombinantContent() {
                         Recombinant Bio-Reagents
                     </motion.h1>
                     <motion.p {...fade(0.2)} className="text-base text-[#64748B] max-w-3xl leading-relaxed mb-6">
-                        We deliver high-quality, <strong className="text-[#1E3A8A]">100% Animal Origin-Free (AOF)</strong> recombinant products manufactured in our state-of-the-art ISO, cGMP and FSSC 22000 certified facility. Designed for safety, lot-to-lot consistency, traceability and superior efficacy.
+                        We manufacture high-purity recombinant proteins using <strong className="text-[#1E3A8A]">100% Animal Origin-Free (AOF)</strong> processes. Produced in our ISO-certified and cGMP-compliant facility, our bio-reagents support research, diagnostics and biomanufacturing applications with reliable performance, traceability and batch-to-batch consistency.
                     </motion.p>
                     <motion.div {...fade(0.3)} className="flex flex-wrap gap-3 mb-8">
                         <Link href="/contact" className="px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-[#F26522] hover:bg-[#d95a1e] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(242,101,34,0.3)]">

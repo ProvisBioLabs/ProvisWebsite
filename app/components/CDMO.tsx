@@ -92,7 +92,7 @@ export default function CDMO() {
                             className="relative h-[300px] w-full rounded-3xl overflow-hidden bg-[#FAFAFA]"
                         >
                             <Image
-                                src="/provis-biolabs-cdmo-manufacturing-facility.webp"
+                                src="/cdmoServices.png"
                                 alt="Provis Biolabs WHO-GMP Certified Biopharmaceutical Manufacturing Facility Interior"
                                 fill
                                 loading="lazy"

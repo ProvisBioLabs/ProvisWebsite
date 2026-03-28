@@ -23,18 +23,18 @@ const staggerContainer = {
 const testimonials = [
     {
         name: "Dr. Sarah Jenkins",
-        role: "Lead Research Scientist",
-        quote: "Provis isn't just a workplace; it's a launchpad for ideas. The autonomy we have to pursue innovative protocols in peptide synthesis is unparalleled. I feel like I'm genuinely shaping the future of therapeutics here.",
+        role: "R&D Scientist",
+        quote: "What I enjoy most at Provis is the ability to move ideas quickly from the lab to real development programs. You’re not just doing experiments but you see how your work contributes to actual products.",
     },
     {
         name: "David Chen",
-        role: "Process Development Engineer",
-        quote: "The culture here is intensely collaborative. When scaling from lab to 300L fermentation, you need a team that moves as one. At Provis, the synergy between R&D and manufacturing is seamlessly built into our DNA.",
+        role: "Sr. Scientist – Peptide Chemistry",
+        quote: "Peptide synthesis can be challenging, but the team environment here makes problem-solving collaborative. There’s always someone willing to share ideas and help improve a process",
     },
     {
         name: "Elena Rodriguez",
-        role: "Quality Assurance Manager",
-        quote: "I've worked in biopharma for 15 years and the commitment to uncompromised quality at Provis is the strongest I've seen. We don't just meet compliance standards; we define them. It's rewarding to stand behind our products.",
+        role: "QA Manager",
+        quote: "Quality here isn’t just a compliance requirement, it’s part of how every team works. It’s satisfying to know the systems we build support reliable products for global customers.",
     }
 ];
 
@@ -72,7 +72,7 @@ const benefits = [
     {
         icon: <Wallet className="w-6 h-6 text-[#1E3A8A]" />,
         title: "Financial Security",
-        desc: "Competitive compensation and robust retirement planning with company match."
+        desc: "Competitive compensation and performance-based incentives"
     },
     {
         icon: <Award className="w-6 h-6 text-[#1E3A8A]" />,
@@ -179,7 +179,7 @@ export default function CareersContent() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/80 via-[#1E3A8A]/20 to-transparent" />
                             <div className="absolute bottom-0 left-0 p-8 md:p-10 w-full">
                                 <h4 className="text-white text-2xl md:text-3xl font-bold mb-2">State-of-the-art Facilities</h4>
-                                <p className="text-blue-100 font-medium max-w-md">Work with cutting-edge equipment in our modern, purpose-built R&D and GMP manufacturing centers.</p>
+                                <p className="text-blue-100 font-medium max-w-md">Work with advanced R&D and GMP facilities.</p>
                             </div>
                         </motion.div>
 
@@ -203,7 +203,7 @@ export default function CareersContent() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/80 to-transparent" />
                                 <div className="absolute bottom-0 left-0 p-8 w-full">
                                     <h4 className="text-white text-xl font-bold mb-1">Uncompromising Quality</h4>
-                                    <p className="text-blue-100/90 text-sm font-medium">Define global standards.</p>
+                                    <p className="text-blue-100/90 text-sm font-medium">Quality and compliance at every step.</p>
                                 </div>
                             </motion.div>
 
@@ -229,7 +229,7 @@ export default function CareersContent() {
                                         <Users2 className="w-6 h-6 text-white" />
                                     </div>
                                     <h4 className="text-2xl font-bold mb-2">A Global Team</h4>
-                                    <p className="text-white/90 font-medium text-sm">Collaborate with brilliantly diverse minds from over 10 countries.</p>
+                                    <p className="text-white/90 font-medium text-sm">Collaborate with multidisciplinary scientific teams.</p>
                                 </div>
                             </motion.div>
                         </div>

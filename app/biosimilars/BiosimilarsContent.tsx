@@ -99,7 +99,7 @@ export default function BiosimilarsContent() {
                         <motion.div {...fade(0.1)} className="grid grid-cols-2 gap-4 relative">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] aspect-square bg-[#F26522]/5 rounded-full blur-3xl -z-10" />
                             {[
-                                { value: "20+", label: "Complex Biosimilars", sub: "Developed & Commercialized" },
+                                { value: "20+", label: "Complex Biosimilars", sub: "Developed & Commercialized by Our Team" },
                                 { value: "Global", label: "Regulatory Approvals", sub: "Multi-market compliance" },
                                 { value: "E. coli & CHO", label: "Expression Systems", sub: "Microbial & Mammalian" },
                                 { value: "End-to-End", label: "Services", sub: "Discovery to Launch" },
@@ -154,7 +154,7 @@ export default function BiosimilarsContent() {
                             },
                             {
                                 num: "05",
-                                title: "Non-GMP to cGMP Manufacturing",
+                                title: "Non-GMP and cGMP Manufacturing",
                                 desc: "Scalable production to support preclinical through clinical supply and IND filing.",
                             },
                         ].map((step, i) => (

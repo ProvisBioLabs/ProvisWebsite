@@ -8,7 +8,7 @@ import { Award, Briefcase, FileText, FlaskConical, Quote, ArrowRight, Linkedin }
 const achievements = [
     {
         icon: <Briefcase strokeWidth={1.5} className="w-6 h-6" />,
-        value: "23+",
+        value: "25+",
         label: "Years in Biopharma",
     },
     {
@@ -91,17 +91,14 @@ export default function Founder() {
                             <div className="mb-16 relative pl-6 sm:pl-10">
                                 <Quote className="w-20 h-20 text-[#FFF0E5] absolute -top-8 -left-4 sm:-left-6 -z-10 transform -scale-x-100" />
                                 <p className="text-2xl sm:text-[28px] font-outfit font-medium text-[#1E3A8A] leading-relaxed mb-6">
-                                    &ldquo;I founded Provis Biolabs in 2019 with a deep belief that India can develop and deliver world-class bioreagents to the global market.&rdquo;
-                                </p>
-                                <p className="text-lg sm:text-[19px] font-outfit font-light text-[#475569] leading-relaxed mb-6">
-                                    Over two decades in biopharma taught me that true innovation lies not just in creating products, but in making them accessible, reliable and sustainable.
+                                    &ldquo;I founded Provis Biolabs with a vision to address critical unmet needs in life sciences by developing high-quality bioreagents, enzymes, peptides, and biologics that support research, diagnostics and biomanufacturing worldwide.&rdquo;
                                 </p>
                                 <p className="text-lg sm:text-[19px] font-outfit font-light text-[#475569] leading-relaxed mb-8">
-                                    Today, with several commercialized products, global partnerships and a growing commercial presence in the USA, I am proud of how far we have come. Our vision is to be a trusted global leader in life sciences, advancing a healthier and more sustainable world.
+                                    Our focus has always been on combining scientific innovation with reliable, scalable manufacturing to deliver solutions that meet growing global demand. At Provis, we are committed to enabling scientific progress and expanding access to life-changing biologics.
                                 </p>
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-px bg-[#F26522]" />
-                                    <span className="font-outfit font-bold text-lg text-[#F26522]">— Dr. Bala Reddy</span>
+                                    <span className="font-outfit font-bold text-lg text-[#F26522]">— Dr. Bala Reddy PhD</span>
                                 </div>
                             </div>
                         </motion.div>
