@@ -22,17 +22,14 @@ const staggerContainer = {
 // Testimonials Data
 const testimonials = [
     {
-        name: "Dr. Sarah Jenkins",
         role: "R&D Scientist",
         quote: "What I enjoy most at Provis is the ability to move ideas quickly from the lab to real development programs. You’re not just doing experiments but you see how your work contributes to actual products.",
     },
     {
-        name: "David Chen",
         role: "Sr. Scientist – Peptide Chemistry",
         quote: "Peptide synthesis can be challenging, but the team environment here makes problem-solving collaborative. There’s always someone willing to share ideas and help improve a process",
     },
     {
-        name: "Elena Rodriguez",
         role: "QA Manager",
         quote: "Quality here isn’t just a compliance requirement, it’s part of how every team works. It’s satisfying to know the systems we build support reliable products for global customers.",
     }
@@ -306,7 +303,6 @@ export default function CareersContent() {
                                 </p>
 
                                 <div className="mt-auto">
-                                    <h4 className="font-bold text-[#1E3A8A] leading-tight">{test.name}</h4>
                                     <p className="text-sm font-semibold text-[#F26522] mt-1">{test.role}</p>
                                 </div>
                             </motion.div>
