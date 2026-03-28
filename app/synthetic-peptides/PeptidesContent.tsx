@@ -63,7 +63,6 @@ export default function PeptidesContent() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="max-w-3xl">
-                            <motion.p {...fade()} className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3">Products</motion.p>
                             <motion.h1 {...fade(0.1)} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A8A] leading-tight mb-4">
                                 Synthetic Peptides
                             </motion.h1>
@@ -106,7 +105,7 @@ export default function PeptidesContent() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.p {...fade()} className="text-sm font-bold tracking-widest uppercase text-[#94a3b8] mb-4">Therapeutic Coverage</motion.p>
                     <div className="flex flex-wrap gap-3">
-                        {therapeuticAreas.map((area, i) => (
+                        therapeuticAreas.map((area, i) => (
                             <motion.span
                                 key={area}
                                 {...fade(i * 0.06)}
@@ -123,7 +122,7 @@ export default function PeptidesContent() {
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div {...fade()} className="mb-12">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-[#1E3A8A]">Our manufacturing capabilities include</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold text-[#1E3A8A]">Our Peptide Synthesis Capabilities</h2>
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
