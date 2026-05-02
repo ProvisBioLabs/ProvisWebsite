@@ -86,7 +86,7 @@ export default function PeptidesContent() {
                    rounded-3xl bg-white shadow-xl overflow-hidden
                   transition-transform duration-300 hover:scale-105">
                                 <Image
-                                    src="/products/syntheticpeptides.png"
+                                    src="/products/syntheticpeptides.webp"
                                     alt="Synthetic Peptides"
                                     fill
                                     className="object-cover"
