@@ -19,6 +19,7 @@
 import Script from 'next/script';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
 export default function GoogleAnalytics() {
   if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return null;
@@ -48,6 +49,9 @@ export default function GoogleAnalytics() {
               // Uncomment the line below to enable enhanced conversions for Google Ads:
               // allow_enhanced_conversions: true,
             });
+
+            // Google Ads tracking
+            ${ADS_ID ? `gtag('config', '${ADS_ID}');` : ''}
           `,
         }}
       />
