@@ -39,7 +39,7 @@ export default function BiosimilarsContent() {
                                 End-to-End Expertise for Biosimilar Development
                             </motion.p>
                             <motion.p {...fade(0.3)} className="text-base text-[#64748B] leading-relaxed mb-10">
-                                Provis offers comprehensive biosimilar development services spanning the complete product lifecycle from early discovery through commercial manufacturing. Our capabilities in Microbial (E. coli) and Mammalian (CHO) expression systems enable us to support diverse therapeutic proteins across multiple complexity levels and therapeutic areas.
+                                Provis offers comprehensive biosimilar development services spanning the complete product lifecycle from development through commercial manufacturing. Our capabilities in Microbial (E. coli) and Mammalian (CHO) expression systems enable us to support diverse therapeutic proteins across multiple complexity levels and therapeutic areas.
                             </motion.p>
                             <motion.div {...fade(0.4)} className="flex flex-wrap gap-3">
                                 <Link href="/contact" className="px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-[#F26522] hover:bg-[#d95a1e] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(242,101,34,0.3)]">
@@ -117,7 +117,7 @@ export default function BiosimilarsContent() {
                         {[
                             {
                                 num: "01",
-                                title: "Late Discovery & Feasibility Studies",
+                                title: "Development & Feasibility Studies",
                                 desc: "Target validation, construct design and expression system selection.",
                             },
                             {
