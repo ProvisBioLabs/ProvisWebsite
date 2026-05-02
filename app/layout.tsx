@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "./components/CookieConsent";
+import { GTMScript, GTMNoScript } from "./components/GoogleTagManager";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -102,6 +104,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager — must be as high in <head> as possible */}
+        <GTMScript />
         {/* Preconnect to Unsplash CDN — used for product card images */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         {/* Preload hero poster image at high priority so it's ready before the
@@ -109,6 +113,10 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/hero-bg-s.webp" fetchPriority="high" />
       </head>
       <body suppressHydrationWarning className={`${fontBody.variable} ${outfit.variable} font-sans antialiased text-[#475569] bg-[#FFFFFF]`}>
+        {/* Google Tag Manager noscript fallback — must be first element in <body> */}
+        <GTMNoScript />
+        {/* Google Analytics 4 — standalone baseline (also fires via GTM if configured there) */}
+        <GoogleAnalytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(indiaSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(usaSchema) }} />

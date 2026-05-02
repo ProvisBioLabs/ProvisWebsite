@@ -71,7 +71,7 @@ export default function BiosimilarsContent() {
             {/* ── Proven Expertise ─────────────────── */}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className=" gap-16 items-center">
                         <motion.div {...fade()}>
                             <h2 className="text-3xl sm:text-4xl font-bold text-[#1E3A8A] mb-6 leading-tight">
                                 Proven Biosimilar Development Expertise
@@ -93,23 +93,6 @@ export default function BiosimilarsContent() {
                                 ))}
                             </ul>
 
-                        </motion.div>
-
-                        {/* Stats panel */}
-                        <motion.div {...fade(0.1)} className="grid grid-cols-2 gap-4 relative">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] aspect-square bg-[#F26522]/5 rounded-full blur-3xl -z-10" />
-                            {[
-                                { value: "20+", label: "Complex Biosimilars", sub: "Developed & Commercialized by Our Team" },
-                                { value: "Global", label: "Regulatory Approvals", sub: "Multi-market compliance" },
-                                { value: "E. coli & CHO", label: "Expression Systems", sub: "Microbial & Mammalian" },
-                                { value: "End-to-End", label: "Services", sub: "Discovery to Launch" },
-                            ].map((stat) => (
-                                <div key={stat.label} className="bg-white border border-[#E2E8F0] shadow-sm rounded-3xl p-6 lg:p-8 hover:border-[#F26522]/30 hover:shadow-lg transition-all duration-500">
-                                    <div className="text-3xl font-bold text-[#1E3A8A] mb-2 whitespace-pre-line leading-tight">{stat.value}</div>
-                                    <div className="text-sm font-bold text-[#F26522] mb-1">{stat.label}</div>
-                                    <div className="text-xs font-medium text-[#94a3b8]">{stat.sub}</div>
-                                </div>
-                            ))}
                         </motion.div>
                     </div>
                 </div>
