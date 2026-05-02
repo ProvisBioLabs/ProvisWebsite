@@ -25,11 +25,11 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // Try port 465 (SSL) first — GoDaddy standard
+  // Try GoDaddy Legacy and GoDaddy Microsoft 365 configs
   const configs = [
-    { host: "smtpout.secureserver.net", port: 465, secure: true,  label: "Port 465 SSL" },
-    { host: "smtpout.secureserver.net", port: 587, secure: false, label: "Port 587 TLS" },
-    { host: "smtp.secureserver.net",    port: 465, secure: true,  label: "Alt host 465 SSL" },
+    { host: "smtp.office365.com",       port: 587, secure: false, label: "MS 365 Port 587 TLS" },
+    { host: "smtpout.secureserver.net", port: 465, secure: true,  label: "Legacy Port 465 SSL" },
+    { host: "smtpout.secureserver.net", port: 587, secure: false, label: "Legacy Port 587 TLS" },
   ];
 
   const results: Record<string, string> = {};

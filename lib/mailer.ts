@@ -4,9 +4,10 @@ import type { ContactFormData } from "./sanitize";
 import { adminNotificationHtml, autoReplyHtml } from "./email-templates";
 
 const transporter = nodemailer.createTransport({
-  host: "smtpout.secureserver.net",
-  port: 465,
-  secure: true, // SSL
+  host: "smtp.office365.com",
+  port: 587,
+  secure: false, // true for 465, false for 587 (TLS)
+  requireTLS: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
