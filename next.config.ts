@@ -92,11 +92,36 @@ const nextConfig: NextConfig = {
   // ─── Redirects ──────────────────────────────────────────────────
   async redirects() {
     return [
+      // ── Old product URLs ──────────────────────────────────────
       {
         source: "/products/reagent",
         destination: "/products/recombinant-bio-reagents",
         permanent: true,
       },
+      // ── Old About sub-pages Google may have indexed ────────────
+      { source: "/about/founder",         destination: "/about", permanent: true },
+      { source: "/our-founder",           destination: "/about", permanent: true },
+      { source: "/founder",               destination: "/about", permanent: true },
+      { source: "/about/vision-mission",  destination: "/about", permanent: true },
+      { source: "/vision-mission",        destination: "/about", permanent: true },
+      { source: "/our-vision-and-mission",destination: "/about", permanent: true },
+      { source: "/about/practices",       destination: "/about", permanent: true },
+      { source: "/our-practices",         destination: "/about", permanent: true },
+      { source: "/practices",             destination: "/about", permanent: true },
+      // ── Old product pipeline URLs ──────────────────────────────
+      { source: "/product-pipeline",      destination: "/products", permanent: true },
+      { source: "/products/pipeline",     destination: "/products", permanent: true },
+      { source: "/pipeline",              destination: "/products", permanent: true },
+      // ── Other common old URL patterns ─────────────────────────
+      { source: "/home",                  destination: "/",        permanent: true },
+      { source: "/index",                 destination: "/",        permanent: true },
+      { source: "/index.html",            destination: "/",        permanent: true },
+      { source: "/about-us",              destination: "/about",   permanent: true },
+      { source: "/contact-us",            destination: "/contact", permanent: true },
+      { source: "/blog",                  destination: "/blogs",   permanent: true },
+      { source: "/blog/:slug",            destination: "/blogs/:slug", permanent: true },
+      { source: "/our-team",              destination: "/about",   permanent: true },
+      { source: "/team",                  destination: "/about",   permanent: true },
     ];
   },
 };
