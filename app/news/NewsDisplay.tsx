@@ -15,6 +15,16 @@ import {
 
 const timelineData = [
     {
+        id: "2026-iso13485",
+        year: "Apr 2026",
+        title: "ISO 13485 Certified",
+        description: "Provis Biolabs achieved ISO 13485 certification, the internationally recognised standard for quality management systems in the medical device and in vitro diagnostics industry. ",
+        icon: Award,
+        accent: "from-blue-600 to-indigo-700",
+        color: "#1E3A8A",
+        bgLight: "bg-blue-50"
+    },
+    {
         id: "2025-hq",
         year: "Oct 2025",
         title: "Corporate Headquarters Expansion",
