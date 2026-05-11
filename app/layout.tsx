@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import CookieConsent from "./components/CookieConsent";
 import { GTMScript, GTMNoScript } from "./components/GoogleTagManager";
@@ -106,6 +107,30 @@ export default function RootLayout({
       <head>
         {/* Google Tag Manager — must be as high in <head> as possible */}
         <GTMScript />
+        {/* LeadFeeder visitor identification */}
+        <Script
+          id="leadfeeder-tracker"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(ss,ex){
+window.ldfdr=window.ldfdr||function(){
+(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));
+};
+(function(d,s){
+fs=d.getElementsByTagName(s)[0];
+function ce(src){
+var cs=d.createElement(s);
+cs.src=src;
+cs.async=1;
+fs.parentNode.insertBefore(cs,fs);
+};
+ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
+})(document,'script');
+})('bElvO732OG18ZMqj');
+`,
+          }}
+        />
         {/* Preconnect to Unsplash CDN — used for product card images */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         {/* Preload hero poster image at high priority so it's ready before the
