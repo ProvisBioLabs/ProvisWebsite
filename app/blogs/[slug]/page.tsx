@@ -12,6 +12,37 @@ function normalizeSlug(s: string): string {
         .replace(/(^-|-$)/g, "");
 }
 
+// Helper function to convert human-readable dates (e.g. "March 2026") to ISO 8601 format
+function getIsoDate(dateStr: string): string {
+    const months: { [key: string]: string } = {
+        january: '01', jan: '01',
+        february: '02', feb: '02',
+        march: '03', mar: '03',
+        april: '04', apr: '04',
+        may: '05',
+        june: '06', jun: '06',
+        july: '07', jul: '07',
+        august: '08', aug: '08',
+        september: '09', sep: '09',
+        october: '10', oct: '10',
+        november: '11', nov: '11',
+        december: '12', dec: '12'
+    };
+    
+    try {
+        const parts = dateStr.trim().toLowerCase().split(/\s+/);
+        if (parts.length === 2) {
+            const monthName = parts[0];
+            const year = parts[1];
+            const monthDigit = months[monthName] || '01';
+            return `${year}-${monthDigit}-01T00:00:00Z`;
+        }
+    } catch (e) {
+        // Fallback
+    }
+    return new Date().toISOString();
+}
+
 // Find a blog post by matching slug or fallback methods (normalized slug, title, related products)
 function findBlogBySlug(slug: string) {
     if (!slug) return null;
@@ -87,7 +118,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: blog.excerpt,
             images: [blog.image.startsWith('http') ? blog.image : `https://www.provisbiolabs.com${blog.image}`],
             type: 'article',
-            publishedTime: blog.date,
+            publishedTime: getIsoDate(blog.date),
             authors: ['Provis Biolabs'],
         },
         twitter: {
@@ -116,13 +147,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         permanentRedirect(`/blogs/${blog.slug}`);
     }
 
+    const isoDate = getIsoDate(blog.date);
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: blog.title,
         description: blog.excerpt,
         image: `https://www.provisbiolabs.com${blog.image}`,
-        datePublished: blog.date,
+        datePublished: isoDate,
+        dateModified: isoDate,
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://www.provisbiolabs.com/blogs/${blog.slug}`
+        },
         author: {
             '@type': 'Organization',
             name: 'Provis Biolabs',
