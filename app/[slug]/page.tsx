@@ -1,9 +1,39 @@
 import { products, getProductBySlug } from "../../lib/data/products";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductView from "./ProductView";
 import type { Metadata } from "next";
+import blogsData from "../blogs/blogsData.json";
+
+// Helper function to normalize strings to kebab-case
+function normalizeSlug(s: string): string {
+    return s
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+}
+
+// Find a blog post by matching slug or fallback methods
+function findBlogBySlug(slug: string) {
+    if (!slug) return null;
+    const normalizedInput = normalizeSlug(slug);
+
+    // 1. Exact or normalized slug match
+    let blog = blogsData.find((b) => b.slug === slug || normalizeSlug(b.slug) === normalizedInput);
+    if (blog) return blog;
+
+    // 2. Normalized title match
+    blog = blogsData.find((b) => normalizeSlug(b.title) === normalizedInput);
+    if (blog) return blog;
+
+    // 3. Substring match
+    blog = blogsData.find((b) => 
+        normalizeSlug(b.slug).includes(normalizedInput) || 
+        normalizeSlug(b.title).includes(normalizedInput)
+    );
+    return blog || null;
+}
 
 export async function generateStaticParams() {
     return products.map((p) => ({ slug: p.slug }));
@@ -12,8 +42,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const product = getProductBySlug(slug);
-    
-    if (!product) return {};
+    if (!product) {
+        const blog = findBlogBySlug(slug);
+        if (blog) {
+            permanentRedirect(`/blogs/${blog.slug}`);
+        }
+        return {};
+    }
     
     const absUrl = `https://provisbiolabs.com/${product.slug}`;
     
@@ -49,9 +84,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = await params;
-    const product = getProductBySlug(resolvedParams.slug);
+    const { slug } = resolvedParams;
+    const product = getProductBySlug(slug);
 
     if (!product) {
+        const blog = findBlogBySlug(slug);
+        if (blog) {
+            permanentRedirect(`/blogs/${blog.slug}`);
+        }
         notFound();
     }
 

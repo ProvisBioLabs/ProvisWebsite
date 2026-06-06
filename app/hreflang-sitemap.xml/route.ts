@@ -31,6 +31,7 @@ const STATIC_PATHS = [
     '/partners',
     '/careers',
     '/contact',
+    '/site-map',
 ];
 
 /** Generate xhtml:link alternates for a given absolute URL (all locales point to same URL) */

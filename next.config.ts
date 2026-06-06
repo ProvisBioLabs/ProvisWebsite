@@ -120,6 +120,12 @@ const nextConfig: NextConfig = {
       { source: "/contact-us",            destination: "/contact", permanent: true },
       { source: "/blog",                  destination: "/blogs",   permanent: true },
       { source: "/blog/:slug",            destination: "/blogs/:slug", permanent: true },
+      // ── WordPress old redirects ──────────────────────────────
+      { source: "/category/:path*",       destination: "/blogs",   permanent: true },
+      { source: "/tag/:path*",            destination: "/blogs",   permanent: true },
+      // Matches WordPress date-based post URLs (e.g., /2023/04/15/some-post-slug)
+      { source: "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug", destination: "/blogs/:slug", permanent: true },
+      { source: "/:year(\\d{4})/:month(\\d{2})/:slug",               destination: "/blogs/:slug", permanent: true },
       { source: "/our-team",              destination: "/about",   permanent: true },
       { source: "/team",                  destination: "/about",   permanent: true },
     ];

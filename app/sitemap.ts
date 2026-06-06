@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { path: '/partners', freq: 'weekly', priority: 0.6 },
         { path: '/careers', freq: 'weekly', priority: 0.6 },
         { path: '/contact', freq: 'weekly', priority: 0.7 },
+        { path: '/site-map', freq: 'monthly', priority: 0.5 },
         { path: '/terms', freq: 'monthly', priority: 0.3 },
         { path: '/privacy-policy', freq: 'monthly', priority: 0.3 },
         { path: '/cookie-policy', freq: 'monthly', priority: 0.3 },
