@@ -57,10 +57,8 @@ function findBlogBySlug(slug: string) {
         blog = blogsData.find((b) => b.slug === decoded);
         if (blog) return blog;
     } catch (e) {
-        // Ignore URI malformed errors
     }
 
-    // 3. Match by normalized slug (kebab-case)
     const normalizedInput = normalizeSlug(slug);
     blog = blogsData.find((b) => normalizeSlug(b.slug) === normalizedInput);
     if (blog) return blog;
