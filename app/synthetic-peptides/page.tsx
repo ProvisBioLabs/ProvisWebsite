@@ -7,28 +7,28 @@ export const metadata: Metadata = {
     title: "Custom Synthetic Peptide Manufacturing & GMP Services | Provis Biolabs",
     description: "Premium custom synthetic peptide services at Provis Biolabs. We provide GMP manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
     alternates: {
-        canonical: "https://provisbiolabs.com/synthetic-peptides",
+        canonical: "https://www.provisbiolabs.com/synthetic-peptides",
         languages: {
-            'en-US': 'https://provisbiolabs.com/synthetic-peptides',
-            'en-GB': 'https://provisbiolabs.com/synthetic-peptides',
-            'en-SG': 'https://provisbiolabs.com/synthetic-peptides',
-            'en-KR': 'https://provisbiolabs.com/synthetic-peptides',
-            'en-NL': 'https://provisbiolabs.com/synthetic-peptides',
-            'en-FR': 'https://provisbiolabs.com/synthetic-peptides',
-            'en-CA': 'https://provisbiolabs.com/synthetic-peptides',
-            'x-default': 'https://provisbiolabs.com/synthetic-peptides',
+            'en-US': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'en-GB': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'en-SG': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'en-KR': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'en-NL': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'en-FR': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'en-CA': 'https://www.provisbiolabs.com/synthetic-peptides',
+            'x-default': 'https://www.provisbiolabs.com/synthetic-peptides',
         }
     },
     openGraph: {
         title: "Custom Synthetic Peptide Manufacturing & GMP Services | Provis Biolabs",
         description: "Premium synthetic peptides — >99% purity, GMP-grade, gram-to-kilogram scale for clinical and commercial applications.",
-        images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
     twitter: {
         card: "summary_large_image",
         title: "Provis Biolabs Synthetic Peptides",
         description: "GMP synthetic peptides: >99% purity, custom manufacturing at scale.",
-        images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
 };
 
@@ -36,9 +36,9 @@ const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://provisbiolabs.com' },
-        { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://provisbiolabs.com/products' },
-        { '@type': 'ListItem', position: 3, name: 'Synthetic Peptides', item: 'https://provisbiolabs.com/synthetic-peptides' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.provisbiolabs.com' },
+        { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.provisbiolabs.com/products' },
+        { '@type': 'ListItem', position: 3, name: 'Synthetic Peptides', item: 'https://www.provisbiolabs.com/synthetic-peptides' }
     ]
 };
 

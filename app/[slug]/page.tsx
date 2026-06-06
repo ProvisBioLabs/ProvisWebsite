@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return {};
     }
     
-    const absUrl = `https://provisbiolabs.com/${product.slug}`;
+    const absUrl = `https://www.provisbiolabs.com/${product.slug}`;
     
     return {
         title: product.seoTitle ?? `${product.name} | Provis Biolabs`,
@@ -71,13 +71,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         openGraph: {
             title: product.seoTitle ?? product.name,
             description: product.seoDescription ?? product.description,
-            images: [product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`],
+            images: [product.image.startsWith('http') ? product.image : `https://www.provisbiolabs.com${product.image}`],
         },
         twitter: {
             card: 'summary_large_image',
             title: product.seoTitle ?? product.name,
             description: product.seoDescription ?? product.shortDescription,
-            images: [product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`],
+            images: [product.image.startsWith('http') ? product.image : `https://www.provisbiolabs.com${product.image}`],
         },
     };
 }
@@ -100,7 +100,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
         '@type': 'Product',
         name: product.name,
         description: product.longDescription || product.description,
-        image: product.image.startsWith('http') ? product.image : `https://provisbiolabs.com${product.image}`,
+        image: product.image.startsWith('http') ? product.image : `https://www.provisbiolabs.com${product.image}`,
         brand: {
             '@type': 'Brand',
             name: 'Provis Biolabs'
@@ -121,11 +121,11 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
             priceCurrency: 'USD',
-            url: 'https://provisbiolabs.com/contact',
+            url: 'https://www.provisbiolabs.com/contact',
             seller: {
                 '@type': 'Organization',
                 name: 'Provis Biolabs',
-                url: 'https://provisbiolabs.com'
+                url: 'https://www.provisbiolabs.com'
             }
         },
         additionalProperty: product.keyFeatures?.map((feature) => ({
@@ -143,25 +143,25 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://provisbiolabs.com'
+                item: 'https://www.provisbiolabs.com'
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Products',
-                item: 'https://provisbiolabs.com/products'
+                item: 'https://www.provisbiolabs.com/products'
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: product.category === 'api' ? 'Bio-APIs' : product.category === 'reagent' ? 'Recombinant Bio-Reagents' : 'CDMO',
-                item: `https://provisbiolabs.com/products/${product.category === 'api' ? 'bio-apis' : product.category === 'reagent' ? 'recombinant-bio-reagents' : 'cdmo'}`
+                item: `https://www.provisbiolabs.com/products/${product.category === 'api' ? 'bio-apis' : product.category === 'reagent' ? 'recombinant-bio-reagents' : 'cdmo'}`
             },
             {
                 '@type': 'ListItem',
                 position: 4,
                 name: product.name,
-                item: `https://provisbiolabs.com/${product.slug}`
+                item: `https://www.provisbiolabs.com/${product.slug}`
             }
         ]
     };

@@ -21,7 +21,7 @@ const fontBody = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://provisbiolabs.com'),
+  metadataBase: new URL('https://www.provisbiolabs.com'),
   title: "Provis Biolabs — Pioneering Bioscience for a Healthier World",
   description:
     "Provis Biolabs delivers premium bioreagents, Bio-APIs and CDMO services to global pharmaceutical and biopharmaceutical innovators.",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: {
-      'en-US': 'https://provisbiolabs.com',
-      'en-GB': 'https://provisbiolabs.com',
-      'en-SG': 'https://provisbiolabs.com',
-      'en-KR': 'https://provisbiolabs.com',
-      'en-NL': 'https://provisbiolabs.com',
-      'en-FR': 'https://provisbiolabs.com',
-      'en-CA': 'https://provisbiolabs.com',
-      'x-default': 'https://provisbiolabs.com',
+      'en-US': 'https://www.provisbiolabs.com',
+      'en-GB': 'https://www.provisbiolabs.com',
+      'en-SG': 'https://www.provisbiolabs.com',
+      'en-KR': 'https://www.provisbiolabs.com',
+      'en-NL': 'https://www.provisbiolabs.com',
+      'en-FR': 'https://www.provisbiolabs.com',
+      'en-CA': 'https://www.provisbiolabs.com',
+      'x-default': 'https://www.provisbiolabs.com',
     }
   }
 };
@@ -51,8 +51,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Provis Biolabs',
-    url: 'https://provisbiolabs.com',
-    logo: 'https://provisbiolabs.com/logo.webp',
+    url: 'https://www.provisbiolabs.com',
+    logo: 'https://www.provisbiolabs.com/logo.webp',
     description: 'Provis Biolabs delivers premium bioreagents, Bio-APIs and CDMO services to global pharmaceutical and biopharmaceutical innovators.',
     sameAs: [
       'https://www.linkedin.com/company/provis-biolabs-private-limited/'
@@ -69,8 +69,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Provis Biolabs Private Limited (India HQ)',
-    image: 'https://provisbiolabs.com/logo.webp',
-    url: 'https://provisbiolabs.com',
+    image: 'https://www.provisbiolabs.com/logo.webp',
+    url: 'https://www.provisbiolabs.com',
     telephone: '+919059284828',
     sameAs: [
       'https://www.linkedin.com/company/provis-biolabs-private-limited/'
@@ -89,8 +89,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Provis Biolabs Inc. (USA Office)',
-    image: 'https://provisbiolabs.com/logo.webp',
-    url: 'https://provisbiolabs.com',
+    image: 'https://www.provisbiolabs.com/logo.webp',
+    url: 'https://www.provisbiolabs.com',
     telephone: '+16509964951',
     address: {
       '@type': 'PostalAddress',

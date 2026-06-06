@@ -3,7 +3,7 @@ import blogsData from './blogs/blogsData.json';
 import { products } from '../lib/data/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://provisbiolabs.com';
+    const baseUrl = 'https://www.provisbiolabs.com';
 
     // Static Routes
     const staticRoutes: { path: string; freq: 'daily' | 'weekly' | 'monthly'; priority: number }[] = [

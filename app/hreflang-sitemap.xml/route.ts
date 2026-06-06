@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import blogsData from '../blogs/blogsData.json';
 import { products } from '../../lib/data/products';
 
-const BASE = 'https://provisbiolabs.com';
+const BASE = 'https://www.provisbiolabs.com';
 
 const LOCALES = [
     { lang: 'en-US' },

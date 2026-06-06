@@ -1,5 +1,5 @@
 // ─── SMTP Test Endpoint — DELETE AFTER DEBUGGING ─────────────────────────────
-// Hit: POST https://provisbiolabs.com/api/test-email
+// Hit: POST https://www.provisbiolabs.com/api/test-email
 // Body: { "secret": "provis-debug-2026" }
 // Returns: the exact SMTP error so you know what to fix
 import { NextRequest, NextResponse } from "next/server";

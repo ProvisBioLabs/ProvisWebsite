@@ -7,8 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
     },
     sitemap: [
-      'https://provisbiolabs.com/sitemap.xml',
-      'https://provisbiolabs.com/hreflang-sitemap.xml',
+      'https://www.provisbiolabs.com/sitemap.xml',
+      'https://www.provisbiolabs.com/hreflang-sitemap.xml',
     ],
   };
 }

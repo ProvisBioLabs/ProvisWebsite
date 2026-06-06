@@ -11,8 +11,8 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const LOGO_URL = "https://provisbiolabs.com/logo.webp";
-const WEBSITE_URL = "https://provisbiolabs.com";
+const LOGO_URL = "https://www.provisbiolabs.com/logo.webp";
+const WEBSITE_URL = "https://www.provisbiolabs.com";
 
 // ─── Shared layout wrapper ──────────────────────────────────────────
 function emailWrapper(content: string): string {

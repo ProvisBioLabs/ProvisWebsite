@@ -7,28 +7,28 @@ export const metadata: Metadata = {
     title: "Biosimilar Development & Analytical Characterization | Provis Biolabs",
     description: "End-to-End expertise in Biosimilar development. Provis Biolabs provides comprehensive services spanning the complete product lifecycle — from discovery and molecular characterization to commercial manufacturing.",
     alternates: {
-        canonical: "https://provisbiolabs.com/biosimilars",
+        canonical: "https://www.provisbiolabs.com/biosimilars",
         languages: {
-            'en-US': 'https://provisbiolabs.com/biosimilars',
-            'en-GB': 'https://provisbiolabs.com/biosimilars',
-            'en-SG': 'https://provisbiolabs.com/biosimilars',
-            'en-KR': 'https://provisbiolabs.com/biosimilars',
-            'en-NL': 'https://provisbiolabs.com/biosimilars',
-            'en-FR': 'https://provisbiolabs.com/biosimilars',
-            'en-CA': 'https://provisbiolabs.com/biosimilars',
-            'x-default': 'https://provisbiolabs.com/biosimilars',
+            'en-US': 'https://www.provisbiolabs.com/biosimilars',
+            'en-GB': 'https://www.provisbiolabs.com/biosimilars',
+            'en-SG': 'https://www.provisbiolabs.com/biosimilars',
+            'en-KR': 'https://www.provisbiolabs.com/biosimilars',
+            'en-NL': 'https://www.provisbiolabs.com/biosimilars',
+            'en-FR': 'https://www.provisbiolabs.com/biosimilars',
+            'en-CA': 'https://www.provisbiolabs.com/biosimilars',
+            'x-default': 'https://www.provisbiolabs.com/biosimilars',
         }
     },
     openGraph: {
         title: "Biosimilar Development & Analytical Characterization | Provis Biolabs",
         description: "End-to-end biosimilar lifecycle expertise: discovery, characterization, to commercial GMP manufacturing.",
-        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
     },
     twitter: {
         card: "summary_large_image",
         title: "Provis Biolabs Biosimilar Development",
         description: "End-to-end biosimilar development: discovery to commercial manufacturing.",
-        images: ["https://provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-team-collaboration.webp"],
     },
 };
 
@@ -75,9 +75,9 @@ const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://provisbiolabs.com' },
-        { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://provisbiolabs.com/products' },
-        { '@type': 'ListItem', position: 3, name: 'Biosimilars', item: 'https://provisbiolabs.com/biosimilars' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.provisbiolabs.com' },
+        { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.provisbiolabs.com/products' },
+        { '@type': 'ListItem', position: 3, name: 'Biosimilars', item: 'https://www.provisbiolabs.com/biosimilars' }
     ]
 };
 

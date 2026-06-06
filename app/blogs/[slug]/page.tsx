@@ -70,22 +70,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${blog.title} | Provis Biolabs Insights`,
         description: blog.excerpt,
         alternates: {
-            canonical: `https://provisbiolabs.com/blogs/${blog.slug}`,
+            canonical: `https://www.provisbiolabs.com/blogs/${blog.slug}`,
             languages: {
-                'en-US': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'en-GB': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'en-SG': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'en-KR': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'en-NL': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'en-FR': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'en-CA': `https://provisbiolabs.com/blogs/${blog.slug}`,
-                'x-default': `https://provisbiolabs.com/blogs/${blog.slug}`,
+                'en-US': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-GB': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-SG': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-KR': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-NL': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-FR': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-CA': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'x-default': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
             }
         },
         openGraph: {
             title: blog.title,
             description: blog.excerpt,
-            images: [blog.image.startsWith('http') ? blog.image : `https://provisbiolabs.com${blog.image}`],
+            images: [blog.image.startsWith('http') ? blog.image : `https://www.provisbiolabs.com${blog.image}`],
             type: 'article',
             publishedTime: blog.date,
             authors: ['Provis Biolabs'],
@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             card: 'summary_large_image',
             title: blog.title,
             description: blog.excerpt,
-            images: [blog.image.startsWith('http') ? blog.image : `https://provisbiolabs.com${blog.image}`],
+            images: [blog.image.startsWith('http') ? blog.image : `https://www.provisbiolabs.com${blog.image}`],
         }
     };
 }
@@ -121,19 +121,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         '@type': 'BlogPosting',
         headline: blog.title,
         description: blog.excerpt,
-        image: `https://provisbiolabs.com${blog.image}`,
+        image: `https://www.provisbiolabs.com${blog.image}`,
         datePublished: blog.date,
         author: {
             '@type': 'Organization',
             name: 'Provis Biolabs',
-            url: 'https://provisbiolabs.com'
+            url: 'https://www.provisbiolabs.com'
         },
         publisher: {
             '@type': 'Organization',
             name: 'Provis Biolabs',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://provisbiolabs.com/logo.webp'
+                url: 'https://www.provisbiolabs.com/logo.webp'
             }
         }
     };
@@ -146,19 +146,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://provisbiolabs.com'
+                item: 'https://www.provisbiolabs.com'
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'News & Insights',
-                item: 'https://provisbiolabs.com/blogs'
+                item: 'https://www.provisbiolabs.com/blogs'
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: blog.title,
-                item: `https://provisbiolabs.com/blogs/${blog.slug}`
+                item: `https://www.provisbiolabs.com/blogs/${blog.slug}`
             }
         ]
     };

@@ -7,28 +7,28 @@ export const metadata: Metadata = {
     title: "Advanced Biologics Research & Development Capabilities | Provis Biolabs",
     description: "Explore the cutting-edge science at Provis Biolabs. From specialized expression systems to advanced bioprocess development, learn how our technology drives the future of biologics.",
     alternates: {
-        canonical: "https://provisbiolabs.com/science",
+        canonical: "https://www.provisbiolabs.com/science",
         languages: {
-            'en-US': 'https://provisbiolabs.com/science',
-            'en-GB': 'https://provisbiolabs.com/science',
-            'en-SG': 'https://provisbiolabs.com/science',
-            'en-KR': 'https://provisbiolabs.com/science',
-            'en-NL': 'https://provisbiolabs.com/science',
-            'en-FR': 'https://provisbiolabs.com/science',
-            'en-CA': 'https://provisbiolabs.com/science',
-            'x-default': 'https://provisbiolabs.com/science',
+            'en-US': 'https://www.provisbiolabs.com/science',
+            'en-GB': 'https://www.provisbiolabs.com/science',
+            'en-SG': 'https://www.provisbiolabs.com/science',
+            'en-KR': 'https://www.provisbiolabs.com/science',
+            'en-NL': 'https://www.provisbiolabs.com/science',
+            'en-FR': 'https://www.provisbiolabs.com/science',
+            'en-CA': 'https://www.provisbiolabs.com/science',
+            'x-default': 'https://www.provisbiolabs.com/science',
         }
     },
     openGraph: {
         title: "Advanced Biologics R&D Capabilities | Provis Biolabs",
         description: "Cutting-edge expression systems, bioprocess development and analytical capabilities for biologics.",
-        images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
     twitter: {
         card: "summary_large_image",
         title: "Provis Biolabs Science & Technology",
         description: "Advanced biologics R&D: E. coli, Pichia, CHO, HEK293 expression systems.",
-        images: ["https://provisbiolabs.com/provis-biolabs-research-lab.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
 };
 
@@ -67,8 +67,8 @@ const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://provisbiolabs.com' },
-        { '@type': 'ListItem', position: 2, name: 'Science & Technology', item: 'https://provisbiolabs.com/science' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.provisbiolabs.com' },
+        { '@type': 'ListItem', position: 2, name: 'Science & Technology', item: 'https://www.provisbiolabs.com/science' }
     ]
 };
 

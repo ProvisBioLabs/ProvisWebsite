@@ -7,28 +7,28 @@ export const metadata: Metadata = {
     title: "Pharmaceutical CDMO Services & Biomanufacturing | Provis Biolabs",
     description: "Expert Pharmaceutical CDMO Services. Provis Biolabs offers comprehensive contract development and manufacturing for biologics, from fermentation and expression to full-scale commercial GMP production.",
     alternates: {
-        canonical: "https://provisbiolabs.com/cdmo",
+        canonical: "https://www.provisbiolabs.com/cdmo",
         languages: {
-            'en-US': 'https://provisbiolabs.com/cdmo',
-            'en-GB': 'https://provisbiolabs.com/cdmo',
-            'en-SG': 'https://provisbiolabs.com/cdmo',
-            'en-KR': 'https://provisbiolabs.com/cdmo',
-            'en-NL': 'https://provisbiolabs.com/cdmo',
-            'en-FR': 'https://provisbiolabs.com/cdmo',
-            'en-CA': 'https://provisbiolabs.com/cdmo',
-            'x-default': 'https://provisbiolabs.com/cdmo',
+            'en-US': 'https://www.provisbiolabs.com/cdmo',
+            'en-GB': 'https://www.provisbiolabs.com/cdmo',
+            'en-SG': 'https://www.provisbiolabs.com/cdmo',
+            'en-KR': 'https://www.provisbiolabs.com/cdmo',
+            'en-NL': 'https://www.provisbiolabs.com/cdmo',
+            'en-FR': 'https://www.provisbiolabs.com/cdmo',
+            'en-CA': 'https://www.provisbiolabs.com/cdmo',
+            'x-default': 'https://www.provisbiolabs.com/cdmo',
         }
     },
     openGraph: {
         title: "Pharmaceutical CDMO Services & Biomanufacturing | Provis Biolabs",
         description: "End-to-end biologics CDMO: fermentation, bioprocessing, GMP manufacturing, regulatory support.",
-        images: ["https://provisbiolabs.com/provis-biolabs-cdmo-manufacturing-facility.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-cdmo-manufacturing-facility.webp"],
     },
     twitter: {
         card: "summary_large_image",
         title: "Provis Biolabs CDMO Services",
         description: "Expert biologics CDMO: development to commercial GMP manufacturing.",
-        images: ["https://provisbiolabs.com/provis-biolabs-cdmo-manufacturing-facility.webp"],
+        images: ["https://www.provisbiolabs.com/provis-biolabs-cdmo-manufacturing-facility.webp"],
     },
 };
 
@@ -75,8 +75,8 @@ const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://provisbiolabs.com' },
-        { '@type': 'ListItem', position: 2, name: 'CDMO Services', item: 'https://provisbiolabs.com/cdmo' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.provisbiolabs.com' },
+        { '@type': 'ListItem', position: 2, name: 'CDMO Services', item: 'https://www.provisbiolabs.com/cdmo' }
     ]
 };
 
