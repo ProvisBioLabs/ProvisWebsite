@@ -116,6 +116,7 @@ export default function SitemapPage() {
                             <li><Link href="/privacy-policy" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Privacy Policy</Link></li>
                             <li><Link href="/cookie-policy" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Cookie Policy</Link></li>
                             <li><Link href="/terms" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Terms of Service</Link></li>
+                            <li><Link href="/site-map" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Sitemap</Link></li>
                         </ul>
                     </div>
                 </div>
