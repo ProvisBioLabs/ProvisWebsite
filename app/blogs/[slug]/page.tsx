@@ -2,7 +2,53 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import blogsData from "../blogsData.json";
 import BlogPostContent from "@/app/blogs/[slug]/BlogPostContent"; // Re-validated absolute import
+import { permanentRedirect } from "next/navigation";
 
+// Helper function to normalize strings to kebab-case
+function normalizeSlug(s: string): string {
+    return s
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+}
+
+// Find a blog post by matching slug or fallback methods (normalized slug, title, related products)
+function findBlogBySlug(slug: string) {
+    if (!slug) return null;
+
+    // 1. Exact match on slug
+    let blog = blogsData.find((b) => b.slug === slug);
+    if (blog) return blog;
+
+    // 2. Decode URL just in case, and try exact match
+    try {
+        const decoded = decodeURIComponent(slug);
+        blog = blogsData.find((b) => b.slug === decoded);
+        if (blog) return blog;
+    } catch (e) {
+        // Ignore URI malformed errors
+    }
+
+    // 3. Match by normalized slug (kebab-case)
+    const normalizedInput = normalizeSlug(slug);
+    blog = blogsData.find((b) => normalizeSlug(b.slug) === normalizedInput);
+    if (blog) return blog;
+
+    // 4. Match by normalized title (kebab-case)
+    blog = blogsData.find((b) => normalizeSlug(b.title) === normalizedInput);
+    if (blog) return blog;
+
+    // 5. Match by related product slug
+    blog = blogsData.find((b) => b.relatedProducts?.some(p => normalizeSlug(p) === normalizedInput));
+    if (blog) return blog;
+
+    // 6. Match by substring / prefix of slug or title
+    blog = blogsData.find((b) => 
+        normalizeSlug(b.slug).includes(normalizedInput) || 
+        normalizeSlug(b.title).includes(normalizedInput)
+    );
+    return blog || null;
+}
 
 export function generateStaticParams() {
     return blogsData.map((blog) => ({
@@ -12,7 +58,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const blog = blogsData.find((b) => b.slug === slug);
+    const blog = findBlogBySlug(slug);
 
     if (!blog) {
         return {
@@ -55,7 +101,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const blog = blogsData.find((b) => b.slug === slug);
+    const blog = findBlogBySlug(slug);
 
     if (!blog) {
         return (
@@ -63,6 +109,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <h1 className="text-3xl font-bold text-[#1E3A8A]">Blog post not found.</h1>
             </div>
         );
+    }
+
+    // If requested URL slug doesn't match the canonical clean slug, redirect permanently
+    if (slug !== blog.slug) {
+        permanentRedirect(`/blogs/${blog.slug}`);
     }
 
     const jsonLd = {
