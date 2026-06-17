@@ -334,7 +334,7 @@ export const products: Product[] = [
             storage: '-20°C',
             formulation: 'Carrier-free'
         },
-        cleavageImages: ['/products/cleavage/streptavidinv2.png']
+        cleavageImages: ['/products/cleavage/streptavidin.png']
     },
     {
         id: '13',
