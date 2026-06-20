@@ -117,17 +117,6 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
             '@type': 'Audience',
             audienceType: 'B2B Pharmaceuticals and Research'
         },
-        offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-            priceCurrency: 'USD',
-            url: 'https://www.provisbiolabs.com/contact',
-            seller: {
-                '@type': 'Organization',
-                name: 'Provis Biolabs',
-                url: 'https://www.provisbiolabs.com'
-            }
-        },
         additionalProperty: product.keyFeatures?.map((feature) => ({
             '@type': 'PropertyValue',
             propertyID: 'feature',
