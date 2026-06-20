@@ -43,6 +43,13 @@ export default function MissionQuote() {
                             className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
                         />
                         <img
+                            src="/certifications/is012485.png"
+                            alt="ISO 13485 Certified"
+                            loading="lazy"
+                            width="64" height="64"
+                            className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
+                        />
+                        <img
                             src="/certifications/halal.webp"
                             alt="Halal Certified"
                             loading="lazy"

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import blogsData from '../blogs/blogsData.json';
 import { products } from '../../lib/data/products';
+import { products as usProducts } from '../../lib/data/usProducts';
 
 const BASE = 'https://www.provisbiolabs.com';
 
@@ -51,10 +52,12 @@ export async function GET() {
     const allUrls: string[] = [
         // Static pages
         ...STATIC_PATHS.map((p) => `${BASE}${p}`),
-        // Product pages
+        // Global product pages
         ...products.map((p: { slug: string }) => `${BASE}/${p.slug}`),
         // Blog pages
         ...blogsData.map((b: { slug: string }) => `${BASE}/blogs/${b.slug}`),
+        // US product pages
+        ...usProducts.map((p: { slug: string }) => `${BASE}/us/${p.slug}`),
     ];
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>

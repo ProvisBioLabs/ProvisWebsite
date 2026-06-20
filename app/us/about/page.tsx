@@ -1,0 +1,67 @@
+import USNavbar from "../components/Navbar";
+import USAbout from "../components/USAbout";
+import CTABanner from "../components/CTABanner";
+import Footer from "../components/Footer";
+
+export const metadata = {
+  title: "About Provis Biolabs USA — Leading Biotechnology & Bioprocessing Experts",
+  description:
+    "Learn about Provis Biolabs USA — our journey as a global leader in bioscience, our mission to innovate for a healthier world and the core PROVIS values that drive our excellence.",
+  alternates: {
+    canonical: "https://www.provisbiolabs.com/us/about",
+    languages: {
+      'en-US': 'https://www.provisbiolabs.com/us/about',
+      'en-GB': 'https://www.provisbiolabs.com/us/about',
+      'en-SG': 'https://www.provisbiolabs.com/us/about',
+      'en-KR': 'https://www.provisbiolabs.com/us/about',
+      'en-NL': 'https://www.provisbiolabs.com/us/about',
+      'en-FR': 'https://www.provisbiolabs.com/us/about',
+      'en-CA': 'https://www.provisbiolabs.com/us/about',
+      'x-default': 'https://www.provisbiolabs.com/us/about',
+    }
+  },
+  openGraph: {
+    title: "About Provis Biolabs USA — Leading Biotechnology & Bioprocessing Experts",
+    description: "Learn about our journey as a global leader in bioscience, our mission and the PROVIS values that drive our excellence.",
+    images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Provis Biolabs USA",
+    description: "Global leader in bioscience: bioreagents, Bio-APIs, biosimilars and CDMO.",
+    images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
+  },
+};
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Dr. Bala Reddy',
+  jobTitle: 'Founder & Managing Director',
+  worksFor: { '@type': 'Organization', name: 'Provis Biolabs', url: 'https://www.provisbiolabs.com', sameAs: 'https://www.linkedin.com/company/provis-biolabs-private-limited/' },
+  sameAs: ['https://www.linkedin.com/in/bala-reddy-phd-4b8949b/'],
+  knowsAbout: ['Biosimilars', 'Recombinant Proteins', 'Biopharmaceuticals', 'CDMO']
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.provisbiolabs.com/us' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.provisbiolabs.com/us/about' }
+  ]
+};
+
+export default function AboutPage() {
+  return (
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <USNavbar />
+      <USAbout />
+      <CTABanner />
+      <Footer />
+    </main>
+  );
+}
+

@@ -76,7 +76,7 @@ export default function About() {
                             </div>
                             <div className="space-y-5 text-[17px] text-[#5C4033] leading-[1.75]">
                               <p>
-                                 Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we've commercialized a diverse portfolio of products with a robust and expanding pipeline. Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
+                                 Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we've commercialized a diverse portfolio of products with a robust and expanding pipeline. Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, ISO 13485, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
                               </p>
                               <p>
                                 Leveraging our state-of-the-art fermentation facility, we provide scalable production solutions to partners worldwide. With a growing network of distribution partners spanning the United States, Europe and Asia, we are rapidly expanding access to our high-quality, <strong className="text-[#F26522] font-semibold">animal origin-free (AOF)</strong> bioreagents across key global markets ensuring enhanced safety, ethical sourcing, environmental responsibility and streamlined regulatory compliance for our customers worldwide.
@@ -89,6 +89,7 @@ export default function About() {
                                     { name: "WHO-GMP", img: "/certifications/who-gmp.webp" },
                                     { name: "GMP Certified", img: "/certifications/gmp.webp" },
                                     { name: "ISO Certified", img: "/certifications/iso.webp" },
+                                    { name: "ISO 13485", img: "/certifications/is012485.png" },
                                     { name: "Halal", img: "/certifications/halal.webp" },
                                     { name: "Kosher", img: "/certifications/kosher.webp" },
                                 ].map((cert) => (
@@ -125,7 +126,7 @@ export default function About() {
 
                         {/* Right — parallax image */}
                         <motion.div
-                            initial={{ opacity: 0, x: 40 }}
+                            initial={false}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}

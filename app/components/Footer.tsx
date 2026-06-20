@@ -5,6 +5,7 @@ import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 const companyLinks = [
     { label: "About Us", href: "/about" },
+    { label: "Sustainability", href: "/sustainability" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
 ];
@@ -78,6 +79,11 @@ export default function Footer() {
                             <img
                                 src="/certifications/iso.webp"
                                 alt="ISO Certified"
+                                className="h-10 w-auto object-contain transition-all duration-300"
+                            />
+                            <img
+                                src="/certifications/is012485.png"
+                                alt="ISO 13485 Certified"
                                 className="h-10 w-auto object-contain transition-all duration-300"
                             />
                             <img

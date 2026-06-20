@@ -21,22 +21,23 @@ export default function AboutStrip() {
                     >
 
 
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-outfit font-black tracking-tight leading-[1.08] text-[#1E3A8A] mb-8">
-                            About <span className="text-[#F26522]">us</span>
+                        
+                        <h2 className="text-4xl sm:text-3xl lg:text-4xl font-outfit font-black tracking-tight leading-[1.08] text-[#1E3A8A] mb-8 drop-shadow-sm">
+                            About <span className="text-[#F26522]">Us</span>
                         </h2>
                           
-                        <div className="text-[17px] text-[#5C4033] leading-[1.75]">
+                        <div className="text-lg sm:text-xl lg:text-[22px] text-[#475569] leading-[1.8] font-medium ">
                                 <p>
-                                 Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we've commercialized a diverse portfolio of products with a robust and expanding pipeline. Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
-                              </p>
+                                 Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we&apos;ve commercialized a diverse portfolio of products with a robust and expanding pipeline.
+                              </p>    
                               <br />
                               <p>
-                                Leveraging our state-of-the-art fermentation facility, we provide scalable production solutions to partners worldwide. With a growing network of distribution partners spanning the United States, Europe and Asia, we are rapidly expanding access to our high-quality, <strong className="text-[#F26522] font-semibold">animal origin-free (AOF)</strong> bioreagents across key global markets ensuring enhanced safety, ethical sourcing, environmental responsibility and streamlined regulatory compliance for our customers worldwide.
+                                 Our end-to-end capabilities cover R&D to GMP manufacturing, supported by <strong className="text-[#F26522] font-semibold">WHO-GMP, GLP, ISO 9001:2015, ISO 13485, Halal and Kosher</strong> certifications, ensuring the highest quality standards throughout our operations.
                               </p>
                         </div>
                     </motion.div>
 
-                    {/* Right — parallax image */}
+                    {/* Right — parallax image */}      
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}

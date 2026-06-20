@@ -103,6 +103,7 @@ const certifications = [
     { name: "WHO-GMP Certified", file: "who-gmp.webp" },
     { name: "GMP Certified Practice", file: "gmp.webp" },
     { name: "ISO 9001:2015", file: "iso.webp" },
+    { name: "ISO 13485", file: "is012485.png" },
     { name: "Halal Certified", file: "halal.webp" },
     { name: "Kosher Certified", file: "kosher.webp" },
 ];
@@ -311,7 +312,7 @@ export default function SciencePageContent() {
                         </motion.div>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
                         {certifications.map((cert, i) => (
                             <motion.div key={cert.name}
                                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}

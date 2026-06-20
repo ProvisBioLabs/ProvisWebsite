@@ -39,7 +39,7 @@ export default function ProductView({ product }: { product: Product }) {
                 <div className="flex flex-col lg:flex-row gap-12 xl:gap-16 items-start relative">
                     {/* LEFT COLUMN: Sticky Image Side (5 columns) */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={false}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                         className="w-full lg:w-[42%] xl:w-[45%] lg:sticky lg:top-32 z-10 flex flex-col gap-5"

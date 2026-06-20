@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import blogsData from './blogs/blogsData.json';
 import { products } from '../lib/data/products';
+import { products as usProducts } from '../lib/data/usProducts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.provisbiolabs.com';
@@ -51,5 +52,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...staticSitemap, ...productSitemap, ...blogSitemap];
+    // US Site Static Routes
+    const usStaticRoutes = [
+        '/us', '/us/about', '/us/products', '/us/products/bio-apis',
+        '/us/products/recombinant-bio-reagents', '/us/cdmo', '/us/contact',
+        '/us/blogs', '/us/events', '/us/partners', '/us/careers',
+    ].map(path => ({
+        url: `${baseUrl}${path}`,
+        lastModified: new Date('2025-01-01'),
+        changeFrequency: 'weekly' as const,
+        priority: 0.85,
+    }));
+
+    // US Product Pages (high priority — rich content)
+    const usProductSitemap = usProducts.map((product) => ({
+        url: `${baseUrl}/us/${product.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.95,
+    }));
+
+    return [...staticSitemap, ...productSitemap, ...blogSitemap, ...usStaticRoutes, ...usProductSitemap];
 }

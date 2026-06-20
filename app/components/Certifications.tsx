@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 const certs = [
     { name: "WHO-GMP", dot: "#F26522" },
     { name: "ISO 9001:2015", dot: "#0047CC" },
-    { name: "ISO 14001", dot: "#10B981" },
-    { name: "GLP", dot: "#F26522" },
-    { name: "Halal", dot: "#0047CC" },
-    { name: "Kosher", dot: "#10B981" },
-    { name: "ICH Q7", dot: "#F26522" },
-    { name: "TSE/BSE Free", dot: "#0047CC" },
-    { name: "HACCP", dot: "#10B981" },
-    { name: "Drug Master File", dot: "#F26522" },
+    { name: "ISO 13485", dot: "#10B981" },
+    { name: "ISO 14001", dot: "#F26522" },
+    { name: "GLP", dot: "#0047CC" },
+    { name: "Halal", dot: "#10B981" },
+    { name: "Kosher", dot: "#F26522" },
+    { name: "ICH Q7", dot: "#0047CC" },
+    { name: "TSE/BSE Free", dot: "#10B981" },
+    { name: "HACCP", dot: "#F26522" },
+    { name: "Drug Master File", dot: "#0047CC" },
 ];
 
 export default function Certifications() {

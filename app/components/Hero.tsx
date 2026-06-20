@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +8,8 @@ const slides = [
     {
         id: 1,
         type: "video",
-        src: "/Provis-Biolabs-Hero-Background.mp4",
+        src: "/provis-biolabs-hero-background.mp4",
+        poster: "/hero-bg.webp",
         title: (
             <>
                 Empowered <br />
@@ -25,11 +26,11 @@ const slides = [
         src: "/hero/slide-2.jpg",
         title: (
             <>
-                Precision <br />
-                <span className="text-[#F26522]">Manufacturing</span><br />
+                Innovating <br />
+                the <span className="text-[#F26522]">Future</span><br />
             </>
         ),
-        subtitle: "State-of-the-art manufacturing backed by ISO 9001 & WHO-GMP certification — built for the demands of modern biopharma ",
+        subtitle: "State-of-the-art facilities delivering high-quality CDMO services globally",
         cta1: { text: "Our Facilities", link: "/cdmo" },
         cta2: { text: "Partner With Us", link: "/contact" }
     },
@@ -39,96 +40,62 @@ const slides = [
         src: "/hero/slide-3.jpg",
         title: (
             <>
-                CDMO Expertise<br />
-                <span className="text-[#F26522]">Under One Roof</span><br />
+                Global Scale.<br />
+                <span className="text-[#F26522]">Local Impact</span><br />
             </>
         ),
-        subtitle: "Integrated biosimilar CDMO services  development, scale-up and manufacturing, all under one roof ",
-        cta1: { text: "Bio Similars", link: "/biosimilars" },
-        cta2: { text: "CDMO Services", link: "/cdmo" }
-    },
-    {
-        id: 4,
-        type: "image",
-        src: "/hero/slide-4.png",
-        title: (
-            <>
-                Your Peptide <br />
-                <span className="text-[#F26522]">Partner</span><br />
-            </>
-        ),
-        subtitle: "Tailored peptide synthesis, dedicated CRO services and high-quality APIs  all from a single trusted partner ",
-        cta1: { text: "Custom Synthesis", link: "/cdmo" },
-        cta2: { text: "CRO Services", link: "/cdmo" }
+        subtitle: "Trusted by leading pharmaceutical innovators worldwide",
+        cta1: { text: "Global Reach", link: "/partners" },
+        cta2: { text: "View Products", link: "/products" }
     }
 ];
 
 export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const slideChanged = useRef(false);
-
-
-
-    // Auto-advance slider — mark slideChanged before every slide change.
+  
     useEffect(() => {
         const timer = setInterval(() => {
-            slideChanged.current = true;
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 6000);
+        }, 6000); 
         return () => clearInterval(timer);
-    }, []);
-
-    const handleSlideChange = useCallback((index: number) => {
-        slideChanged.current = true;
-        setCurrentSlide(index);
     }, []);
 
     return (
         <section id="hero" className="relative min-h-screen flex text-left items-center overflow-hidden bg-white">
-
-            <AnimatePresence mode="popLayout">
+            
+            <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div
                     key={currentSlide}
-                    // First paint → initial={false}: framer-motion skips applying
-                    // opacity:0 as an inline style → background is visible immediately.
-                    // Slide changes → initial={{ opacity: 0 }}: normal crossfade.
-                    initial={slideChanged.current ? { opacity: 0 } : false}
+                    initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
                     className="absolute inset-0 z-0 bg-[#F8FAFC]"
                 >
                     {slides[currentSlide].type === "video" ? (
-                        <div
-                            className="absolute inset-0 w-full h-full"
-                            dangerouslySetInnerHTML={{
-                                __html: `
-                                <video
-                                    autoplay
-                                    loop
-                                    muted
-                                    playsinline
-                                    preload="auto"
-                                    class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
-                                >
-                                    <source src="${slides[currentSlide].src}" type="video/mp4" />
-                                </video>
-                                `
-                            }}
-                        />
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            poster={slides[currentSlide].poster}
+                            preload="metadata"
+                            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-125"
+                        >
+                            <source src={slides[currentSlide].src} type="video/mp4" />
+                        </video>
                     ) : (
                         <Image
                             src={slides[currentSlide].src}
                             alt="Provis Biolabs Biopharma Solutions and Research"
                             fill
                             priority
-                            sizes="100vw"
                             className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply filter contrast-125"
                         />
                     )}
 
-                    {/* White gradient overlays */}
+                    {/* Ultra-clean white gradient overlay to fade the media into the background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/69 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-80" />
                 </motion.div>
@@ -136,14 +103,10 @@ export default function Hero() {
 
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
                 <div className="max-w-3xl pointer-events-auto">
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence mode="wait" initial={false}>
                         <motion.div
                             key={`content-${currentSlide}`}
-                            // First paint → initial={false}: H1 is rendered at full
-                            // opacity in SSR HTML with NO inline opacity:0 style.
-                            // Browser can record LCP as soon as fonts are ready.
-                            // Slide changes → fade+slide in from below normally.
-                            initial={slideChanged.current ? { opacity: 0, y: 20 } : false}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -151,7 +114,7 @@ export default function Hero() {
                             <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-outfit font-black tracking-tight leading-[1.1] text-[#1E3A8A] mb-8 drop-shadow-sm">
                                 {slides[currentSlide].title}
                             </h1>
-                            <p className="text-base sm:text-xl lg:text-2xl text-[#475569] font-normal leading-relaxed mb-10 sm:mb-12 max-w-2xl drop-shadow-sm">
+                            <p className="text-base sm:text-xl lg:text-2xl text-[#475569] font-normal leading-relaxed mb-10 sm:mb-12 max-w-2xl drop-shadow-sm min-h-[100px] sm:min-h-[110px] lg:min-h-[120px]">
                                 {slides[currentSlide].subtitle}
                             </p>
                             <div className="flex flex-wrap items-center gap-6">
@@ -180,11 +143,11 @@ export default function Hero() {
                     const isVideo = slides[currentSlide].type === "video";
                     const activeColor = "bg-[#F26522]";
                     const inactiveColor = isVideo ? "bg-[#1E3A8A]/30 hover:bg-[#1E3A8A]/50" : "bg-white/60 hover:bg-white shadow-[0_2px_4px_rgba(0,0,0,0.3)]";
-
+                    
                     return (
                         <button
                             key={index}
-                            onClick={() => handleSlideChange(index)}
+                            onClick={() => setCurrentSlide(index)}
                             className="p-2 cursor-pointer group flex items-center justify-center"
                             aria-label={`Go to slide ${index + 1}`}
                         >

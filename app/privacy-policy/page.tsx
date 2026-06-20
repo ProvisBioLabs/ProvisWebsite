@@ -24,7 +24,6 @@ export default function PrivacyPolicyPage() {
                     </p>
 
                     <div className="bg-white rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-sm prose prose-slate max-w-none">
-
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mt-0 mb-4">1. Introduction</h2>
                         <p className="text-[#475569] leading-relaxed mb-6">
                             Provis Biolabs Private Limited (&quot;Provis Biolabs&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose and safeguard your information when you visit our website at <strong>www.provisbiolabs.com</strong> or contact us regarding our biosimilar development and Contract Development and Manufacturing Organisation (CDMO) services.
