@@ -139,7 +139,7 @@ export default function USProductsCatalog() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-[#475569] max-w-2xl leading-relaxed mb-10"
                     >
-                        Animal origin-free. WHO-GMP manufactured. Trusted by Across Globe
+                        AOF, GMP & ISO 13485 Certified Manufacturing.Trusted by Global Companies
                     </motion.p>
 
                     {/* Search */}

@@ -52,7 +52,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    // US Site Static Routes
+    // US Site Static Routes (Hidden until launch)
+    /*
     const usStaticRoutes = [
         '/us', '/us/about', '/us/products', '/us/products/bio-apis',
         '/us/products/recombinant-bio-reagents', '/us/cdmo', '/us/contact',
@@ -71,6 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'weekly' as const,
         priority: 0.95,
     }));
+    */
 
-    return [...staticSitemap, ...productSitemap, ...blogSitemap, ...usStaticRoutes, ...usProductSitemap];
+    return [...staticSitemap, ...productSitemap, ...blogSitemap];
 }
