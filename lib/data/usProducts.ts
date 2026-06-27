@@ -86,7 +86,7 @@ export const products: Product[] = [
             'Available in scalable SKUs (100KU to 5MU) for process development through commercial manufacturing'
         ],
         specifications: [
-            { parameter: 'PURITY', details: 'RUO & GMP grade, defined by SDS-PAGE and activity assays' },
+            { parameter: 'PURITY', details: '≥99% by SDS-PAGE' },
             { parameter: 'ENZYME SOURCE', details: 'Recombinant Serratia marcescens endonuclease expressed in E. coli' },
             { parameter: 'FORM', details: 'Frozen Liquid' },
             { parameter: 'RECOMMENDED STORAGE CONDITIONS', details: '−15°C to −25°C' },
@@ -206,7 +206,7 @@ export const products: Product[] = [
         quickSpecs: {
             activity: 'Flash Reaction',
             storage: '2°C to 8°C',
-            formulation: 'Complete reaction in ~10 mins'
+            formulation: 'Liquid'
         },
         workflow: ['Protein Prep', 'Flash Enzyme Addition', 'Rapid Incubation (10m)', 'Direct Analytics Injection'],
         cleavageImages: ['/products/cleavage/pngase-f-flashv2.png'],
@@ -264,7 +264,7 @@ export const products: Product[] = [
         seoTitle: 'Recombinant Trypsin GMP Grade CAS 9002-07-7 | AOF | Provis Biolabs',
         seoDescription: 'GMP-grade recombinant Trypsin (CAS 9002-07-7), animal-origin-free, for bioprocessing and cell culture. Consistent activity, zero contaminating proteases. Request quote.',
         quickSpecs: {
-            activity: 'High Specific Activity',
+            purity: '≥98% by SDS-PAGE',
             casNumber: '9002-07-7',
             storage: '-15°C to -25°C',
             formulation: 'Lyophilized Powder'
@@ -325,7 +325,7 @@ export const products: Product[] = [
         seoTitle: 'Recombinant Trypsin MS Grade CAS 9002-07-7 | AOF | Provis Biolabs',
         seoDescription: 'MS-grade recombinant Trypsin (CAS 9002-07-7), animal-origin-free, optimized for mass spectrometry and peptide mapping. Request quote.',
         quickSpecs: {
-            activity: 'High Specific Activity',
+            purity: '≥98% by SDS-PAGE',
             casNumber: '9002-07-7',
             storage: '-15°C to -25°C',
             formulation: 'Lyophilized Powder'
@@ -385,7 +385,7 @@ export const products: Product[] = [
         seoTitle: 'Recombinant Trypsin-EDTA Solution GMP Grade | Provis Biolabs',
         seoDescription: 'GMP-grade recombinant Trypsin-EDTA solution, animal-origin-free, for bioprocessing and cell culture dissociation. Request quote.',
         quickSpecs: {
-            activity: 'High Specific Activity',
+            purity: '≥98% by SDS-PAGE',
             casNumber: '9002-07-7',
             storage: '-15°C to -25°C',
             formulation: 'Sterile Liquid Solution'
@@ -408,8 +408,8 @@ export const products: Product[] = [
             { parameter: 'Form', details: 'Sterile Liquid Solution' },
             { parameter: 'Storage Condition', details: '−15°C to −25°C' },
             { parameter: 'Optimal pH', details: '7.0–7.6' },
-            { parameter: 'Trypsin Concentration', details: 'Refer to CoA for lot-specific concentration' },
-            { parameter: 'EDTA Concentration', details: 'Refer to CoA for lot-specific concentration' },
+            { parameter: 'Trypsin Concentration', details: '0.05%' },
+            { parameter: 'EDTA Concentration', details: '0.02%' },
             { parameter: 'Sterility', details: 'Sterile filtered; refer to CoA' },
             { parameter: 'Documentation', details: 'CoA, Certificate of Origin and GMP compliance documentation available' }
         ],
@@ -439,7 +439,7 @@ export const products: Product[] = [
         seoTitle: 'Carboxypeptidase B CAS 9025-24-5 | Recombinant GMP Grade | Provis Biolabs',
         seoDescription: 'Recombinant Carboxypeptidase B, GMP Grade (CAS 9025-24-5) for C-terminal cleavage in biologic manufacturing. Request quote.',
         quickSpecs: {
-            purity: 'High Specificity',
+            purity: '>95%',
             casNumber: '9025-24-5',
             storage: '-15°C to -25°C',
             formulation: 'Frozen Liquid'
@@ -463,7 +463,7 @@ export const products: Product[] = [
             { parameter: 'Storage Condition', details: '−15°C to −25°C' },
             { parameter: 'Optimal pH', details: '7.5–9.0' },
             { parameter: 'Cofactor', details: 'Zn²⁺ (metalloenzyme; avoid metal chelators such as EDTA)' },
-            { parameter: 'Purity', details: 'Defined by SDS-PAGE and activity assay; CoA provided per lot' },
+            { parameter: 'Purity', details: '>95% by SDS-PAGE; CoA provided per lot' },
             { parameter: 'Documentation', details: 'CoA, Certificate of Origin, GMP compliance documentation available' }
         ],
         skuList: [
@@ -496,7 +496,7 @@ export const products: Product[] = [
         seoTitle: 'Recombinant Carboxypeptidase B Sequencing Grade CAS 9025-24-5 | Provis Biolabs',
         seoDescription: 'Sequencing Grade rCPB (CAS 9025-24-5) for C-terminal peptide cleavage in mass spectrometry workflows. Request quote.',
         quickSpecs: {
-            purity: 'Sequencing Grade',
+            purity: '≥99% by SDS-PAGE',
             casNumber: '9025-24-5',
             storage: '-15°C to -25°C',
             formulation: 'Frozen Liquid'
@@ -555,7 +555,7 @@ export const products: Product[] = [
         seoTitle: 'Streptavidin CAS 9013-20-1 | High-Affinity Biotin-Binding | Provis Biolabs',
         seoDescription: 'Ultra-pure Streptavidin (CAS 9013-20-1) with exceptional biotin affinity for diagnostics, immunoassays and affinity purification. Low non-specific binding. Request quote.',
         quickSpecs: {
-            purity: 'Lyophilized Powder',
+            purity: '>98%',
             casNumber: '9013-20-1',
             storage: '-20°C',
             formulation: 'Carrier-free'
@@ -583,7 +583,7 @@ export const products: Product[] = [
             purity: 'High Specificity',
             casNumber: '9014-74-8',
             storage: '-20°C',
-            formulation: 'Glycerol-free possible'
+            formulation: 'Liquid'
         },
         cleavageImages: ['/products/cleavage/enterokinasev2.png']
     },
@@ -607,40 +607,14 @@ export const products: Product[] = [
         seoTitle: 'Kex2 Protease CAS 77257-14-8 | Recombinant AOF | Fusion Protein Maturation | Provis Biolabs',
         seoDescription: 'Recombinant animal-origin-free Kex2 Protease (CAS 77257-14-8). Highly specific dibasic site cleavage for biotherapeutic fusion protein maturation. Request a quote.',
         quickSpecs: {
-            purity: 'High Specificity',
+            purity: '≥90% by SDS-PAGE',
             casNumber: '77257-14-8',
             storage: '-20°C',
-            formulation: 'Stability Buffer'
+            formulation: 'Liquid'
         },
         cleavageImages: ['/products/cleavage/kex2-proteasev2.png']
     },
-    {
-        id: '7',
 
-        slug: 'recombinant-albumin',
-        name: 'Recombinant Human Albumin',
-        category: 'reagent',
-        grade: 'Bioprocessing Grade',
-        tagline: 'Animal-Origin Free',
-        shortDescription: 'Animal origin-free recombinant albumin excipient',
-        description: 'Recombinant human albumin for cell culture, vaccine formulation and biologics stabilization workflows',
-        longDescription: 'Recombinant Human Albumin is an animal-origin-free (AOF) protein that eliminates the risks of adventitious agents while mimicking the structural and functional attributes of native human serum albumin. With exceptional lot-to-lot consistency and superior purity profiles, it stabilizes labile therapeutics, enhances cell culture media viability and serves securely in advanced vaccine formulations.',
-        image: '/products/recombinant-albumin.webp',
-        aof: true,
-        casNumber: '70024-90-7',
-        keyFeatures: ['Animal-Origin Free | BSE/TSE Risk Eliminated', 'High Purity >99% by SDS-PAGE', 'Validated for Vaccine & Biopharmaceutical Stabilization', 'Consistent Physicochemical Profile Across All Lots'],
-        applications: ['Cell Culture', 'Vaccine Formulation', 'Protein Stabilization', 'Cryopreservation'],
-        href: '/recombinant-albumin',
-        seoTitle: 'Recombinant Human Albumin CAS 70024-90-7 | Animal-Origin-Free | Provis Biolabs',
-        seoDescription: 'Animal-origin-free Recombinant Human Albumin (CAS 70024-90-7). Bioprocessing-grade, >99% purity, excellent lot-to-lot consistency. Ideal BSA replacement. Request quote.',
-        quickSpecs: {
-            purity: '≥99%',
-            casNumber: '70024-90-7',
-            storage: '2-8°C',
-            formulation: 'Liquid'
-        },
-        cleavageImages: ['/products/cleavage/recombinant-albuminv2.png']
-    },
     {
         id: '1',
 

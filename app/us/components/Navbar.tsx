@@ -22,7 +22,6 @@ export const navItems: NavItem[] = [
                 gridCols: 2,
                 items: [
                     { name: 'Provinase™', href: '/us/provinase' },
-                    { name: 'Recombinant Human Albumin', href: '/us/recombinant-albumin' },
                     { name: 'Trypsin ', href: '/us/trypsin' },
                     { name: 'Carboxypeptidase B', href: '/us/carboxypeptidase-b-gmp' },
                     { name: 'PNGase F', href: '/us/pngase-f' },

@@ -329,7 +329,7 @@ export const products: Product[] = [
         seoTitle: 'Streptavidin CAS 9013-20-1 | High-Affinity Biotin-Binding | Provis Biolabs',
         seoDescription: 'Ultra-pure Streptavidin (CAS 9013-20-1) with exceptional biotin affinity for diagnostics, immunoassays and affinity purification. Low non-specific binding. Request quote.',
         quickSpecs: {
-            purity: 'Lyophilized Powder',
+            purity: '>98%',
             casNumber: '9013-20-1',
             storage: '-20°C',
             formulation: 'Carrier-free'
@@ -367,7 +367,7 @@ export const products: Product[] = [
         quickSpecs: {
             activity: 'Flash Reaction',
             storage: '-20°C',
-            formulation: 'Complete reaction in ~10 mins'
+            formulation: 'Liquid'
         },
         workflow: ['Protein Prep', 'Flash Enzyme Addition', 'Rapid Incubation (10m)', 'Direct Analytics Injection'],
         cleavageImages: ['/products/cleavage/pngase-f-flashv2.png']
@@ -393,7 +393,7 @@ export const products: Product[] = [
             purity: 'High Specificity',
             casNumber: '9014-74-8',
             storage: '-20°C',
-            formulation: 'Glycerol-free possible'
+            formulation: 'Liquid'
         },
         cleavageImages: ['/products/cleavage/enterokinasev2.png']
     },
@@ -416,10 +416,10 @@ export const products: Product[] = [
         seoTitle: 'Kex2 Protease CAS 77257-14-8 | Recombinant AOF | Fusion Protein Maturation | Provis Biolabs',
         seoDescription: 'Recombinant animal-origin-free Kex2 Protease (CAS 77257-14-8). Highly specific dibasic site cleavage for biotherapeutic fusion protein maturation. Request a quote.',
         quickSpecs: {
-            purity: 'High Specificity',
+            purity: '≥90% by SDS-PAGE',
             casNumber: '77257-14-8',
             storage: '-20°C',
-            formulation: 'Stability Buffer'
+            formulation: 'Liquid'
         },
         cleavageImages: ['/products/cleavage/kex2-proteasev2.png']
     }
