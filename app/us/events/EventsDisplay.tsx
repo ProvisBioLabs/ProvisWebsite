@@ -56,30 +56,45 @@ const eventItems: EventItem[] = [
     //      status: "upcoming",
     //      highlight: true,
     // },
-           //  ──────────── PAST ────────────
+    //  ──────────── PAST ────────────
     {
-    id: "bio-international-convention-2026",
-    day: "22–25",
-    month: "JUN",
-    year: "2026",
-    category: "BIOTECHNOLOGY CONVENTION",
-    title: "BIO International Convention 2026 — San Diego",
-    description: "Provis Biolabs will be participating in BIO International Convention 2026, the world's premier biotechnology event. Visit our team to explore high-quality solutions for research, discovery and development, including recombinant proteins, peptides & custom synthesis, enzymes and specialty reagents. Connect with our experts to discuss partnership opportunities and innovative solutions for biotech and life science applications.",
-    icon: Globe,
-    location: "San Diego Convention Center, California, USA",
-    booth: "3351-S9",
-    type: "Convention",
-    image: "/events/bioconventionv2.png",
-    status: "upcoming",
+        id: "bioprocess-international-2026",
+        day: "22–25",
+        month: "SEP",
+        year: "2026",
+        category: "BIOPROCESSING CONFERENCE",
+        title: "BioProcess International 2026 — Boston",
+        description: "Provis Biolabs will be participating in BioProcess International 2026, one of the leading global events for bioprocessing and biomanufacturing professionals. Visit our team at Booth 1500 to explore our comprehensive portfolio, including recombinant proteins, peptides, enzymes, custom synthesis services, and specialty reagents. Connect with our experts to discuss innovative solutions and partnership opportunities for advancing life science research and biopharmaceutical development.",
+        icon: Globe,
+        location: "Hynes Convention Center, Massachusetts, USA",
+        booth: "1500",
+        type: "Conference",
+        image: "/events/BioProcessInternational2026.png",
+        status: "upcoming"
     },
     {
-    id: "cphi-japan-2026",
-    day: "21–23",
-    month: "APR",
-    year: "2026",
-    category: "PHARMA EXHIBITION",
-    title: "CPHI Japan 2026 — Tokyo",
-    description: "Provis Biolabs will be attending CPHI Japan 2026, Asia's premier pharmaceutical industry exhibition. Join us in Tokyo as we showcase our portfolio of high-quality bioreagents, Bio-APIs, recombinant proteins and CDMO capabilities. Meet our team to explore partnership opportunities and discover how we can accelerate your next biologics project.",
+        id: "bio-international-convention-2026",
+        day: "22–25",
+        month: "JUN",
+        year: "2026",
+        category: "BIOTECHNOLOGY CONVENTION",
+        title: "BIO International Convention 2026 — San Diego",
+        description: "Provis Biolabs will be participating in BIO International Convention 2026, the world's premier biotechnology event. Visit our team to explore high-quality solutions for research, discovery and development, including recombinant proteins, peptides & custom synthesis, enzymes and specialty reagents. Connect with our experts to discuss partnership opportunities and innovative solutions for biotech and life science applications.",
+        icon: Globe,
+        location: "San Diego Convention Center, California, USA",
+        booth: "3351-S9",
+        type: "Convention",
+        image: "/events/BIOInternationalConvention.png",
+        status: "past",
+    },
+    {
+        id: "cphi-japan-2026",
+        day: "21–23",
+        month: "APR",
+        year: "2026",
+        category: "PHARMA EXHIBITION",
+        title: "CPHI Japan 2026 — Tokyo",
+        description: "Provis Biolabs will be attending CPHI Japan 2026, Asia's premier pharmaceutical industry exhibition. Join us in Tokyo as we showcase our portfolio of high-quality bioreagents, Bio-APIs, recombinant proteins and CDMO capabilities. Meet our team to explore partnership opportunities and discover how we can accelerate your next biologics project.",
         icon: Globe,
         location: "Tokyo Big Sight, Tokyo, Japan",
         booth: "TBA",
@@ -324,11 +339,10 @@ function UpcomingEventsSlider({ events }: { events: EventItem[] }) {
                             key={i}
                             onClick={() => setCurrent(i)}
                             aria-label={`Go to slide ${i + 1}`}
-                            className={`rounded-full transition-all duration-300 ${
-                                i === current
+                            className={`rounded-full transition-all duration-300 ${i === current
                                     ? "w-8 h-2.5 bg-[#F26522]"
                                     : "w-2.5 h-2.5 bg-[#E2E8F0] hover:bg-[#F26522]/50"
-                            }`}
+                                }`}
                         />
                     ))}
                 </div>

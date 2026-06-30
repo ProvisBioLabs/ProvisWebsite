@@ -27,7 +27,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            const response = await fetch('/api/contact', {
+            const response = await fetch('/api/us/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -65,7 +65,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
             {status === 'error' && (
                 <div className="p-4 bg-red-50 text-red-700 rounded-xl border border-red-200 font-sans shadow-sm flex items-center gap-3">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <strong>Error.</strong> Something went wrong. Please try again or email us directly at bd@provisbiolabs.com.
+                    <strong>Error.</strong> Something went wrong. Please try again or email us directly at bdusa@provisbiolabs.com.
                 </div>
             )}
 

@@ -15,13 +15,17 @@ const transporter = nodemailer.createTransport({
 /**
  * Send admin notification email with all form details.
  */
-export async function sendAdminNotification(data: ContactFormData): Promise<void> {
-  const adminEmail = process.env.ADMIN_EMAIL || "bd@provisbiolabs.com";
+export async function sendAdminNotification(data: ContactFormData, isUS: boolean = false): Promise<void> {
+  const adminEmail = isUS 
+    ? (process.env.US_ADMIN_EMAIL || "bdusa@provisbiolabs.com") 
+    : (process.env.ADMIN_EMAIL || "bd@provisbiolabs.com");
+
+  const subjectPrefix = isUS ? "[US Inquiry] " : "";
 
   await transporter.sendMail({
     from: `"Provis Biolabs" <${process.env.EMAIL_USER}>`,
     to: adminEmail,
-    subject: `New Enquiry: ${data.interest} — ${data.firstName} ${data.lastName}`,
+    subject: `${subjectPrefix}New Enquiry: ${data.interest} — ${data.firstName} ${data.lastName}`,
     html: adminNotificationHtml(data),
     replyTo: data.email,
   });
@@ -30,11 +34,11 @@ export async function sendAdminNotification(data: ContactFormData): Promise<void
 /**
  * Send auto-reply (thank you) email to the customer.
  */
-export async function sendAutoReply(data: ContactFormData): Promise<void> {
+export async function sendAutoReply(data: ContactFormData, isUS: boolean = false): Promise<void> {
   await transporter.sendMail({
     from: `"Provis Biolabs" <${process.env.EMAIL_USER}>`,
     to: data.email,
     subject: "Thank you for contacting Provis Biolabs",
-    html: autoReplyHtml(data),
+    html: autoReplyHtml(data, isUS),
   });
 }

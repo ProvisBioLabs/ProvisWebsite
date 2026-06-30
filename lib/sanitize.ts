@@ -32,6 +32,7 @@ const VALID_INTERESTS = [
   "Recombinant Bio-Reagents",
   "CDMO Services",
   "Synthetic Peptides",
+  "Custom Peptide Synthesis",
   "Partnership",
   "Other",
 ];
@@ -46,8 +47,8 @@ export function validateContactForm(raw: Record<string, unknown>): ValidationRes
   const interest = sanitizeInput(raw.interest);
   const message = sanitizeInput(raw.message);
 
-  if (!firstName) errors.push("First name is required");
-  if (!lastName) errors.push("Last name is required");
+  if (!firstName || firstName.length < 1) errors.push("First name is required");
+  if (!lastName || lastName.length < 1) errors.push("Last name is required");
 
   if (!email) {
     errors.push("Email is required");
