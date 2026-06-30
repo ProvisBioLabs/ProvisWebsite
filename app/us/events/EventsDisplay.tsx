@@ -69,7 +69,7 @@ const eventItems: EventItem[] = [
         location: "Hynes Convention Center, Massachusetts, USA",
         booth: "1500",
         type: "Conference",
-        image: "/events/BioProcessInternational2026.jpg",
+        image: "/events/biointernational.webp",
         status: "upcoming"
     },
     {
