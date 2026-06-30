@@ -31,7 +31,7 @@ function emailWrapper(content: string): string {
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:${BRAND.white}; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(30,58,138,0.08);">
           <!-- Header -->
           <tr>
-            <td style="background:linear-gradient(135deg,${BRAND.navy},#2563EB); padding:28px 32px; text-align:center;">
+            <td style="background:#000000; padding:28px 32px; text-align:center;">
               <img src="${LOGO_URL}" alt="Provis Biolabs" height="40" style="height:40px;" />
             </td>
           </tr>
