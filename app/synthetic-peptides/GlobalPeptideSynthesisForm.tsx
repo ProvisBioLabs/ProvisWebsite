@@ -242,16 +242,16 @@ export default function GlobalPeptideSynthesisForm() {
                         </div>
                     )}
 
-                    {/* ─── Applicant Information ─── */}
+                    {/* ─── Contact Information ─── */}
                     <div className="p-6 sm:p-8 lg:p-10 border-b border-[#E2E8F0]">
                         <h3 className="text-lg font-bold text-[#1E3A8A] mb-6 flex items-center gap-2">
                             <span className="w-7 h-7 rounded-lg bg-[#1E3A8A] text-white text-xs font-black flex items-center justify-center">1</span>
-                            Applicant Information
+                            Contact Information
                         </h3>
 
                         <div className="grid sm:grid-cols-2 gap-5">
                             <div>
-                                <label className="block text-[13px] font-bold text-[#1E3A8A] mb-2">Applicant Name *</label>
+                                <label className="block text-[13px] font-bold text-[#1E3A8A] mb-2">Full Name *</label>
                                 <input
                                     type="text"
                                     required
