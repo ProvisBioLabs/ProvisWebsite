@@ -37,34 +37,27 @@ export default function Popup() {
             animate={{ scale: 1, opacity: 1, y: 0 }} 
             exit={{ scale: 0.9, opacity: 0, y: 20 }} 
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative max-w-3xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden"
+            className="relative max-w-xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button 
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-md transition-colors"
+              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-md transition-colors"
               aria-label="Close popup"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
             
             <Link href="/events" onClick={() => setIsOpen(false)} className="block relative w-full group">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image 
-                  src="/events/BIOInternationalConvention.png" 
+                  src="/events/BioProcessInternational2026.jpg" 
                   alt="Upcoming Event" 
-                  fill 
+                  width={800} 
+                  height={600} 
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-              </div>
-              
-              <div className="p-6 sm:p-8 bg-white text-center">
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#1E3A8A] mb-3">Join Us at the BIO International Convention!</h2>
-                <p className="text-[#475569] mb-6 max-w-xl mx-auto">Discover our latest innovations in custom peptide synthesis, bioreagents, and CDMO services.</p>
-                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-[#F26522] hover:bg-[#d95a1e] transition-colors shadow-lg shadow-[#F26522]/30">
-                  Learn More
-                </div>
               </div>
             </Link>
           </motion.div>
