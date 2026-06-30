@@ -54,7 +54,7 @@ export default function Popup() {
                   src="/events/biointernational.webp" 
                   alt="Upcoming Event" 
                   fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-fit transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 600px"
                   priority
                 />
