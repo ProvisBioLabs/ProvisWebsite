@@ -69,7 +69,7 @@ const eventItems: EventItem[] = [
         location: "Hynes Convention Center, Massachusetts, USA",
         booth: "1500",
         type: "Conference",
-        image: "/events/BioProcessInternational2026.png",
+        image: "/events/BioProcessInternational2026.jpg",
         status: "upcoming"
     },
     {
@@ -268,7 +268,8 @@ function UpcomingEventsSlider({ events }: { events: EventItem[] }) {
                                     src={event.image}
                                     alt={event.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 100vw, 800px"
                                     priority
                                 />
 
