@@ -5,6 +5,7 @@ import "./globals.css";
 import CookieConsent from "./components/CookieConsent";
 import { GTMScript, GTMNoScript } from "./components/GoogleTagManager";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import Popup from "./components/Popup";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -147,6 +148,7 @@ ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(usaSchema) }} />
         {children}
         <CookieConsent />
+        <Popup />
       </body>
     </html>
   );
