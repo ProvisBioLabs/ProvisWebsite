@@ -92,7 +92,9 @@ export function adminNotificationHtml(data: ContactFormData): string {
 }
 
 // ─── Auto-Reply Email (to customer) ─────────────────────────────────
-export function autoReplyHtml(data: ContactFormData): string {
+export function autoReplyHtml(data: ContactFormData, isUS: boolean = false): string {
+  const contactEmail = isUS ? "bdusa@provisbiolabs.com" : "bd@provisbiolabs.com";
+
   const content = `
     <h2 style="margin:0 0 6px; font-size:22px; color:${BRAND.navy};">Thank you, ${data.firstName}!</h2>
     <p style="margin:0 0 20px; font-size:15px; color:${BRAND.gray};">We appreciate you reaching out to Provis Biolabs.</p>
@@ -110,7 +112,7 @@ export function autoReplyHtml(data: ContactFormData): string {
       <tr>
         <td style="padding:12px 16px; background:${BRAND.orangeLight}; border-radius:8px;">
           <p style="margin:0 0 4px; font-size:13px; font-weight:600; color:${BRAND.orange};">📧 Email</p>
-          <a href="mailto:bd@provisbiolabs.com" style="font-size:14px; color:${BRAND.navy}; text-decoration:none;">bd@provisbiolabs.com</a>
+          <a href="mailto:${contactEmail}" style="font-size:14px; color:${BRAND.navy}; text-decoration:none;">${contactEmail}</a>
         </td>
         <td width="12"></td>
         <td style="padding:12px 16px; background:${BRAND.orangeLight}; border-radius:8px;">

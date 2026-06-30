@@ -27,7 +27,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            const response = await fetch('/api/contact', {
+            const response = await fetch('/api/us/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),

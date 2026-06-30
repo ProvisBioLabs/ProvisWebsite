@@ -144,7 +144,7 @@ export default function PeptideSynthesisForm() {
                 message: `Organization: ${organization}\nCountry: ${country}\n\n${peptideDetails}`,
             };
 
-            const response = await fetch("/api/contact", {
+            const response = await fetch("/api/us/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
