@@ -53,8 +53,7 @@ export default function Popup() {
                 <Image 
                   src="/events/BioProcessInternational2026.jpg" 
                   alt="Upcoming Event" 
-                  width={800} 
-                  height={600} 
+                  fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
