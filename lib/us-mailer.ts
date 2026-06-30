@@ -24,7 +24,7 @@ export async function sendUSAdminNotification(data: ContactFormData): Promise<vo
     from: `"Provis Biolabs USA" <${process.env.US_EMAIL_USER}>`,
     to: adminEmail,
     subject: `${subjectPrefix}New Enquiry: ${data.interest} — ${data.firstName} ${data.lastName}`,
-    html: adminNotificationHtml(data),
+    html: adminNotificationHtml(data, true),
     replyTo: data.email,
   });
 }

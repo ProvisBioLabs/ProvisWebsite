@@ -61,7 +61,7 @@ function emailWrapper(content: string): string {
 }
 
 // ─── Admin Notification Email ───────────────────────────────────────
-export function adminNotificationHtml(data: ContactFormData): string {
+export function adminNotificationHtml(data: ContactFormData, isUS: boolean = false): string {
   const row = (label: string, value: string) => `
     <tr>
       <td style="padding:10px 14px; font-weight:600; color:${BRAND.navy}; background:${BRAND.grayLight}; border:1px solid ${BRAND.border}; width:140px; font-size:14px;">${label}</td>
@@ -77,7 +77,7 @@ export function adminNotificationHtml(data: ContactFormData): string {
       ${row("First Name", data.firstName)}
       ${row("Last Name", data.lastName)}
       ${row("Email", `<a href="mailto:${data.email}" style="color:${BRAND.navy};">${data.email}</a>`)}
-      ${row("Phone", data.phone || "—")}
+      ${isUS ? row("Phone", data.phone || "—") : ""}
       ${row("Interest", data.interest)}
     </table>
     <div style="margin-top:20px;">

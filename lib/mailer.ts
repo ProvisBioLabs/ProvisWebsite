@@ -26,7 +26,7 @@ export async function sendAdminNotification(data: ContactFormData, isUS: boolean
     from: `"Provis Biolabs" <${process.env.EMAIL_USER}>`,
     to: adminEmail,
     subject: `${subjectPrefix}New Enquiry: ${data.interest} — ${data.firstName} ${data.lastName}`,
-    html: adminNotificationHtml(data),
+    html: adminNotificationHtml(data, isUS),
     replyTo: data.email,
   });
 }
