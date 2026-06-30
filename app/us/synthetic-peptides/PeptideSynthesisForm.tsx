@@ -135,9 +135,10 @@ export default function PeptideSynthesisForm() {
                 )
                 .join("\n\n");
 
+            const nameParts = applicantName.trim().split(/\s+/);
             const data = {
-                firstName: applicantName.split(" ")[0] || applicantName,
-                lastName: applicantName.split(" ").slice(1).join(" ") || "",
+                firstName: nameParts[0] || applicantName,
+                lastName: nameParts.slice(1).join(" ") || ".", // fallback to prevent empty lastName
                 email,
                 phone,
                 interest: "Custom Peptide Synthesis",

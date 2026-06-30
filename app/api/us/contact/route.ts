@@ -1,7 +1,7 @@
 // ─── US Contact Form API Route (/api/us/contact) ─────────────────────────
 import { NextRequest, NextResponse } from "next/server";
 import { validateContactForm } from "@/lib/sanitize";
-import { sendAdminNotification, sendAutoReply } from "@/lib/mailer";
+import { sendUSAdminNotification, sendUSAutoReply } from "@/lib/us-mailer";
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,17 +21,17 @@ export async function POST(request: NextRequest) {
     // 3. Send emails (admin + auto-reply) — run in parallel
     const emailPromises: Promise<void>[] = [];
 
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+    if (process.env.US_EMAIL_USER && process.env.US_EMAIL_PASS) {
       emailPromises.push(
-        sendAdminNotification(sanitized, true).catch((err) => {
+        sendUSAdminNotification(sanitized).catch((err) => {
           console.error("[US Contact] Admin email failed:", err);
         }),
-        sendAutoReply(sanitized, true).catch((err) => {
+        sendUSAutoReply(sanitized).catch((err) => {
           console.error("[US Contact] Auto-reply email failed:", err);
         })
       );
     } else {
-      console.warn("[US Contact] EMAIL_USER/EMAIL_PASS not set — skipping emails");
+      console.warn("[US Contact] US_EMAIL_USER/US_EMAIL_PASS not set — skipping emails");
     }
 
     // 4. Forward to US Google Sheets (Apps Script) — non-blocking
@@ -42,8 +42,14 @@ export async function POST(request: NextRequest) {
           method: "POST",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({
-            ...sanitized,
-            timestamp: new Date().toISOString(),
+            Timestamp: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+            "First Name": sanitized.firstName,
+            "Last Name": sanitized.lastName,
+            Email: sanitized.email,
+            Phone: sanitized.phone || "",
+            Interest: sanitized.interest,
+            Message: sanitized.message,
+            Source: "US Website",
           }),
         })
           .then(() => undefined)

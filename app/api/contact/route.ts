@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       console.warn("[Contact] EMAIL_USER/EMAIL_PASS not set — skipping emails");
     }
 
-    // 4. Forward to Google Sheets (Apps Script) — non-blocking
+    // 4. Forward to Global Google Sheets (Apps Script) — non-blocking
     const sheetsUrl = process.env.GOOGLE_SCRIPT_URL;
     if (sheetsUrl) {
       emailPromises.push(
@@ -42,8 +42,14 @@ export async function POST(request: NextRequest) {
           method: "POST",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({
-            ...sanitized,
-            timestamp: new Date().toISOString(),
+            Timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+            "First Name": sanitized.firstName,
+            "Last Name": sanitized.lastName,
+            Email: sanitized.email,
+            Phone: sanitized.phone || "",
+            Interest: sanitized.interest,
+            Message: sanitized.message,
+            Source: "Global Website",
           }),
         })
           .then(() => undefined)
