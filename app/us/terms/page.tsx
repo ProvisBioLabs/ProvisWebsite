@@ -114,7 +114,7 @@ export default function TermsPage() {
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">10. Governing Law and Jurisdiction</h2>
                         <p className="text-[#475569] leading-relaxed mb-8">
-                            These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising in connection with these Terms or the use of this website shall be subject to the exclusive jurisdiction of the courts in Hyderabad, Telangana, India.
+                            These Terms shall be governed by and construed in accordance with the laws of the State of Connecticut, USA. Any disputes arising in connection with these Terms or the use of this website shall be subject to the exclusive jurisdiction of the state and federal courts located in Connecticut, USA.
                         </p>
 
                         <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">11. Contact Us</h2>

@@ -23,7 +23,7 @@ export default function CookiePolicyPage() {
                 <div className="prose prose-lg prose-slate max-w-none text-[#475569]">
                     <h2 className="text-2xl font-bold text-[#1E3A8A] mt-8 mb-4">1. Introduction</h2>
                     <p className="mb-6">
-                        Provis Biolabs Private Limited ("we", "our", or "us") uses cookies and similar technologies on our website. This Cookie Policy explains what cookies are, how we use them and your choices regarding our use of cookies, in compliance with the General Data Protection Regulation (GDPR) and other applicable data privacy laws.
+                        Provis Biolabs Private Limited ("we", "our", or "us") uses cookies and similar technologies on our website. This Cookie Policy explains what cookies are, how we use them and your choices regarding our use of cookies, in compliance with the California Consumer Privacy Act (CCPA) and other applicable United States data privacy laws.
                     </p>
 
                     <h2 className="text-2xl font-bold text-[#1E3A8A] mt-8 mb-4">2. What Are Cookies?</h2>
@@ -62,7 +62,7 @@ export default function CookiePolicyPage() {
 
                     <h2 className="text-2xl font-bold text-[#1E3A8A] mt-8 mb-4">6. Contact Us</h2>
                     <p className="mb-6">
-                        If you have any questions about our use of cookies or other technologies, please email us at <a href="mailto:bd@provisbiolabs.com" className="text-[#F26522] hover:underline">bd@provisbiolabs.com</a>.
+                        If you have any questions about our use of cookies or other technologies, please email us at <a href="mailto:bdusa@provisbiolabs.com" className="text-[#F26522] hover:underline">bdusa@provisbiolabs.com</a>.
                     </p>
                 </div>
             </div>

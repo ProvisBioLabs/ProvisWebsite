@@ -44,7 +44,7 @@ const keyFeatures = [
     "Personalized consultation with experienced peptide experts",
     "Purities ranging from crude to >98% and quantities ranging from gram to multi-gram scale",
     "Wide range of peptide modifications available",
-    "cGMP facility for bulk manufacturing of peptides",
+    "cGMP facility for manufacturing of peptides",
     "Fast turn around time",
 ];
 

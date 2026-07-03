@@ -36,8 +36,8 @@ export default function USProductView({ product }: { product: Product }) {
             a: "Each production lot meets our stringent release specifications of high purity determined by SDS-PAGE and highly controlled endotoxin levels, supporting reproducible performance in sensitive applications."
         },
         {
-            q: "Is this product suitable for bulk manufacturing?",
-            a: "Yes. Provis Biolabs supports bulk supply and tailored formats for organizations requiring dependable, long-term access to critical enzymes and reagents under GMP compliant processes."
+            q: "Is this product suitable for manufacturing scale-up?",
+            a: "Yes. Provis Biolabs supports tailored formats for organizations requiring dependable, long-term access to critical enzymes and reagents under GMP compliant processes."
         },
         {
             q: "Is it animal-origin-free (AOF)?",
@@ -146,12 +146,12 @@ export default function USProductView({ product }: { product: Product }) {
                                 <div className="flex items-start gap-3">
                                     <Info className="w-5 h-5 text-[#F26522] shrink-0 mt-0.5" />
                                     <div>
-                                        <h4 className="font-bold text-[#1E3A8A] text-sm mb-1">Bulk Supply & Program Support</h4>
+                                        <h4 className="font-bold text-[#1E3A8A] text-sm mb-1">Scale-up & Program Support</h4>
                                         <p className="text-xs text-[#64748B] leading-relaxed mb-3">
-                                            Provis Biolabs supports bulk supply and tailored formats for organizations requiring dependable, long-term access to critical enzymes.
+                                            Provis Biolabs supports tailored formats for organizations requiring dependable, long-term access to critical enzymes.
                                         </p>
                                         <Link href="/us/contact" className="text-[#F26522] text-xs font-bold hover:underline inline-flex items-center">
-                                            Inquire for Bulk Pricing <ChevronRight className="w-3 h-3 ml-1" />
+                                            Inquire for Pricing <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>
                                 </div>
@@ -201,7 +201,7 @@ export default function USProductView({ product }: { product: Product }) {
                                     </div>
                                 ))}
                                 <div className="flex items-center gap-2 px-4 py-3 border-l-2 border-[#E2E8F0]">
-                                    <span className="font-bold text-[#1E3A8A]">Bulk:</span>
+                                    <span className="font-bold text-[#1E3A8A]">Scale-up:</span>
                                     <span className="text-sm text-[#F26522] font-bold">Inquire</span>
                                 </div>
                             </div>

@@ -137,7 +137,7 @@ export const products: Product[] = [
         seoTitle: 'PNGase F CAS 83534-39-8 | N-Glycan Release Enzyme | Provis Biolabs',
         seoDescription: 'High-purity PNGase F (CAS 83534-39-8) for complete N-glycan removal from native or denatured glycoproteins. Research-grade, high batch consistency. Request a quote.',
         quickSpecs: {
-            purity: 'Ultra-pure',
+            purity: '≥95%',
             activity: 'High',
             storage: '2°C to 8°C',
             formulation: 'Liquid'

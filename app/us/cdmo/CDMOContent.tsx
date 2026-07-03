@@ -259,7 +259,7 @@ export default function CDMOContent() {
                     <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
                             { title: "Therapeutic Proteins", items: ["Cytokines and growth factors", "Hormones and peptides", "Enzymes for therapeutic use"] },
-                            { title: "Bio-APIs", items: ["Bulk drug substance for biologics", "Active pharmaceutical ingredients"] },
+                            { title: "Bio-APIs", items: ["Drug substance for biologics", "Active pharmaceutical ingredients"] },
                             { title: "Recombinant Enzymes", items: ["Custom recombinant proteins", "Research-grade bioreagents", "Diagnostic enzymes"] }
                         ].map((cat, i) => (
                             <motion.div key={cat.title} {...fade(i * 0.1)} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-8 shadow-sm">

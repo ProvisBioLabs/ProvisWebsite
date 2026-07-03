@@ -302,7 +302,7 @@ export default function ProductViewUS({ product }: { product: Product }) {
                                 </div>
                                 <div className="mt-4 flex justify-end">
                                     <Link href="/us/contact" className="inline-flex items-center gap-2 bg-[#F26522] hover:bg-[#d95c1a] text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-md hover:-translate-y-0.5">
-                                        Request a Bulk Quote <ArrowRight className="w-4 h-4" />
+                                        Request a Quote <ArrowRight className="w-4 h-4" />
                                     </Link>
                                 </div>
                             </section>
@@ -548,7 +548,7 @@ export default function ProductViewUS({ product }: { product: Product }) {
                             {/* CTA Card */}
                             <div className="bg-gradient-to-br from-[#0F2351] to-[#1a3a8a] rounded-2xl p-5 text-white">
                                 <p className="font-black text-base mb-2">Need a custom quantity?</p>
-                                <p className="text-white/70 text-sm mb-4 leading-relaxed">Our experts can help with bulk orders, custom formulations, and regulatory documentation.</p>
+                                <p className="text-white/70 text-sm mb-4 leading-relaxed">Our experts can help with custom formulations and regulatory documentation.</p>
                                 <Link href="/us/contact" className="w-full flex items-center justify-center gap-2 bg-[#F26522] hover:bg-[#d95c1a] text-white font-bold py-3 px-5 rounded-xl text-sm transition-all">
                                     Contact Our Team <ArrowRight className="w-4 h-4" />
                                 </Link>
