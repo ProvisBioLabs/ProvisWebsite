@@ -12,8 +12,8 @@ import USProducts from "./components/USProducts";
 import USAboutStrip from "./components/USAboutStrip";
 
 export const metadata: Metadata = {
-  title: "Provis Biolabs USA — WHO-GMP Grade Recombinant Bioreagents & Peptides",
-  description: "Provis Biolabs USA provides FDA & cGMP ready, 100% animal origin-free recombinant bioreagents, synthetic peptides, and end-to-end CDMO services specifically for North American biopharma.",
+  title: "Provis Biolabs USA | Research & GMP Grade Recombinant Bioreagents",
+  description: " Provis Biolabs provides research and GMP grade recombinant proteins, enzymes, custom peptide synthesis and end-to-end CDMO services for research, diagnostics and biopharmaceutical manufacturing.",
   keywords: "recombinant bioreagents USA, FDA ready bioreagents, cGMP peptides North America, animal origin-free recombinant proteins, CDMO services USA, WHO-GMP biopharma manufacturing, Provis Biolabs US",
   openGraph: {
     title: "Provis Biolabs USA — Premium Bioreagents & CDMO Services",
