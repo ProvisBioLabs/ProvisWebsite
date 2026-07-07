@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.provisbiolabs.com/products/bio-apis",
         languages: {
-            'en-US': 'https://www.provisbiolabs.com/products/bio-apis',
+            'en-US': 'https://www.provisbiolabs.com/us/products/bio-apis',
             'en-GB': 'https://www.provisbiolabs.com/products/bio-apis',
             'en-SG': 'https://www.provisbiolabs.com/products/bio-apis',
             'en-KR': 'https://www.provisbiolabs.com/products/bio-apis',

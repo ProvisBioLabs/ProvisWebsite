@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.provisbiolabs.com/biosimilars",
         languages: {
-            'en-US': 'https://www.provisbiolabs.com/biosimilars',
+            'en-US': 'https://www.provisbiolabs.com/us/biosimilars',
             'en-GB': 'https://www.provisbiolabs.com/biosimilars',
             'en-SG': 'https://www.provisbiolabs.com/biosimilars',
             'en-KR': 'https://www.provisbiolabs.com/biosimilars',

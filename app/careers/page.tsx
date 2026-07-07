@@ -8,7 +8,7 @@ export const metadata = {
     alternates: {
         canonical: "https://www.provisbiolabs.com/careers",
         languages: {
-            'en-US': 'https://www.provisbiolabs.com/careers',
+            'en-US': 'https://www.provisbiolabs.com/us/careers',
             'en-GB': 'https://www.provisbiolabs.com/careers',
             'en-SG': 'https://www.provisbiolabs.com/careers',
             'en-KR': 'https://www.provisbiolabs.com/careers',

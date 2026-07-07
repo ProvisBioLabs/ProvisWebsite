@@ -35,11 +35,23 @@ const STATIC_PATHS = [
     '/site-map',
 ];
 
-/** Generate xhtml:link alternates for a given absolute URL (all locales point to same URL) */
+/** Generate xhtml:link alternates for a given absolute URL */
 function alternates(url: string): string {
     return LOCALES.map(
-        ({ lang }) =>
-            `    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}" />`
+        ({ lang }) => {
+            let localizedUrl = url;
+            // If the language is US and the URL is a global URL (doesn't have /us/)
+            // we point the en-US hreflang to the /us/ version
+            if (lang === 'en-US' && !url.includes('/us/')) {
+                const urlObj = new URL(url);
+                // Insert /us after the origin
+                localizedUrl = `${urlObj.origin}/us${urlObj.pathname === '/' ? '' : urlObj.pathname}`;
+            } else if (lang !== 'en-US' && url.includes('/us/')) {
+                 // For US pages, non-US tags should point back to the global page
+                 localizedUrl = url.replace('/us', '');
+            }
+            return `    <xhtml:link rel="alternate" hreflang="${lang}" href="${localizedUrl}" />`;
+        }
     ).join('\n');
 }
 

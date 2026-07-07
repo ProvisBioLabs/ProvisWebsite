@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.provisbiolabs.com/custom-peptide-synthesis",
         languages: {
-            'en-US': 'https://www.provisbiolabs.com/custom-peptide-synthesis',
+            'en-US': 'https://www.provisbiolabs.com/us/custom-peptide-synthesis',
             'en-GB': 'https://www.provisbiolabs.com/custom-peptide-synthesis',
             'en-SG': 'https://www.provisbiolabs.com/custom-peptide-synthesis',
             'en-KR': 'https://www.provisbiolabs.com/custom-peptide-synthesis',

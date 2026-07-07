@@ -101,7 +101,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         alternates: {
             canonical: `https://www.provisbiolabs.com/blogs/${blog.slug}`,
             languages: {
-                'en-US': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
+                'en-US': `https://www.provisbiolabs.com/us/blogs/${blog.slug}`,
                 'en-GB': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
                 'en-SG': `https://www.provisbiolabs.com/blogs/${blog.slug}`,
                 'en-KR': `https://www.provisbiolabs.com/blogs/${blog.slug}`,

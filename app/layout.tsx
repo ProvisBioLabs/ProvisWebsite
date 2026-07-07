@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: {
-      'en-US': 'https://www.provisbiolabs.com',
+      'en-US': 'https://www.provisbiolabs.com/us',
       'en-GB': 'https://www.provisbiolabs.com',
       'en-SG': 'https://www.provisbiolabs.com',
       'en-KR': 'https://www.provisbiolabs.com',

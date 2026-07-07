@@ -52,12 +52,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    // US Site Static Routes (Hidden until launch)
-    /*
+    // US Site Static Routes
     const usStaticRoutes = [
         '/us', '/us/about', '/us/products', '/us/products/bio-apis',
         '/us/products/recombinant-bio-reagents', '/us/cdmo', '/us/contact',
-        '/us/blogs', '/us/events', '/us/partners', '/us/careers',
+        '/us/blogs', '/us/events', '/us/partners', '/us/careers', 
+        '/us/custom-peptide-synthesis', '/us/site-map', '/us/terms',
+        '/us/privacy-policy', '/us/cookie-policy'
     ].map(path => ({
         url: `${baseUrl}${path}`,
         lastModified: new Date('2025-01-01'),
@@ -72,7 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'weekly' as const,
         priority: 0.95,
     }));
-    */
 
-    return [...staticSitemap, ...productSitemap, ...blogSitemap];
+    return [...staticSitemap, ...productSitemap, ...blogSitemap, ...usStaticRoutes, ...usProductSitemap];
 }

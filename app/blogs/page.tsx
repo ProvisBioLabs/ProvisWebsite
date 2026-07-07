@@ -8,7 +8,7 @@ export const metadata = {
     alternates: {
         canonical: "https://www.provisbiolabs.com/blogs",
         languages: {
-            'en-US': 'https://www.provisbiolabs.com/blogs',
+            'en-US': 'https://www.provisbiolabs.com/us/blogs',
             'en-GB': 'https://www.provisbiolabs.com/blogs',
             'en-SG': 'https://www.provisbiolabs.com/blogs',
             'en-KR': 'https://www.provisbiolabs.com/blogs',

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.provisbiolabs.com/products/recombinant-bio-reagents",
         languages: {
-            'en-US': 'https://www.provisbiolabs.com/products/recombinant-bio-reagents',
+            'en-US': 'https://www.provisbiolabs.com/us/products/recombinant-bio-reagents',
             'en-GB': 'https://www.provisbiolabs.com/products/recombinant-bio-reagents',
             'en-SG': 'https://www.provisbiolabs.com/products/recombinant-bio-reagents',
             'en-KR': 'https://www.provisbiolabs.com/products/recombinant-bio-reagents',
