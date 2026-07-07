@@ -19,7 +19,7 @@ const categories = [
         image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=500&auto=format&fit=crop"
     },
     {
-        id: "SYNTHETIC PEPTIDES",
+        id: "CUSTOM PEPTIDE SYNTHESIS",
         title: "Custom Peptide Synthesis",
         shortDesc: "Custom peptide synthesis services",
         href: "/custom-peptide-synthesis",
@@ -109,10 +109,10 @@ const products = [
         desc: "Highly specific protease for fusion tag cleavage in recombinant protein production",
     },
     {
-        category: "SYNTHETIC PEPTIDES",
+        category: "CUSTOM PEPTIDE SYNTHESIS",
         tag: "Custom Synthesis",
         name: "Custom Peptide Synthesis",
-        desc: "GMP and research-grade synthetic peptides for therapeutics, diagnostics and vaccine development",
+        desc: "High-quality custom peptide synthesis for therapeutics, diagnostics and vaccine development",
     },
     {
         category: "BIOSIMILARS",

@@ -44,7 +44,7 @@ const keyFeatures = [
     "Personalized consultation with experienced peptide experts",
     "Purities ranging from crude to >98% and quantities ranging from gram to multi-gram scale",
     "Wide range of peptide modifications available",
-    "cGMP facility for manufacturing of peptides",
+    "Facility for manufacturing of peptides",
     "Fast turn around time",
 ];
 
@@ -67,9 +67,6 @@ export default function PeptidesContent() {
                             <motion.h1 {...fade(0.1)} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A8A] leading-tight mb-4">
                                 Custom Peptide Synthesis
                             </motion.h1>
-                            <motion.p {...fade(0.2)} className="text-xl text-[#475569] font-bold leading-relaxed mb-6">
-                                Custom Peptide Synthesis
-                            </motion.p>
                             <motion.div {...fade(0.3)} className="space-y-4 text-[#475569] text-base leading-relaxed mb-10">
                                 <p>We provide end-to-end custom peptide synthesis services for pharmaceutical, biotechnology and academic research teams worldwide. Using advanced Fmoc-based solid-phase peptide synthesis and rigorous quality control systems, we deliver peptides ranging from simple linear sequences to complex cyclic, bridged and PEGylated constructs with high purity and reliability.</p>
                             </motion.div>

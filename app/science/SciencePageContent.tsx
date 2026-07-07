@@ -92,7 +92,7 @@ const pipeline = [
         products: ["Proteinase K", "Recombinant Insulin", "Transferrin", "DNA Polymerase"],
     },
     {
-        title: "Synthetic Peptides",
+        title: "Custom Peptide Synthesis",
         gradient: "from-[#F8FAFC] to-white",
         products: ["ACTH (Desmopressin)", "Buserelin (Degarlix)", "Degarelix", "Leuprolide", "Octreotide"],
     },

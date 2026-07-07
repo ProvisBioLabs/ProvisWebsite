@@ -132,7 +132,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                     <option value="">Select an option</option>
                     <option value="Recombinant Bio-Reagents">Recombinant Bio-Reagents</option>
                     <option value="CDMO Services">CDMO Services</option>
-                    <option value="Synthetic Peptides">Synthetic Peptides</option>
+                    <option value="Custom Peptide Synthesis">Custom Peptide Synthesis</option>
                     <option value="Partnership">Partnership</option>
                     <option value="Other">Other</option>
                 </select>

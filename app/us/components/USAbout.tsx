@@ -81,7 +81,7 @@ export default function About() {
                             <ul className="space-y-4">
                                 {[
                                     "Recombinant bioreagents",
-                                    "Synthetic peptides",
+                                    "Custom peptide synthesis",
                                     "CDMO services",
                                     "Research, process development, and GMP manufacturing"
                                 ].map((item, i) => (

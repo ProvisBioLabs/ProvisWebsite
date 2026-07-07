@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import PeptidesContent from "./PeptidesContent";
 
 export const metadata: Metadata = {
-    title: "Custom Peptide Synthesis Manufacturing & GMP Services | Provis Biolabs",
-    description: "Premium Custom Peptide Synthesis services at Provis Biolabs. We provide GMP manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
+    title: "Custom Peptide Synthesis Manufacturing Services | Provis Biolabs",
+    description: "Premium Custom Peptide Synthesis services at Provis Biolabs. We provide high-quality manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
     alternates: {
         canonical: "https://www.provisbiolabs.com/custom-peptide-synthesis",
         languages: {
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
         }
     },
     openGraph: {
-        title: "Custom Peptide Synthesis Manufacturing & GMP Services | Provis Biolabs",
-        description: "Premium Custom Peptide Synthesis — >99% purity, GMP-grade, gram-to-kilogram scale for clinical and commercial applications.",
+        title: "Custom Peptide Synthesis Manufacturing Services | Provis Biolabs",
+        description: "Premium Custom Peptide Synthesis — >99% purity, gram-to-kilogram scale for clinical and commercial applications.",
         images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
     twitter: {
         card: "summary_large_image",
         title: "Provis Biolabs Custom Peptide Synthesis",
-        description: "GMP Custom Peptide Synthesis: >99% purity, custom manufacturing at scale.",
+        description: "Custom Peptide Synthesis: >99% purity, custom manufacturing at scale.",
         images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
 };
@@ -56,18 +56,18 @@ const faqJsonLd = {
         },
         {
             '@type': 'Question',
-            name: 'Do you offer GMP-grade Custom Peptide Synthesis?',
+            name: 'Do you offer high-quality Custom Peptide Synthesis?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Yes. Provis Biolabs manufactures GMP-grade Custom Peptide Synthesis for clinical and commercial applications, compliant with ICH Q7 standards, with full batch documentation and CoA.'
+                text: 'Yes. Provis Biolabs manufactures high-quality Custom Peptide Synthesis for clinical and commercial applications, with full batch documentation and CoA.'
             }
         },
         {
             '@type': 'Question',
-            name: 'What scale of synthetic peptide manufacturing does Provis Biolabs offer?',
+            name: 'What scale of custom peptide manufacturing does Provis Biolabs offer?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Provis Biolabs supports synthetic peptide production from milligram-scale feasibility studies through to kilogram-scale commercial manufacturing, with flexible scale-up processes.'
+                text: 'Provis Biolabs supports custom peptide production from milligram-scale feasibility studies through to kilogram-scale commercial manufacturing, with flexible scale-up processes.'
             }
         },
         {

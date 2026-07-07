@@ -9,9 +9,14 @@ export function middleware(request: NextRequest) {
   
   const isUsPath = url.pathname.startsWith('/us');
 
+  // Check if it's a known bot
+  const userAgent = request.headers.get('user-agent') || '';
+  const isBot = /bot|crawler|spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|baiduspider/i.test(userAgent);
+
+  // Skip geolocation logic for bots to allow them to crawl all versions of the site
   // Skip geolocation logic for local development to allow testing both sites
   const isLocalhost = url.hostname.includes('localhost') || url.hostname.includes('127.0.0.1');
-  if (isLocalhost) return NextResponse.next();
+  if (isLocalhost || isBot) return NextResponse.next();
 
   // If the user is from the US
   if (country === 'US') {

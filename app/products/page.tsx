@@ -6,7 +6,7 @@ import ProductsCatalog from "../../app/components/ProductsCatalog";
 export const metadata: Metadata = {
     title: "Bio-APIs, Bioreagents & CDMO Products | Provis Biolabs",
     description:
-        "Explore Provis Biolabs' full product catalog: Bio-APIs, Recombinant Bio-Reagents, Synthetic Peptides and Biosimilar pipeline products — Animal origin-free. WHO-GMP manufactured.",
+        "Explore Provis Biolabs' full product catalog: Bio-APIs, Recombinant Bio-Reagents, Custom Peptide Synthesis and Biosimilar pipeline products — Animal origin-free. WHO-GMP manufactured.",
     alternates: {
         canonical: "https://www.provisbiolabs.com/products",
         languages: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: "Bio-APIs, Bioreagents & CDMO Products | Provis Biolabs",
-        description: "WHO-GMP grade Bio-APIs, recombinant proteins, synthetic peptides — animal origin-free.",
+        description: "WHO-GMP grade Bio-APIs, recombinant proteins, custom peptide synthesis — animal origin-free.",
         images: ["https://www.provisbiolabs.com/products-showcase.webp"],
     },
     twitter: {

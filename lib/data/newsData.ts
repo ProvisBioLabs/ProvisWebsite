@@ -63,7 +63,7 @@ export const timelineData = [
         id: "2023-rd",
         year: "Oct 2023",
         title: "Protein & Peptide R&D Expansion",
-        description: "Expanded R&D capabilities into recombinant proteins and synthetic peptides, broadening the product pipeline for global life science markets.",
+        description: "Expanded R&D capabilities into recombinant proteins and custom peptide synthesis, broadening the product pipeline for global life science markets.",
         icon: FlaskConical,
         accent: "from-teal-500 to-cyan-600",
         color: "#14B8A6",

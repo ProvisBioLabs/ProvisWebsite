@@ -31,7 +31,6 @@ const VALID_INTERESTS = [
   "Bio-APIs",
   "Recombinant Bio-Reagents",
   "CDMO Services",
-  "Synthetic Peptides",
   "Custom Peptide Synthesis",
   "Partnership",
   "Other",

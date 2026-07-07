@@ -119,7 +119,7 @@ export default function ProductsCatalog() {
             if (active === "RECOMBINANT BIO-REAGENTS") {
                 return p.category === 'reagent';
             }
-            if (active === "SYNTHETIC PEPTIDES") {
+            if (active === "CUSTOM PEPTIDE SYNTHESIS") {
                 return p.slug === 'custom-peptide-synthesis';
             }
             if (active === "BIOSIMILARS") {
