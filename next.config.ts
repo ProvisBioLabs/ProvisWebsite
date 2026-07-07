@@ -94,6 +94,16 @@ const nextConfig: NextConfig = {
     return [
       // ── Old product URLs ──────────────────────────────────────
       {
+        source: "/synthetic-peptides",
+        destination: "/custom-peptide-synthesis",
+        permanent: true,
+      },
+      {
+        source: "/us/synthetic-peptides",
+        destination: "/us/custom-peptide-synthesis",
+        permanent: true,
+      },
+      {
         source: "/products/reagent",
         destination: "/products/recombinant-bio-reagents",
         permanent: true,
