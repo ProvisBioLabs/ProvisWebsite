@@ -339,13 +339,13 @@ export const products: Product[] = [
     {
         id: '13',
         slug: 'pngase-f-flash',
-        name: 'PNGase F Flash™',
+        name: 'PNGase F Flashᵀᴹ',
         category: 'reagent',
         grade: 'Research Grade',
         tagline: 'Fastest N-Glycan Release',
         shortDescription: 'Rapid N-glycan removal enzyme for antibody analysis',
         description: 'Optimized for high-throughput characterization, PNGase F Flash completes N-glycan removal in approximately 10 minutes',
-        longDescription: 'PNGase F Flash™ is a rapid deglycosylation protocol designed for time-critical and high-throughput analytical workflows. Maintaining the same high specificity and low protease activity as standard PNGase F, this accelerated formulation is perfect for rapid LC-MS peptide mapping, biosimilar characterization and rapid QC testing of mAbs.',
+        longDescription: 'PNGase F Flashᵀᴹ is a rapid deglycosylation protocol designed for time-critical and high-throughput analytical workflows. Maintaining the same high specificity and low protease activity as standard PNGase F, this accelerated formulation is perfect for rapid LC-MS peptide mapping, biosimilar characterization and rapid QC testing of mAbs.',
         image: '/products/pngflash.webp',
         casNumber: '83534-39-8',
         keyFeatures: [
@@ -362,8 +362,8 @@ export const products: Product[] = [
             'QC testing'
         ],
         href: '/pngase-f-flash',
-        seoTitle: 'PNGase F Flash™ | Rapid 10-Minute Deglycosylation | Provis Biolabs',
-        seoDescription: 'PNGase F Flash™ completes N-glycan removal in ~10 minutes. Ideal for high-throughput mAb characterization, LC-MS peptide mapping and biosimilar QC testing. Request quote.',
+        seoTitle: 'PNGase F Flashᵀᴹ | Rapid 10-Minute Deglycosylation | Provis Biolabs',
+        seoDescription: 'PNGase F Flashᵀᴹ completes N-glycan removal in ~10 minutes. Ideal for high-throughput mAb characterization, LC-MS peptide mapping and biosimilar QC testing. Request quote.',
         quickSpecs: {
             activity: 'Flash Reaction',
             storage: '-20°C',

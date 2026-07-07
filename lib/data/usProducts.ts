@@ -52,12 +52,12 @@ export const products: Product[] = [
         id: '2',
 
         slug: 'provinase',
-        name: 'Provinase™ (Endonuclease)',
+        name: 'Provinaseᵀᴹ (Endonuclease)',
         category: 'reagent',
         grade: 'Research and GMP grade',
         tagline: 'Trusted by Leading Vaccine & CGT Companies in India',
         shortDescription: 'Flagship endonuclease for bioprocessing',
-        description: 'Provinase™ is a recombinant non-specific endonuclease derived from Serratia marcescens, expressed in E. coli and manufactured to GMP grade standards. It hydrolyzes all forms of nucleic acids, single- and double-stranded DNA and RNA, via a Mg²⁺-dependent phosphodiester bond cleavage mechanism, reducing them to 3–5 nucleotide fragments.',
+        description: 'Provinaseᵀᴹ is a recombinant non-specific endonuclease derived from Serratia marcescens, expressed in E. coli and manufactured to GMP grade standards. It hydrolyzes all forms of nucleic acids, single- and double-stranded DNA and RNA, via a Mg²⁺-dependent phosphodiester bond cleavage mechanism, reducing them to 3–5 nucleotide fragments.',
         image: '/products/provinase.webp',
         aof: true,
         badge: 'Bestseller',
@@ -65,8 +65,8 @@ export const products: Product[] = [
         keyFeatures: ['Animal-Origin Free', 'High Specific Activity', 'Low Endotoxin', 'Validated for Viral Vector Manufacturing'],
         applications: ['Host Cell DNA Clearance', 'Viscosity Reduction', 'Viral Vector Manufacturing', 'Vaccine Manufacturing', 'CAR-T and Cell Therapy'],
         href: '/provinase',
-        seoTitle: 'Provinase™ Recombinant Endonuclease | GMP Grade | Provis Biolabs',
-        seoDescription: 'Order Provinase™  a GMP-grade, animal-origin-free recombinant endonuclease for host-cell DNA removal in bioproduction. Request quote.',
+        seoTitle: 'Provinaseᵀᴹ Recombinant Endonuclease | GMP Grade | Provis Biolabs',
+        seoDescription: 'Order Provinaseᵀᴹ  a GMP-grade, animal-origin-free recombinant endonuclease for host-cell DNA removal in bioproduction. Request quote.',
         quickSpecs: {
             purity: '≥99%',
             activity: '≥250 U/µL',
@@ -76,7 +76,7 @@ export const products: Product[] = [
         },
         workflow: ['Clarification', 'Benzonase/Provinase Treatment', 'Tangential Flow Filtration', 'Ion Exchange Chromatography'],
         cleavageImages: ['/products/cleavage/provinasev2.png'],
-        overview: 'Provinase™ is a recombinant non-specific endonuclease derived from Serratia marcescens, expressed in E. coli and manufactured to GMP grade standards. It hydrolyzes all forms of nucleic acids, single- and double-stranded DNA and RNA, via a Mg²⁺-dependent phosphodiester bond cleavage mechanism, reducing them to 3–5 nucleotide fragments. Provinase™ is widely used in biopharmaceutical manufacturing for host cell DNA (hcDNA) clearance, a critical step in meeting regulatory nucleic acid limits for injectable biologics.',
+        overview: 'Provinaseᵀᴹ is a recombinant non-specific endonuclease derived from Serratia marcescens, expressed in E. coli and manufactured to GMP grade standards. It hydrolyzes all forms of nucleic acids, single- and double-stranded DNA and RNA, via a Mg²⁺-dependent phosphodiester bond cleavage mechanism, reducing them to 3–5 nucleotide fragments. Provinaseᵀᴹ is widely used in biopharmaceutical manufacturing for host cell DNA (hcDNA) clearance, a critical step in meeting regulatory nucleic acid limits for injectable biologics.',
         benefits: [
             'GMP-grade recombinant endonuclease for regulatory-compliant hcDNA clearance',
             'Effective against all nucleic acid forms (ssDNA, dsDNA, ssRNA, dsRNA)',
@@ -95,17 +95,17 @@ export const products: Product[] = [
             { parameter: 'EXPIRATION', details: 'Per CoA; avoid repeated freeze-thaw cycles' }
         ],
         skuList: [
-            { sku: '100KU', catNo: 'PB-01-100KU', description: 'Provinase™ Endonuclease, GMP grade, 100,000 Units', price: '$285' },
-            { sku: '500KU', catNo: 'PB-01-500KU', description: 'Provinase™ Endonuclease, GMP grade, 500,000 Units', price: '$1,190' },
-            { sku: '5MU', catNo: 'PB-01-5MU', description: 'Provinase™ Endonuclease, GMP grade, 5,000,000 Units', price: '$8,950' }
+            { sku: '100KU', catNo: 'PB-01-100KU', description: 'Provinaseᵀᴹ Endonuclease, GMP grade, 100,000 Units', price: '$285' },
+            { sku: '500KU', catNo: 'PB-01-500KU', description: 'Provinaseᵀᴹ Endonuclease, GMP grade, 500,000 Units', price: '$1,190' },
+            { sku: '5MU', catNo: 'PB-01-5MU', description: 'Provinaseᵀᴹ Endonuclease, GMP grade, 5,000,000 Units', price: '$8,950' }
         ],
         faqs: [
-            { question: 'What is the mechanism of action of Provinase™?', answer: 'Provinase™ cleaves phosphodiester bonds in nucleic acid backbones in a non-sequence-specific manner, producing 3–5 nucleotide oligomers. The reaction requires divalent cations, with Mg²⁺ preferred at 1–2 mM concentration.' },
-            { question: 'Is Provinase™ active against both DNA and RNA?', answer: 'Yes. Provinase™ is a non-specific endonuclease with activity against ssDNA, dsDNA, ssRNA and dsRNA, as well as nucleic acid-protein complexes in solution.' },
-            { question: 'What concentration of Provinase™ is typically used in bioprocessing?', answer: 'Typical use concentrations range from 1–50 U/mL depending on the nucleic acid load, buffer conditions and process scale. Optimization is recommended for each specific process.' },
-            { question: 'Does Provinase™ require removal after treatment?', answer: 'Yes. In GMP processes, Provinase™ removal is typically demonstrated as part of clearance validation. Downstream chromatographic steps (e.g., ion exchange, affinity) generally achieve adequate clearance of the enzyme.' },
-            { question: 'Is Provinase™ compatible with common lysis and harvest buffers?', answer: 'Provinase™ is broadly compatible with pH 6–10 and tolerates moderate salt concentrations. It should be evaluated for compatibility with detergents, chelating agents (e.g., EDTA, which chelates Mg²⁺ and inhibits activity) and reducing agents at your specific process conditions.' },
-            { question: 'How does Provinase™ compare to other commercial endonucleases?', answer: 'Provinase™ offers comparable endonuclease activity to other commercially available GMP-grade recombinant endonucleases, with the advantage of animal-component-free production and scalable supply formats suited for both process development and commercial campaigns.' }
+            { question: 'What is the mechanism of action of Provinaseᵀᴹ?', answer: 'Provinaseᵀᴹ cleaves phosphodiester bonds in nucleic acid backbones in a non-sequence-specific manner, producing 3–5 nucleotide oligomers. The reaction requires divalent cations, with Mg²⁺ preferred at 1–2 mM concentration.' },
+            { question: 'Is Provinaseᵀᴹ active against both DNA and RNA?', answer: 'Yes. Provinaseᵀᴹ is a non-specific endonuclease with activity against ssDNA, dsDNA, ssRNA and dsRNA, as well as nucleic acid-protein complexes in solution.' },
+            { question: 'What concentration of Provinaseᵀᴹ is typically used in bioprocessing?', answer: 'Typical use concentrations range from 1–50 U/mL depending on the nucleic acid load, buffer conditions and process scale. Optimization is recommended for each specific process.' },
+            { question: 'Does Provinaseᵀᴹ require removal after treatment?', answer: 'Yes. In GMP processes, Provinaseᵀᴹ removal is typically demonstrated as part of clearance validation. Downstream chromatographic steps (e.g., ion exchange, affinity) generally achieve adequate clearance of the enzyme.' },
+            { question: 'Is Provinaseᵀᴹ compatible with common lysis and harvest buffers?', answer: 'Provinaseᵀᴹ is broadly compatible with pH 6–10 and tolerates moderate salt concentrations. It should be evaluated for compatibility with detergents, chelating agents (e.g., EDTA, which chelates Mg²⁺ and inhibits activity) and reducing agents at your specific process conditions.' },
+            { question: 'How does Provinaseᵀᴹ compare to other commercial endonucleases?', answer: 'Provinaseᵀᴹ offers comparable endonuclease activity to other commercially available GMP-grade recombinant endonucleases, with the advantage of animal-component-free production and scalable supply formats suited for both process development and commercial campaigns.' }
         ]
     },
     {
