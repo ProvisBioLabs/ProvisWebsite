@@ -24,7 +24,7 @@ const STATIC_PATHS = [
     '/products/bio-apis',
     '/products/recombinant-bio-reagents',
     '/biosimilars',
-    '/synthetic-peptides',
+    '/custom-peptide-synthesis',
     '/cdmo',
     '/blogs',
     '/news',

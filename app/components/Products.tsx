@@ -20,9 +20,9 @@ const categories = [
     },
     {
         id: "SYNTHETIC PEPTIDES",
-        title: "Synthetic Peptides",
+        title: "Custom Peptide Synthesis",
         shortDesc: "Custom peptide synthesis services",
-        href: "/synthetic-peptides",
+        href: "/custom-peptide-synthesis",
         image: "/products/syntheticpeptides.webp"
     },
     {

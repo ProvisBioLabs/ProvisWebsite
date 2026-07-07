@@ -14,7 +14,7 @@ const productLinks = [
     { label: "Bio-APIs", href: "/products/bio-apis" },
     { label: "Recombinant Bio-Reagents", href: "/products/recombinant-bio-reagents" },
     { label: "Biosimilars", href: "/biosimilars" },
-    { label: "Synthetic Peptides", href: "/synthetic-peptides" },
+    { label: "Custom Peptide Synthesis", href: "/custom-peptide-synthesis" },
     { label: "CDMO Services", href: "/cdmo" },
 ];
 

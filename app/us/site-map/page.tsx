@@ -81,7 +81,7 @@ export default function SitemapPage() {
                                 </ul>
                             </li>
                             <li className="pt-2">
-                                <Link href="/us/synthetic-peptides" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Synthetic Peptides</Link>
+                                <Link href="/us/custom-peptide-synthesis" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Custom Peptide Synthesis</Link>
                             </li>
                             <li>
                                 <Link href="/us/biosimilars" className="text-[#1E3A8A] font-medium hover:text-[#F26522] transition-colors">Biosimilars</Link>

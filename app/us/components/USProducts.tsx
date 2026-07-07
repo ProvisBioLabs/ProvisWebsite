@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { products as allProducts } from '../../../lib/data/usProducts';
 
 // Filter products: Recombinant bio-reagents and synthetic peptides only
-const usProducts = allProducts.filter(p => p.category === 'reagent' || p.slug === 'synthetic-peptides');
+const usProducts = allProducts.filter(p => p.category === 'reagent' || p.slug === 'custom-peptide-synthesis');
 
 // We duplicate the array to create a seamless infinite marquee effect
 const marqueeItems = [...usProducts, ...usProducts];

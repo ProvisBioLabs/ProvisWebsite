@@ -10,7 +10,7 @@ const companyLinks = [
 
 const productLinks = [
     { label: "Recombinant Bio-Reagents", href: "/us/products" },
-    { label: "Synthetic Peptides", href: "/us/synthetic-peptides" },
+    { label: "Custom Peptide Synthesis", href: "/us/custom-peptide-synthesis" },
     { label: "CDMO Services", href: "/us/cdmo" },
 ];
 

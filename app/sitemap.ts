@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { path: '/products/bio-apis', freq: 'weekly', priority: 0.9 },
         { path: '/products/recombinant-bio-reagents', freq: 'weekly', priority: 0.9 },
         { path: '/biosimilars', freq: 'weekly', priority: 0.8 },
-        { path: '/synthetic-peptides', freq: 'weekly', priority: 0.8 },
+        { path: '/custom-peptide-synthesis', freq: 'weekly', priority: 0.8 },
         { path: '/cdmo', freq: 'weekly', priority: 0.9 },
         { path: '/blogs', freq: 'daily', priority: 0.8 },
         { path: '/news', freq: 'daily', priority: 0.8 },

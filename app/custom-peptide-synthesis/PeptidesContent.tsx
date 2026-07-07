@@ -65,7 +65,7 @@ export default function PeptidesContent() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="max-w-3xl">
                             <motion.h1 {...fade(0.1)} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A8A] leading-tight mb-4">
-                                Synthetic Peptides
+                                Custom Peptide Synthesis
                             </motion.h1>
                             <motion.p {...fade(0.2)} className="text-xl text-[#475569] font-bold leading-relaxed mb-6">
                                 Custom Peptide Synthesis
@@ -88,7 +88,7 @@ export default function PeptidesContent() {
                   transition-transform duration-300 hover:scale-105">
                                 <Image
                                     src="/products/syntheticpeptides.webp"
-                                    alt="Synthetic Peptides"
+                                    alt="Custom Peptide Synthesis"
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 768px) 80vw, 420px"

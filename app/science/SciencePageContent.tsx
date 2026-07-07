@@ -22,7 +22,7 @@ const researchBullets = [
 const focusAreas = [
     { name: "Bio - APIs", href: "/products/bio-apis" },
     { name: "Recombinant Bioreagents", href: "/products/recombinant-bio-reagents" },
-    { name: "Synthetic Peptides", href: "/synthetic-peptides" },
+    { name: "Custom Peptide Synthesis", href: "/custom-peptide-synthesis" },
 ];
 
 const technologies = [

@@ -114,13 +114,13 @@ export default function ProductsCatalog() {
     const categorizedProducts = useMemo(() => {
         return allProducts.filter(p => {
             if (active === "BIO-APIS") {
-                return p.category === 'api' && p.slug !== 'biosimilars' && p.slug !== 'synthetic-peptides';
+                return p.category === 'api' && p.slug !== 'biosimilars' && p.slug !== 'custom-peptide-synthesis';
             }
             if (active === "RECOMBINANT BIO-REAGENTS") {
                 return p.category === 'reagent';
             }
             if (active === "SYNTHETIC PEPTIDES") {
-                return p.slug === 'synthetic-peptides';
+                return p.slug === 'custom-peptide-synthesis';
             }
             if (active === "BIOSIMILARS") {
                 return p.slug === 'biosimilars';

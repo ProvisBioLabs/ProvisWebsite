@@ -57,7 +57,7 @@ export const navItems: NavItem[] = [
         ],
     },
     { label: 'Biosimilars', href: '/biosimilars' },
-    { label: 'Peptides', href: '/synthetic-peptides' },
+    { label: 'Peptides', href: '/custom-peptide-synthesis' },
     { label: 'Science & Technology', href: '/science' },
     { label: 'CDMO', href: '/cdmo' },
     {

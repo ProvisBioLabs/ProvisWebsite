@@ -36,7 +36,7 @@ export const navItems: NavItem[] = [
     },
     {
         label: 'Peptides',
-        href: '/us/synthetic-peptides',
+        href: '/us/custom-peptide-synthesis',
     },
     {
         label: 'Resources',
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
     const menuTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const pathname = usePathname();
 
-    const isDarkHeaderPage = pathname.startsWith('/us/') && !['/us', '/us/products', '/us/cdmo', '/us/about', '/us/sustainability', '/us/contact', '/us/synthetic-peptides', '/us/blogs', '/us/events', '/us/partners'].includes(pathname);
+    const isDarkHeaderPage = pathname.startsWith('/us/') && !['/us', '/us/products', '/us/cdmo', '/us/about', '/us/sustainability', '/us/contact', '/us/custom-peptide-synthesis', '/us/blogs', '/us/events', '/us/partners'].includes(pathname);
 
     const isLinkActive = (href: string) => {
         if (!href) return false;
