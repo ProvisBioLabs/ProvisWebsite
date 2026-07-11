@@ -46,7 +46,6 @@ export function validateContactForm(raw: Record<string, unknown>): ValidationRes
   const phone = sanitizeInput(raw.phone);
   const interest = sanitizeInput(raw.interest);
   const message = sanitizeInput(raw.message);
-
   if (!firstName || firstName.length < 1) errors.push("First name is required");
   if (!lastName || lastName.length < 1) errors.push("Last name is required");
 

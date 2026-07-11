@@ -1,8 +1,8 @@
 const fs = require('fs');
 let content = fs.readFileSync('lib/data/usProducts.ts', 'utf8');
 
-content = content.replace(/slug:\s*'trypsin-ms'[\s\S]*?image:\s*'[^']+'/, match => match.replace(/image:\s*'[^']+'/, image: '/products/typsinmsgrade.png'));
-content = content.replace(/slug:\s*'trypsin-edta'[\s\S]*?image:\s*'[^']+'/, match => match.replace(/image:\s*'[^']+'/, image: '/products/trypsinedta.png'));
+// content = content.replace(/slug:\s*'trypsin-ms'[\s\S]*?image:\s*'[^']+'/, match => match.replace(/image:\s*'[^']+'/, image: '/products/typsinmsgrade.png'));
+// content = content.replace(/slug:\s*'trypsin-edta'[\s\S]*?image:\s*'[^']+'/, match => match.replace(/image:\s*'[^']+'/, image: '/products/trypsinedta.png'));
 
 // We need to reorder the products array
 // The products array starts at export const products: Product[] = [ and ends at ];\n\nexport function

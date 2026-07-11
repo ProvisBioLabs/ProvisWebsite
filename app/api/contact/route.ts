@@ -18,54 +18,82 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. Send emails (admin + auto-reply) — run in parallel
-    const emailPromises: Promise<void>[] = [];
+    // 3. Return success immediately — user sees green tick instantly
+    const response = NextResponse.json({ success: true });
 
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-      emailPromises.push(
-        sendAdminNotification(sanitized).catch((err) => {
-          console.error("[Contact] Admin email failed:", err);
-        }),
-        sendAutoReply(sanitized).catch((err) => {
-          console.error("[Contact] Auto-reply email failed:", err);
-        })
-      );
-    } else {
-      console.warn("[Contact] EMAIL_USER/EMAIL_PASS not set — skipping emails");
-    }
+    // 4. Fire all background tasks without blocking the response
+    const runBackground = async () => {
+      const tasks: Promise<void>[] = [];
 
-    // 4. Forward to Global Google Sheets (Apps Script) — non-blocking
-    const sheetsUrl = process.env.GOOGLE_SCRIPT_URL;
-    if (sheetsUrl) {
-      emailPromises.push(
-        fetch(sheetsUrl, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify({
-            Timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-            "First Name": sanitized.firstName,
-            "Last Name": sanitized.lastName,
-            Email: sanitized.email,
-            Phone: sanitized.phone || "",
-            Interest: sanitized.interest,
-            Message: sanitized.message,
-            Source: "Global Website",
+      // ── Emails ──────────────────────────────────────────────────────
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+        tasks.push(
+          sendAdminNotification(sanitized, false).catch((err) => {
+            // Retry is handled inside sendAdminNotification.
+            // If all retries fail, log the full error so it's visible in prod logs.
+            console.error("[Contact] ❌ Admin email PERMANENTLY failed:", {
+              error: err instanceof Error ? err.message : String(err),
+              name: sanitized.firstName + " " + sanitized.lastName,
+              email: sanitized.email,
+              interest: sanitized.interest,
+            });
           }),
-        })
-          .then(() => undefined)
-          .catch((err) => {
-            console.error("[Contact] Google Sheets save failed:", err);
+          sendAutoReply(sanitized, false).catch((err) => {
+            console.error("[Contact] ❌ Auto-reply PERMANENTLY failed:", {
+              error: err instanceof Error ? err.message : String(err),
+              to: sanitized.email,
+            });
           })
-      );
-    } else {
-      console.warn("[Contact] GOOGLE_SCRIPT_URL not set — skipping Sheets");
-    }
+        );
+      } else {
+        console.error(
+          "[Contact] 🚨 CRITICAL: EMAIL_USER or EMAIL_PASS env var is missing — NO emails will be sent!"
+        );
+      }
 
-    // Wait for all background work
-    await Promise.all(emailPromises);
+      // ── Google Sheets ────────────────────────────────────────────────
+      const sheetsUrl = process.env.GOOGLE_SCRIPT_URL;
+      if (sheetsUrl) {
+        // AbortController gives us a hard timeout on the fetch
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000); // 10s max
 
-    // 5. Return success
-    return NextResponse.json({ success: true });
+        tasks.push(
+          fetch(sheetsUrl, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            signal: controller.signal,
+            body: JSON.stringify({
+              Timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+              "First Name": sanitized.firstName,
+              "Last Name": sanitized.lastName,
+              Email: sanitized.email,
+              Phone: sanitized.phone || "",
+              Interest: sanitized.interest,
+              Message: sanitized.message,
+              Source: "Global Website",
+            }),
+          })
+            .then(() => {
+              clearTimeout(timeout);
+              console.info("[Contact] ✅ Google Sheets saved");
+            })
+            .catch((err) => {
+              clearTimeout(timeout);
+              console.error("[Contact] ❌ Google Sheets failed:", err instanceof Error ? err.message : err);
+            })
+        );
+      } else {
+        console.warn("[Contact] ⚠️ GOOGLE_SCRIPT_URL not set — skipping Sheets");
+      }
+
+      await Promise.all(tasks);
+    };
+
+    // Kick off without awaiting (Next.js keeps the lambda alive long enough)
+    runBackground();
+
+    return response;
   } catch (error) {
     console.error("[Contact] Unexpected error:", error);
     return NextResponse.json(
