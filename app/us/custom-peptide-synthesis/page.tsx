@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import PeptidesContent from "./PeptidesContent";
 
 export const metadata: Metadata = {
-    title: "Custom Peptide Synthesis | Provis Biolabs",
+    title: "Custom Peptide Synthesis| Provis Biolabs",
     description: "Premium Custom Peptide Synthesis services in the USA at Provis Biolabs. We provide high-quality manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
     alternates: {
         canonical: "https://www.provisbiolabs.com/us/custom-peptide-synthesis",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         }
     },
     openGraph: {
-        title: "Custom Peptide Synthesis Manufacturing USA Services | Provis Biolabs",
+        title: "Custom Peptide Synthesis | Provis Biolabs",
         description: "Premium Custom Peptide Synthesis — >99% purity, gram-to-kilogram scale for clinical and commercial applications.",
         images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
