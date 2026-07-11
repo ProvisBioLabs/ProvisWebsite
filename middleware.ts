@@ -13,6 +13,17 @@ export function middleware(request: NextRequest) {
   const userAgent = request.headers.get('user-agent') || '';
   const isBot = /bot|crawler|spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|baiduspider/i.test(userAgent);
 
+  // If the request is for the Provinase landing page subdomain
+  const hostname = request.headers.get('host') || '';
+  if (hostname === 'provinase.provisbiolabs.com' || hostname === 'www.provinase.provisbiolabs.com') {
+    // Rewrite all requests on this subdomain to /provinase-site (keeping the path if they navigate, though it's a single page)
+    if (!url.pathname.startsWith('/provinase-site')) {
+      url.pathname = `/provinase-site${url.pathname === '/' ? '' : url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
+    return NextResponse.next();
+  }
+
   // Skip geolocation logic for bots to allow them to crawl all versions of the site
   // Skip geolocation logic for local development to allow testing both sites
   const isLocalhost = url.hostname.includes('localhost') || url.hostname.includes('127.0.0.1');

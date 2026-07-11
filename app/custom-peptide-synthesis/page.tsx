@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import PeptidesContent from "./PeptidesContent";
 
 export const metadata: Metadata = {
-    title: "Custom Peptide Synthesis Manufacturing Services | Provis Biolabs",
+    title: "Custom Peptide Synthesis  | Provis Biolabs",
     description: "Premium Custom Peptide Synthesis services at Provis Biolabs. We provide high-quality manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
     alternates: {
         canonical: "https://www.provisbiolabs.com/custom-peptide-synthesis",
