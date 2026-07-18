@@ -1,79 +1,112 @@
-// ─── SMTP Test Endpoint — DELETE AFTER DEBUGGING ─────────────────────────────
+// ─── SMTP Diagnostic Endpoint — DELETE AFTER DEBUGGING ───────────────────────
 // Hit: POST https://www.provisbiolabs.com/api/test-email
 // Body: { "secret": "provis-debug-2026" }
-// Returns: the exact SMTP error so you know what to fix
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+
+export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => ({}));
 
-  // Simple guard so random people can't trigger test emails
   if (body.secret !== "provis-debug-2026") {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const user = process.env.EMAIL_USER;
-  const pass = process.env.EMAIL_PASS;
-  const admin = process.env.ADMIN_EMAIL;
+  const globalUser = process.env.EMAIL_USER;
+  const globalPass = process.env.EMAIL_PASS;
+  const usUser = process.env.US_EMAIL_USER;
+  const usPass = process.env.US_EMAIL_PASS;
 
-  if (!user || !pass) {
-    return NextResponse.json({
-      error: "EMAIL_USER or EMAIL_PASS env var missing on this deployment",
-      user: user ? "SET" : "MISSING",
-      pass: pass ? "SET" : "MISSING",
-    });
-  }
+  // Show masked credential info so we can verify they're loaded correctly
+  const maskPass = (p?: string) =>
+    p ? `${p[0]}${"*".repeat(Math.max(0, p.length - 2))}${p[p.length - 1]} (len=${p.length})` : "MISSING";
+  const maskUser = (u?: string) => u || "MISSING";
 
-  // Try GoDaddy Legacy and GoDaddy Microsoft 365 configs
-  const configs = [
-    { host: "smtp.office365.com",       port: 587, secure: false, label: "MS 365 Port 587 TLS" },
-    { host: "smtpout.secureserver.net", port: 465, secure: true,  label: "Legacy Port 465 SSL" },
-    { host: "smtpout.secureserver.net", port: 587, secure: false, label: "Legacy Port 587 TLS" },
+  const envInfo = {
+    EMAIL_USER: maskUser(globalUser),
+    EMAIL_PASS: maskPass(globalPass),
+    US_EMAIL_USER: maskUser(usUser),
+    US_EMAIL_PASS: maskPass(usPass),
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL || "NOT SET",
+    US_ADMIN_EMAIL: process.env.US_ADMIN_EMAIL || "NOT SET",
+  };
+
+  // Define test configs for GoDaddy SMTP
+  const smtpConfigs = [
+    { host: "smtpout.secureserver.net", port: 465, secure: true,  label: "GoDaddy 465 SSL" },
+    { host: "smtpout.secureserver.net", port: 587, secure: false, label: "GoDaddy 587 STARTTLS" },
+    { host: "smtp.office365.com",       port: 587, secure: false, label: "MS365 587 STARTTLS" },
   ];
 
-  const results: Record<string, string> = {};
+  // Test both accounts
+  const accounts = [
+    { user: globalUser, pass: globalPass, name: "GLOBAL (customersupport@)" },
+    { user: usUser,     pass: usPass,     name: "US (bdusa@)" },
+  ];
 
-  for (const cfg of configs) {
-    try {
-      const transporter = nodemailer.createTransport({
-        host: cfg.host,
-        port: cfg.port,
-        secure: cfg.secure,
-        auth: { user, pass },
-        connectionTimeout: 20000,
-        greetingTimeout: 15000,
-        socketTimeout: 30000,
-        tls: {
-          rejectUnauthorized: false,
-          minVersion: "TLSv1.2",
-        },
-      });
+  const allResults: Record<string, Record<string, string>> = {};
 
-      // Verify SMTP connection first
-      await transporter.verify();
-
-      // If verify passes, try sending
-      await transporter.sendMail({
-        from: `"Provis Biolabs Test" <${user}>`,
-        to: admin || user,
-        subject: "✅ SMTP Test — Provis Biolabs",
-        text: `SMTP test succeeded via ${cfg.label}. Your email config is working.`,
-      });
-
-      results[cfg.label] = "✅ SUCCESS — email sent!";
-      // Return early on first success
-      return NextResponse.json({ success: true, results, workingConfig: cfg.label });
-
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      results[cfg.label] = `❌ ${msg}`;
+  for (const account of accounts) {
+    if (!account.user || !account.pass) {
+      allResults[account.name] = { status: "SKIPPED — credentials missing" };
+      continue;
     }
+
+    const accountResults: Record<string, string> = {};
+
+    for (const cfg of smtpConfigs) {
+      const testLabel = `${cfg.label}`;
+      try {
+        const transporter = nodemailer.createTransport({
+          host: cfg.host,
+          port: cfg.port,
+          secure: cfg.secure,
+          auth: { user: account.user, pass: account.pass },
+          connectionTimeout: 15_000,
+          greetingTimeout: 10_000,
+          socketTimeout: 20_000,
+          tls: {
+            rejectUnauthorized: false,
+            minVersion: "TLSv1.2",
+          },
+        });
+
+        // Step 1: verify connection
+        await transporter.verify();
+        accountResults[testLabel] = "✅ VERIFY OK";
+
+        // Step 2: try sending
+        try {
+          await transporter.sendMail({
+            from: `"Provis Test" <${account.user}>`,
+            to: account.user, // send to self
+            subject: `✅ SMTP Test — ${account.name} via ${cfg.label}`,
+            text: `Test email sent successfully at ${new Date().toISOString()}`,
+          });
+          accountResults[testLabel] = "✅ SENT OK!";
+        } catch (sendErr: unknown) {
+          const msg = sendErr instanceof Error ? sendErr.message : String(sendErr);
+          accountResults[testLabel] = `⚠️ VERIFY OK but SEND FAILED: ${msg}`;
+        }
+
+        transporter.close();
+        // If this config worked, no need to try others for this account
+        break;
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : String(err);
+        accountResults[testLabel] = `❌ ${msg}`;
+      }
+    }
+
+    allResults[account.name] = accountResults;
   }
 
   return NextResponse.json({
-    success: false,
-    results,
-    hint: "All SMTP configs failed. Check GoDaddy SMTP Auth setting and password.",
+    envInfo,
+    results: allResults,
+    timestamp: new Date().toISOString(),
   });
 }
+
