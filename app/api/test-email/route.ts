@@ -41,9 +41,13 @@ export async function POST(request: NextRequest) {
         port: cfg.port,
         secure: cfg.secure,
         auth: { user, pass },
-        connectionTimeout: 8000,
-        greetingTimeout: 8000,
-        socketTimeout: 8000,
+        connectionTimeout: 20000,
+        greetingTimeout: 15000,
+        socketTimeout: 30000,
+        tls: {
+          rejectUnauthorized: false,
+          minVersion: "TLSv1.2",
+        },
       });
 
       // Verify SMTP connection first
