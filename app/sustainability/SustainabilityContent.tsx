@@ -247,52 +247,6 @@ export default function SustainabilityContent() {
                 </div>
             </section>
 
-            {/* ── Supplier Engagement & Partnerships ─────────────────────────── */}
-            <section className="py-24 bg-[#F8FAFC] border-t border-[#E2E8F0]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.div {...fadeWithInitial()} className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-3 block">Collaboration</span>
-                        <h2 className="text-3xl sm:text-4xl font-bold text-[#1E3A8A] mb-6">Supplier Engagement & Partnerships</h2>
-                        <p className="text-[#475569] text-lg leading-relaxed">
-                            We firmly believe that our suppliers are strategic partners in our growth. In line with this belief, we are committed to building resilient and responsible supplier partnerships by embedding sustainability across our procurement practices.
-                        </p>
-                    </motion.div>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            { 
-                                title: "UN Global Compact (UNGC)", 
-                                img: "/sustainability/ungc.png", 
-                                imgBg: "bg-black",
-                                desc: "We are a proud signatory of the UNGC, reinforcing our commitment to its 10 principles. We regularly monitor progress spanning human rights, labour, environment, and anti-corruption." 
-                            },
-                            { 
-                                title: "CEO Water Mandate", 
-                                img: "/sustainability/ceo-water-mandate.png", 
-                                imgBg: "bg-black",
-                                desc: "We are aligning with the CEO Water Mandate to collaborate with global peers to advance sustainable water strategies, reduce water-related risks, and contribute to community resilience." 
-                            },
-                            { 
-                                title: "PSCI Alignment", 
-                                img: "/sustainability/psci.png", 
-                                imgBg: "bg-white border-b border-[#E2E8F0]",
-                                desc: "As a natural extension of our commitment to responsible supply chains, we are aligning with PSCI principles. We aim to deepen collaboration and drive ESG performance across the value chain." 
-                            }
-                        ].map((item, i) => (
-                            <motion.div key={i} {...fadeWithInitial(i * 0.1)} className="group bg-white border border-[#E2E8F0] rounded-[2rem] overflow-hidden hover:shadow-[0_20px_50px_rgba(30,58,138,0.08)] transition-all">
-                                <div className={`relative h-40 w-full overflow-hidden flex items-center justify-center ${item.imgBg}`}>
-                                    <Image src={item.img} alt={item.title} fill className="object-contain p-6 transition-transform duration-700 group-hover:scale-105" />
-                                </div>
-                                <div className="p-8">
-                                    <h3 className="text-xl font-bold text-[#1E3A8A] mb-4">{item.title}</h3>
-                                    <p className="text-[#475569] text-sm leading-relaxed">{item.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* ── ESG Policies ─────────────────────────── */}
             <section id="policies" className="py-24 bg-white border-t border-[#E2E8F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
