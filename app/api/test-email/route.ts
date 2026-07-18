@@ -14,10 +14,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const globalUser = process.env.EMAIL_USER;
-  const globalPass = process.env.EMAIL_PASS;
-  const usUser = process.env.US_EMAIL_USER;
-  const usPass = process.env.US_EMAIL_PASS;
+  const globalUser = process.env.EMAIL_USER?.trim();
+  const globalPass = process.env.EMAIL_PASS?.trim();
+  const usUser = process.env.US_EMAIL_USER?.trim();
+  const usPass = process.env.US_EMAIL_PASS?.trim();
 
   // Show masked credential info so we can verify they're loaded correctly
   const maskPass = (p?: string) =>
@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
           host: cfg.host,
           port: cfg.port,
           secure: cfg.secure,
-          auth: { user: account.user, pass: account.pass },
+          auth: { user: account.user!.trim(), pass: account.pass!.trim() },
           connectionTimeout: 15_000,
           greetingTimeout: 10_000,
           socketTimeout: 20_000,
