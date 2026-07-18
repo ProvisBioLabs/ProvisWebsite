@@ -3,6 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateContactForm } from "@/lib/sanitize";
 import { sendUSAdminNotification, sendUSAutoReply } from "@/lib/us-mailer";
 
+// Force Node.js runtime so the function doesn't get killed prematurely
+export const runtime = "nodejs";
+// Allow enough time for SMTP retries (3 attempts × exponential backoff)
+export const maxDuration = 30;
+
 export async function POST(request: NextRequest) {
   try {
     // 1. Parse JSON body
@@ -18,78 +23,89 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. Return success immediately — user sees green tick instantly
-    const response = NextResponse.json({ success: true });
+    // 3. Run ALL tasks BEFORE returning the response.
+    //    Previously these were fire-and-forget (runBackground() without await),
+    //    which caused the serverless lambda to exit before emails finished sending.
+    const results = { adminEmail: false, autoReply: false, sheets: false };
 
-    // 4. Fire all background tasks without blocking the response
-    const runBackground = async () => {
-      const tasks: Promise<void>[] = [];
-
-      // ── Emails ──────────────────────────────────────────────────────
-      if (process.env.US_EMAIL_USER && process.env.US_EMAIL_PASS) {
-        tasks.push(
-          sendUSAdminNotification(sanitized).catch((err) => {
+    // ── Emails ──────────────────────────────────────────────────────
+    if (process.env.US_EMAIL_USER && process.env.US_EMAIL_PASS) {
+      const emailTasks: Promise<void>[] = [
+        sendUSAdminNotification(sanitized)
+          .then(() => { results.adminEmail = true; })
+          .catch((err) => {
             console.error("[US Contact] ❌ Admin email PERMANENTLY failed:", {
               error: err instanceof Error ? err.message : String(err),
+              stack: err instanceof Error ? err.stack : undefined,
               name: sanitized.firstName + " " + sanitized.lastName,
               email: sanitized.email,
               interest: sanitized.interest,
             });
           }),
-          sendUSAutoReply(sanitized).catch((err) => {
+        sendUSAutoReply(sanitized)
+          .then(() => { results.autoReply = true; })
+          .catch((err) => {
             console.error("[US Contact] ❌ Auto-reply PERMANENTLY failed:", {
               error: err instanceof Error ? err.message : String(err),
+              stack: err instanceof Error ? err.stack : undefined,
               to: sanitized.email,
             });
-          })
-        );
-      } else {
+          }),
+      ];
+
+      await Promise.all(emailTasks);
+    } else {
+      console.error(
+        "[US Contact] 🚨 CRITICAL: US_EMAIL_USER or US_EMAIL_PASS env var is missing — NO emails will be sent!"
+      );
+    }
+
+    // ── Google Sheets ────────────────────────────────────────────────
+    const sheetsUrl = process.env.US_GOOGLE_SCRIPT_URL;
+    if (sheetsUrl) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10_000);
+
+      try {
+        await fetch(sheetsUrl, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          signal: controller.signal,
+          body: JSON.stringify({
+            Timestamp: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+            "First Name": sanitized.firstName,
+            "Last Name": sanitized.lastName,
+            Email: sanitized.email,
+            Phone: sanitized.phone || "",
+            Interest: sanitized.interest,
+            Message: sanitized.message,
+            Source: "US Website",
+          }),
+        });
+        clearTimeout(timeout);
+        results.sheets = true;
+        console.info("[US Contact] ✅ Google Sheets saved");
+      } catch (err) {
+        clearTimeout(timeout);
         console.error(
-          "[US Contact] 🚨 CRITICAL: US_EMAIL_USER or US_EMAIL_PASS env var is missing — NO emails will be sent!"
+          "[US Contact] ❌ Google Sheets failed:",
+          err instanceof Error ? err.message : err
         );
       }
+    } else {
+      console.warn("[US Contact] ⚠️ US_GOOGLE_SCRIPT_URL not set — skipping Sheets");
+    }
 
-      // ── Google Sheets ────────────────────────────────────────────────
-      const sheetsUrl = process.env.US_GOOGLE_SCRIPT_URL;
-      if (sheetsUrl) {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10000); // 10s max
+    // 4. Log a summary for every submission (visible in Vercel logs)
+    console.info("[US Contact] 📋 Submission processed:", {
+      name: `${sanitized.firstName} ${sanitized.lastName}`,
+      email: sanitized.email,
+      interest: sanitized.interest,
+      results,
+    });
 
-        tasks.push(
-          fetch(sheetsUrl, {
-            method: "POST",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-            signal: controller.signal,
-            body: JSON.stringify({
-              Timestamp: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
-              "First Name": sanitized.firstName,
-              "Last Name": sanitized.lastName,
-              Email: sanitized.email,
-              Phone: sanitized.phone || "",
-              Interest: sanitized.interest,
-              Message: sanitized.message,
-              Source: "US Website",
-            }),
-          })
-            .then(() => {
-              clearTimeout(timeout);
-              console.info("[US Contact] ✅ Google Sheets saved");
-            })
-            .catch((err) => {
-              clearTimeout(timeout);
-              console.error("[US Contact] ❌ Google Sheets failed:", err instanceof Error ? err.message : err);
-            })
-        );
-      } else {
-        console.warn("[US Contact] ⚠️ US_GOOGLE_SCRIPT_URL not set — skipping Sheets");
-      }
-
-      await Promise.all(tasks);
-    };
-
-    runBackground();
-
-    return response;
+    // 5. Return success to the client
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error("[US Contact] Unexpected error:", error);
     return NextResponse.json(
@@ -98,3 +114,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+

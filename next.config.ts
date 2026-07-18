@@ -81,9 +81,12 @@ const nextConfig: NextConfig = {
   },
 
   // ─── Compiler Tweaks ─────────────────────────────────────────────
-  // Remove console.log in production builds
+  // Remove console.log/debug in production but KEEP error/warn/info
+  // so we can actually see email failures and critical issues in Vercel logs
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === "production"
+      ? { exclude: ["error", "warn", "info"] }
+      : false,
   },
 
   // Enable React strict mode for better error detection

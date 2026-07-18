@@ -33,7 +33,6 @@ const VALID_INTERESTS = [
   "CDMO Services",
   "Custom Peptide Synthesis",
   "Partnership",
-  "Provinase Enquiry",
   "Other",
 ];
 
