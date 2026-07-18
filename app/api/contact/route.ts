@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     const results = { adminEmail: false, autoReply: false, sheets: false };
 
     // ── Emails ──────────────────────────────────────────────────────
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+    if (process.env.EMAIL_USER?.trim() && process.env.EMAIL_PASS?.trim()) {
       const emailTasks: Promise<void>[] = [
         sendAdminNotification(sanitized, false)
           .then(() => { results.adminEmail = true; })

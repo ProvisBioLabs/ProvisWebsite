@@ -14,8 +14,8 @@ function createTransporter() {
     secure: true,
     // ❌ NO pool — pooling is the #1 cause of intermittent failures on serverless
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: (process.env.EMAIL_USER || "").trim(),
+      pass: (process.env.EMAIL_PASS || "").trim(),
     },
     // GoDaddy SMTP is slow — give it generous timeouts
     connectionTimeout: 20_000,  // 20s to establish connection
@@ -78,7 +78,7 @@ export async function sendAdminNotification(
 
   await sendWithRetry(
     {
-      from: `"Provis Biolabs" <${process.env.EMAIL_USER}>`,
+      from: `"Provis Biolabs" <${(process.env.EMAIL_USER || "").trim()}>`,
       to: adminEmail,
       subject: `${subjectPrefix}New Enquiry: ${data.interest} — ${data.firstName} ${data.lastName}`,
       html: adminNotificationHtml(data, isUS),
@@ -95,7 +95,7 @@ export async function sendAutoReply(
 ): Promise<void> {
   await sendWithRetry(
     {
-      from: `"Provis Biolabs" <${process.env.EMAIL_USER}>`,
+      from: `"Provis Biolabs" <${(process.env.EMAIL_USER || "").trim()}>`,
       to: data.email,
       subject: "Thank you for contacting Provis Biolabs",
       html: autoReplyHtml(data, isUS),
