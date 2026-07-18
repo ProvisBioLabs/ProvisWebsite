@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import EventsDisplay from "./EventsDisplay";
+import { eventItems } from "../../lib/data/eventsData";
 
 export const metadata = {
     title: "Upcoming Events & Conferences | Provis Biolabs",
@@ -41,9 +42,38 @@ const breadcrumbJsonLd = {
 };
 
 export default function EventsPage() {
+    const eventJsonLd = eventItems.map(event => ({
+        '@context': 'https://schema.org',
+        '@type': 'Event',
+        name: event.title,
+        startDate: event.startDate,
+        endDate: event.endDate,
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        eventStatus: 'https://schema.org/EventScheduled',
+        location: {
+            '@type': 'Place',
+            name: event.location,
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: event.location,
+                addressLocality: event.location.split(',').slice(-2, -1)[0]?.trim() || event.location,
+                addressCountry: event.location.split(',').slice(-1)[0]?.trim() || 'US'
+            }
+        },
+        image: `https://www.provisbiolabs.com${event.image}`,
+        description: event.description,
+        organizer: {
+            '@type': 'Organization',
+            name: 'Provis Biolabs',
+            url: 'https://www.provisbiolabs.com'
+        }
+    }));
+
+    const schemas = [breadcrumbJsonLd, ...eventJsonLd];
+
     return (
         <main className="min-h-screen flex flex-col pt-20">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
             <Navbar />
             <div className="flex-grow">
                 <EventsDisplay />
@@ -52,3 +82,4 @@ export default function EventsPage() {
         </main>
     );
 }
+
