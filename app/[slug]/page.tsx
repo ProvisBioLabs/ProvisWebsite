@@ -59,6 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             canonical: absUrl,
             languages: {
                 'en-US': `https://www.provisbiolabs.com/us/${product.slug}`,
+                'en-IN': absUrl,
                 'en-GB': absUrl,
                 'en-SG': absUrl,
                 'en-KR': absUrl,

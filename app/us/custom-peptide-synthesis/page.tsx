@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import USNavbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PeptidesContent from "./PeptidesContent";
+import { customPeptideFaqs } from "../../custom-peptide-synthesis/faqData";
 
 export const metadata: Metadata = {
-    title: "Custom Peptide Synthesis| Provis Biolabs",
-    description: "Premium Custom Peptide Synthesis services in the USA at Provis Biolabs. We provide high-quality manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
+    title: "Custom Peptide Synthesis | Provis Biolabs",
+    description: "Premium Custom Peptide Synthesis services in the USA & globally at Provis Biolabs. We provide high-quality manufacturing, >99% purity and scale from grams to kilograms for clinical and commercial applications.",
     alternates: {
         canonical: "https://www.provisbiolabs.com/us/custom-peptide-synthesis",
         languages: {
             'en-US': 'https://www.provisbiolabs.com/us/custom-peptide-synthesis',
+            'en-IN': 'https://www.provisbiolabs.com/custom-peptide-synthesis',
             'en-GB': 'https://www.provisbiolabs.com/us/custom-peptide-synthesis',
             'en-SG': 'https://www.provisbiolabs.com/us/custom-peptide-synthesis',
             'en-KR': 'https://www.provisbiolabs.com/us/custom-peptide-synthesis',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: "Custom Peptide Synthesis | Provis Biolabs",
-        description: "Premium Custom Peptide Synthesis — >99% purity, gram-to-kilogram scale for clinical and commercial applications.",
+        description: "Premium Custom Peptide Synthesis — >99% purity, gram-to-kilogram scale for clinical and commercial applications in USA, India & globally.",
         images: ["https://www.provisbiolabs.com/provis-biolabs-research-lab.webp"],
     },
     twitter: {
@@ -45,40 +47,58 @@ const breadcrumbJsonLd = {
 const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-        {
-            '@type': 'Question',
-            name: 'What purity levels do Provis Biolabs Custom Peptide Synthesis achieve?',
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Provis Biolabs Custom Peptide Synthesis achieve >99% purity as standard, with comprehensive HPLC and mass spectrometry characterization provided for every batch.'
-            }
+    mainEntity: customPeptideFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
         },
-        {
-            '@type': 'Question',
-            name: 'Do you offer high-quality Custom Peptide Synthesis?',
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Yes. Provis Biolabs manufactures high-quality Custom Peptide Synthesis for clinical and commercial applications, with full batch documentation and CoA.'
+    })),
+};
+
+const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Custom Peptide Synthesis',
+    description: 'Premium Custom Peptide Synthesis services in the USA and globally, including GMP and research-grade peptides, from mg to kg scale.',
+    provider: {
+        '@type': 'Organization',
+        name: 'Provis Biolabs',
+        url: 'https://www.provisbiolabs.com/us'
+    },
+    areaServed: [
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'India' },
+        { '@type': 'Country', name: 'Worldwide' }
+    ],
+    hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Custom Peptide Services',
+        itemListElement: [
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Solid Phase Peptide Synthesis (SPPS)'
+                }
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Liquid Phase Peptide Synthesis (LPPS)'
+                }
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Peptide Modifications & Tagging'
+                }
             }
-        },
-        {
-            '@type': 'Question',
-            name: 'What scale of custom peptide manufacturing does Provis Biolabs offer?',
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Provis Biolabs supports custom peptide production from milligram-scale feasibility studies through to kilogram-scale commercial manufacturing, with flexible scale-up processes.'
-            }
-        },
-        {
-            '@type': 'Question',
-            name: 'What types of peptides can Provis Biolabs manufacture?',
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Provis Biolabs manufactures a wide range of custom Custom Peptide Synthesis including linear, cyclic, disulfide-bonded, PEGylated and modified peptides for pharmaceutical, diagnostic and research applications.'
-            }
-        }
-    ]
+        ]
+    }
 };
 
 export default function SyntheticPeptidesPage() {
@@ -86,6 +106,7 @@ export default function SyntheticPeptidesPage() {
         <main>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <USNavbar />
             <PeptidesContent />
             <Footer />

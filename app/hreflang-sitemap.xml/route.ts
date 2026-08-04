@@ -7,6 +7,7 @@ const BASE = 'https://www.provisbiolabs.com';
 
 const LOCALES = [
     { lang: 'en-US' },
+    { lang: 'en-IN' },
     { lang: 'en-GB' },
     { lang: 'en-SG' },
     { lang: 'en-KR' },

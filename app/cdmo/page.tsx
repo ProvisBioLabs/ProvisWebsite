@@ -10,6 +10,7 @@ export const metadata: Metadata = {
         canonical: "https://www.provisbiolabs.com/cdmo",
         languages: {
             'en-US': 'https://www.provisbiolabs.com/us/cdmo',
+            'en-IN': 'https://www.provisbiolabs.com/cdmo',
             'en-GB': 'https://www.provisbiolabs.com/cdmo',
             'en-SG': 'https://www.provisbiolabs.com/cdmo',
             'en-KR': 'https://www.provisbiolabs.com/cdmo',

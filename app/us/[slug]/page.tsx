@@ -58,6 +58,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             canonical: absUrl,
             languages: {
                 "en-US": absUrl,
+                "en-IN": `${BASE_URL}/${product.slug}`,
                 "x-default": `${BASE_URL}/${product.slug}`,
             },
         },

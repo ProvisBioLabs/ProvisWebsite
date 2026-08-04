@@ -12,7 +12,7 @@ export default function CookiePolicyPage() {
                 <div className="mb-12">
                     <h1 className="text-4xl sm:text-5xl font-black text-[#1E3A8A] mb-4">Cookie Policy</h1>
                     <p className="text-[#64748B] text-lg">Last Updated: March 2024</p>
-                </div>
+                </div>    
                 <div className="prose prose-lg prose-slate max-w-none text-[#475569]">
                     <h2 className="text-2xl font-bold text-[#1E3A8A] mt-8 mb-4">1. Introduction</h2>
                     <p className="mb-6">

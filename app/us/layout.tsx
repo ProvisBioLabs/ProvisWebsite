@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.provisbiolabs.com/us',
     languages: {
       'en-US': 'https://www.provisbiolabs.com/us',
+      'en-IN': 'https://www.provisbiolabs.com',
       'en-GB': 'https://www.provisbiolabs.com', 
       'x-default': 'https://www.provisbiolabs.com',
     }
