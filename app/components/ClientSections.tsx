@@ -8,8 +8,8 @@
  */
 import dynamic from "next/dynamic";
 
-const AboutStrip = dynamic(() => import("./AboutStrip"), { ssr: false });
-const Products = dynamic(() => import("./Products"), { ssr: false });
+const AboutStrip = dynamic(() => import("./AboutStrip"));
+const Products = dynamic(() => import("./Products"));
 
 export default function ClientSections() {
     return (

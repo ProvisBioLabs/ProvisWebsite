@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
       await Promise.all(emailTasks);
     } else {
       console.error(
-        "[Contact] 🚨 CRITICAL: EMAIL_USER or EMAIL_PASS env var is missing — NO emails will be sent!"
+        "[Contact]  CRITICAL: EMAIL_USER or EMAIL_PASS env var is missing — NO emails will be sent!"
       );
     }
 
@@ -93,11 +93,11 @@ export async function POST(request: NextRequest) {
         });
         clearTimeout(timeout);
         results.sheets = true;
-        console.info("[Contact] ✅ Google Sheets saved");
+        console.info("[Contact] Google Sheets saved");
       } catch (err) {
         clearTimeout(timeout);
         console.error(
-          "[Contact] ❌ Google Sheets failed:",
+          "[Contact]  Google Sheets failed:",
           err instanceof Error ? err.message : err
         );
       }

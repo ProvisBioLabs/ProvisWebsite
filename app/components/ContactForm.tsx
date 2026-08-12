@@ -95,7 +95,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
             setTimeout(() => setStatus(''), 7000);
         }
     };
-
+    
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             {status === 'success' && (
