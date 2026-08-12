@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validateContactForm } from "@/lib/sanitize";
 import { sendAdminNotification, sendAutoReply } from "@/lib/mailer";
+import { checkSpam } from "@/lib/spam-guard";
 
 // Force Node.js runtime so the function doesn't get killed prematurely
 export const runtime = "nodejs";
@@ -12,6 +13,14 @@ export async function POST(request: NextRequest) {
   try {
     // 1. Parse JSON body
     const body = await request.json();
+
+    // 1.5. Spam guard — honeypot + time-based + reCAPTCHA v3
+    const spamResult = await checkSpam(body);
+    if (spamResult.blocked) {
+      console.warn("[Contact] 🚫 Spam blocked:", spamResult.reason);
+      // Return silent success so bots don't learn they were blocked
+      return NextResponse.json({ success: true });
+    }
 
     // 2. Validate & sanitize
     const { valid, errors, sanitized } = validateContactForm(body);

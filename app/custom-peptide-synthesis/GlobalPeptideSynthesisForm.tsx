@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
     Send,
@@ -14,6 +14,38 @@ import {
     AlertCircle,
     Atom,
 } from "lucide-react";
+
+// ─── reCAPTCHA v3 helper ────────────────────────────────────────────
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+
+function loadRecaptchaScript(): Promise<void> {
+    if (!RECAPTCHA_SITE_KEY) return Promise.resolve();
+    if (document.getElementById("recaptcha-v3-script")) return Promise.resolve();
+
+    return new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.id = "recaptcha-v3-script";
+        script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+        script.async = true;
+        script.onload = () => resolve();
+        document.head.appendChild(script);
+    });
+}
+
+async function getRecaptchaToken(action: string): Promise<string> {
+    if (!RECAPTCHA_SITE_KEY) return "";
+    try {
+        await loadRecaptchaScript();
+        const grecaptcha = (window as unknown as { grecaptcha: { ready: (cb: () => void) => void; execute: (key: string, opts: { action: string }) => Promise<string> } }).grecaptcha;
+        return new Promise((resolve) => {
+            grecaptcha.ready(() => {
+                grecaptcha.execute(RECAPTCHA_SITE_KEY, { action }).then(resolve);
+            });
+        });
+    } catch {
+        return "";
+    }
+}
 
 interface PeptideEntry {
     id: number;
@@ -80,8 +112,15 @@ export default function GlobalPeptideSynthesisForm() {
     const [peptides, setPeptides] = useState<PeptideEntry[]>([createEmptyPeptide(1)]);
     const [status, setStatus] = useState<"" | "success" | "error">("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [honeypot, setHoneypot] = useState("");
     const submittingRef = useRef(false);
     const nextId = useRef(2);
+    const formLoadedAt = useRef(Date.now());
+
+    // Reset the timestamp when component mounts
+    useEffect(() => {
+        formLoadedAt.current = Date.now();
+    }, []);
 
     const addPeptide = () => {
         setPeptides((prev) => [...prev, createEmptyPeptide(nextId.current++)]);
@@ -135,6 +174,7 @@ export default function GlobalPeptideSynthesisForm() {
                 .join("\n\n");
 
             const nameParts = applicantName.trim().split(/\s+/);
+            const recaptchaToken = await getRecaptchaToken("peptide_submit");
             const data = {
                 firstName: nameParts[0] || applicantName,
                 lastName: nameParts.slice(1).join(" ") || ".",
@@ -142,6 +182,9 @@ export default function GlobalPeptideSynthesisForm() {
                 phone,
                 interest: "Custom Peptide Synthesis",
                 message: `Organization: ${organization}\nCountry: ${country}\n\n${peptideDetails}`,
+                _company_website: honeypot,
+                _formLoadedAt: formLoadedAt.current,
+                _recaptchaToken: recaptchaToken,
             };
 
             // Routes to global /api/contact — sends to customersupport@ and global Google Sheet
@@ -160,7 +203,9 @@ export default function GlobalPeptideSynthesisForm() {
                 setPhone("");
                 setOrganization("");
                 setCountry("Select Country");
+                setHoneypot("");
                 setPeptides([createEmptyPeptide(1)]);
+                formLoadedAt.current = Date.now();
                 nextId.current = 2;
             } else {
                 setStatus("error");
@@ -241,6 +286,20 @@ export default function GlobalPeptideSynthesisForm() {
                             </div>
                         </div>
                     )}
+
+                    {/* Honeypot — invisible to real users, bots auto-fill it */}
+                    <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', height: 0, width: 0, overflow: 'hidden' }}>
+                        <label htmlFor="_company_website_peptide">Company Website</label>
+                        <input
+                            type="text"
+                            id="_company_website_peptide"
+                            name="_company_website"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={honeypot}
+                            onChange={(e) => setHoneypot(e.target.value)}
+                        />
+                    </div>
 
                     {/* ─── Contact Information ─── */}
                     <div className="p-6 sm:p-8 lg:p-10 border-b border-[#E2E8F0]">

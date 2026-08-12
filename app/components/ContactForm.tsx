@@ -1,10 +1,42 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 
 interface ContactFormProps {
     prefilledInterest?: string;
+}
+
+// ─── reCAPTCHA v3 helper ────────────────────────────────────────────
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+
+function loadRecaptchaScript(): Promise<void> {
+    if (!RECAPTCHA_SITE_KEY) return Promise.resolve();
+    if (document.getElementById("recaptcha-v3-script")) return Promise.resolve();
+
+    return new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.id = "recaptcha-v3-script";
+        script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+        script.async = true;
+        script.onload = () => resolve();
+        document.head.appendChild(script);
+    });
+}
+
+async function getRecaptchaToken(action: string): Promise<string> {
+    if (!RECAPTCHA_SITE_KEY) return "";
+    try {
+        await loadRecaptchaScript();
+        const grecaptcha = (window as unknown as { grecaptcha: { ready: (cb: () => void) => void; execute: (key: string, opts: { action: string }) => Promise<string> } }).grecaptcha;
+        return new Promise((resolve) => {
+            grecaptcha.ready(() => {
+                grecaptcha.execute(RECAPTCHA_SITE_KEY, { action }).then(resolve);
+            });
+        });
+    } catch {
+        return "";
+    }
 }
 
 export default function ContactForm({ prefilledInterest = "" }: ContactFormProps) {
@@ -12,6 +44,12 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
     const [interest, setInterest] = useState(prefilledInterest);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const submittingRef = useRef(false); // prevents duplicate submissions
+    const formLoadedAt = useRef(Date.now());
+
+    // Reset the timestamp when component mounts
+    useEffect(() => {
+        formLoadedAt.current = Date.now();
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -25,7 +63,11 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
         try {
             const form = e.currentTarget;
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const data: Record<string, unknown> = Object.fromEntries(formData.entries());
+
+            // Add spam guard fields
+            data._formLoadedAt = formLoadedAt.current;
+            data._recaptchaToken = await getRecaptchaToken("contact_submit");
 
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -39,6 +81,7 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                 setStatus('success');
                 setInterest(prefilledInterest || "");
                 form.reset();
+                formLoadedAt.current = Date.now(); // Reset for next submission
             } else {
                 console.error('API Error:', result.errors);
                 setStatus('error');
@@ -68,6 +111,18 @@ export default function ContactForm({ prefilledInterest = "" }: ContactFormProps
                     <strong>Error.</strong> Something went wrong. Please try again or email us directly at bd@provisbiolabs.com.
                 </div>
             )}
+
+            {/* Honeypot — invisible to real users, bots auto-fill it */}
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', height: 0, width: 0, overflow: 'hidden', tabIndex: -1 } as React.CSSProperties}>
+                <label htmlFor="_company_website">Company Website</label>
+                <input
+                    type="text"
+                    id="_company_website"
+                    name="_company_website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                />
+            </div>
 
             <div className="grid md:grid-cols-2 gap-6">
                 <div>
