@@ -26,9 +26,6 @@ export const metadata: Metadata = {
   title: "Provis Biolabs — Pioneering Bioscience for a Healthier World",
   description:
     "Provis Biolabs delivers premium bioreagents, Bio-APIs and CDMO services to global pharmaceutical and biopharmaceutical innovators.",
-  icons: {
-    icon: '/icon.svg',
-  },
   alternates: {
     languages: {
       'en-US': 'https://www.provisbiolabs.com/us',

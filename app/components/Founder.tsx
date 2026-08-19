@@ -58,7 +58,7 @@ export default function Founder() {
                             />
 
                         </div>
-
+                        
                     </motion.div>
 
                     {/* Content Side */}
