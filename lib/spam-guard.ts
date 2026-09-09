@@ -50,7 +50,7 @@ export async function checkSpam(
       verifyUrl.searchParams.set("secret", secretKey);
       verifyUrl.searchParams.set("response", recaptchaToken);
 
-      const res = await fetch(verifyUrl.toString(), { method: "POST" });
+      const res = await fetch(verifyUrl.toString(), {method: "POST" });
       const data = (await res.json()) as {
         success: boolean;
         score?: number;

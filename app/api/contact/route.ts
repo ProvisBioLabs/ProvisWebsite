@@ -68,13 +68,11 @@ export async function POST(request: NextRequest) {
         "[Contact]  CRITICAL: EMAIL_USER or EMAIL_PASS env var is missing — NO emails will be sent!"
       );
     }
-
     // ── Google Sheets ────────────────────────────────────────────────
     const sheetsUrl = process.env.GOOGLE_SCRIPT_URL;
     if (sheetsUrl) {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10_000);
-
       try {
         await fetch(sheetsUrl, {
           method: "POST",

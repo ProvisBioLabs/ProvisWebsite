@@ -34,9 +34,7 @@ export default function ContactContent() {
                         Whether you're looking for a CDMO partner, have a business enquiry, or want to explore career opportunities, our team is here to help.
                     </motion.p>
                 </div>
-
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
                     {/* Left: Contact Form */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}

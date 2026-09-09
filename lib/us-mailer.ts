@@ -1,4 +1,4 @@
-// ─── Nodemailer Transport — GoDaddy SMTP (US Dedicated) ──────────────
+// ─── Nodemailer Transport — Zoho Mail (US Dedicated) ──────────────
 import nodemailer from "nodemailer";
 import type { ContactFormData } from "./sanitize";
 import { adminNotificationHtml, autoReplyHtml } from "./email-templates";
@@ -9,7 +9,8 @@ import { adminNotificationHtml, autoReplyHtml } from "./email-templates";
 // know, causing silent send failures. A fresh transporter = fresh TCP = reliable.
 function createUSTransporter() {
   return nodemailer.createTransport({
-    host: "smtpout.secureserver.net",
+    // Zoho SMTP host (change to smtp.zoho.com if your account is in the US data center)
+    host: "smtp.zoho.in",
     port: 465,
     secure: true,
     // ❌ NO pool — pooling is the #1 cause of intermittent failures on serverless
@@ -17,15 +18,10 @@ function createUSTransporter() {
       user: process.env.US_EMAIL_USER,
       pass: process.env.US_EMAIL_PASS,
     },
-    // GoDaddy SMTP is slow — give it generous timeouts
-    connectionTimeout: 20_000,  // 20s to establish connection
-    greetingTimeout: 15_000,    // 15s for SMTP greeting
-    socketTimeout: 30_000,      // 30s for socket inactivity
-    // GoDaddy TLS compatibility
-    tls: {
-      rejectUnauthorized: false, // GoDaddy certs sometimes have chain issues
-      minVersion: "TLSv1.2",
-    },
+    // Zoho SMTP settings
+    connectionTimeout: 20_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 30_000,
   });
 }
 

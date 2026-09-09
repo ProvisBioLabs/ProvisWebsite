@@ -33,10 +33,10 @@ export async function POST(request: NextRequest) {
     US_ADMIN_EMAIL: process.env.US_ADMIN_EMAIL || "NOT SET",
   };
 
-  // Define test configs for GoDaddy SMTP
+  // Define test configs for Zoho SMTP
   const smtpConfigs = [
-    { host: "smtpout.secureserver.net", port: 465, secure: true,  label: "GoDaddy 465 SSL" },
-    { host: "smtpout.secureserver.net", port: 587, secure: false, label: "GoDaddy 587 STARTTLS" },
+    { host: "smtp.zoho.in", port: 465, secure: true,  label: "Zoho 465 SSL (IN)" },
+    { host: "smtp.zoho.com", port: 465, secure: true,  label: "Zoho 465 SSL (US)" },
     { host: "smtp.office365.com",       port: 587, secure: false, label: "MS365 587 STARTTLS" },
   ];
 
