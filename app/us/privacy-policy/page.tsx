@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
                             <p className="text-[#475569] font-semibold mb-1">Provis Biolabs Private Limited</p>
                             <p className="text-[#475569] mb-1">Email: <a href="mailto:bdusa@provisbiolabs.com" className="text-[#F26522]">bdusa@provisbiolabs.com</a></p>
                             <p className="text-[#475569] mb-1">Phone (India): +91 9059284828</p>
-                            <p className="text-[#475569]">Phone (USA): +1 (650) 996-4951</p>
+
                         </div>
 
                     </div>

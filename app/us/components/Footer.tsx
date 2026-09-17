@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import Image from "next/image";
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
 
 const companyLinks = [
     { label: "About Us", href: "/us/about" },
@@ -141,7 +141,7 @@ export default function Footer() {
                             <p className="text-sm text-[#475569] mb-1">Provis Biolabs Inc.</p>
                             <p className="text-sm text-[#475569] mb-3">111 Roberts St, F #109, East Hartford, CT 06108</p>
                             <div className="flex items-center gap-4 text-sm font-medium text-[#475569]">
-                                <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> +1 (650) 996-4951</span>
+
                                 <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> bdusa@provisbiolabs.com</span>
                             </div>
                         </div>

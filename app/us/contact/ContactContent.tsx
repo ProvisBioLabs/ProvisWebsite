@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Send, ArrowRight } from "lucide-react";
+import { MapPin, Mail, Send, ArrowRight } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 
 export default function ContactContent() {
@@ -76,18 +76,19 @@ export default function ContactContent() {
 
                                 <div className="h-px w-12 bg-[#E2E8F0] my-6" />
 
-                                <a href="tel:+16509964951" className="flex items-center gap-3 text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors group/link">
-                                    <div className="w-8 h-8 rounded-full bg-[#f8fafc] flex items-center justify-center group-hover/link:bg-[#FFF7F2] transition-colors">
-                                        <Phone className="w-4 h-4" />
-                                    </div>
-                                    +1 (650) 996-4951
-                                </a>
 
                                 <a href="mailto:bdusa@provisbiolabs.com" className="flex items-center gap-3 text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors group/link">
                                     <div className="w-8 h-8 rounded-full bg-[#f8fafc] flex items-center justify-center group-hover/link:bg-[#FFF7F2] transition-colors">
                                         <Mail className="w-4 h-4" />
                                     </div>
                                     bdusa@provisbiolabs.com
+                                </a>
+
+                                <a href="mailto:carrers@provisbiolabs.com" className="flex items-center gap-3 text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors group/link">
+                                    <div className="w-8 h-8 rounded-full bg-[#f8fafc] flex items-center justify-center group-hover/link:bg-[#FFF7F2] transition-colors">
+                                        <Mail className="w-4 h-4" />
+                                    </div>
+                                    carrers@provisbiolabs.com
                                 </a>
                             </div>
                         </div>
