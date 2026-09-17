@@ -125,8 +125,8 @@ export default function CareersContent() {
                                 </a>
                             </div>
                         </motion.div>
-                        
-                        <motion.div 
+
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.2 }}
@@ -159,7 +159,7 @@ export default function CareersContent() {
 
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
                         {/* Large Main Feature */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -182,7 +182,7 @@ export default function CareersContent() {
 
                         <div className="md:col-span-4 flex flex-col gap-6">
                             {/* Top Right */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -205,7 +205,7 @@ export default function CareersContent() {
                             </motion.div>
 
                             {/* Bottom Right */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -234,7 +234,7 @@ export default function CareersContent() {
                 </div>
             </div>
 
-           
+
             {/* 4. WELLBEING & BENEFITS */}
             <div className="py-24 bg-white border-t border-[#E2E8F0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,7 +249,7 @@ export default function CareersContent() {
 
                         <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
                             {benefits.map((benefit, idx) => (
-                                <motion.div 
+                                <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -333,7 +333,7 @@ export default function CareersContent() {
 
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <a
-                                    href="mailto:career@provisbiolabs.com"
+                                    href="mailto:careers@provisbiolabs.com"
                                     className="px-8 py-4 bg-white text-[#F26522] font-bold rounded-full hover:bg-gray-50 hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
                                 >
                                     Email Resume
