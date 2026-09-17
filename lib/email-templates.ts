@@ -114,11 +114,7 @@ export function autoReplyHtml(data: ContactFormData, isUS: boolean = false): str
           <p style="margin:0 0 4px; font-size:13px; font-weight:600; color:${BRAND.orange};">📧 Email</p>
           <a href="mailto:${contactEmail}" style="font-size:14px; color:${BRAND.navy}; text-decoration:none;">${contactEmail}</a>
         </td>
-        ${isUS ? `<td width="12"></td>
-        <td style="padding:12px 16px; background:${BRAND.orangeLight}; border-radius:8px;">
-          <p style="margin:0 0 4px; font-size:13px; font-weight:600; color:${BRAND.orange};">📞 Phone (USA)</p>
-          <a href="tel:+16509964951" style="font-size:14px; color:${BRAND.navy}; text-decoration:none;">+1 (650) 996-4951</a>
-        </td>` : ""}
+        ${isUS ? `` : ""}
       </tr>
     </table>
 

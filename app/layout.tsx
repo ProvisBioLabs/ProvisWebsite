@@ -90,7 +90,6 @@ export default function RootLayout({
     name: 'Provis Biolabs Inc. (USA Office)',
     image: 'https://www.provisbiolabs.com/logo.webp',
     url: 'https://www.provisbiolabs.com',
-    telephone: '+16509964951',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '111 Roberts St, F #109',

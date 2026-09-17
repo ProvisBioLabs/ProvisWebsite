@@ -84,12 +84,12 @@ export default function ContactContent() {
                                     bdusa@provisbiolabs.com
                                 </a>
 
-                                <a href="mailto:carrers@provisbiolabs.com" className="flex items-center gap-3 text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors group/link">
+                                {/* <a href="mailto:careers@provisbiolabs.com" className="flex items-center gap-3 text-[#1E3A8A] font-bold hover:text-[#F26522] transition-colors group/link">
                                     <div className="w-8 h-8 rounded-full bg-[#f8fafc] flex items-center justify-center group-hover/link:bg-[#FFF7F2] transition-colors">
                                         <Mail className="w-4 h-4" />
                                     </div>
-                                    carrers@provisbiolabs.com
-                                </a>
+                                    careers@provisbiolabs.com
+                                </a> */}
                             </div>
                         </div>
                     </motion.div>
