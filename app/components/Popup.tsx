@@ -51,7 +51,7 @@ export default function Popup() {
             <Link href="/events" onClick={() => setIsOpen(false)} className="block relative w-full group">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image 
-                  src="/events/biointernational.webp" 
+                  src="/events/festivalsofbiologics.png" 
                   alt="Upcoming Event" 
                   fill 
                   className="object-fit transition-transform duration-700 group-hover:scale-105"

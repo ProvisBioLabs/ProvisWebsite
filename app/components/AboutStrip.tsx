@@ -18,14 +18,10 @@ export default function AboutStrip() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    >
-
-
-                        
+                    >   
                         <h2 className="text-4xl sm:text-3xl lg:text-4xl font-outfit font-black tracking-tight leading-[1.08] text-[#1E3A8A] mb-8 drop-shadow-sm">
                             About <span className="text-[#F26522]">Us</span>
-                        </h2>
-                          
+                        </h2>     
                         <div className="text-lg sm:text-xl lg:text-[22px] text-[#475569] leading-[1.8] font-medium ">
                                 <p>
                                  Provis Biolabs is a <strong className="text-[#F26522] font-semibold">fast-growing biotechnology company</strong> specializing in premium bioreagents for global pharmaceutical and biopharmaceutical applications. Since our founding in 2019, we&apos;ve commercialized a diverse portfolio of products with a robust and expanding pipeline.
@@ -36,7 +32,6 @@ export default function AboutStrip() {
                               </p>
                         </div>
                     </motion.div>
-
                     {/* Right — parallax image */}      
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
