@@ -145,7 +145,7 @@ ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(usaSchema) }} />
         {children}
         <CookieConsent />
-        <Popup />
+        {/* <Popup /> */}
       </body>
     </html>
   );
